@@ -1,0 +1,68 @@
+/*
+COLORS
+ */
+$color-gray-text = #777
+$color-text = #4a4a4a
+$color-darkmode-text = #e1e3e5
+$color-darkmode-text-dim = darken($color-darkmode-text, 20)
+
+$color-gray-border = #ddd
+$color-focus-blue = #0d7cc8
+$color-button-cta = #209cee
+
+$color-blue = #2c61b6
+$color-blue-alt = #0D7CC8
+
+$color-red = #e24161
+$color-red-text = #a61216
+
+$color-green = #009826
+$color-green-text = #109541
+
+$color-yellow = #ffdd57
+$color-gold = #eebc41
+
+$color-light-gray-background = #f9f9fa
+$color-dark-background = #181b22
+
+/*
+SIZES
+ */
+$border-radius = 4px
+
+$height-input = 40px
+
+
+/*
+TYPOGRAPHY
+ */
+$line-height-base = 1.5
+
+$font-sans = "Inter", BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
+
+$font-weight-sans-regular = 400
+$font-weight-sans-bold = 600
+$font-weight-sans-black = 900
+
+$font-size-small = 13px
+$font-size-normal = 16px
+$font-size-medium-1 = 20px
+$font-size-medium-2 = 25px
+$font-size-large-1 = 31px
+$font-size-large-2 = 39px
+$font-size-large-3 = 48px
+
+tracking(fontSize)
+  letter-spacing round(-0.017+(0.202*(2.71828**(-0.175*fontSize))), 3)em
+
+lineHeightRounded(fontSize, lineHeight)
+  line-height round(lineHeight*fontSize)px
+
+leading(fontSize)
+  lineHeightRounded(fontSize, $line-height-base - (fontSize - $font-size-normal) * .01)
+
+font-sans(size, weight=$font-weight-sans-regular)
+  font-size size*1px
+  tracking(size)
+  leading(size)
+  font-weight weight
