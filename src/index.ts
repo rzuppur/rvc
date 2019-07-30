@@ -1,6 +1,6 @@
 import { VueConstructor, PluginObject } from 'vue';
-import Button from "@/components/Button.vue";
-import Icon from "@/components/Icon.vue";
+import Button from '@/components/Button.vue';
+import Icon from '@/components/Icon.vue';
 
 declare global {
   interface Window {
@@ -16,9 +16,8 @@ const install = (Vue: VueConstructor): void => {
    *   if you need to extend Vue constructor, you can extend it in here.
    */
 
-  Vue.component("r-button", Button);
-  Vue.component("r-icon", Icon);
-
+  Vue.component('r-button', Button);
+  Vue.component('r-icon', Icon);
 };
 
 const plugin: PluginObject<VueConstructor> = {

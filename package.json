@@ -1,5 +1,5 @@
 {
-  "name": "rvc",
+  "name": "@rzuppur/rvc",
   "version": "0.1.0",
   "author": "Reino Zuppur",
   "scripts": {
@@ -46,5 +46,21 @@
   },
   "jsdelivr": "dist/rvc.umd.min.js",
   "sideeffects": false,
-  "types": "types/index.d.ts"
+  "types": "types/index.d.ts",
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rzuppur/rvc.git"
+  },
+  "keywords": [
+    "vue",
+    "ui"
+  ],
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/rzuppur/rvc/issues"
+  },
+  "homepage": "https://github.com/rzuppur/rvc#readme"
 }

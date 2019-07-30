@@ -30,22 +30,22 @@
 
 <script>
 
-  export default {
-    name: "Button",
-    props: {
-      action: Function,
-      label: String,
-      icon: String,
-      iconColor: String,
-      borderless: Boolean,
-      primary: Boolean,
-      gray: Boolean,
-      fullwidth: Boolean,
-      loading: Boolean,
-      submit: Boolean,
-      disabled: Boolean,
-    },
-  };
+export default {
+  name: 'Button',
+  props: {
+    action: Function,
+    label: String,
+    icon: String,
+    iconColor: String,
+    borderless: Boolean,
+    primary: Boolean,
+    gray: Boolean,
+    fullwidth: Boolean,
+    loading: Boolean,
+    submit: Boolean,
+    disabled: Boolean,
+  },
+};
 
 </script>
 
