@@ -50,7 +50,7 @@
 </template>
 
 <style lang="stylus">
-  @import "~@/shared.styl"
+  @import "./shared.styl"
   @import url('https://rsms.me/inter/inter.css');
 
   body

@@ -14,7 +14,7 @@
     :type="(props.submit || props.submit === '') ? 'submit' : 'button'"
     :disabled="(props.disabled || props.disabled === '') || props.loading"
     :aria-label="props.label"
-    @pointerdown.prevent
+    @pointerdown.prevent=""
     @click="props.action ? props.action : () => {}"
   )
 
@@ -50,7 +50,7 @@ export default {
 </script>
 
 <style lang="stylus">
-  @import "~@/shared.styl"
+  @import "../shared.styl"
 
   @keyframes spinAround
     from

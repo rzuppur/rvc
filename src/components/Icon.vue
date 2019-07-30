@@ -32,7 +32,7 @@
 
 
 <style lang="stylus">
-  @import "~@/shared.styl"
+  @import "../shared.styl"
 
   .icon.material
     height 24px
