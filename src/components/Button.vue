@@ -7,6 +7,7 @@
       (props.primary || props.primary === '') ? 'primary' : '',\
       (props.gray || props.gray === '') ? 'gray' : '',\
       (props.fullwidth || props.fullwidth === '') ? 'fullwidth' : '',\
+      (props.small || props.small === '') ? 'small' : '',\
       (props.loading || props.loading === '') ? 'loading' : '',\
       data.class,\
       data.staticClass,\
@@ -41,6 +42,7 @@
       primary: Boolean,
       gray: Boolean,
       fullwidth: Boolean,
+      small: Boolean,
       loading: Boolean,
       submit: Boolean,
       disabled: Boolean,
@@ -126,8 +128,8 @@
         .darkMode &
           background alpha(#fff, .08)
 
-      &:focus
-        box-shadow inset 0 0 0 2px alpha($color-focus-blue, 0.2)
+      &:focus:not(:active)
+        box-shadow 0 0 0 3px alpha($color-focus-blue, 0.2) !important
 
     &:hover:not(.borderless)
       box-shadow 0 0 0 2px alpha($color-focus-blue, 0.3) !important
@@ -160,9 +162,15 @@
       display flex
       width 100%
 
+    &.small
+      height $height-input-small
+
     &.icon-only
       width $height-input
       padding 0
+
+      &.small
+        width $height-input-small
 
     &:not(.icon-only)
       min-width 65px
@@ -214,5 +222,16 @@
       &:first-child:last-child
         margin-left 0
         margin-right 0
+
+  &.small .icon
+
+      &:first-child:not(:last-child)
+        margin-left -4px
+        margin-right 5px
+
+      &:last-child:not(:first-child)
+        margin-right -4px
+        margin-left 5px
+
 
 </style>

@@ -35,6 +35,10 @@
 
     .buttons
       r-button(:action="test") @click test
+      r-button(small) Small
+      r-button(small icon="arrow left") Small icon
+      r-button(small icon="close")
+      r-button(small borderless icon="edit")
 
   #app
 
