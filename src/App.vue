@@ -1,6 +1,7 @@
 <template lang="pug">
 
   mixin buttons()
+
     .buttons
       r-button Normal
       r-button(primary) Primary
@@ -32,6 +33,8 @@
       r-button(icon="add image")
       r-button(borderless icon="eye visible")
 
+    .buttons
+      r-button(:action="test") @click test
 
   #app
 
@@ -48,6 +51,17 @@
       +buttons()
 
 </template>
+
+<script>
+  export default {
+    methods: {
+      test() {
+        // eslint-disable-next-line no-alert
+        window.alert("Test");
+      },
+    },
+  };
+</script>
 
 <style lang="stylus">
   @import "./shared.styl"
