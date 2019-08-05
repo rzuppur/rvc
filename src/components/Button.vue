@@ -139,6 +139,7 @@
 
     &.primary
       background $color-button-cta
+      border none
       color #fff
 
       &:hover,
