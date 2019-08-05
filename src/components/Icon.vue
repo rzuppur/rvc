@@ -26,6 +26,8 @@
     template(v-else-if="props.icon === 'expand'") <svg style="width:24px;height:24px" viewBox="0 0 24 24"><path d="M12,18.17L8.83,15L7.42,16.41L12,21L16.59,16.41L15.17,15M12,5.83L15.17,9L16.58,7.59L12,3L7.41,7.59L8.83,9L12,5.83Z" /></svg>
     template(v-else-if="props.icon === 'collapse'") <svg style="width:24px;height:24px" viewBox="0 0 24 24"><path d="M16.59,5.41L15.17,4L12,7.17L8.83,4L7.41,5.41L12,10M7.41,18.59L8.83,20L12,16.83L15.17,20L16.58,18.59L12,14L7.41,18.59Z" /></svg>
     template(v-else-if="props.icon === 'add'") <svg style="width:24px;height:24px" viewBox="0 0 24 24"><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" /></svg>
+    template(v-else-if="props.icon === 'send'") <svg style="width:24px;height:24px" viewBox="0 0 24 24"><path d="M2,21L23,12L2,3V10L17,12L2,14V21Z" /></svg>
+    template(v-else-if="props.icon === 'log out'") <svg style="width:24px;height:24px" viewBox="0 0 24 24"><path d="M19,3H5C3.89,3 3,3.89 3,5V9H5V5H19V19H5V15H3V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M10.08,15.58L11.5,17L16.5,12L11.5,7L10.08,8.41L12.67,11H3V13H12.67L10.08,15.58Z" /></svg>
     template(v-else) ?
 
 </template>

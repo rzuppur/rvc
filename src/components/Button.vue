@@ -3,7 +3,7 @@
   button.r-button(
     :class="[\
       (props.borderless || props.borderless === '') ? 'borderless' : '',\
-      (props.icon && !children) ? 'icon-only' : '',\
+      (props.icon && !(children && children.length && children[0].text)) ? 'icon-only' : '',\
       (props.primary || props.primary === '') ? 'primary' : '',\
       (props.gray || props.gray === '') ? 'gray' : '',\
       (props.fullwidth || props.fullwidth === '') ? 'fullwidth' : '',\
@@ -24,7 +24,7 @@
       :icon="props.icon"
       :class="(props.primary || props.primary === '') ? 'white' : (props.iconColor ? props.iconColor : 'gray')")
 
-    span(v-if="children")
+    span(v-if="children && children.length && children[0].text")
       slot
 
 </template>
