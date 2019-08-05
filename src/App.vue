@@ -1,6 +1,18 @@
 <template lang="pug">
 
+  mixin icons()
+
+    h3 Icons
+
+    .icons
+      .icon-container(v-for="icon in icons.concat(['missing'])")
+        r-icon.gray(:icon="icon")
+        code.name {{ icon }}
+
+
   mixin buttons()
+
+    h3 Buttons
 
     .buttons
       r-button Normal
@@ -40,24 +52,35 @@
       r-button(small icon="close")
       r-button(small borderless icon="edit")
 
+
   #app
 
     section
 
       h1 Light
 
+      +icons()
       +buttons()
 
     section.darkMode
 
       h1 Dark
 
+      +icons()
       +buttons()
 
 </template>
 
 <script>
+
+  import ICONS from "./icons";
+
   export default {
+    computed: {
+      icons() {
+        return Object.keys(ICONS);
+      },
+    },
     methods: {
       test() {
         // eslint-disable-next-line no-alert
@@ -83,6 +106,9 @@
       background $color-dark-background
       color $color-darkmode-text
 
+    h3
+      margin-bottom 10px
+
   .buttons
     $_buttons_margin = 10px
 
@@ -100,5 +126,23 @@
 
       &:not(:last-child):not(.fullwidth)
         margin-right $_buttons_margin
+
+  .icons
+    margin-bottom -5px
+    margin-right -5px
+
+    .icon-container
+      border 1px solid alpha(#999, .2)
+      border-radius $border-radius
+      display inline-flex
+      align-items center
+      margin-right 5px
+      margin-bottom 5px
+
+      .icon
+        margin 7px
+
+      .name
+        padding-right 9px
 
 </style>
