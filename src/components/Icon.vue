@@ -74,10 +74,7 @@
       fill $color-green
 
     &.red svg
-      fill $color-red-text
-
-      .darkMode &
-        fill $color-red
+      fill $color-red
 
     &.blue svg
       fill $color-blue

@@ -1,5 +1,5 @@
 /*!
- * rvc v0.7.0 
+ * rvc v0.8.0 
  * (c) 2019 Reino Zuppur
  * Released under the UNLICENSED License.
  */
@@ -303,7 +303,7 @@ var __vue_staticRenderFns__$1 = [];
   /* style */
   const __vue_inject_styles__$1 = function (inject) {
     if (!inject) return
-    inject("data-v-29c6cb84_0", { source: ".icon.material{height:24px;width:24px}.icon.material.icon-text{vertical-align:text-top;display:inline-block;position:relative;top:1px}.icon.material.icon-text,.icon.material.icon-text svg{height:18px!important;width:18px!important}.darkMode .icon.material svg{fill:#e1e3e5}.icon.material.gray svg{fill:#777}.darkMode .icon.material.gray svg{fill:#aab0b6}.icon.material.light-gray svg{fill:$color-gray-text-light}.icon.material.green svg{fill:#009826}.icon.material.red svg{fill:#a61216}.darkMode .icon.material.red svg{fill:#e24161}.icon.material.blue svg{fill:#2c61b6}.darkMode .icon.material.blue svg{fill:#0f91ea}.icon.material.white svg{fill:#fff}", map: undefined, media: undefined });
+    inject("data-v-337fb0ed_0", { source: ".icon.material{height:24px;width:24px}.icon.material.icon-text{vertical-align:text-top;display:inline-block;position:relative;top:1px}.icon.material.icon-text,.icon.material.icon-text svg{height:18px!important;width:18px!important}.darkMode .icon.material svg{fill:#e1e3e5}.icon.material.gray svg{fill:#777}.darkMode .icon.material.gray svg{fill:#aab0b6}.icon.material.light-gray svg{fill:$color-gray-text-light}.icon.material.green svg{fill:#009826}.icon.material.red svg{fill:#e24161}.icon.material.blue svg{fill:#2c61b6}.darkMode .icon.material.blue svg{fill:#0f91ea}.icon.material.white svg{fill:#fff}", map: undefined, media: undefined });
 
   };
   /* scoped */
@@ -327,7 +327,7 @@ var __vue_staticRenderFns__$1 = [];
     undefined
   );
 
-var version = '0.7.0';
+var version = '0.8.0';
 
 var install = function install(Vue) {
   Vue.component('r-button', Button);
