@@ -268,6 +268,7 @@ var script$1 = {
   props: {
     icon: {
       validator: function validator(value) {
+        if (value === "missing") return true;
         var valid = Object.keys(ICONS).includes(value); // eslint-disable-next-line no-console
 
         if (!valid) console.warn("Invalid icon name, available names are\n".concat(Object.keys(ICONS).join("\n")));
@@ -301,7 +302,7 @@ var __vue_staticRenderFns__$1 = [];
   /* style */
   const __vue_inject_styles__$1 = function (inject) {
     if (!inject) return
-    inject("data-v-337fb0ed_0", { source: ".icon.material{height:24px;width:24px}.icon.material.icon-text{vertical-align:text-top;display:inline-block;position:relative;top:1px}.icon.material.icon-text,.icon.material.icon-text svg{height:18px!important;width:18px!important}.darkMode .icon.material svg{fill:#e1e3e5}.icon.material.gray svg{fill:#777}.darkMode .icon.material.gray svg{fill:#aab0b6}.icon.material.light-gray svg{fill:$color-gray-text-light}.icon.material.green svg{fill:#009826}.icon.material.red svg{fill:#e24161}.icon.material.blue svg{fill:#2c61b6}.darkMode .icon.material.blue svg{fill:#0f91ea}.icon.material.white svg{fill:#fff}", map: undefined, media: undefined });
+    inject("data-v-42a5281e_0", { source: ".icon.material{height:24px;width:24px}.icon.material.icon-text{vertical-align:text-top;display:inline-block;position:relative;top:1px}.icon.material.icon-text,.icon.material.icon-text svg{height:18px!important;width:18px!important}.darkMode .icon.material svg{fill:#e1e3e5}.icon.material.gray svg{fill:#777}.darkMode .icon.material.gray svg{fill:#aab0b6}.icon.material.light-gray svg{fill:$color-gray-text-light}.icon.material.green svg{fill:#009826}.icon.material.red svg{fill:#e24161}.icon.material.blue svg{fill:#2c61b6}.darkMode .icon.material.blue svg{fill:#0f91ea}.icon.material.white svg{fill:#fff}", map: undefined, media: undefined });
 
   };
   /* scoped */
@@ -325,11 +326,11 @@ var __vue_staticRenderFns__$1 = [];
     undefined
   );
 
-var version = '0.8.0';
+var version = "0.8.0";
 
 var install = function install(Vue) {
-  Vue.component('r-button', Button);
-  Vue.component('r-icon', Icon);
+  Vue.component("r-button", Button);
+  Vue.component("r-icon", Icon);
 };
 
 var plugin = {
@@ -337,7 +338,7 @@ var plugin = {
   version: version
 };
 
-if (typeof window !== 'undefined' && window.Vue) {
+if (typeof window !== "undefined" && window.Vue) {
   window.Vue.use(plugin);
 }
 

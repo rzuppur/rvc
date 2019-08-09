@@ -14,6 +14,7 @@
     props: {
       icon: {
         validator(value) {
+          if (value === "missing") return true;
           const valid = Object.keys(ICONS).includes(value);
           // eslint-disable-next-line no-console
           if (!valid) console.warn(`Invalid icon name, available names are\n${Object.keys(ICONS).join("\n")}`);

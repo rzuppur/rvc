@@ -3,8 +3,9 @@
  *   This file is plugin stub for main.ts
  */
 
-import Vue, { VueConstructor } from 'vue';
-import plugin from './index';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import Vue, { VueConstructor } from "vue";
+import plugin from "./index";
 
 Vue.use<VueConstructor>(plugin);
 

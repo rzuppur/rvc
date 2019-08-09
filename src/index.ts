@@ -1,6 +1,7 @@
-import { VueConstructor, PluginObject } from 'vue';
-import Button from './components/Button.vue';
-import Icon from './components/Icon.vue';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { VueConstructor, PluginObject } from "vue";
+import Button from "./components/Button.vue";
+import Icon from "./components/Icon.vue";
 
 declare global {
   interface Window {
@@ -8,11 +9,11 @@ declare global {
   }
 }
 
-const version = '__VERSION__';
+const version = "__VERSION__";
 
 const install = (Vue: VueConstructor): void => {
-  Vue.component('r-button', Button);
-  Vue.component('r-icon', Icon);
+  Vue.component("r-button", Button);
+  Vue.component("r-icon", Icon);
 };
 
 const plugin: PluginObject<VueConstructor> = {
@@ -21,6 +22,6 @@ const plugin: PluginObject<VueConstructor> = {
 };
 export default plugin;
 
-if (typeof window !== 'undefined' && window.Vue) {
+if (typeof window !== "undefined" && window.Vue) {
   window.Vue.use(plugin);
 }
