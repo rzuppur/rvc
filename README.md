@@ -1,6 +1,7 @@
 # Reino Vue Components
 
 ### Button
+
 Every property listed is optional. If button contains no childs but has an icon, it will be shown as an icon button (width equal to height).
 ```html
   <r-button
@@ -20,6 +21,50 @@ Every property listed is optional. If button contains no childs but has an icon,
     {{ text }}
   </r-button>
 ```
+
+![](https://i.imgur.com/22VRHdp.png)
+
+<details><summary>View Pug template</summary>
+<pre>
+    .buttons
+      r-button Normal
+      r-button(primary) Primary
+      r-button(borderless) Borderless
+      r-button(gray borderless) Gray borderless
+      r-button(gray) Gray
+
+    .buttons
+      r-button(disabled) Normal
+      r-button(primary disabled) Primary
+      r-button(borderless disabled) Borderless
+      r-button(gray borderless disabled) Gray borderless
+      r-button(gray disabled) Gray
+
+    .buttons
+      r-button(loading)
+      r-button(primary loading)
+      r-button(borderless loading)
+      r-button(gray borderless loading)
+      r-button(gray loading)
+
+    .buttons
+      r-button(icon="arrow left") Icon
+      r-button(primary icon="add") Icon
+      r-button(borderless icon="close" icon-color="red") Icon
+      r-button(gray borderless icon="edit" icon-color="blue") Icon
+      r-button(gray icon="check" icon-color="green") Icon
+
+      r-button(icon="add image")
+      r-button(borderless icon="eye visible")
+
+    .buttons
+      r-button(:action="test") @click test
+      r-button(small) Small
+      r-button(small icon="arrow left") Small icon
+      r-button(small icon="close")
+      r-button(small borderless icon="edit")
+</pre>
+</details>
     
 ### Icon
 Material or modified material icons as 24x24px svg.
@@ -27,48 +72,17 @@ Material or modified material icons as 24x24px svg.
   <r-icon
     icon: string
     icon-color: string  // ("gray" | "light-gray" | "green" | "red" | "blue" | "white")
-  >
+  />
 ```
 
-Valid icons are:
-- add
-- add image
-- add text
-- add date
-- send
-- check
-- undo
-- attention
-- close
-- more
-- date
-- merge
-- download
-- sync
-- log out
-- file
-- upload
-- edit
-- images
-- settings
-- new message
-- pin
-- pin off
-- expand
-- collapse
-- eye hidden
-- eye visible
-- arrow up
-- arrow down
-- arrow left
-- arrow right
-- chevron down
-- chevron up
+![](https://i.imgur.com/7BHFyiu.png)
 
 ### Night mode
 Add class `darkMode` to any parent element.
 
+
 ___
+<br/><br/>
 
 ## Usage
 
@@ -82,6 +96,7 @@ Vue.use(rvc);
 ```
 
 ___
+<br/><br/>
 
 ### Project setup
 ```
