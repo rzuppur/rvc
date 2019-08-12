@@ -1,4 +1,4 @@
-<template lang="pug" functional>
+<!--<template lang="pug" functional>
 
   button.r-button(
     :class="[\
@@ -27,12 +27,13 @@
     span(v-if="slots().default")
       slot
 
-</template>
+</template>-->
 
 <script>
 
   export default {
     name: "Button",
+    functional: true,
     props: {
       action: Function,
       label: String,
@@ -46,6 +47,53 @@
       loading: Boolean,
       submit: Boolean,
       disabled: Boolean,
+    },
+    render(createElement, context) {
+      const p = context.props;
+
+      const childrenNodes = [];
+      const textSlot = context.slots().default;
+
+      if (p.icon) {
+        childrenNodes.push(createElement("r-icon", {
+          props: { icon: p.icon },
+          class: [{
+            white: p.primary,
+            gray: !p.primary && !p.iconColor,
+          }, p.iconColor],
+        }));
+      }
+
+      if (textSlot) childrenNodes.push(createElement("span", {}, [textSlot]));
+
+      const buttonClasses = {
+        "r-button": true,
+        "icon-only": p.icon && !textSlot,
+        borderless: p.borderless,
+        primary: p.primary,
+        gray: p.gray,
+        fullwidth: p.fullwidth,
+        small: p.small,
+        loading: p.loading,
+      };
+
+      return createElement("button", {
+        attrs: { "aria-label": p.label },
+        class: [buttonClasses, context.data.staticClass, context.data.class],
+        directives: context.data.directives,
+        domProps: {
+          disabled: p.disabled || p.loading,
+          type: p.submit ? "submit" : "button",
+        },
+        on: {
+          click(event) {
+            if (p.action) p.action(event);
+          },
+          pointerdown(event) {
+            event.preventDefault();
+          },
+        },
+      }, childrenNodes);
     },
   };
 
@@ -150,7 +198,7 @@
         box-shadow 0 0 0 3px alpha($color-focus-blue, 0.2), inset 0 0 0 1px darken($color-focus-blue, 10) !important
 
     &.gray
-      background $color-light-gray-background
+      background darken($color-light-gray-background, .5)
 
       .darkMode &
         background alpha(#fff, .1)
