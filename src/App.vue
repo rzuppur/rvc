@@ -1,5 +1,12 @@
 <template lang="pug">
 
+  mixin tooltip()
+    h3 Tooltip
+    .buttons
+      r-button(v-rtip="randomLenStr") Default
+      r-button(v-rtip.bottom="'Reeeeeee 2222'") 2
+
+
   mixin icons()
 
     h3 Icons
@@ -59,10 +66,11 @@
 
       h1 Light
 
+      +tooltip()
       +icons()
       +buttons()
 
-    section.darkMode
+    //-section.darkMode
 
       h1 Dark
 
@@ -76,6 +84,18 @@
   import ICONS from "./icons";
 
   export default {
+    data() {
+      return {
+        randomLenStr: "Tesdg",
+      };
+    },
+    created() {
+      setInterval(() => {
+        this.randomLenStr =
+        Math.random().toString(36).substr(0, parseInt(Math.random() * 15, 10)) +
+        Math.random().toString(36).substr(0, parseInt(Math.random() * 15, 10));
+      }, 1000);
+    },
     computed: {
       icons() {
         return Object.keys(ICONS);
