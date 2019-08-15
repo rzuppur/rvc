@@ -12,9 +12,8 @@
     h3 Icons
 
     .icons
-      .icon-container(v-for="icon in icons.concat(['missing'])")
+      .icon-container(v-for="icon in icons.concat(['missing'])" v-rtip="icon" )
         r-icon.gray(:icon="icon")
-        code.name {{ icon }}
 
 
   mixin buttons()

@@ -22,6 +22,15 @@
       };
     },
     computed: {
+      left() {
+        let x = this.x - Math.round(this.width / 2);
+        if (x < 5) x = 5;
+
+        return `${x}px`;
+      },
+      top() {
+        return `${this.y - this.height - 5}px`;
+      },
       tooltipStyle() {
         return {
           left: this.left,
@@ -31,18 +40,9 @@
       },
       arrowStyle() {
         return {
-          left: `${this.x - 6}px`,
+          left: `${this.x - 7}px`,
           top: `${this.y - 5}px`,
         };
-      },
-      left() {
-        let x = this.x - Math.round(this.width / 2);
-        if (x < 5) x = 5;
-
-        return `${x}px`;
-      },
-      top() {
-        return `${this.y - this.height - 5}px`;
       },
     },
     mounted() {
