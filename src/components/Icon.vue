@@ -1,8 +1,8 @@
-<template lang="pug" functional>
+<!--<template lang="pug" functional>
 
   span.icon.material(:class="[ data.class, data.staticClass ]" v-html="props.iconsObject[props.icon] ? props.iconsObject[props.icon] : props.fallbackIcon")
 
-</template>
+</template>-->
 
 <script>
 
@@ -10,7 +10,7 @@
 
   export default {
     name: "Icon",
-
+    functional: true,
     props: {
       icon: {
         validator(value) {
@@ -36,6 +36,17 @@
         },
       },
     },
+    render(createElement, context) {
+      const d = context.data;
+      const p = context.props;
+
+      return createElement("span", {
+        attrs: { "aria-hidden": true },
+        class: ["icon", "material", d.staticClass, d.class],
+        directives: d.directives,
+        domProps: { innerHTML: p.iconsObject[p.icon] ? p.iconsObject[p.icon] : p.fallbackIcon },
+      });
+    },
   };
 
 </script>
@@ -47,6 +58,7 @@
   .icon.material
     height 24px
     width 24px
+    display inline-block
 
     &.icon-text
       vertical-align text-top

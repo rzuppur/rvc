@@ -49,6 +49,7 @@
       disabled: Boolean,
     },
     render(createElement, context) {
+      const d = context.data;
       const p = context.props;
 
       const childrenNodes = [];
@@ -79,8 +80,8 @@
 
       return createElement("button", {
         attrs: { "aria-label": p.label },
-        class: [buttonClasses, context.data.staticClass, context.data.class],
-        directives: context.data.directives,
+        class: [buttonClasses, d.staticClass, d.class],
+        directives: d.directives,
         domProps: {
           disabled: p.disabled || p.loading,
           type: p.submit ? "submit" : "button",

@@ -12,8 +12,7 @@
     h3 Icons
 
     .icons
-      .icon-container(v-for="icon in icons.concat(['missing'])" v-rtip="icon" )
-        r-icon.gray(:icon="icon")
+      r-icon.gray(v-for="icon in icons.concat(['missing'])" :icon="icon" v-rtip="icon")
 
 
   mixin buttons()
@@ -69,7 +68,7 @@
       +icons()
       +buttons()
 
-    //-section.darkMode
+    section.darkMode
 
       h1 Dark
 
@@ -146,22 +145,5 @@
       &:not(:last-child):not(.fullwidth)
         margin-right $_buttons_margin
 
-  .icons
-    margin-bottom -5px
-    margin-right -5px
-
-    .icon-container
-      border 1px solid alpha(#999, .2)
-      border-radius $border-radius
-      display inline-flex
-      align-items center
-      margin-right 5px
-      margin-bottom 5px
-
-      .icon
-        margin 7px
-
-      .name
-        padding-right 9px
 
 </style>
