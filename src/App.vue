@@ -3,8 +3,10 @@
   mixin tooltip()
     h3 Tooltip
     .buttons
-      r-button(v-rtip="randomLenStr") Default
-      r-button(v-rtip.bottom="'Reeeeeee 2222'") 2
+      r-button(v-rtip="'Default tooltip - very long text test'") Default
+      r-button(v-rtip.bottom="'Position bottom'") Bottom
+      r-button(v-rtip.left="'Position left'") Left
+      r-button(v-rtip.right="'Position right'") Right
 
 
   mixin icons()
@@ -57,23 +59,22 @@
       r-button(small icon="close")
       r-button(small borderless icon="edit")
 
+  mixin display()
+    +tooltip()
+    +icons()
+    +buttons()
 
   #app
 
     section
 
       h1 Light
-
-      +tooltip()
-      +icons()
-      +buttons()
+      +display()
 
     section.darkMode
 
       h1 Dark
-
-      +icons()
-      +buttons()
+      +display()
 
 </template>
 
@@ -82,18 +83,6 @@
   import ICONS from "./icons";
 
   export default {
-    data() {
-      return {
-        randomLenStr: "Tesdg",
-      };
-    },
-    created() {
-      setInterval(() => {
-        this.randomLenStr =
-        Math.random().toString(36).substr(0, parseInt(Math.random() * 15, 10)) +
-        Math.random().toString(36).substr(0, parseInt(Math.random() * 15, 10));
-      }, 1000);
-    },
     computed: {
       icons() {
         return Object.keys(ICONS);

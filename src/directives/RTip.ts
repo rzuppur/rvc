@@ -5,21 +5,14 @@ import Tooltip from "../components/Tooltip.vue";
 const mouseEnter = (event: MouseEvent) => {
   // @ts-ignore
   const { tooltipData } = event.currentTarget;
-  // @ts-ignore
-  const rect = event.currentTarget.getBoundingClientRect();
-
-  tooltipData.tooltip.x = Math.round(rect.x + rect.width / 2);
-  tooltipData.tooltip.y = Math.round(rect.y);
-  tooltipData.tooltip.text = tooltipData.text;
+  tooltipData.tooltip.el = event.currentTarget;
   tooltipData.tooltip.show = true;
-  tooltipData.show = true;
 };
 
 const mouseLeave = (event: MouseEvent) => {
   // @ts-ignore
   const { tooltipData } = event.currentTarget;
   tooltipData.tooltip.show = false;
-  tooltipData.show = false;
 };
 
 const touchStart = (event: TouchEvent) => {
@@ -36,16 +29,12 @@ const touchEnd = (event: TouchEvent) => {
 
 const RTip = (Vue: VueConstructor): DirectiveOptions => ({
   bind(el: HTMLElement, binding: VNodeDirective, vnode: VNode) {
-    console.log("BIND", binding.value);
-
     el.addEventListener("mouseenter", mouseEnter, { passive: true });
     el.addEventListener("mouseleave", mouseLeave, { passive: true });
     el.addEventListener("touchstart", touchStart, { passive: true });
     el.addEventListener("touchend", touchEnd, { passive: true });
   },
   inserted(el: HTMLElement, binding: VNodeDirective, vnode: VNode) {
-    console.log("INSERTED", binding.value);
-
     // @ts-ignore
     if (!vnode.context.$root["r-tooltip"]) {
       const node = document.createElement("div");
@@ -57,19 +46,19 @@ const RTip = (Vue: VueConstructor): DirectiveOptions => ({
     }
 
     // @ts-ignore
-    el.tooltipData = { text: binding.value, modifiers: binding.modifiers, tooltip: vnode.context.$root["r-tooltip"] };
+    el.tooltipData = {
+      text: binding.value,
+      modifiers: binding.modifiers,
+      // @ts-ignore
+      tooltip: vnode.context.$root["r-tooltip"],
+    };
   },
-  componentUpdated(el: HTMLElement, binding: VNodeDirective, vnode: VNode) {
-    console.log("UPDATE", binding.value);
-
+  componentUpdated(el: HTMLElement, binding: VNodeDirective, vnode: VNode, a) {
+    if (binding.oldValue === binding.value) return;
     // @ts-ignore
     el.tooltipData.text = binding.value;
-    // @ts-ignore
-    if (el.tooltipData.show) el.tooltipData.tooltip.text = binding.value;
   },
   unbind(el: HTMLElement, binding: VNodeDirective, vnode: VNode) {
-    console.log("UNBIND", binding.value);
-
     el.removeEventListener("mouseenter", mouseEnter);
     el.removeEventListener("mouseleave", mouseLeave);
     el.removeEventListener("touchstart", touchStart);

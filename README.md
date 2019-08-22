@@ -1,5 +1,16 @@
 # Reino Vue Components
 
+
+### Tooltip
+Tooltip directive `v-rtip`. Supports top (default), bottom, left and right alignment: `v-rtip.bottom`, `v-rtip.left`, `v-rtip.right`.
+```html
+<div
+  v-rtip="'Tooltip text'"
+></div>
+```
+![](https://i.imgur.com/w71gTSe.png)
+
+
 ### Button
 
 Every property listed is optional. If button contains no childs but has an icon, it will be shown as an icon button (width equal to height).
@@ -81,7 +92,7 @@ Material or modified material icons as 24x24px svg.
 Add class `darkMode` to any parent element.
 
 
-___
+
 <br/><br/>
 
 ## Usage
@@ -95,8 +106,6 @@ import rvc from "@rzuppur/rvc";
 Vue.use(rvc);
 ```
 
-___
-<br/><br/>
 
 ### Project setup
 ```
