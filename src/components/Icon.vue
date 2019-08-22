@@ -42,7 +42,7 @@
 
       return createElement("span", {
         attrs: { "aria-hidden": true },
-        class: ["icon", "material", d.staticClass, d.class],
+        class: ["r-icon", d.staticClass, d.class],
         directives: d.directives,
         domProps: { innerHTML: p.iconsObject[p.icon] ? p.iconsObject[p.icon] : p.fallbackIcon },
       });
@@ -55,7 +55,7 @@
 <style lang="stylus">
   @import "../shared.styl"
 
-  .icon.material
+  .r-icon
     height 24px
     width 24px
     display inline-block
