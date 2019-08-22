@@ -152,20 +152,18 @@
   @import "../shared.styl"
 
   .tooltip-enter-active
-    transition opacity 100ms, transform 150ms
+    transition opacity 100ms
 
   .tooltip-enter
     opacity 0
-    transform scale(.95) translateY(10px)
 
   .tooltip-arrow-enter-active
-    transition opacity 150ms, transform 150ms
+    transition opacity 150ms
 
   .tooltip-arrow-enter
     opacity 0
-    transform scale(.2)
 
-  $_background = alpha(lighten($color-dark-background, 3), .95)
+  $_background = $color-text
 
   .r-tooltip
     position fixed
