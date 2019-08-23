@@ -88,6 +88,12 @@ Material or modified material icons as 24x24px svg.
 
 ![](https://i.imgur.com/7BHFyiu.png)
 
+
+### Toast notification
+From any component, call `this.$notifyToast("message");`.
+
+
+
 ### Night mode
 Add class `darkMode` to any parent element.
 
