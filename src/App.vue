@@ -76,6 +76,14 @@
       h1 Dark
       +display()
 
+    section
+      h3 Toast notification
+
+      .buttons
+        r-button(:action="() => { $notifyToast('Notification') }") Notification
+        r-button(:action="() => { $notifyToast('Short') }") Short
+        r-button(:action="() => { $notifyToast('Long text notification that should hopefully wrap to multiple lines') }") Long text notification that should hopefully wrap to multiple lines
+
 </template>
 
 <script>
@@ -134,5 +142,9 @@
       &:not(:last-child):not(.fullwidth)
         margin-right $_buttons_margin
 
+  .icons
+    .r-icon
+      margin-right 10px
+      margin-bottom 10px
 
 </style>

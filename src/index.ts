@@ -2,6 +2,7 @@
 import { VueConstructor, PluginObject } from "vue";
 import Button from "./components/Button.vue";
 import Icon from "./components/Icon.vue";
+import Toast from "./components/Toast.vue";
 import RTip from "./directives/RTip";
 
 declare global {
@@ -16,6 +17,27 @@ const install = (Vue: VueConstructor): void => {
   Vue.component("r-button", Button);
   Vue.component("r-icon", Icon);
   Vue.directive("rtip", RTip(Vue));
+
+  let toastComponent: Toast;
+
+  Vue.mixin({
+    mounted() {
+      // @ts-ignore
+      if (!this.$parent) {
+        const node = document.createElement("div");
+        // @ts-ignore
+        this.$el.appendChild(node);
+        const ToastConstructor = Vue.extend(Toast);
+        // @ts-ignore
+        toastComponent = new ToastConstructor({ parent: this }).$mount(node);
+      }
+    },
+  });
+
+  Vue.prototype.$notifyToast = (message: string) => {
+    // @ts-ignore
+    toastComponent.notify(message);
+  };
 };
 
 const plugin: PluginObject<VueConstructor> = {
