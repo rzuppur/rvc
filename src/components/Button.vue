@@ -253,13 +253,13 @@
     span
       transition opacity 75ms
 
-      &:not(.icon)
+      &:not(.r-icon)
         position relative
         white-space nowrap
         overflow hidden
         text-overflow ellipsis
 
-    .icon
+    .r-icon
 
       &:first-child:not(:last-child)
         margin-left -2px
@@ -273,7 +273,7 @@
         margin-left 0
         margin-right 0
 
-  &.small .icon
+  &.small .r-icon
 
       &:first-child:not(:last-child)
         margin-left -4px
