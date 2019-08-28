@@ -1,5 +1,5 @@
 /*!
- * rvc v0.14.1 
+ * rvc v0.14.2 
  * (c) 2019 Reino Zuppur
  * Released under the MIT License.
  */
@@ -566,7 +566,7 @@ var script$3 = {
     },
     getData: function getData() {
       if (this.visible) {
-        if (this.el && this.el.tooltipData) {
+        if (this.el && this.el.tooltipData && document.body.contains(this.el)) {
           var tooltipData = this.el.tooltipData;
           this.text = tooltipData.text;
 
@@ -583,6 +583,7 @@ var script$3 = {
           }
         } else {
           this.visible = false;
+          this.show = false;
         }
       }
     },
@@ -642,11 +643,11 @@ var __vue_staticRenderFns__$1 = [];
   /* style */
   const __vue_inject_styles__$3 = function (inject) {
     if (!inject) return
-    inject("data-v-79547001_0", { source: ".tooltip-enter-active[data-v-79547001]{transition:opacity .1s}.tooltip-enter[data-v-79547001]{opacity:0}.tooltip-arrow-enter-active[data-v-79547001]{transition:opacity 150ms}.tooltip-arrow-enter[data-v-79547001]{opacity:0}.r-tooltip[data-v-79547001]{position:fixed;z-index:1000;padding:5px 12px;margin-right:5px;word-break:break-word;color:#fff;font-size:16px;letter-spacing:-.005em;line-height:24px;font-weight:600;background:#40444a;border-radius:4px;box-shadow:0 2px 10px -2px rgba(0,0,0,.2);pointer-events:none;user-select:none}.r-tooltip-arrow[data-v-79547001]{position:fixed;z-index:1001;border-top:7px solid #40444a;border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:7px solid transparent}", map: undefined, media: undefined });
+    inject("data-v-5ada6cd7_0", { source: ".tooltip-enter-active[data-v-5ada6cd7]{transition:opacity .1s}.tooltip-enter[data-v-5ada6cd7]{opacity:0}.tooltip-arrow-enter-active[data-v-5ada6cd7]{transition:opacity 150ms}.tooltip-arrow-enter[data-v-5ada6cd7]{opacity:0}.r-tooltip[data-v-5ada6cd7]{position:fixed;z-index:1000;padding:5px 12px;margin-right:5px;word-break:break-word;color:#fff;font-size:16px;letter-spacing:-.005em;line-height:24px;font-weight:600;background:#40444a;border-radius:4px;box-shadow:0 2px 10px -2px rgba(0,0,0,.2);pointer-events:none;user-select:none}.r-tooltip-arrow[data-v-5ada6cd7]{position:fixed;z-index:1001;border-top:7px solid #40444a;border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:7px solid transparent}", map: undefined, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$3 = "data-v-79547001";
+  const __vue_scope_id__$3 = "data-v-5ada6cd7";
   /* module identifier */
   const __vue_module_identifier__$3 = undefined;
   /* functional template */
@@ -742,7 +743,7 @@ var RTip = function RTip(Vue) {
   };
 };
 
-var version = "0.14.1";
+var version = "0.14.2";
 
 var install = function install(Vue) {
   Vue.component("r-button", Button);

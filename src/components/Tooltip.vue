@@ -89,7 +89,7 @@
       },
       getData() {
         if (this.visible) {
-          if (this.el && this.el.tooltipData) {
+          if (this.el && this.el.tooltipData && document.body.contains(this.el)) {
             const { tooltipData } = this.el;
             this.text = tooltipData.text;
             if (Object.keys(tooltipData.modifiers).length) {
@@ -105,6 +105,7 @@
             }
           } else {
             this.visible = false;
+            this.show = false;
           }
         }
       },

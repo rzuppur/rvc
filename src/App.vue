@@ -7,6 +7,7 @@
       r-button(v-rtip.bottom="'Position bottom'") Bottom
       r-button(v-rtip.left="'Position left'") Left
       r-button(v-rtip.right="'Position right'") Right
+      r-button(v-if="showTooltipButton" v-rtip="'Tooltip'") Element removed
 
 
   mixin icons()
@@ -91,6 +92,17 @@
   import ICONS from "./icons";
 
   export default {
+    data() {
+      return { showTooltipButton: true };
+    },
+    mounted() {
+      this._i = setInterval(() => {
+        this.showTooltipButton = !this.showTooltipButton;
+      }, 2000);
+    },
+    beforeDestroy() {
+      clearInterval(this._i);
+    },
     computed: {
       icons() {
         return Object.keys(ICONS);
