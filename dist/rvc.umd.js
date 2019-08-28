@@ -1,5 +1,5 @@
 /*!
- * rvc v0.14.0 
+ * rvc v0.14.1 
  * (c) 2019 Reino Zuppur
  * Released under the MIT License.
  */
@@ -557,13 +557,9 @@
       update: function update() {
         var _this2 = this;
 
-        console.log("update");
-
         if (this.visible) {
           window.cancelAnimationFrame(this.animFrame);
           this.animFrame = window.requestAnimationFrame(function () {
-            console.log("ANIMFRAME");
-
             _this2.getData();
 
             _this2.position();
@@ -648,11 +644,11 @@
     /* style */
     const __vue_inject_styles__$3 = function (inject) {
       if (!inject) return
-      inject("data-v-62787e40_0", { source: ".tooltip-enter-active[data-v-62787e40]{transition:opacity .1s}.tooltip-enter[data-v-62787e40]{opacity:0}.tooltip-arrow-enter-active[data-v-62787e40]{transition:opacity 150ms}.tooltip-arrow-enter[data-v-62787e40]{opacity:0}.r-tooltip[data-v-62787e40]{position:fixed;z-index:1000;padding:5px 12px;margin-right:5px;word-break:break-word;color:#fff;font-size:16px;letter-spacing:-.005em;line-height:24px;font-weight:600;background:#40444a;border-radius:4px;box-shadow:0 2px 10px -2px rgba(0,0,0,.2);pointer-events:none;user-select:none}.r-tooltip-arrow[data-v-62787e40]{position:fixed;z-index:1001;border-top:7px solid #40444a;border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:7px solid transparent}", map: undefined, media: undefined });
+      inject("data-v-79547001_0", { source: ".tooltip-enter-active[data-v-79547001]{transition:opacity .1s}.tooltip-enter[data-v-79547001]{opacity:0}.tooltip-arrow-enter-active[data-v-79547001]{transition:opacity 150ms}.tooltip-arrow-enter[data-v-79547001]{opacity:0}.r-tooltip[data-v-79547001]{position:fixed;z-index:1000;padding:5px 12px;margin-right:5px;word-break:break-word;color:#fff;font-size:16px;letter-spacing:-.005em;line-height:24px;font-weight:600;background:#40444a;border-radius:4px;box-shadow:0 2px 10px -2px rgba(0,0,0,.2);pointer-events:none;user-select:none}.r-tooltip-arrow[data-v-79547001]{position:fixed;z-index:1001;border-top:7px solid #40444a;border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:7px solid transparent}", map: undefined, media: undefined });
 
     };
     /* scoped */
-    const __vue_scope_id__$3 = "data-v-62787e40";
+    const __vue_scope_id__$3 = "data-v-79547001";
     /* module identifier */
     const __vue_module_identifier__$3 = undefined;
     /* functional template */
@@ -748,7 +744,7 @@
     };
   };
 
-  var version = "0.14.0";
+  var version = "0.14.1";
 
   var install = function install(Vue) {
     Vue.component("r-button", Button);

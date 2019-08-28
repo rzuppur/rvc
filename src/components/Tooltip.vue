@@ -79,11 +79,9 @@
     },
     methods: {
       update() {
-        console.log("update");
         if (this.visible) {
           window.cancelAnimationFrame(this.animFrame);
           this.animFrame = window.requestAnimationFrame(() => {
-            console.log("ANIMFRAME");
             this.getData();
             this.position();
           });
