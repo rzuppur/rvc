@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { VueConstructor, PluginObject } from "vue";
+import { VueConstructor, PluginObject, Component } from "vue";
 import Button from "./components/Button.vue";
 import Icon from "./components/Icon.vue";
 import Toast from "./components/Toast.vue";
@@ -18,7 +18,7 @@ const install = (Vue: VueConstructor): void => {
   Vue.component("r-icon", Icon);
   Vue.directive("rtip", RTip(Vue));
 
-  let toastComponent: Toast;
+  let toastComponent: Component;
 
   Vue.mixin({
     mounted() {

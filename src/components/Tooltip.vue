@@ -79,26 +79,34 @@
     },
     methods: {
       update() {
-        this.animFrame = window.requestAnimationFrame(() => {
+        console.log("update");
+        if (this.visible) {
           window.cancelAnimationFrame(this.animFrame);
-          this.getData();
-          this.position();
-        });
+          this.animFrame = window.requestAnimationFrame(() => {
+            console.log("ANIMFRAME");
+            this.getData();
+            this.position();
+          });
+        }
       },
       getData() {
-        if (this.visible && this.el && this.el.tooltipData) {
-          const { tooltipData } = this.el;
-          this.text = tooltipData.text;
-          if (Object.keys(tooltipData.modifiers).length) {
-            if (tooltipData.modifiers.bottom) {
-              this.location = "bottom";
-            } else if (tooltipData.modifiers.left) {
-              this.location = "left";
-            } else if (tooltipData.modifiers.right) {
-              this.location = "right";
+        if (this.visible) {
+          if (this.el && this.el.tooltipData) {
+            const { tooltipData } = this.el;
+            this.text = tooltipData.text;
+            if (Object.keys(tooltipData.modifiers).length) {
+              if (tooltipData.modifiers.bottom) {
+                this.location = "bottom";
+              } else if (tooltipData.modifiers.left) {
+                this.location = "left";
+              } else if (tooltipData.modifiers.right) {
+                this.location = "right";
+              }
+            } else {
+              this.location = "top";
             }
           } else {
-            this.location = "top";
+            this.visible = false;
           }
         }
       },
