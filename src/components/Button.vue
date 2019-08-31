@@ -275,13 +275,13 @@
 
   &.small .r-icon
 
-      &:first-child:not(:last-child)
-        margin-left -4px
-        margin-right 5px
+    &:first-child:not(:last-child)
+      margin-left -4px
+      margin-right 5px
 
-      &:last-child:not(:first-child)
-        margin-right -4px
-        margin-left 5px
+    &:last-child:not(:first-child)
+      margin-right -4px
+      margin-left 5px
 
 
 </style>

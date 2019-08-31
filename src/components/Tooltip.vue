@@ -104,6 +104,7 @@
               this.location = "top";
             }
           } else {
+            clearTimeout(this.hideShowTimeout);
             this.visible = false;
             this.show = false;
           }
