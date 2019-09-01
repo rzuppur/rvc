@@ -8,6 +8,8 @@
       r-button(v-rtip.left="'Position left'") Left
       r-button(v-rtip.right="'Position right'") Right
       r-button(v-if="showTooltipButton" v-rtip="'Tooltip'") Element removed
+      div(v-show="showTooltipButton")
+        r-button(v-rtip="'Tooltip'") Element hidden
 
 
   mixin icons()

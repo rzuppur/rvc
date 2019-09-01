@@ -1,68 +1,44 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { DirectiveOptions, VNodeDirective, VNode, VueConstructor } from "vue";
-import Tooltip from "../components/Tooltip.vue";
+import Tooltip from "./common/Tooltip";
 
-const mouseEnter = (event: MouseEvent) => {
-  // @ts-ignore
-  const { tooltipData } = event.currentTarget;
-  tooltipData.tooltip.el = event.currentTarget;
-  tooltipData.tooltip.show = true;
-};
+interface VNode_ extends VNode {
+  _tooltip?: Tooltip;
+}
 
-const mouseLeave = (event: MouseEvent) => {
-  // @ts-ignore
-  const { tooltipData } = event.currentTarget;
-  tooltipData.tooltip.show = false;
-};
+interface HTMLElement_ extends HTMLElement {
+  tooltipData?: {
+    text: string;
+    modifiers: any;
+  };
+}
 
-const touchStart = (event: TouchEvent) => {
-  // @ts-ignore
-  const { tooltipData } = event.currentTarget;
-  console.log("touchStart", tooltipData);
-};
+const RTip = (vue: VueConstructor): DirectiveOptions => ({
+  // bind(el: HTMLElement, binding: VNodeDirective, vnode: VNode_) {},
+  inserted(el: HTMLElement_, binding: VNodeDirective, vnode: VNode_) {
+    Tooltip.createTooltipComponentInApp(vnode.context, vue);
 
-const touchEnd = (event: TouchEvent) => {
-  // @ts-ignore
-  const { tooltipData } = event.currentTarget;
-  console.log("touchEnd", tooltipData);
-};
+    // Create a Tooltip instance for element and save it with VNode
+    vnode._tooltip = new Tooltip(vnode.context);
+    vnode._tooltip.attach(el);
 
-const RTip = (Vue: VueConstructor): DirectiveOptions => ({
-  bind(el: HTMLElement, binding: VNodeDirective, vnode: VNode) {
-    el.addEventListener("mouseenter", mouseEnter, { passive: true });
-    el.addEventListener("mouseleave", mouseLeave, { passive: true });
-    el.addEventListener("touchstart", touchStart, { passive: true });
-    el.addEventListener("touchend", touchEnd, { passive: true });
-  },
-  inserted(el: HTMLElement, binding: VNodeDirective, vnode: VNode) {
-    // @ts-ignore
-    if (!vnode.context.$root["r-tooltip"]) {
-      const node = document.createElement("div");
-      // @ts-ignore
-      vnode.context.$root.$el.appendChild(node);
-      const TooltipConstructor = Vue.extend(Tooltip);
-      // @ts-ignore
-      vnode.context.$root["r-tooltip"] = new TooltipConstructor({ parent: vnode.context.$root }).$mount(node);
-    }
-
-    // @ts-ignore
+    // Save tooltipData with element
     el.tooltipData = {
       text: binding.value,
       modifiers: binding.modifiers,
-      // @ts-ignore
-      tooltip: vnode.context.$root["r-tooltip"],
     };
   },
-  componentUpdated(el: HTMLElement, binding: VNodeDirective, vnode: VNode, a) {
+  componentUpdated(el: HTMLElement_, binding: VNodeDirective, vnode: VNode) {
     if (binding.oldValue === binding.value) return;
-    // @ts-ignore
-    el.tooltipData.text = binding.value;
+
+    // Save tooltipData with element
+    el.tooltipData = {
+      text: binding.value,
+      modifiers: binding.modifiers,
+    };
   },
-  unbind(el: HTMLElement, binding: VNodeDirective, vnode: VNode) {
-    el.removeEventListener("mouseenter", mouseEnter);
-    el.removeEventListener("mouseleave", mouseLeave);
-    el.removeEventListener("touchstart", touchStart);
-    el.removeEventListener("touchend", touchEnd);
+  unbind(el: HTMLElement_, binding: VNodeDirective, vnode: VNode_) {
+    vnode._tooltip && vnode._tooltip.detach(el);
   },
 });
 
