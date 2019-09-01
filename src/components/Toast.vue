@@ -72,7 +72,7 @@
 
   .toast-notification
     display inline-block
-    padding 5px 12px
+    padding 15px 25px
     margin-bottom 5px
     word-break break-word
     color #fff
