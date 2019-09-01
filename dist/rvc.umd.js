@@ -1,5 +1,5 @@
 /*!
- * rvc v0.14.3 
+ * rvc v0.14.4 
  * (c) 2019 Reino Zuppur
  * Released under the MIT License.
  */
@@ -461,11 +461,11 @@
     /* style */
     const __vue_inject_styles__$2 = function (inject) {
       if (!inject) return
-      inject("data-v-578bc328_0", { source: ".toast-list[data-v-578bc328]{position:fixed;top:36px;left:10px;right:10px;z-index:1100;user-select:none;pointer-events:none}.toast-list-inner[data-v-578bc328]{max-width:450px;margin:0 auto;position:relative;text-align:center}.toast-notification[data-v-578bc328]{display:inline-block;padding:5px 12px;margin-bottom:5px;word-break:break-word;color:#fff;font-size:16px;letter-spacing:-.005em;line-height:24px;font-weight:600;background:#40444a;border-radius:4px;box-shadow:0 2px 10px -2px rgba(0,0,0,.2);pointer-events:all;user-select:none}.toast-list-enter[data-v-578bc328],.toast-list-leave-to[data-v-578bc328]{opacity:0}.toast-list-enter-active[data-v-578bc328],.toast-list-leave-active[data-v-578bc328],.toast-list-move[data-v-578bc328]{transition:all .2s}.toast-list-leave-active[data-v-578bc328]{position:absolute;left:0;right:0}", map: undefined, media: undefined });
+      inject("data-v-4c8cf45f_0", { source: ".toast-list[data-v-4c8cf45f]{position:fixed;top:36px;left:10px;right:10px;z-index:1100;user-select:none;pointer-events:none}.toast-list-inner[data-v-4c8cf45f]{max-width:450px;margin:0 auto;position:relative;text-align:center}.toast-notification[data-v-4c8cf45f]{display:inline-block;padding:15px 25px;margin-bottom:5px;word-break:break-word;color:#fff;font-size:16px;letter-spacing:-.005em;line-height:24px;font-weight:600;background:#40444a;border-radius:4px;box-shadow:0 2px 10px -2px rgba(0,0,0,.2);pointer-events:all;user-select:none}.toast-list-enter[data-v-4c8cf45f],.toast-list-leave-to[data-v-4c8cf45f]{opacity:0}.toast-list-enter-active[data-v-4c8cf45f],.toast-list-leave-active[data-v-4c8cf45f],.toast-list-move[data-v-4c8cf45f]{transition:all .2s}.toast-list-leave-active[data-v-4c8cf45f]{position:absolute;left:0;right:0}", map: undefined, media: undefined });
 
     };
     /* scoped */
-    const __vue_scope_id__$2 = "data-v-578bc328";
+    const __vue_scope_id__$2 = "data-v-4c8cf45f";
     /* module identifier */
     const __vue_module_identifier__$2 = undefined;
     /* functional template */
@@ -484,6 +484,28 @@
       browser,
       undefined
     );
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  function _createClass(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties(Constructor, staticProps);
+    return Constructor;
+  }
 
   //
   var script$3 = {
@@ -659,7 +681,7 @@
     
 
     
-    var Tooltip = normalizeComponent_1(
+    var TooltipComponent = normalizeComponent_1(
       { render: __vue_render__$1, staticRenderFns: __vue_staticRenderFns__$1 },
       __vue_inject_styles__$3,
       __vue_script__$3,
@@ -670,83 +692,113 @@
       undefined
     );
 
-  var mouseEnter = function mouseEnter(event) {
-    // @ts-ignore
-    var tooltipData = event.currentTarget.tooltipData;
-    tooltipData.tooltip.el = event.currentTarget;
-    tooltipData.tooltip.show = true;
-  };
+  var TooltipComponentSymbol = Symbol("TooltipComponentSymbol");
 
-  var mouseLeave = function mouseLeave(event) {
-    // @ts-ignore
-    var tooltipData = event.currentTarget.tooltipData;
-    tooltipData.tooltip.show = false;
-  };
+  var Tooltip =
+  /*#__PURE__*/
+  function () {
+    function Tooltip(context) {
+      _classCallCheck(this, Tooltip);
 
-  var touchStart = function touchStart(event) {
-    // @ts-ignore
-    var tooltipData = event.currentTarget.tooltipData;
-    console.log("touchStart", tooltipData);
-  };
+      if (!context) throw new Error("No context");
+      if (!context.$root) throw new Error("No context $root"); // @ts-ignore
 
-  var touchEnd = function touchEnd(event) {
-    // @ts-ignore
-    var tooltipData = event.currentTarget.tooltipData;
-    console.log("touchEnd", tooltipData);
-  };
+      this.tooltipComponent = context.$root[TooltipComponentSymbol];
+    }
 
-  var RTip = function RTip(Vue) {
-    return {
-      bind: function bind(el, binding, vnode) {
-        el.addEventListener("mouseenter", mouseEnter, {
+    _createClass(Tooltip, [{
+      key: "attach",
+      value: function attach(el) {
+        el.addEventListener("mouseenter", this.mouseEnter.bind(this), {
           passive: true
         });
-        el.addEventListener("mouseleave", mouseLeave, {
+        el.addEventListener("mouseleave", this.mouseLeave.bind(this), {
           passive: true
-        });
-        el.addEventListener("touchstart", touchStart, {
-          passive: true
-        });
-        el.addEventListener("touchend", touchEnd, {
-          passive: true
-        });
-      },
-      inserted: function inserted(el, binding, vnode) {
+        }); // el.addEventListener("touchstart", this.touchStart.bind(this), { passive: true });
+        // el.addEventListener("touchend", this.touchEnd.bind(this), { passive: true });
+      }
+    }, {
+      key: "detach",
+      value: function detach(el) {
+        el.removeEventListener("mouseenter", this.mouseEnter);
+        el.removeEventListener("mouseleave", this.mouseLeave); // el.removeEventListener("touchstart", this.touchStart);
+        // el.removeEventListener("touchend", this.touchEnd);
+      }
+    }, {
+      key: "mouseEnter",
+      value: function mouseEnter(event) {
+        this.tooltipComponent.el = event.currentTarget;
+        this.tooltipComponent.show = true;
+      }
+    }, {
+      key: "mouseLeave",
+      value: function mouseLeave(event) {
+        this.tooltipComponent.show = false;
+      }
+      /*
+      private touchStart(event: TouchEvent) {
         // @ts-ignore
-        if (!vnode.context.$root["r-tooltip"]) {
-          var node = document.createElement("div"); // @ts-ignore
+        const { tooltipData } = event.currentTarget;
+        console.log("touchStart", tooltipData);
+      }
+          private touchEnd(event: TouchEvent) {
+        // @ts-ignore
+        const { tooltipData } = event.currentTarget;
+        console.log("touchEnd", tooltipData);
+      }
+      */
 
-          vnode.context.$root.$el.appendChild(node);
-          var TooltipConstructor = Vue.extend(Tooltip); // @ts-ignore
+    }], [{
+      key: "createTooltipComponentInApp",
+      value: function createTooltipComponentInApp(context, vue) {
+        if (!context) throw new Error("No context");
+        if (!context.$root) throw new Error("No context $root"); // @ts-ignore
 
-          vnode.context.$root["r-tooltip"] = new TooltipConstructor({
-            parent: vnode.context.$root
-          }).$mount(node);
-        } // @ts-ignore
+        if (context.$root[TooltipComponentSymbol]) return;
+        var node = document.createElement("div");
+        context.$root.$el.appendChild(node);
+        var TooltipConstructor = vue.extend(TooltipComponent); // @ts-ignore
+
+        context.$root[TooltipComponentSymbol] = new TooltipConstructor({
+          parent: context.$root
+        }).$mount(node);
+      }
+    }]);
+
+    return Tooltip;
+  }();
+
+  var RTip = function RTip(vue) {
+    return {
+      // bind(el: HTMLElement, binding: VNodeDirective, vnode: VNode_) {},
+      inserted: function inserted(el, binding, vnode) {
+        Tooltip.createTooltipComponentInApp(vnode.context, vue); // Create a Tooltip instance for element and save it with VNode
+
+        vnode._tooltip = new Tooltip(vnode.context);
+
+        vnode._tooltip.attach(el); // Save tooltipData with element
 
 
         el.tooltipData = {
           text: binding.value,
-          modifiers: binding.modifiers,
-          // @ts-ignore
-          tooltip: vnode.context.$root["r-tooltip"]
+          modifiers: binding.modifiers
         };
       },
-      componentUpdated: function componentUpdated(el, binding, vnode, a) {
-        if (binding.oldValue === binding.value) return; // @ts-ignore
+      componentUpdated: function componentUpdated(el, binding, vnode) {
+        if (binding.oldValue === binding.value) return; // Save tooltipData with element
 
-        el.tooltipData.text = binding.value;
+        el.tooltipData = {
+          text: binding.value,
+          modifiers: binding.modifiers
+        };
       },
       unbind: function unbind(el, binding, vnode) {
-        el.removeEventListener("mouseenter", mouseEnter);
-        el.removeEventListener("mouseleave", mouseLeave);
-        el.removeEventListener("touchstart", touchStart);
-        el.removeEventListener("touchend", touchEnd);
+        vnode._tooltip && vnode._tooltip.detach(el);
       }
     };
   };
 
-  var version = "0.14.3";
+  var version = "0.14.4";
 
   var install = function install(Vue) {
     Vue.component("r-button", Button);
