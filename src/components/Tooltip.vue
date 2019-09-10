@@ -60,6 +60,11 @@
             }, 500);
           } else {
             clearTimeout(this.hideShowTimeout);
+            if (this.el && this.el.tooltipData) {
+              const { tooltipData } = this.el;
+              this.text = tooltipData.text;
+              if (!this.text) return;
+            }
             this.hideShowTimeout = setTimeout(() => {
               this.visible = true;
             }, 200);
@@ -89,9 +94,13 @@
       },
       getData() {
         if (this.visible) {
-          if (this.el && this.el.tooltipData && document.body.contains(this.el)) {
+          if (this.el && this.el.tooltipData && document.body.contains(this.el) && this.el.offsetHeight > 0) {
             const { tooltipData } = this.el;
             this.text = tooltipData.text;
+            if (!this.text) {
+              this.forceHide();
+              return;
+            }
             if (Object.keys(tooltipData.modifiers).length) {
               if (tooltipData.modifiers.bottom) {
                 this.location = "bottom";
@@ -104,11 +113,14 @@
               this.location = "top";
             }
           } else {
-            clearTimeout(this.hideShowTimeout);
-            this.visible = false;
-            this.show = false;
+            this.forceHide();
           }
         }
+      },
+      forceHide() {
+        clearTimeout(this.hideShowTimeout);
+        this.visible = false;
+        this.show = false;
       },
       position() {
         if (this.visible && this.el) {

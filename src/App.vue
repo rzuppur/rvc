@@ -7,6 +7,7 @@
       r-button(v-rtip.bottom="'Position bottom'") Bottom
       r-button(v-rtip.left="'Position left'") Left
       r-button(v-rtip.right="'Position right'") Right
+      r-button(v-rtip="null") Null
       r-button(v-if="showTooltipButton" v-rtip="'Tooltip'") Element removed
       div(v-show="showTooltipButton")
         r-button(v-rtip="'Tooltip'") Element hidden
