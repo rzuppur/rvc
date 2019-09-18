@@ -57,7 +57,7 @@
             clearTimeout(this.hideShowTimeout);
             this.hideShowTimeout = setTimeout(() => {
               this.visible = false;
-            }, 500);
+            }, 100);
           } else {
             clearTimeout(this.hideShowTimeout);
             if (this.el && this.el.tooltipData) {
