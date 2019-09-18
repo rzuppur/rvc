@@ -86,7 +86,7 @@
       .buttons
         r-button(:action="() => { $notifyToast('Notification') }") Notification
         r-button(:action="() => { $notifyToast('Short') }") Short
-        r-button(:action="() => { $notifyToast('Long text notification that should hopefully wrap to multiple lines') }") Long text notification that should hopefully wrap to multiple lines
+        r-button(:action="() => { $notifyToast('Long text notification that should hopefully wrap to multiple lines and you should be able to read this entire text before it disappears.') }") Long notification
 
 </template>
 

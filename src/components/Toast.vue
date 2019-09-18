@@ -65,7 +65,7 @@
     pointer-events none
 
   .toast-list-inner
-    max-width 450px
+    max-width 700px
     margin 0 auto
     position relative
     text-align center
