@@ -1,5 +1,5 @@
 /*!
- * rvc v0.15.0 
+ * rvc v0.16.0 
  * (c) 2019 Reino Zuppur
  * Released under the MIT License.
  */
@@ -466,11 +466,11 @@ var __vue_staticRenderFns__ = [];
   /* style */
   const __vue_inject_styles__$2 = function (inject) {
     if (!inject) return
-    inject("data-v-4c8cf45f_0", { source: ".toast-list[data-v-4c8cf45f]{position:fixed;top:36px;left:10px;right:10px;z-index:1100;user-select:none;pointer-events:none}.toast-list-inner[data-v-4c8cf45f]{max-width:450px;margin:0 auto;position:relative;text-align:center}.toast-notification[data-v-4c8cf45f]{display:inline-block;padding:15px 25px;margin-bottom:5px;word-break:break-word;color:#fff;font-size:16px;letter-spacing:-.005em;line-height:24px;font-weight:600;background:#40444a;border-radius:4px;box-shadow:0 2px 10px -2px rgba(0,0,0,.2);pointer-events:all;user-select:none}.toast-list-enter[data-v-4c8cf45f],.toast-list-leave-to[data-v-4c8cf45f]{opacity:0}.toast-list-enter-active[data-v-4c8cf45f],.toast-list-leave-active[data-v-4c8cf45f],.toast-list-move[data-v-4c8cf45f]{transition:all .2s}.toast-list-leave-active[data-v-4c8cf45f]{position:absolute;left:0;right:0}", map: undefined, media: undefined });
+    inject("data-v-6fbf9cb7_0", { source: ".toast-list[data-v-6fbf9cb7]{position:fixed;top:36px;left:10px;right:10px;z-index:1100;user-select:none;pointer-events:none}.toast-list-inner[data-v-6fbf9cb7]{max-width:700px;margin:0 auto;position:relative;text-align:center}.toast-notification[data-v-6fbf9cb7]{display:inline-block;padding:15px 25px;margin-bottom:5px;word-break:break-word;color:#fff;font-size:16px;letter-spacing:-.005em;line-height:24px;font-weight:600;background:#40444a;border-radius:4px;box-shadow:0 2px 10px -2px rgba(0,0,0,.2);pointer-events:all;user-select:none}.toast-list-enter[data-v-6fbf9cb7],.toast-list-leave-to[data-v-6fbf9cb7]{opacity:0}.toast-list-enter-active[data-v-6fbf9cb7],.toast-list-leave-active[data-v-6fbf9cb7],.toast-list-move[data-v-6fbf9cb7]{transition:all .2s}.toast-list-leave-active[data-v-6fbf9cb7]{position:absolute;left:0;right:0}", map: undefined, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$2 = "data-v-4c8cf45f";
+  const __vue_scope_id__$2 = "data-v-6fbf9cb7";
   /* module identifier */
   const __vue_module_identifier__$2 = undefined;
   /* functional template */
@@ -561,7 +561,7 @@ var script$3 = {
           clearTimeout(this.hideShowTimeout);
           this.hideShowTimeout = setTimeout(function () {
             _this.visible = false;
-          }, 500);
+          }, 100);
         } else {
           clearTimeout(this.hideShowTimeout);
 
@@ -688,11 +688,11 @@ var __vue_staticRenderFns__$1 = [];
   /* style */
   const __vue_inject_styles__$3 = function (inject) {
     if (!inject) return
-    inject("data-v-623eae14_0", { source: ".tooltip-enter-active[data-v-623eae14]{transition:opacity .1s}.tooltip-enter[data-v-623eae14]{opacity:0}.tooltip-arrow-enter-active[data-v-623eae14]{transition:opacity 150ms}.tooltip-arrow-enter[data-v-623eae14]{opacity:0}.r-tooltip[data-v-623eae14]{position:fixed;z-index:1000;padding:5px 12px;margin-right:5px;word-break:break-word;color:#fff;font-size:16px;letter-spacing:-.005em;line-height:24px;font-weight:600;background:#40444a;border-radius:4px;box-shadow:0 2px 10px -2px rgba(0,0,0,.2);pointer-events:none;user-select:none}.r-tooltip-arrow[data-v-623eae14]{position:fixed;z-index:1001;border-top:7px solid #40444a;border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:7px solid transparent}", map: undefined, media: undefined });
+    inject("data-v-056fe507_0", { source: ".tooltip-enter-active[data-v-056fe507]{transition:opacity .1s}.tooltip-enter[data-v-056fe507]{opacity:0}.tooltip-arrow-enter-active[data-v-056fe507]{transition:opacity 150ms}.tooltip-arrow-enter[data-v-056fe507]{opacity:0}.r-tooltip[data-v-056fe507]{position:fixed;z-index:1000;padding:5px 12px;margin-right:5px;word-break:break-word;color:#fff;font-size:16px;letter-spacing:-.005em;line-height:24px;font-weight:600;background:#40444a;border-radius:4px;box-shadow:0 2px 10px -2px rgba(0,0,0,.2);pointer-events:none;user-select:none}.r-tooltip-arrow[data-v-056fe507]{position:fixed;z-index:1001;border-top:7px solid #40444a;border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:7px solid transparent}", map: undefined, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$3 = "data-v-623eae14";
+  const __vue_scope_id__$3 = "data-v-056fe507";
   /* module identifier */
   const __vue_module_identifier__$3 = undefined;
   /* functional template */
@@ -818,7 +818,7 @@ var RTip = function RTip(vue) {
   };
 };
 
-var version = "0.15.0";
+var version = "0.16.0";
 
 var install = function install(Vue) {
   Vue.component("r-button", Button);
