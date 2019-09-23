@@ -147,13 +147,13 @@
           background alpha(#fff, .08)
 
       &:focus:not(:active)
-        box-shadow 0 0 0 3px alpha($color-focus-blue, 0.2) !important
+        box-shadow inset 0 0 0 3px alpha($color-focus-blue, 0.2) !important
 
     &:hover:not(.borderless)
-      box-shadow 0 0 0 2px alpha($color-focus-blue, 0.3) !important
+      box-shadow inset 0 0 0 1px alpha($color-focus-blue, 0.3) !important
 
     &:focus:not(:active)
-      box-shadow 0 0 0 3px alpha($color-focus-blue, 0.2), 0 0 0 1px $color-focus-blue !important
+      box-shadow inset 0 0 0 1px alpha($color-focus-blue, 0.2), 0 0 0 1px $color-focus-blue !important
 
     &.primary
       background $color-button-cta
@@ -165,7 +165,7 @@
         background darken($color-button-cta, 3)
 
       &:focus:not(:active)
-        box-shadow 0 0 0 3px alpha($color-focus-blue, 0.2), inset 0 0 0 1px darken($color-focus-blue, 10) !important
+        box-shadow inset 0 0 0 2px $color-focus-blue, inset 0 0 0 3px darken($color-focus-blue, 20) !important
 
     &.gray
       background darken($color-light-gray-background, .5)

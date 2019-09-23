@@ -65,7 +65,7 @@
     display inline-block
 
     &.icon-text
-      vertical-align text-top
+      vertical-align text-bottom
       display inline-block
       position relative
       top 1px
