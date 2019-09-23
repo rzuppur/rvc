@@ -47,6 +47,7 @@
       return createElement("span", {
         attrs: { "aria-hidden": true },
         class: ["r-icon", iconValid ? "" : "red", d.staticClass, d.class],
+        style: [d.staticStyle, d.style],
         directives: d.directives,
         domProps: { innerHTML: iconValid ? toSvgTag(p.iconsObject[p.icon]) : toSvgTag(p.fallbackIcon) },
       });

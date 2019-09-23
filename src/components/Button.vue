@@ -50,6 +50,7 @@
       return createElement("button", {
         attrs: { "aria-label": p.label },
         class: [buttonClasses, d.staticClass, d.class],
+        style: [d.staticStyle, d.style],
         directives: d.directives,
         domProps: {
           disabled: p.disabled || p.loading,
