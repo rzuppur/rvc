@@ -1,34 +1,3 @@
-<!--<template lang="pug" functional>
-
-  button.r-button(
-    :class="[\
-      (props.borderless || props.borderless === '') ? 'borderless' : '',\
-      (props.icon && !slots().default) ? 'icon-only' : '',\
-      (props.primary || props.primary === '') ? 'primary' : '',\
-      (props.gray || props.gray === '') ? 'gray' : '',\
-      (props.fullwidth || props.fullwidth === '') ? 'fullwidth' : '',\
-      (props.small || props.small === '') ? 'small' : '',\
-      (props.loading || props.loading === '') ? 'loading' : '',\
-      data.class,\
-      data.staticClass,\
-    ]"
-    :type="(props.submit || props.submit === '') ? 'submit' : 'button'"
-    :disabled="(props.disabled || props.disabled === '') || props.loading"
-    :aria-label="props.label"
-    @pointerdown.prevent=""
-    @click="() => { props.action ? props.action() : null }"
-  )
-
-    r-icon(
-      v-if="props.icon"
-      :icon="props.icon"
-      :class="(props.primary || props.primary === '') ? 'white' : (props.iconColor ? props.iconColor : 'gray')")
-
-    span(v-if="slots().default")
-      slot
-
-</template>-->
-
 <script>
 
   export default {

@@ -90,6 +90,9 @@
     &.green svg
       fill $color-green
 
+      .darkMode &
+        fill lighten($color-green, 4)
+
     &.red svg
       fill $color-red
 
@@ -100,7 +103,7 @@
       fill $color-blue
 
       .darkMode &
-        fill lighten($color-blue-alt, 7)
+        fill darken($color-blue, 7)
 
     &.gold svg
       fill $color-gold
