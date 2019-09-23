@@ -102,6 +102,9 @@
       .darkMode &
         fill lighten($color-blue-alt, 7)
 
+    &.gold svg
+      fill $color-gold
+
     &.white svg
       fill #fff
 
