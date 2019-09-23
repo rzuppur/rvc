@@ -1,5 +1,5 @@
 /*!
- * rvc v0.21.1 
+ * rvc v0.21.2 
  * (c) 2019 Reino Zuppur
  * Released under the MIT License.
  */
@@ -680,11 +680,11 @@ var __vue_staticRenderFns__$1 = [];
   /* style */
   const __vue_inject_styles__$3 = function (inject) {
     if (!inject) return
-    inject("data-v-463c5c10_0", { source: ".tooltip-enter-active[data-v-463c5c10]{transition:opacity .1s}.tooltip-enter[data-v-463c5c10]{opacity:0}.tooltip-arrow-enter-active[data-v-463c5c10]{transition:opacity 150ms}.tooltip-arrow-enter[data-v-463c5c10]{opacity:0}.r-tooltip[data-v-463c5c10]{position:fixed;z-index:1000;padding:5px 12px;margin-right:5px;word-break:break-word;color:#fff;font-size:16px;letter-spacing:-.005em;line-height:24px;font-weight:600;background:#40444a;border-radius:4px;box-shadow:0 2px 10px -2px rgba(0,0,0,.2);pointer-events:none;user-select:none}.r-tooltip-arrow[data-v-463c5c10]{position:fixed;z-index:1001;border-top:7px solid #40444a;border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:7px solid transparent}", map: undefined, media: undefined });
+    inject("data-v-ffb1eee4_0", { source: ".tooltip-enter-active[data-v-ffb1eee4]{transition:opacity .1s}.tooltip-enter[data-v-ffb1eee4]{opacity:0}.tooltip-arrow-enter-active[data-v-ffb1eee4]{transition:opacity 150ms}.tooltip-arrow-enter[data-v-ffb1eee4]{opacity:0}.r-tooltip[data-v-ffb1eee4]{position:fixed;z-index:1000;padding:5px 12px;margin-right:5px;word-break:break-word;color:#fff;font-size:16px;letter-spacing:-.005em;line-height:24px;font-weight:600;background:#40444a;border-radius:4px;box-shadow:0 2px 10px -2px rgba(0,0,0,.2);pointer-events:none;user-select:none}.r-tooltip-arrow[data-v-ffb1eee4]{position:fixed;z-index:1001;border-top:7px solid #40444a;border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:7px solid transparent;pointer-events:none;user-select:none}", map: undefined, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$3 = "data-v-463c5c10";
+  const __vue_scope_id__$3 = "data-v-ffb1eee4";
   /* module identifier */
   const __vue_module_identifier__$3 = undefined;
   /* functional template */
@@ -810,7 +810,7 @@ var RTip = function RTip(vue) {
   };
 };
 
-var version = "0.21.1";
+var version = "0.21.2";
 
 var install = function install(Vue) {
   Vue.component("r-button", Button);

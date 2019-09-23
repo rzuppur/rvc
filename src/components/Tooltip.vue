@@ -207,5 +207,7 @@
     border-left $_size solid transparent
     border-right $_size solid transparent
     border-bottom $_size solid transparent
+    pointer-events none
+    user-select none
 
 </style>
