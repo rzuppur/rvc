@@ -186,10 +186,12 @@
 
     &.icon-only
       width $height-input
+      min-width @width
       padding 0
 
       &.small
         width $height-input-small
+        min-width @width
 
     &:not(.icon-only)
       min-width 65px
