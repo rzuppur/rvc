@@ -1,5 +1,5 @@
 /*!
- * rvc v0.17.0 
+ * rvc v0.17.1 
  * (c) 2019 Reino Zuppur
  * Released under the MIT License.
  */
@@ -382,7 +382,7 @@
     /* style */
     const __vue_inject_styles__$1 = function (inject) {
       if (!inject) return
-      inject("data-v-2bd1014c_0", { source: ".r-icon{height:24px;width:24px;display:inline-block}.r-icon.icon-text{vertical-align:text-top;display:inline-block;position:relative;top:1px}.r-icon.icon-text,.r-icon.icon-text svg{height:18px!important;width:18px!important}.darkMode .r-icon svg{fill:#e1e3e5}.r-icon.gray svg{fill:#777}.darkMode .r-icon.gray svg{fill:#aab0b6}.r-icon.light-gray svg{fill:$color-gray-text-light}.r-icon.green svg{fill:#009826}.r-icon.red svg{fill:#e24161}.darkMode .r-icon.red svg{fill:#e55370}.r-icon.blue svg{fill:#2c61b6}.darkMode .r-icon.blue svg{fill:#0f91ea}.r-icon.gold svg{fill:#eebc41}.r-icon.white svg{fill:#fff}", map: undefined, media: undefined });
+      inject("data-v-2bd1014c_0", { source: ".r-icon{height:24px;width:24px;display:inline-block}.r-icon.icon-text{vertical-align:text-top;display:inline-block;position:relative;top:1px}.r-icon.icon-text,.r-icon.icon-text svg{height:18px!important;width:18px!important}.darkMode .r-icon svg{fill:#e1e3e5}.r-icon.gray svg{fill:#777}.darkMode .r-icon.gray svg{fill:#aab0b6}.r-icon.light-gray svg{fill:#aaa}.r-icon.green svg{fill:#009826}.r-icon.red svg{fill:#e24161}.darkMode .r-icon.red svg{fill:#e55370}.r-icon.blue svg{fill:#2c61b6}.darkMode .r-icon.blue svg{fill:#0f91ea}.r-icon.gold svg{fill:#eebc41}.r-icon.white svg{fill:#fff}", map: undefined, media: undefined });
 
     };
     /* scoped */
@@ -822,7 +822,7 @@
     };
   };
 
-  var version = "0.17.0";
+  var version = "0.17.1";
 
   var install = function install(Vue) {
     Vue.component("r-button", Button);
