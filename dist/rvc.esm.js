@@ -1,5 +1,5 @@
 /*!
- * rvc v0.21.1 
+ * rvc v0.21.2 
  * (c) 2019 Reino Zuppur
  * Released under the MIT License.
  */
@@ -10,7 +10,6 @@ var script = {
   functional: true,
   props: {
     action: Function,
-    actionWithModifier: Function,
     label: String,
     icon: String,
     iconColor: String,
@@ -65,8 +64,6 @@ var script = {
       },
       on: {
         click: function click(event) {
-          if (p.actionWithModifier) ;
-
           if (p.action) p.action(event);
         },
         pointerdown: function pointerdown(event) {
@@ -222,7 +219,7 @@ const __vue_script__ = script;
   /* style */
   const __vue_inject_styles__ = function (inject) {
     if (!inject) return
-    inject("data-v-651c3662_0", { source: ".r-button{cursor:pointer;user-select:none;-webkit-touch-callout:none;-webkit-appearance:none;-moz-appearance:none;position:relative;vertical-align:top;white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;height:40px;padding:0 12px;border:1px solid #ddd;border-radius:4px;font-family:Inter,BlinkMacSystemFont,-apple-system,\"Segoe UI\",Roboto,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\";font-size:16px;letter-spacing:-.005em;line-height:24px;font-weight:400;text-align:center;color:#40444a;background-color:#fff;box-shadow:none;transition:transform .1s,box-shadow .1s}.darkMode .r-button{background-color:transparent;color:#e1e3e5;border-color:rgba(255,255,255,.15)}.r-button,.r-button:hover{text-decoration:none;color:#40444a}.darkMode .r-button,.darkMode .r-button:hover{color:#e1e3e5}.r-button.is-active,.r-button.is-focused,.r-button:active,.r-button:focus{outline:0}.r-button[disabled]{cursor:not-allowed}.r-button:active:not([disabled]){transform:scale(.98)}.r-button.borderless{background-color:transparent;box-shadow:none;border:none}.r-button.borderless:focus,.r-button.borderless:hover{background:rgba(0,0,0,.04)}.darkMode .r-button.borderless:focus,.darkMode .r-button.borderless:hover{background:rgba(255,255,255,.08)}.r-button.borderless:focus:not(:active){box-shadow:inset 0 0 0 3px rgba(13,124,200,.2)!important}.r-button:hover:not(.borderless){box-shadow:inset 0 0 0 1px rgba(13,124,200,.3)!important}.r-button:focus:not(:active){box-shadow:inset 0 0 0 1px rgba(13,124,200,.2),0 0 0 1px #0d7cc8!important}.r-button.primary{background:#2097e8;border:none;color:#fff}.r-button.primary:focus,.r-button.primary:hover{background:#1790e1}.r-button.primary:focus:not(:active){box-shadow:inset 0 0 0 2px #0d7cc8,inset 0 0 0 3px #074168!important}.r-button.gray{background:#f8f8f9}.darkMode .r-button.gray{background:rgba(255,255,255,.1)}.r-button[disabled]{box-shadow:none!important;opacity:.4}.r-button.fullwidth{display:flex;width:100%}.r-button.small{height:34px}.r-button.icon-only{width:40px;min-width:40px;padding:0}.r-button.icon-only.small{width:34px;min-width:34px}.r-button:not(.icon-only){min-width:65px}.r-button.loading{color:transparent!important;pointer-events:none}.r-button.loading span{opacity:0}.r-button.loading::after{content:\"\";width:18px;height:18px;border:2px solid transparent;border-top-color:rgba(0,0,0,.3);border-right-color:rgba(0,0,0,.3);border-radius:100%;animation:spinAround .6s infinite linear;position:absolute!important}.darkMode .r-button.loading::after{border-top-color:rgba(255,255,255,.4);border-right-color:rgba(255,255,255,.4)}.r-button:not(.muted) span:not(.icon){font-size:16px;letter-spacing:-.005em;line-height:24px;font-weight:600}.r-button span{transition:opacity 75ms}.r-button span:not(.r-icon){position:relative;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.r-button .r-icon:first-child:not(:last-child){margin-left:-2px;margin-right:8px}.r-button .r-icon:last-child:not(:first-child){margin-left:8px;margin-right:-2px}.r-button .r-icon:first-child:last-child{margin-left:0;margin-right:0}.small .r-icon:first-child:not(:last-child){margin-left:-4px;margin-right:5px}.small .r-icon:last-child:not(:first-child){margin-right:-4px;margin-left:5px}@-moz-keyframes spinAround{from{transform:rotate(0)}to{transform:rotate(359deg)}}@-webkit-keyframes spinAround{from{transform:rotate(0)}to{transform:rotate(359deg)}}@-o-keyframes spinAround{from{transform:rotate(0)}to{transform:rotate(359deg)}}@keyframes spinAround{from{transform:rotate(0)}to{transform:rotate(359deg)}}", map: undefined, media: undefined });
+    inject("data-v-6ad1e0d8_0", { source: ".r-button{cursor:pointer;user-select:none;-webkit-touch-callout:none;-webkit-appearance:none;-moz-appearance:none;position:relative;vertical-align:top;white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;height:40px;padding:0 12px;border:1px solid #ddd;border-radius:4px;font-family:Inter,BlinkMacSystemFont,-apple-system,\"Segoe UI\",Roboto,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\";font-size:16px;letter-spacing:-.005em;line-height:24px;font-weight:400;text-align:center;color:#40444a;background-color:#fff;box-shadow:none;transition:transform .1s,box-shadow .1s}.darkMode .r-button{background-color:transparent;color:#e1e3e5;border-color:rgba(255,255,255,.15)}.r-button,.r-button:hover{text-decoration:none;color:#40444a}.darkMode .r-button,.darkMode .r-button:hover{color:#e1e3e5}.r-button.is-active,.r-button.is-focused,.r-button:active,.r-button:focus{outline:0}.r-button[disabled]{cursor:not-allowed}.r-button:active:not([disabled]){transform:scale(.98)}.r-button.borderless{background-color:transparent;box-shadow:none;border:none}.r-button.borderless:focus,.r-button.borderless:hover{background:rgba(0,0,0,.04)}.darkMode .r-button.borderless:focus,.darkMode .r-button.borderless:hover{background:rgba(255,255,255,.08)}.r-button.borderless:focus:not(:active){box-shadow:inset 0 0 0 3px rgba(13,124,200,.2)!important}.r-button:hover:not(.borderless){box-shadow:inset 0 0 0 1px rgba(13,124,200,.3)!important}.r-button:focus:not(:active){box-shadow:inset 0 0 0 1px rgba(13,124,200,.2),0 0 0 1px #0d7cc8!important}.r-button.primary{background:#2097e8;border:none;color:#fff}.r-button.primary:focus,.r-button.primary:hover{background:#1790e1}.r-button.primary:focus:not(:active){box-shadow:inset 0 0 0 2px #0d7cc8,inset 0 0 0 3px #074168!important}.r-button.gray{background:#f8f8f9}.darkMode .r-button.gray{background:rgba(255,255,255,.1)}.r-button[disabled]{box-shadow:none!important;opacity:.4}.r-button.fullwidth{display:flex;width:100%}.r-button.small{height:34px}.r-button.icon-only{width:40px;min-width:40px;padding:0}.r-button.icon-only.small{width:34px;min-width:34px}.r-button:not(.icon-only){min-width:65px}.r-button.loading{color:transparent!important;pointer-events:none}.r-button.loading span{opacity:0}.r-button.loading::after{content:\"\";width:18px;height:18px;border:2px solid transparent;border-top-color:rgba(0,0,0,.3);border-right-color:rgba(0,0,0,.3);border-radius:100%;animation:spinAround .6s infinite linear;position:absolute!important}.darkMode .r-button.loading::after{border-top-color:rgba(255,255,255,.4);border-right-color:rgba(255,255,255,.4)}.r-button:not(.muted) span:not(.icon){font-size:16px;letter-spacing:-.005em;line-height:24px;font-weight:600}.r-button span{transition:opacity 75ms}.r-button span:not(.r-icon){position:relative;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.r-button .r-icon:first-child:not(:last-child){margin-left:-2px;margin-right:8px}.r-button .r-icon:last-child:not(:first-child){margin-left:8px;margin-right:-2px}.r-button .r-icon:first-child:last-child{margin-left:0;margin-right:0}.small .r-icon:first-child:not(:last-child){margin-left:-4px;margin-right:5px}.small .r-icon:last-child:not(:first-child){margin-right:-4px;margin-left:5px}@-moz-keyframes spinAround{from{transform:rotate(0)}to{transform:rotate(359deg)}}@-webkit-keyframes spinAround{from{transform:rotate(0)}to{transform:rotate(359deg)}}@-o-keyframes spinAround{from{transform:rotate(0)}to{transform:rotate(359deg)}}@keyframes spinAround{from{transform:rotate(0)}to{transform:rotate(359deg)}}", map: undefined, media: undefined });
 
   };
   /* scoped */
@@ -370,7 +367,7 @@ const __vue_script__$1 = script$1;
   /* style */
   const __vue_inject_styles__$1 = function (inject) {
     if (!inject) return
-    inject("data-v-7323fe22_0", { source: ".r-icon{height:24px;width:24px;display:inline-block}.r-icon.icon-text{vertical-align:text-bottom;display:inline-block;position:relative;top:1px}.r-icon.icon-text,.r-icon.icon-text svg{height:18px!important;width:18px!important}.darkMode .r-icon svg{fill:#e1e3e5}.r-icon.gray svg{fill:#777}.darkMode .r-icon.gray svg{fill:#aab0b6}.r-icon.light-gray svg{fill:#aaa}.r-icon.green svg{fill:#009635}.darkMode .r-icon.green svg{fill:#00aa3c}.r-icon.red svg{fill:#e24161}.darkMode .r-icon.red svg{fill:#e55370}.r-icon.blue svg{fill:#2097e8}.darkMode .r-icon.blue svg{fill:#1584cf}.r-icon.gold svg{fill:#eebc41}.r-icon.white svg{fill:#fff}", map: undefined, media: undefined });
+    inject("data-v-3132224a_0", { source: ".r-icon{height:24px;width:24px;display:inline-block}.r-icon.icon-text{vertical-align:text-bottom;display:inline-block;position:relative;top:1px}.r-icon.icon-text,.r-icon.icon-text svg{height:18px!important;width:18px!important}.darkMode .r-icon svg{fill:#e1e3e5}.r-icon.gray svg{fill:#777}.darkMode .r-icon.gray svg{fill:#aab0b6}.r-icon.light-gray svg{fill:#aaa}.r-icon.green svg{fill:#009635}.darkMode .r-icon.green svg{fill:#00aa3c}.r-icon.red svg{fill:#e24161}.darkMode .r-icon.red svg{fill:#e55370}.r-icon.blue svg{fill:#2097e8}.darkMode .r-icon.blue svg{fill:#1584cf}.r-icon.gold svg{fill:#eebc41}.r-icon.white svg{fill:#fff}", map: undefined, media: undefined });
 
   };
   /* scoped */
@@ -429,7 +426,8 @@ var script$2 = {
   },
   methods: {
     notify: function notify(text) {
-      var index = this.index++;
+      var index = this.index;
+      this.index += 1;
       text = text.toString();
       this.queue.push({
         text: text,
@@ -458,11 +456,11 @@ var __vue_staticRenderFns__ = [];
   /* style */
   const __vue_inject_styles__$2 = function (inject) {
     if (!inject) return
-    inject("data-v-0e8d3bbf_0", { source: ".toast-list[data-v-0e8d3bbf]{position:fixed;top:36px;left:10px;right:10px;z-index:1100;user-select:none;pointer-events:none}.toast-list-inner[data-v-0e8d3bbf]{max-width:700px;margin:0 auto;position:relative;text-align:center}.toast-notification[data-v-0e8d3bbf]{display:inline-block;padding:15px 25px;margin-bottom:5px;word-break:break-word;color:#fff;font-size:16px;letter-spacing:-.005em;line-height:24px;font-weight:600;background:#40444a;border-radius:4px;box-shadow:0 2px 10px -2px rgba(0,0,0,.2);pointer-events:all;user-select:none}.toast-list-enter[data-v-0e8d3bbf],.toast-list-leave-to[data-v-0e8d3bbf]{opacity:0}.toast-list-enter-active[data-v-0e8d3bbf],.toast-list-leave-active[data-v-0e8d3bbf],.toast-list-move[data-v-0e8d3bbf]{transition:all .2s}.toast-list-leave-active[data-v-0e8d3bbf]{position:absolute;left:0;right:0}", map: undefined, media: undefined });
+    inject("data-v-4776e39a_0", { source: ".toast-list[data-v-4776e39a]{position:fixed;top:36px;left:10px;right:10px;z-index:1100;user-select:none;pointer-events:none}.toast-list-inner[data-v-4776e39a]{max-width:700px;margin:0 auto;position:relative;text-align:center}.toast-notification[data-v-4776e39a]{display:inline-block;padding:15px 25px;margin-bottom:5px;word-break:break-word;color:#fff;font-size:16px;letter-spacing:-.005em;line-height:24px;font-weight:600;background:#40444a;border-radius:4px;box-shadow:0 2px 10px -2px rgba(0,0,0,.2);pointer-events:all;user-select:none}.toast-list-enter[data-v-4776e39a],.toast-list-leave-to[data-v-4776e39a]{opacity:0}.toast-list-enter-active[data-v-4776e39a],.toast-list-leave-active[data-v-4776e39a],.toast-list-move[data-v-4776e39a]{transition:all .2s}.toast-list-leave-active[data-v-4776e39a]{position:absolute;left:0;right:0}", map: undefined, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$2 = "data-v-0e8d3bbf";
+  const __vue_scope_id__$2 = "data-v-4776e39a";
   /* module identifier */
   const __vue_module_identifier__$2 = undefined;
   /* functional template */
@@ -810,7 +808,7 @@ var RTip = function RTip(vue) {
   };
 };
 
-var version = "0.21.1";
+var version = "0.21.2";
 
 var install = function install(Vue) {
   Vue.component("r-button", Button);

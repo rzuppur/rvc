@@ -33,7 +33,8 @@
     },
     methods: {
       notify(text) {
-        const index = this.index++;
+        const { index } = this;
+        this.index += 1;
         text = text.toString();
         this.queue.push({
           text,
