@@ -222,7 +222,7 @@
       color transparent !important
       pointer-events none
 
-      span
+      & > span
         opacity 0
 
       &::after
@@ -240,10 +240,10 @@
           border-top-color alpha(#fff, 0.4)
           border-right-color alpha(#fff, 0.4)
 
-    &:not(.muted) span:not(.icon)
+    &:not(.muted) > span:not(.icon)
       font-sans($font-size-normal, $font-weight-sans-bold)
 
-    span
+    & > span
       transition opacity 75ms
 
       &:not(.r-icon)
@@ -252,7 +252,7 @@
         overflow hidden
         text-overflow ellipsis
 
-    .r-icon
+    & > .r-icon
 
       &:first-child:not(:last-child)
         margin-left -2px
@@ -266,7 +266,7 @@
         margin-left 0
         margin-right 0
 
-  &.small .r-icon
+  &.small > .r-icon
 
     &:first-child:not(:last-child)
       margin-left -4px
