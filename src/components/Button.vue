@@ -5,6 +5,7 @@
     functional: true,
     props: {
       action: Function,
+      actionWithModifier: Function,
       label: String,
       icon: String,
       iconColor: String,
@@ -58,7 +59,27 @@
         },
         on: {
           click(event) {
+
+            // Check for ctrl+click
+            if (
+              p.actionWithModifier
+              && event.getModifierState("Control")
+              && !event.getModifierState("Shift")
+              && !event.getModifierState("Alt")
+              && !event.getModifierState("Meta")
+              && !event.getModifierState("Meta")
+              && !event.getModifierState("Hyper")
+              && !event.getModifierState("OS")
+              && !event.getModifierState("Super")
+              && !event.getModifierState("Win")
+            ) {
+              p.actionWithModifier(event);
+              return;
+            }
+
+            // Check if normal click handler is present
             if (p.action) p.action(event);
+
           },
           pointerdown(event) {
             event.preventDefault();

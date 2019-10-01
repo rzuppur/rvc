@@ -58,6 +58,7 @@
 
     .buttons
       r-button(:action="test") @click test
+      r-button(:action="test" :actionWithModifier="test2") @click.ctrl test
       r-button(small) Small
       r-button(small icon="arrow left") Small icon
       r-button(small icon="close")
@@ -114,7 +115,11 @@
     methods: {
       test() {
         // eslint-disable-next-line no-alert
-        window.alert("Test");
+        window.alert("Click test");
+      },
+      test2() {
+        // eslint-disable-next-line no-alert
+        window.alert("Ctrl+click test");
       },
     },
   };
