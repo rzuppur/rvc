@@ -98,6 +98,11 @@
     data() {
       return { showTooltipButton: true };
     },
+    computed: {
+      icons() {
+        return Object.keys(ICONS);
+      },
+    },
     mounted() {
       this._i = setInterval(() => {
         this.showTooltipButton = !this.showTooltipButton;
@@ -105,11 +110,6 @@
     },
     beforeDestroy() {
       clearInterval(this._i);
-    },
-    computed: {
-      icons() {
-        return Object.keys(ICONS);
-      },
     },
     methods: {
       test() {
