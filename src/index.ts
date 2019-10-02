@@ -1,3 +1,4 @@
+// @ts-ignore
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { VueConstructor, PluginObject, Component } from "vue";
 import Button from "./components/Button.vue";

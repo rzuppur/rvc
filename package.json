@@ -1,6 +1,6 @@
 {
   "name": "@rzuppur/rvc",
-  "version": "0.22.1",
+  "version": "0.22.2",
   "author": "Reino Zuppur",
   "scripts": {
     "serve": "vue-cli-service serve",

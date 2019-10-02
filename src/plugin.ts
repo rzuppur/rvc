@@ -3,6 +3,7 @@
  *   This file is plugin stub for main.ts
  */
 
+// @ts-ignore
 // eslint-disable-next-line import/no-extraneous-dependencies
 import Vue, { VueConstructor } from "vue";
 import plugin from "./index";
