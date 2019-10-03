@@ -54,7 +54,7 @@
 </script>
 
 <style lang="stylus" scoped>
-  @import "../shared.styl"
+  @import "../styles/shared.styl"
 
   .toast-list
     position fixed

@@ -93,7 +93,7 @@
 
 <script>
 
-  import ICONS from "./icons";
+  import ICONS from "../src/icons";
 
   export default {
     data() {
@@ -126,7 +126,7 @@
 </script>
 
 <style lang="stylus">
-  @import "./shared.styl"
+  @import "../src/styles/shared.styl"
   @import url('https://rsms.me/inter/inter.css');
 
   body

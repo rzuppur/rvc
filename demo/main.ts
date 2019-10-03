@@ -1,7 +1,9 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-import Vue from "vue";
-import App from "../demo/App.vue";
-import "./plugin";
+import Vue, { VueConstructor } from "vue";
+import App from "./App.vue";
+import plugin from "../src/index";
+
+Vue.use<VueConstructor>(plugin);
 
 Vue.config.productionTip = false;
 

@@ -58,7 +58,7 @@
 
 
 <style lang="stylus">
-  @import "../shared.styl"
+  @import "../styles/shared.styl"
 
   .r-icon
     height 24px

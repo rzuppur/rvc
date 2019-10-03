@@ -92,7 +92,7 @@
 </script>
 
 <style lang="stylus">
-  @import "../shared.styl"
+  @import "../styles/shared.styl"
 
   @keyframes spinAround
     from
