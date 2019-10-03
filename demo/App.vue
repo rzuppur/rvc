@@ -13,8 +13,9 @@
 
       section
 
-        .title-4 {{ darkMode ? "Dark theme" : "Light theme" }} #{""}
-          r-button(small gray borderless :action="toggleTheme" :icon="`brightness ${darkMode ? 'dark' : 'bright'}`") Toggle theme
+        .title-5 {{ darkMode ? "Dark theme" : "Light theme" }} #{""}
+
+        r-button(:action="toggleTheme" :icon="`brightness ${darkMode ? 'dark' : 'bright'}`") Toggle theme
 
       section
 
@@ -135,10 +136,7 @@
   section
     padding 20px
 
-    .title-4
-      margin 0
-      font-weight $font-weight-sans-bold
-
+    .title-4,
     .title-5
       font-weight $font-weight-sans-bold
 
