@@ -1,93 +1,89 @@
 <template lang="pug">
 
-  mixin tooltip()
-    h3 Tooltip
-    .buttons
-      r-button(v-rtip="'Default tooltip - very long text test'") Default
-      r-button(v-rtip.bottom="'Position bottom'") Bottom
-      r-button(v-rtip.left="'Position left'") Left
-      r-button(v-rtip.right="'Position right'") Right
-      r-button(v-rtip="null") Null
-      r-button(v-if="showTooltipButton" v-rtip="'Tooltip'") Element removed
-      div(v-show="showTooltipButton")
-        r-button(v-rtip="'Tooltip'") Element hidden
-
-
-  mixin icons()
-
-    h3 Icons
-
-    .icons
-      r-icon.gray(v-for="icon in icons.concat(['missing'])" :icon="icon" v-rtip="icon")
-
-
-  mixin buttons()
-
-    h3 Buttons
-
-    .buttons
-      r-button Normal
-      r-button(primary) Primary
-      r-button(borderless) Borderless
-      r-button(gray borderless) Gray borderless
-      r-button(gray) Gray
-
-    .buttons
-      r-button(disabled) Normal
-      r-button(primary disabled) Primary
-      r-button(borderless disabled) Borderless
-      r-button(gray borderless disabled) Gray borderless
-      r-button(gray disabled) Gray
-
-    .buttons
-      r-button(loading)
-      r-button(primary loading)
-      r-button(borderless loading)
-      r-button(gray borderless loading)
-      r-button(gray loading)
-
-    .buttons
-      r-button(icon="arrow left") Icon
-      r-button(primary icon="add") Icon
-      r-button(borderless icon="close" icon-color="red") Icon
-      r-button(gray borderless icon="edit" icon-color="blue") Icon
-      r-button(gray icon="check" icon-color="green") Icon
-
-      r-button(icon="add image")
-      r-button(borderless icon="eye visible")
-
-    .buttons
-      r-button(:action="test") @click test
-      r-button(:action="test" :actionWithModifier="test2") @click.ctrl test
-      r-button(small) Small
-      r-button(small icon="arrow left") Small icon
-      r-button(small icon="close")
-      r-button(small borderless icon="edit")
-
-  mixin display()
-    +tooltip()
-    +icons()
-    +buttons()
-
   #app
 
     section
+      h1 RVC Demo
+      p
+        a(href="https://github.com/rzuppur/rvc/blob/master/demo/App.vue" target="_blank") View page source
+        br
+        a(href="https://www.npmjs.com/package/@rzuppur/rvc" target="_blank") @rzuppur/rvc
 
-      h1 Light
-      +display()
+    div(:class="{ darkMode }")
 
-    section.darkMode
+      section
 
-      h1 Dark
-      +display()
+        h1 {{ darkMode ? "Dark theme" : "Light theme" }} #{""}
+          r-button(small gray borderless :action="toggleTheme" icon="brightness bright") Toggle theme
 
-    section
-      h3 Toast notification
+      section
 
-      .buttons
-        r-button(:action="() => { $notifyToast('Notification') }") Notification
-        r-button(:action="() => { $notifyToast('Short') }") Short
-        r-button(:action="() => { $notifyToast('Long text notification that should hopefully wrap to multiple lines and you should be able to read this entire text before it disappears.') }") Long notification
+        h3 Tooltip
+
+        .buttons
+          r-button(v-rtip="'Default tooltip - long text test'") Default
+          r-button(v-rtip.bottom="'Position bottom'") Bottom
+          r-button(v-rtip.left="'Position left'") Left
+          r-button(v-rtip.right="'Position right'") Right
+          r-button(v-rtip="null") Null
+
+      section
+
+        h3 Buttons
+
+        .buttons
+          r-button Normal
+          r-button(primary) Primary
+          r-button(borderless) Borderless
+          r-button(gray borderless) Gray borderless
+          r-button(gray) Gray
+
+        .buttons
+          r-button(disabled) Normal
+          r-button(primary disabled) Primary
+          r-button(borderless disabled) Borderless
+          r-button(gray borderless disabled) Gray borderless
+          r-button(gray disabled) Gray
+
+        .buttons
+          r-button(loading)
+          r-button(primary loading)
+          r-button(borderless loading)
+          r-button(gray borderless loading)
+          r-button(gray loading)
+
+        .buttons
+          r-button(icon="arrow left") Icon
+          r-button(primary icon="add") Icon
+          r-button(borderless icon="close" icon-color="red") Icon
+          r-button(gray borderless icon="edit" icon-color="blue") Icon
+          r-button(gray icon="check" icon-color="green") Icon
+
+          r-button(icon="add image")
+          r-button(borderless icon="eye visible")
+
+        .buttons
+          r-button(:action="test") @click test
+          r-button(:action="test" :actionWithModifier="test2") @click.ctrl test
+          r-button(small) Small
+          r-button(small icon="arrow left") Small icon
+          r-button(small icon="close")
+          r-button(small borderless icon="edit")
+
+      section
+        h3 Toast notification
+
+        .buttons
+          r-button(:action="() => { $notifyToast('Notification') }") Notification
+          r-button(:action="() => { $notifyToast('Short') }") Short
+          r-button(:action="() => { $notifyToast('Long text notification that should hopefully wrap to multiple lines and you should be able to read this entire text before it disappears.') }") Long notification
+
+      section
+
+        h3 Icons
+
+        .icons
+          r-icon.gray(v-for="icon in icons.concat(['missing'])" :icon="icon" v-rtip="icon")
 
 </template>
 
@@ -97,20 +93,14 @@
 
   export default {
     data() {
-      return { showTooltipButton: true };
+      return {
+        darkMode: false,
+      };
     },
     computed: {
       icons() {
         return Object.keys(ICONS);
       },
-    },
-    mounted() {
-      this._i = setInterval(() => {
-        this.showTooltipButton = !this.showTooltipButton;
-      }, 2000);
-    },
-    beforeDestroy() {
-      clearInterval(this._i);
     },
     methods: {
       test() {
@@ -120,6 +110,9 @@
       test2() {
         // eslint-disable-next-line no-alert
         window.alert("Ctrl+click test");
+      },
+      toggleTheme() {
+        this.darkMode = !this.darkMode;
       },
     },
   };
@@ -134,12 +127,12 @@
     padding 0
     font-family $font-sans
 
+  .darkMode
+    background $color-dark-background
+    color $color-darkmode-text
+
   section
     padding 20px
-
-    &.darkMode
-      background $color-dark-background
-      color $color-darkmode-text
 
     h3
       margin-bottom 10px
