@@ -3,6 +3,7 @@
 import { Component, PluginObject, VueConstructor } from "vue";
 import Button from "./components/Button.vue";
 import Icon from "./components/Icon.vue";
+import GlobalStyles from "./components/GlobalStyles.vue";
 import Toast from "./components/Toast.vue";
 import RTip from "./directives/RTip";
 
@@ -27,6 +28,7 @@ const install = (Vue: VueConstructor): void => {
   Vue.directive("rtip", RTip(Vue));
 
   let toastComponent: Component;
+  let globalStylesComponent: Component;
 
   Vue.mixin({
     mounted() {
@@ -34,6 +36,8 @@ const install = (Vue: VueConstructor): void => {
       if (!this.$parent) {
         // @ts-ignore
         toastComponent = mountComponentToRoot(Vue, this, Toast);
+        // @ts-ignore
+        globalStylesComponent = mountComponentToRoot(Vue, this, GlobalStyles);
       }
     },
   });

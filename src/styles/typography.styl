@@ -1,0 +1,84 @@
+@import "shared.styl"
+
+body
+  font-family $font-sans
+
+b,
+strong
+  font-weight $font-weight-sans-bold
+
+/*
+UTILITY
+ */
+
+.text-bold
+  font-weight $font-weight-sans-bold
+
+.text-center
+  text-align center
+
+.text-right
+  text-align right
+
+.text-quiet
+  color $color-gray-text
+
+  .darkMode &
+    color $color-darkmode-text-dim
+
+.text-error
+  color $color-red-text
+
+  .darkMode &
+    color $color-red
+
+.text-small
+  font-sans($font-size-small)
+
+/*
+P
+ */
+
+p
+  word-wrap break-word
+
+p
+  margin-bottom $font-size-normal
+  font-sans($font-size-normal)
+
+p:last-child
+  margin-bottom 0
+
+/*
+TITLES
+ */
+
+for i in (1..6)
+  .title-{i}
+    word-wrap break-word
+    margin-bottom $font-size-normal
+
+.title-1
+  font-sans($font-size-large-3)
+
+.title-2
+  font-sans($font-size-large-2)
+
+.title-3
+  font-sans($font-size-large-1)
+
+.title-4
+  font-sans($font-size-medium-2)
+
+.title-5
+  font-sans($font-size-medium-1)
+
+.title-6
+  font-sans($font-size-normal, $font-weight-sans-bold)
+
+.title-caps
+  word-wrap break-word
+  margin-bottom $font-size-normal
+  font-sans($font-size-small, $font-weight-sans-bold)
+  text-transform uppercase
+  letter-spacing 0.08em

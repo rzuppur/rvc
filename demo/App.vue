@@ -3,7 +3,7 @@
   #app
 
     section
-      h1 RVC Demo
+      h1.title-2 RVC Demo
       p
         a(href="https://github.com/rzuppur/rvc/blob/master/demo/App.vue" target="_blank") View page source
         br
@@ -13,12 +13,12 @@
 
       section
 
-        h1 {{ darkMode ? "Dark theme" : "Light theme" }} #{""}
-          r-button(small gray borderless :action="toggleTheme" icon="brightness bright") Toggle theme
+        .title-4 {{ darkMode ? "Dark theme" : "Light theme" }} #{""}
+          r-button(small gray borderless :action="toggleTheme" :icon="`brightness ${darkMode ? 'dark' : 'bright'}`") Toggle theme
 
       section
 
-        h3 Tooltip
+        .title-5 Tooltip
 
         .buttons
           r-button(v-rtip="'Default tooltip - long text test'") Default
@@ -29,7 +29,7 @@
 
       section
 
-        h3 Buttons
+        .title-5 Buttons
 
         .buttons
           r-button Normal
@@ -71,7 +71,8 @@
           r-button(small borderless icon="edit")
 
       section
-        h3 Toast notification
+
+        .title-5 Toast notification
 
         .buttons
           r-button(:action="() => { $notifyToast('Notification') }") Notification
@@ -80,7 +81,7 @@
 
       section
 
-        h3 Icons
+        .title-5 Icons
 
         .icons
           r-icon.gray(v-for="icon in icons.concat(['missing'])" :icon="icon" v-rtip="icon")
@@ -120,7 +121,7 @@
 
 <style lang="stylus">
   @import "../src/styles/shared.styl"
-  @import url('https://rsms.me/inter/inter.css');
+  //@import url('https://rsms.me/inter/inter.css');
 
   body
     margin 0
@@ -134,8 +135,12 @@
   section
     padding 20px
 
-    h3
-      margin-bottom 10px
+    .title-4
+      margin 0
+      font-weight $font-weight-sans-bold
+
+    .title-5
+      font-weight $font-weight-sans-bold
 
   .buttons
     $_buttons_margin = 10px
