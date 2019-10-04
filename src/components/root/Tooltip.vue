@@ -169,7 +169,7 @@
 
 
 <style lang="stylus" scoped>
-  @import "../styles/shared.styl"
+  @import "../../styles/shared.styl"
 
   .tooltip-enter-active
     transition opacity 100ms

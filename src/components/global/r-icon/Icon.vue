@@ -1,12 +1,6 @@
-<!--<template lang="pug" functional>
-
-  span.icon.material(:class="[ data.class, data.staticClass ]" v-html="props.iconsObject[props.icon] ? props.iconsObject[props.icon] : props.fallbackIcon")
-
-</template>-->
-
 <script>
 
-  import ICONS from "../icons";
+  import ICONS from "../../../icons";
 
   const toSvgTag = svgPath => `<svg style="width:24px;height:24px" viewBox="0 0 24 24"><path d="${svgPath}" /></svg>`;
 
@@ -58,7 +52,7 @@
 
 
 <style lang="stylus">
-  @import "../styles/shared.styl"
+  @import "../../../styles/shared.styl"
 
   .r-icon
     height 24px

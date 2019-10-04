@@ -1,6 +1,6 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { Vue, VueConstructor } from "vue/types/vue.d";
-import TooltipComponent from "../../components/Tooltip.vue";
+import TooltipComponent from "../../components/root/Tooltip.vue";
 
 export interface TooltipComponentInterface {
   show: boolean;

@@ -1,10 +1,12 @@
 // @ts-ignore
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { Component, PluginObject, VueConstructor } from "vue";
-import Button from "./components/Button.vue";
-import Icon from "./components/Icon.vue";
-import GlobalStyles from "./components/GlobalStyles.vue";
-import Toast from "./components/Toast.vue";
+import Button from "./components/global/r-button/Button.vue";
+import Icon from "./components/global/r-icon/Icon.vue";
+import Tabs from "./components/global/r-tabs/Tabs.vue";
+import Tab from "./components/global/r-tabs/r-tab/Tab.vue";
+import GlobalStyles from "./components/root/GlobalStyles.vue";
+import Toast from "./components/root/Toast.vue";
 import RTip from "./directives/RTip";
 
 declare global {

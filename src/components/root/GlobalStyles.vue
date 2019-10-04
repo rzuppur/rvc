@@ -10,7 +10,7 @@
 
 <style lang="stylus">
 
-  @import "../styles/reset.styl"
-  @import "../styles/typography.styl"
+  @import "../../styles/reset.styl"
+  @import "../../styles/typography.styl"
 
 </style>

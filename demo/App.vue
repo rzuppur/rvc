@@ -19,6 +19,10 @@
 
       section
 
+        r-tabs
+
+      section
+
         .title-5 Tooltip
 
         .buttons
