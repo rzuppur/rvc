@@ -1,27 +1,55 @@
-html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6
-  margin 0
-  padding 0
+*,
+*::before,
+*::after
+  box-sizing border-box
 
-ul
+ul[class],
+ol[class]
+  padding 0
   list-style none
 
-button, input, select, textarea
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd
   margin 0
 
-html
-  box-sizing border-box
-  text-rendering optimizeLegibility
+body
+  min-height 100vh
+  scroll-behavior smooth
   -webkit-text-size-adjust 100%
   text-size-adjust 100%
   font-kerning normal
   background #fff
 
-h1, h2, h3, h4, h5, h6
+a:not([class])
+  text-decoration-skip-ink auto
+
+img
+  max-width 100%
+  display block
+
+input,
+button,
+textarea,
+select
+  font inherit
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
   font-weight inherit
   font-size inherit
-
-*
-  &,
-  &::before,
-  &::after
-    box-sizing inherit
