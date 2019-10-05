@@ -24,6 +24,7 @@ Every property listed is optional. If button contains no childs but has an icon,
     loading: boolean  // Shows a loading spinner and disables the button
     submit: boolean  // default type="button", this sets it to "submit" (for forms)
     action: function  // @click handler
+    actionWithModifier: function  // @click.ctrl.exact handler
     label: string  // aria-label, for icon only buttons
     icon: string  // One of valid r-icon icons
     icon-color: string  // ("light-gray" | "green" | "red" | "blue" | "white")
@@ -45,6 +46,8 @@ From any component, call `this.$notifyToast("message");`.
 Add class `darkMode` to any parent element.
 ### Typography
 Headings are all reset to normal text. Use `title-N` for visually styling them.
+
+Default font stack is `"Inter", BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"` but Inter is not imported, if you want to use it instead of OS default fonts you have to add `@import url('https://rsms.me/inter/inter.css')` to your css.
 
 Available classes:
 ```

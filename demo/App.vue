@@ -163,7 +163,7 @@
 </script>
 
 <style lang="stylus">
-  //@import url('https://rsms.me/inter/inter.css');
+  @import url('https://rsms.me/inter/inter.css');
 </style>
 
 <style lang="stylus" scoped>
