@@ -36,6 +36,7 @@
     "babel-eslint": "^10.0.3",
     "eslint": "^6.5.0",
     "eslint-plugin-vue": "^5.2.3",
+    "jstransformer-markdown-it": "^2.1.0",
     "pug-cli": "^1.0.0-alpha6",
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2",

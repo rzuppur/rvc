@@ -37,18 +37,23 @@ UTILITY
   font-sans($font-size-small)
 
 /*
+DEFAULT BOTTOM MARGINS
+ */
+
+p,
+pre
+  margin-bottom $font-size-normal
+
+  &:last-child
+    margin-bottom 0
+
+/*
 P
  */
 
 p
   word-wrap break-word
-
-p
-  margin-bottom $font-size-normal
   font-sans($font-size-normal)
-
-p:last-child
-  margin-bottom 0
 
 /*
 TITLES
@@ -83,3 +88,15 @@ for i in (1..6)
   font-sans($font-size-small, $font-weight-sans-bold)
   text-transform uppercase
   letter-spacing 0.08em
+
+hr
+  height 2px
+  border none
+  outline none
+  margin $font-size-normal 0
+  padding 0
+  box-shadow none
+  background $color-light-gray-background
+
+  .darkMode &
+    background alpha(#fff, .1)

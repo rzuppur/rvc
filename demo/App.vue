@@ -13,17 +13,27 @@
 
       section
 
-        r-button(:action="toggleTheme" :icon="`brightness ${darkMode ? 'dark' : 'bright'}`") Toggle theme
+        r-button.space-bottom-medium(:action="toggleTheme" :icon="`brightness ${darkMode ? 'dark' : 'bright'}`") Toggle theme
+        div(v-pre)
+          include:markdown-it ../docs/dark.md
 
       section
 
         r-tabs
 
           r-tab(name="Icons")
+            div(v-pre)
+              include:markdown-it ../docs/icon.md
+            hr
+
             .icons
               r-icon.gray(v-for="icon in icons.concat(['missing'])" :icon="icon" v-rtip="icon")
 
           r-tab(name="Tooltip")
+            div(v-pre)
+              include:markdown-it ../docs/tooltip.md
+            hr
+
             .buttons
               r-button(v-rtip="'Default tooltip - long text test'") Default
               r-button(v-rtip.bottom="'Position bottom'") Bottom
@@ -32,6 +42,10 @@
               r-button(v-rtip="null") Null
 
           r-tab(name="Buttons")
+            div(v-pre)
+              include:markdown-it ../docs/button.md
+            hr
+
             .buttons
               r-button Normal
               r-button(primary) Primary
@@ -72,12 +86,20 @@
               r-button(small borderless icon="edit")
 
           r-tab(name="Toast notification")
+            div(v-pre)
+              include:markdown-it ../docs/toast.md
+            hr
+
             .buttons
               r-button(:action="() => { $notifyToast('Notification') }") Notification
               r-button(:action="() => { $notifyToast('Short') }") Short
               r-button(:action="() => { $notifyToast('Long text notification that should hopefully wrap to multiple lines and you should be able to read this entire text before it disappears.') }") Long notification
 
           r-tab(name="Typography")
+            div(v-pre)
+              include:markdown-it ../docs/typo.md
+            hr
+
             .text-bold text-bold
             .text-quiet text-quiet
             .text-center text-center
@@ -141,13 +163,11 @@
 </script>
 
 <style lang="stylus">
-  @import "../src/styles/shared.styl"
   //@import url('https://rsms.me/inter/inter.css');
+</style>
 
-  body
-    margin 0
-    padding 0
-    font-family $font-sans
+<style lang="stylus" scoped>
+  @import "../src/styles/shared.styl"
 
   .darkMode
     background $color-dark-background
@@ -182,5 +202,23 @@
     .r-icon
       margin-right 10px
       margin-bottom 10px
+
+  code
+    background alpha(#999, 0.2)
+    border-radius $border-radius
+    padding 4px
+    font-size $font-size-small
+
+  pre code
+    background none
+    padding 0
+
+  pre
+    background alpha(#999, 0.2)
+    padding 10px
+    border-radius $border-radius
+
+  hr
+    margin $font-size-normal*2px 0
 
 </style>
