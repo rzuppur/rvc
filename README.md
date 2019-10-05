@@ -4,7 +4,6 @@
 
 <br>
 
-
 ### Tooltip
 Tooltip directive `v-rtip`. Supports top (default), bottom, left and right alignment: `v-rtip.bottom`, `v-rtip.left`, `v-rtip.right`.
 ```html
@@ -12,10 +11,7 @@ Tooltip directive `v-rtip`. Supports top (default), bottom, left and right align
   v-rtip="'Tooltip text'"
 ></div>
 ```
-
-
 ### Button
-
 Every property listed is optional. If button contains no childs but has an icon, it will be shown as an icon button (width equal to height).
 ```html
   <r-button
@@ -35,8 +31,6 @@ Every property listed is optional. If button contains no childs but has an icon,
     {{ text }}
   </r-button>
 ```
-
-    
 ### Icon
 Material or modified material icons as 24x24px svg.
 ```html
@@ -45,23 +39,15 @@ Material or modified material icons as 24x24px svg.
     icon-color: string  // ("gray" | "light-gray" | "green" | "red" | "blue" | "white")
   />
 ```
-
-
 ### Toast notification
 From any component, call `this.$notifyToast("message");`.
-
-
-
-### Night mode
+### Dark mode
 Add class `darkMode` to any parent element.
-
-
-
 <br/><br/>
 
 ## Usage
 
-### Install 
+### Install
 `yarn add @rzuppur/rvc` or `npm install --save @rzuppur/rvc`
 
 #### **`src/main.js`**

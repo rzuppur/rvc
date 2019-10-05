@@ -5,6 +5,7 @@
   "scripts": {
     "demo": "vue-cli-service demo App.vue",
     "demo:build": "vue-cli-service demo --mode build App.vue",
+    "docs:build": "pug -p docs < README.pug > README.md",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "prepublish": "vue-cli-service build",
@@ -35,6 +36,7 @@
     "babel-eslint": "^10.0.3",
     "eslint": "^6.5.0",
     "eslint-plugin-vue": "^5.2.3",
+    "pug-cli": "^1.0.0-alpha6",
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2",
     "typescript": "^3.6.3",
