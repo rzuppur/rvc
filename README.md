@@ -43,6 +43,25 @@ Material or modified material icons as 24x24px svg.
 From any component, call `this.$notifyToast("message");`.
 ### Dark mode
 Add class `darkMode` to any parent element.
+### Typography
+Headings are all reset to normal text. Use `title-N` for visually styling them.
+
+Available classes:
+```
+text-bold
+text-quiet
+text-center
+text-right
+text-error
+text-small
+title-1
+title-2
+title-3
+title-4
+title-5
+title-6
+title-caps
+```
 <br/><br/>
 
 ## Usage
