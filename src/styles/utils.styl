@@ -1,5 +1,9 @@
 @import "shared.styl"
 
+/*
+SPACING
+ */
+
 for direction in "top" "bottom"
   .space-{direction}-tiny
     margin-{direction} ($font-size-normal / 4px)
@@ -12,3 +16,10 @@ for direction in "top" "bottom"
 
   .space-{direction}-large
     margin-{direction} ($font-size-normal * 2px)
+
+.margin-vertical-none
+  margin-top 0 !important
+  margin-bottom 0 !important
+
+.margin-none
+  margin 0 !important
