@@ -133,11 +133,9 @@
   import ICONS from "../src/icons";
 
   export default {
-    data() {
-      return {
-        darkMode: false,
-      };
-    },
+    data: () => ({
+      darkMode: false,
+    }),
     computed: {
       icons() {
         return Object.keys(ICONS);

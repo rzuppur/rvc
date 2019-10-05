@@ -14,21 +14,19 @@
 
   export default {
     name: "Tooltip",
-    data() {
-      return {
-        visible: false,
-        show: false,
-        el: null,
-        text: "",
-        tooltip_x: 0,
-        tooltip_y: 0,
-        arrow_x: 0,
-        arrow_y: 0,
-        width: 0,
-        height: 0,
-        location: "top",
-      };
-    },
+    data: () => ({
+      visible: false,
+      show: false,
+      el: null,
+      text: "",
+      tooltip_x: 0,
+      tooltip_y: 0,
+      arrow_x: 0,
+      arrow_y: 0,
+      width: 0,
+      height: 0,
+      location: "top",
+    }),
     computed: {
       tooltipStyle() {
         return {

@@ -12,11 +12,9 @@
 
   export default {
     name: "Toast",
-    data() {
-      return {
-        queue: [],
-      };
-    },
+    data: () => ({
+      queue: [],
+    }),
     watch: {
       queue: {
         handler(val) {
