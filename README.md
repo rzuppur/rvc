@@ -12,7 +12,6 @@ Tooltip directive `v-rtip`. Supports top (default), bottom, left and right align
   v-rtip="'Tooltip text'"
 ></div>
 ```
-![](https://i.imgur.com/w71gTSe.png)
 
 
 ### Button
@@ -37,49 +36,6 @@ Every property listed is optional. If button contains no childs but has an icon,
   </r-button>
 ```
 
-![](https://i.imgur.com/22VRHdp.png)
-
-<details><summary>Example usage (<a href="https://pugjs.org">Pug template</a>)</summary>
-<pre>
-.buttons
-  r-button Normal
-  r-button(primary) Primary
-  r-button(borderless) Borderless
-  r-button(gray borderless) Gray borderless
-  r-button(gray) Gray
-&nbsp;
-.buttons
-  r-button(disabled) Normal
-  r-button(primary disabled) Primary
-  r-button(borderless disabled) Borderless
-  r-button(gray borderless disabled) Gray borderless
-  r-button(gray disabled) Gray
-&nbsp;
-.buttons
-  r-button(loading)
-  r-button(primary loading)
-  r-button(borderless loading)
-  r-button(gray borderless loading)
-  r-button(gray loading)
-&nbsp;
-.buttons
-  r-button(icon="arrow left") Icon
-  r-button(primary icon="add") Icon
-  r-button(borderless icon="close" icon-color="red") Icon
-  r-button(gray borderless icon="edit" icon-color="blue") Icon
-  r-button(gray icon="check" icon-color="green") Icon
-  &nbsp;
-  r-button(icon="add image")
-  r-button(borderless icon="eye visible")
-&nbsp;
-.buttons
-  r-button(:action="test") @click test
-  r-button(small) Small
-  r-button(small icon="arrow left") Small icon
-  r-button(small icon="close")
-  r-button(small borderless icon="edit")
-</pre>
-</details>
     
 ### Icon
 Material or modified material icons as 24x24px svg.
@@ -89,8 +45,6 @@ Material or modified material icons as 24x24px svg.
     icon-color: string  // ("gray" | "light-gray" | "green" | "red" | "blue" | "white")
   />
 ```
-
-![](https://i.imgur.com/7BHFyiu.png)
 
 
 ### Toast notification
