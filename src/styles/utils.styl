@@ -1,0 +1,14 @@
+@import "shared.styl"
+
+for direction in "top" "bottom"
+  .space-{direction}-tiny
+    margin-{direction} ($font-size-normal / 4px)
+
+  .space-{direction}-small
+    margin-{direction} ($font-size-normal / 2px)
+
+  .space-{direction}-medium
+    margin-{direction} $font-size-normal
+
+  .space-{direction}-large
+    margin-{direction} ($font-size-normal * 2px)

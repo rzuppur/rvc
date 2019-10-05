@@ -12,5 +12,6 @@
 
   @import "../../styles/reset.styl"
   @import "../../styles/typography.styl"
+  @import "../../styles/utils.styl"
 
 </style>
