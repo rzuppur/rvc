@@ -27,6 +27,8 @@ const mountComponentToRoot = (vue: VueConstructor, parent: any, componentConstru
 const install = (Vue: VueConstructor): void => {
   Vue.component("r-button", Button);
   Vue.component("r-icon", Icon);
+  Vue.component("r-tabs", Tabs);
+  Vue.component("r-tab", Tab);
   Vue.directive("rtip", RTip(Vue));
 
   let toastComponent: Component;

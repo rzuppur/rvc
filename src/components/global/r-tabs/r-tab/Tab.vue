@@ -1,7 +1,8 @@
 <template lang="pug">
 
-  .tab
-    p TAB
+  .tab-content(v-if="isActive")
+
+    slot
 
 </template>
 
@@ -14,6 +15,9 @@
         required: true,
       },
     },
+    data: () => ({
+      isActive: false,
+    }),
   };
 </script>
 
