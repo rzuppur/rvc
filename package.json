@@ -1,15 +1,15 @@
 {
   "name": "@rzuppur/rvc",
-  "version": "0.24.0",
+  "version": "0.25.0",
   "author": "Reino Zuppur",
   "scripts": {
     "demo": "vue-cli-service demo App.vue",
     "demo:build": "vue-cli-service demo --mode build App.vue",
     "docs:build": "pug -p docs < README.pug > README.md",
-    "build": "vue-cli-service build",
+    "build": "yarn run docs:build && vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "prepublish": "vue-cli-service build",
-    "start": "vue-cli-service demo"
+    "prepublish": "yarn run build",
+    "start": "yarn run demo"
   },
   "main": "dist/rvc.common.js",
   "module": "dist/rvc.esm.js",
@@ -50,7 +50,8 @@
   "sideeffects": false,
   "types": "types/index.d.ts",
   "directories": {
-    "doc": "docs"
+    "doc": "docs",
+    "example": "demo"
   },
   "repository": {
     "type": "git",
