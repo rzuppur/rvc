@@ -1,6 +1,8 @@
 # Reino Vue Components
 
-[View demo](https://rvc-demo.netlify.com/)
+[View demo & docs](https://rvc-demo.netlify.com/)
+<br>
+[Install](#install)
 
 <br>
 
@@ -65,20 +67,31 @@ title-5
 title-6
 title-caps
 ```
+### Tabs
+Basic tabs component.
+```html
+<r-tabs/>
+  <r-tab
+    name: string  // REQUIRED
+  >
+    {{ tab content }}
+  </r-tab>
+  <r-tab name="tab_name_2"></r-tab>
+  <r-tab name="tab_name_3"></r-tab>
+</r-tabs>
+```
 <br/><br/>
 
 ## Usage
-
 ### Install
 `yarn add @rzuppur/rvc` or `npm install --save @rzuppur/rvc`
 
-#### **`src/main.js`**
+
+**src/main.js**
 ```javascript
 import rvc from "@rzuppur/rvc";
 Vue.use(rvc);
 ```
-
-
 ### Project setup
 ```
 yarn install

@@ -3,15 +3,28 @@
   #app
 
     section
-      h1.title-2 RVC Demo
+      h1.title-2.space-bottom-small RVC
+      h2.title-5 Vue UI Components Library
+
       p
         a(href="https://github.com/rzuppur/rvc/blob/master/demo/App.vue" target="_blank") View page source
         br
-        a(href="https://www.npmjs.com/package/@rzuppur/rvc" target="_blank") @rzuppur/rvc
+        a(href="https://github.com/rzuppur/rvc" target="_blank") GitHub
+        br
+        a(href="https://www.npmjs.com/package/@rzuppur/rvc" target="_blank") NPM
+
+    section
+
+      h2.title-5.text-bold Install
+
+      div(v-pre)
+        include:markdown-it ../docs/usage.md
 
     div(:class="{ darkMode }")
 
       section
+
+        h2.title-5.text-bold Demo
 
         r-button.space-bottom-medium(:action="toggleTheme" :icon="`brightness ${darkMode ? 'dark' : 'bright'}`") Toggle theme
         div(v-pre)
@@ -22,17 +35,15 @@
         r-tabs
 
           r-tab(name="Icons")
-            div(v-pre)
+            .space-bottom-medium(v-pre)
               include:markdown-it ../docs/icon.md
-            hr
 
             .icons
               r-icon.gray(v-for="icon in icons.concat(['missing'])" :icon="icon" v-rtip="icon")
 
           r-tab(name="Tooltip")
-            div(v-pre)
+            .space-bottom-medium(v-pre)
               include:markdown-it ../docs/tooltip.md
-            hr
 
             .buttons
               r-button(v-rtip="'Default tooltip - long text test'") Default
@@ -42,9 +53,8 @@
               r-button(v-rtip="null") Null
 
           r-tab(name="Buttons")
-            div(v-pre)
+            .space-bottom-medium(v-pre)
               include:markdown-it ../docs/button.md
-            hr
 
             .buttons
               r-button Normal
@@ -86,9 +96,8 @@
               r-button(small borderless icon="edit")
 
           r-tab(name="Toast notification")
-            div(v-pre)
+            .space-bottom-medium(v-pre)
               include:markdown-it ../docs/toast.md
-            hr
 
             .buttons
               r-button(:action="() => { $notifyToast('Notification') }") Notification
@@ -96,9 +105,8 @@
               r-button(:action="() => { $notifyToast('Long text notification that should hopefully wrap to multiple lines and you should be able to read this entire text before it disappears.') }") Long notification
 
           r-tab(name="Typography")
-            div(v-pre)
+            .space-bottom-medium(v-pre)
               include:markdown-it ../docs/typo.md
-            hr
 
             .text-bold text-bold
             .text-quiet text-quiet
@@ -130,6 +138,16 @@
             .title-caps title-caps
             p The component system is another important concept in Vue, because it’s an abstraction that allows us to build large-scale applications composed of small, self-contained, and often reusable components. If we think about it, almost any type of application interface can be abstracted into a tree of components.
 
+          r-tab(name="Tabs")
+            .space-bottom-medium(v-pre)
+              include:markdown-it ../docs/tab.md
+            r-tabs
+              r-tab(name="Tab 1")
+                p Tab 1 content
+              r-tab(name="Tab 2")
+                p Tab 2 content
+
+        hr
 
 </template>
 
@@ -176,10 +194,6 @@
   section
     padding 20px
 
-    .title-4,
-    .title-5
-      font-weight $font-weight-sans-bold
-
   .buttons
     $_buttons_margin = 10px
 
@@ -217,6 +231,7 @@
     background alpha(#999, 0.2)
     padding 10px
     border-radius $border-radius
+    overflow-x auto
 
   hr
     margin $font-size-normal*2px 0
