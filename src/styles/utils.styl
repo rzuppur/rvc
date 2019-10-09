@@ -6,20 +6,29 @@ SPACING
 
 for direction in "top" "bottom"
   .space-{direction}-tiny
-    margin-{direction} ($font-size-normal / 4px)
+    margin-{direction} $spacing-tiny
 
   .space-{direction}-small
-    margin-{direction} ($font-size-normal / 2px)
+    margin-{direction} $spacing-small
 
   .space-{direction}-medium
-    margin-{direction} $font-size-normal
+    margin-{direction} $spacing-medium
 
   .space-{direction}-large
-    margin-{direction} ($font-size-normal * 2px)
+    margin-{direction} $spacing-large
+
+  .space-{direction}-huge
+    margin-{direction} $spacing-huge
+
+
 
 .margin-vertical-none
   margin-top 0 !important
   margin-bottom 0 !important
+
+.margin-horizontal-none
+  margin-left 0 !important
+  margin-right 0 !important
 
 .margin-none
   margin 0 !important

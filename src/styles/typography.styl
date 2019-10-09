@@ -2,7 +2,7 @@
 
 body
   font-family $font-sans
-  line-height $line-height-base
+  line-height $_line-height-base
 
 b,
 strong
@@ -15,7 +15,7 @@ DEFAULT BOTTOM MARGINS
 
 p,
 pre
-  margin-bottom $font-size-normal
+  margin-bottom $spacing-medium
 
   &:last-child
     margin-bottom 0
@@ -35,32 +35,32 @@ TITLES
 for i in (1..6)
   .title-{i}
     word-wrap break-word
-    margin-bottom $font-size-normal
+    margin-bottom $spacing-medium
 
 .title-1
-  font-sans($font-size-large-3)
+  font-sans($font-size-large-5)
 
 .title-2
-  font-sans($font-size-large-2)
+  font-sans($font-size-large-4)
 
 .title-3
-  font-sans($font-size-large-1)
+  font-sans($font-size-large-3)
 
 .title-4
-  font-sans($font-size-medium-2)
+  font-sans($font-size-large-2)
 
 .title-5
-  font-sans($font-size-medium-1)
+  font-sans($font-size-large-1)
 
 .title-6
   font-sans($font-size-normal, $font-weight-sans-bold)
 
 .title-caps
   word-wrap break-word
-  margin-bottom $font-size-normal
+  margin-bottom $spacing-medium
   font-sans($font-size-small, $font-weight-sans-bold)
   text-transform uppercase
-  letter-spacing 0.08em
+  letter-spacing 0.1em
 
 
 /*

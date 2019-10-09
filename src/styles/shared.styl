@@ -44,27 +44,44 @@ $font-weight-sans-regular = 400
 $font-weight-sans-bold = 600
 $font-weight-sans-black = 900
 
-$font-size-small = 13px
-$font-size-normal = 16px
-$font-size-medium-1 = 20px
-$font-size-medium-2 = 25px
-$font-size-large-1 = 31px
-$font-size-large-2 = 39px
-$font-size-large-3 = 48px
+$_line-height-base = 1.5
+$_font-size-base = 16px
+$_font-sizes-ratio = 1.333
 
-$line-height-base = 1.5
+font-size-ratio(level)
+  max(13px, round($_font-size-base * ($_font-sizes-ratio ** level)))
+
+$font-size-small = font-size-ratio(-1)
+$font-size-normal = font-size-ratio(0)
+$font-size-large-1 = font-size-ratio(1)
+$font-size-large-2 = font-size-ratio(2)
+$font-size-large-3 = font-size-ratio(3)
+$font-size-large-4 = font-size-ratio(4)
+$font-size-large-5 = font-size-ratio(5)
 
 tracking(fontSize)
   letter-spacing round(-0.017+(0.202*(2.71828**(-0.175*fontSize))), 3)em
 
 lineHeightRounded(fontSize, lineHeight)
-  line-height round(lineHeight*fontSize)px
+  line-height round(lineHeight * fontSize)px
 
 leading(fontSize)
-  lineHeightRounded(fontSize, $line-height-base - (fontSize - $font-size-normal) * .01)
+  lineHeightRounded(fontSize, $_line-height-base - (fontSize - $font-size-normal) * .009)
 
 font-sans(size, weight=$font-weight-sans-regular)
   font-size size*1px
   tracking(size)
   leading(size)
   font-weight weight
+
+/*
+SPACING
+ */
+
+$_spacing-base = round($_font-size-base * $_line-height-base)
+
+$spacing-tiny = round($_spacing-base / 4px)
+$spacing-small = round($_spacing-base / 2px)
+$spacing-medium = $_spacing-base
+$spacing-large = round($_spacing-base * 2px)
+$spacing-huge = round($_spacing-base * 4px)

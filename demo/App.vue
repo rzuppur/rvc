@@ -3,7 +3,7 @@
   #app
 
     section
-      h1.title-2.space-bottom-small RVC
+      h1.title-3.space-bottom-small RVC
       h2.title-5 Vue UI Components Library
 
       p
@@ -108,13 +108,6 @@
             .space-bottom-medium(v-pre)
               include:markdown-it ../docs/typo.md
 
-            .text-bold text-bold
-            .text-quiet text-quiet
-            .text-center text-center
-            .text-right text-right
-            .text-error text-error
-            .text-small text-small
-
             .title-1 title-1
             p The official guide assumes intermediate level knowledge of HTML, CSS, and JavaScript. If you are totally new to frontend development, it might not be the best idea to jump right into a framework as your first step - grasp the basics then come back! Prior experience with other frameworks helps, but is not required.
 
@@ -137,6 +130,13 @@
 
             .title-caps title-caps
             p The component system is another important concept in Vue, because it’s an abstraction that allows us to build large-scale applications composed of small, self-contained, and often reusable components. If we think about it, almost any type of application interface can be abstracted into a tree of components.
+
+            .text-bold text-bold
+            .text-quiet text-quiet
+            .text-center text-center
+            .text-right text-right
+            .text-error text-error
+            .text-small text-small
 
           r-tab(name="Tabs")
             .space-bottom-medium(v-pre)
