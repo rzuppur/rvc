@@ -49,27 +49,33 @@ Material or modified material icons as 24x24px svg.
 From any component, call `this.$notifyToast("message");`.
 ### Dark mode
 Add class `darkMode` to any parent element.
+### Containers
+Container sizes: `r-container-tiny`, `r-container-small`, `r-container-medium`, `r-container-large`, `r-container-huge`, `r-container-maximum`
+
+For basic content container use class `r-container` and `r-container-{size}`.
+
+For columns, use `r-container-row` on parent and if you want your row to have a maximum width add `r-container-{size}`.
+Use `r-container-column` for columns and add `r-container-{size}` to limit column size.
+
+Add `r-columns-mobile-{small|medium|large}` to `r-container-row` to specify the breakpoint when columns should switch to block layout.
+
+
+```html
+<div class="r-container r-container-{tiny|small|medium|large|huge|maximum}"></div>
+
+<div class="r-container-row r-container-{tiny|small|medium|large|huge|maximum} r-columns-mobile-{small|medium|large}">
+  <div class="r-container-column r-container-{tiny|small|medium|large|huge|maximum}"></div>
+  <div class="r-container-column r-container-{tiny|small|medium|large|huge|maximum}"></div>
+  <div class="r-container-column r-container-{tiny|small|medium|large|huge|maximum}"></div>
+</div>
+```
 ### Typography
 Headings are all reset to normal text. Use `title-N` for visually styling them.
 
 Default font stack is `"Inter", BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"` but Inter is not imported, if you want to use it instead of OS default fonts you have to add `@import url('https://rsms.me/inter/inter.css')` to your css.
 
 Available classes:
-```
-text-bold
-text-quiet
-text-center
-text-right
-text-error
-text-small
-title-1
-title-2
-title-3
-title-4
-title-5
-title-6
-title-caps
-```
+`text-bold`, `text-quiet`, `text-center`, `text-right`, `text-error`, `text-small`, `title-1`, `title-2`, `title-3`, `title-4`, `title-5`, `title-6`, `title-caps`
 ### Tabs
 Basic tabs component.
 ```html
@@ -89,10 +95,10 @@ Basic tabs component.
 ### Install
 `yarn add @rzuppur/rvc` or `npm install --save @rzuppur/rvc`
 
-
-**src/main.js**
 ```javascript
+import Vue from "vue";
 import rvc from "@rzuppur/rvc";
+
 Vue.use(rvc);
 ```
 ### Project setup

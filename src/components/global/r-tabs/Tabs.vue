@@ -1,7 +1,7 @@
 <template lang="pug">
 
   .tabs
-    .tabs-tabs.space-bottom-large
+    .tabs-tabs.space-bottom-medium
       r-button.tab(
         v-for="tab in tabs"
         :key="'tab-' + tab.name"

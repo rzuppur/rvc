@@ -2,152 +2,181 @@
 
   #app
 
-    section
-      h1.title-3.space-bottom-small RVC
-      h2.title-5 Vue UI Components Library
+    .r-container-row.r-columns-mobile-medium
 
-      p
-        a(href="https://github.com/rzuppur/rvc/blob/master/demo/App.vue" target="_blank") View page source
-        br
-        a(href="https://github.com/rzuppur/rvc" target="_blank") GitHub
-        br
-        a(href="https://www.npmjs.com/package/@rzuppur/rvc" target="_blank") NPM
+      .r-container-column.r-container-small.sidebar
 
-    section
+        section
+          h1.title-3.space-bottom-tiny RVC
+          .title-5.margin-top-none Vue UI Components Library
 
-      h2.title-5.text-bold Install
+          p
+            a(href="https://github.com/rzuppur/rvc/blob/master/demo/App.vue" target="_blank") View page source
+            br
+            a(href="https://github.com/rzuppur/rvc" target="_blank") GitHub
+            br
+            a(href="https://www.npmjs.com/package/@rzuppur/rvc" target="_blank") NPM
 
-      div(v-pre)
-        include:markdown-it ../docs/usage.md
+          h2.title-5 Install
 
-    div(:class="{ darkMode }")
+          div(v-pre)
+            include:markdown-it ../docs/usage.md
 
-      section
+          h2.title-5 Dark mode
 
-        h2.title-5.text-bold Demo
+          .space-bottom-medium(v-pre)
+            include:markdown-it ../docs/dark.md
 
-        r-button.space-bottom-medium(:action="toggleTheme" :icon="`brightness ${darkMode ? 'dark' : 'bright'}`") Toggle theme
-        div(v-pre)
-          include:markdown-it ../docs/dark.md
+          r-button(gray borderless :action="toggleTheme" :icon="`brightness ${darkMode ? 'dark' : 'bright'}`") Toggle theme
 
-      section
+      .r-container-column.r-container-maximum(:class="{ darkMode }")
 
-        r-tabs
+        section
 
-          r-tab(name="Icons")
-            .space-bottom-medium(v-pre)
-              include:markdown-it ../docs/icon.md
+          r-tabs
 
-            .icons
-              r-icon.gray(v-for="icon in icons.concat(['missing'])" :icon="icon" v-rtip="icon")
+            r-tab(name="Icons")
+              .space-bottom-medium(v-pre)
+                include:markdown-it ../docs/icon.md
 
-          r-tab(name="Tooltip")
-            .space-bottom-medium(v-pre)
-              include:markdown-it ../docs/tooltip.md
+              .icons
+                r-icon.gray(v-for="icon in icons.concat(['missing'])" :icon="icon" v-rtip="icon")
 
-            .buttons
-              r-button(v-rtip="'Default tooltip - long text test'") Default
-              r-button(v-rtip.bottom="'Position bottom'") Bottom
-              r-button(v-rtip.left="'Position left'") Left
-              r-button(v-rtip.right="'Position right'") Right
-              r-button(v-rtip="null") Null
+            r-tab(name="Tooltip")
+              .space-bottom-medium(v-pre)
+                include:markdown-it ../docs/tooltip.md
 
-          r-tab(name="Buttons")
-            .space-bottom-medium(v-pre)
-              include:markdown-it ../docs/button.md
+              .buttons
+                r-button(v-rtip="'Default tooltip - long text test'") Default
+                r-button(v-rtip.bottom="'Position bottom'") Bottom
+                r-button(v-rtip.left="'Position left'") Left
+                r-button(v-rtip.right="'Position right'") Right
+                r-button(v-rtip="null") Null
 
-            .buttons
-              r-button Normal
-              r-button(primary) Primary
-              r-button(borderless) Borderless
-              r-button(gray borderless) Gray borderless
-              r-button(gray) Gray
+            r-tab(name="Buttons")
+              .space-bottom-medium(v-pre)
+                include:markdown-it ../docs/button.md
 
-            .buttons
-              r-button(disabled) Normal
-              r-button(primary disabled) Primary
-              r-button(borderless disabled) Borderless
-              r-button(gray borderless disabled) Gray borderless
-              r-button(gray disabled) Gray
+              .buttons
+                r-button Normal
+                r-button(primary) Primary
+                r-button(borderless) Borderless
+                r-button(gray borderless) Gray borderless
+                r-button(gray) Gray
 
-            .buttons
-              r-button(loading)
-              r-button(primary loading)
-              r-button(borderless loading)
-              r-button(gray borderless loading)
-              r-button(gray loading)
+              .buttons
+                r-button(disabled) Normal
+                r-button(primary disabled) Primary
+                r-button(borderless disabled) Borderless
+                r-button(gray borderless disabled) Gray borderless
+                r-button(gray disabled) Gray
 
-            .buttons
-              r-button(icon="arrow left") Icon
-              r-button(primary icon="add") Icon
-              r-button(borderless icon="close" icon-color="red") Icon
-              r-button(gray borderless icon="edit" icon-color="blue") Icon
-              r-button(gray icon="check" icon-color="green") Icon
+              .buttons
+                r-button(loading)
+                r-button(primary loading)
+                r-button(borderless loading)
+                r-button(gray borderless loading)
+                r-button(gray loading)
 
-              r-button(icon="add image")
-              r-button(borderless icon="eye visible")
+              .buttons
+                r-button(icon="arrow left") Icon
+                r-button(primary icon="add") Icon
+                r-button(borderless icon="close" icon-color="red") Icon
+                r-button(gray borderless icon="edit" icon-color="blue") Icon
+                r-button(gray icon="check" icon-color="green") Icon
 
-            .buttons
-              r-button(:action="test") @click test
-              r-button(:action="test" :actionWithModifier="test2") @click.ctrl test
-              r-button(small) Small
-              r-button(small icon="arrow left") Small icon
-              r-button(small icon="close")
-              r-button(small borderless icon="edit")
+                r-button(icon="add image")
+                r-button(borderless icon="eye visible")
 
-          r-tab(name="Toast notification")
-            .space-bottom-medium(v-pre)
-              include:markdown-it ../docs/toast.md
+              .buttons
+                r-button(:action="test") @click test
+                r-button(:action="test" :actionWithModifier="test2") @click.ctrl test
+                r-button(small) Small
+                r-button(small icon="arrow left") Small icon
+                r-button(small icon="close")
+                r-button(small borderless icon="edit")
 
-            .buttons
-              r-button(:action="() => { $notifyToast('Notification') }") Notification
-              r-button(:action="() => { $notifyToast('Short') }") Short
-              r-button(:action="() => { $notifyToast('Long text notification that should hopefully wrap to multiple lines and you should be able to read this entire text before it disappears.') }") Long notification
+            r-tab(name="Toast notification")
+              .space-bottom-medium(v-pre)
+                include:markdown-it ../docs/toast.md
 
-          r-tab(name="Typography")
-            .space-bottom-medium(v-pre)
-              include:markdown-it ../docs/typo.md
+              .buttons
+                r-button(:action="() => { $notifyToast('Notification') }") Notification
+                r-button(:action="() => { $notifyToast('Short') }") Short
+                r-button(:action="() => { $notifyToast('Long text notification that should hopefully wrap to multiple lines and you should be able to read this entire text before it disappears.') }") Long notification
 
-            .title-1 title-1
-            p The official guide assumes intermediate level knowledge of HTML, CSS, and JavaScript. If you are totally new to frontend development, it might not be the best idea to jump right into a framework as your first step - grasp the basics then come back! Prior experience with other frameworks helps, but is not required.
+            r-tab(name="Containers")
+              .space-bottom-medium(v-pre)
+                include:markdown-it ../docs/container.md
 
-            .title-2 title-2
-            p At the core of Vue.js is a system that enables us to declaratively render data to the DOM using straightforward template syntax
-            p Here we are encountering something new. The v-bind attribute you are seeing is called a directive. Directives are prefixed with v- to indicate that they are special attributes provided by Vue, and as you may have guessed, they apply special reactive behavior to the rendered DOM. Here, it is basically saying “keep this element’s title attribute up-to-date with the message property on the Vue instance.”
+              each size in ["tiny", "small", "medium", "large", "huge", "maximum"]
+                .space-bottom-medium.r-container(class="r-container-" + size)
+                  p.container-demo r-container r-container-#{size}
 
-            .title-3 title-3
-            p This example demonstrates that we can bind data to not only text and attributes, but also the structure of the DOM. Moreover, Vue also provides a powerful transition effect system that can automatically apply transition effects when elements are inserted/updated/removed by Vue.
-            p There are quite a few other directives, each with its own special functionality. For example, the v-for directive can be used for displaying a list of items using the data from an Array.
+              .r-container-row.r-container-huge
+                p.space-bottom-small.container-demo.flex1 r-container-row r-container-huge r-columns-mobile-large
+              .r-container-row.r-container-huge.r-columns-mobile-large
+                .r-container-column.r-container-tiny
+                  p.container-demo r-container-column r-container-tiny
+                .r-container-column.r-container-large
+                  p.container-demo  r-container-column r-container-large
+                .r-container-column.r-container-small
+                  p.container-demo r-container-column r-container-small
 
-            .title-4 title-4
-            p In the console, enter app4.todos.push({ text: 'New item' }). You should see a new item appended to the list.
+              .space-bottom-medium
 
-            .title-5 title-5
-            p Note that in this method we update the state of our app without touching the DOM - all DOM manipulations are handled by Vue, and the code you write is focused on the underlying logic.
+              .r-container-row.r-container-medium
+                p.space-bottom-small.container-demo.flex1 r-container-row r-container-medium r-columns-mobile-small
+              .r-container-row.r-container-medium.r-columns-mobile-small
+                .r-container-column.r-container-maximum
+                  p.container-demo  r-container-column r-container-maximum
+                .r-container-column.r-container-tiny
+                  p.container-demo r-container-column r-container-tiny
 
-            .title-6 title-6
-            p Vue also provides the v-model directive that makes two-way binding between form input and app state a breeze.
+            r-tab(name="Typography")
+              .space-bottom-medium(v-pre)
+                include:markdown-it ../docs/typo.md
 
-            .title-caps title-caps
-            p The component system is another important concept in Vue, because it’s an abstraction that allows us to build large-scale applications composed of small, self-contained, and often reusable components. If we think about it, almost any type of application interface can be abstracted into a tree of components.
+              .title-1 title-1
+              p The official guide assumes intermediate level knowledge of HTML, CSS, and JavaScript. If you are totally new to frontend development, it might not be the best idea to jump right into a framework as your first step - grasp the basics then come back! Prior experience with other frameworks helps, but is not required.
 
-            .text-bold text-bold
-            .text-quiet text-quiet
-            .text-center text-center
-            .text-right text-right
-            .text-error text-error
-            .text-small text-small
+              .title-2 title-2
+              p At the core of Vue.js is a system that enables us to declaratively render data to the DOM using straightforward template syntax
+              p Here we are encountering something new. The v-bind attribute you are seeing is called a directive. Directives are prefixed with v- to indicate that they are special attributes provided by Vue, and as you may have guessed, they apply special reactive behavior to the rendered DOM. Here, it is basically saying “keep this element’s title attribute up-to-date with the message property on the Vue instance.”
 
-          r-tab(name="Tabs")
-            .space-bottom-medium(v-pre)
-              include:markdown-it ../docs/tab.md
-            r-tabs
-              r-tab(name="Tab 1")
-                p Tab 1 content
-              r-tab(name="Tab 2")
-                p Tab 2 content
+              .title-3 title-3
+              p This example demonstrates that we can bind data to not only text and attributes, but also the structure of the DOM. Moreover, Vue also provides a powerful transition effect system that can automatically apply transition effects when elements are inserted/updated/removed by Vue.
+              p There are quite a few other directives, each with its own special functionality. For example, the v-for directive can be used for displaying a list of items using the data from an Array.
 
-        hr
+              .title-4 title-4
+              p In the console, enter app4.todos.push({ text: 'New item' }). You should see a new item appended to the list.
+
+              .title-5 title-5
+              p Note that in this method we update the state of our app without touching the DOM - all DOM manipulations are handled by Vue, and the code you write is focused on the underlying logic.
+
+              .title-6 title-6
+              p Vue also provides the v-model directive that makes two-way binding between form input and app state a breeze.
+
+              .title-caps title-caps
+              p The component system is another important concept in Vue, because it’s an abstraction that allows us to build large-scale applications composed of small, self-contained, and often reusable components. If we think about it, almost any type of application interface can be abstracted into a tree of components.
+
+              .text-bold text-bold
+              .text-quiet text-quiet
+              .text-center text-center
+              .text-right text-right
+              .text-error text-error
+              .text-small text-small
+
+            r-tab(name="Tabs")
+              .space-bottom-medium(v-pre)
+                include:markdown-it ../docs/tab.md
+              r-tabs
+                r-tab(name="Tab 1")
+                  p Tab 1 content
+                r-tab(name="Tab 2")
+                  p Tab 2 content
+
+          hr
 
 </template>
 
@@ -191,8 +220,12 @@
     background $color-dark-background
     color $color-darkmode-text
 
+  .sidebar
+    background $color-light-gray-background
+
   section
-    padding 20px
+    padding-top $space-medium
+    padding-bottom $space-medium
 
   .buttons
     $_buttons_margin = 10px
@@ -235,5 +268,17 @@
 
   hr
     margin $font-size-normal*2px 0
+
+
+  .tab-content
+    .r-container,
+    .r-container-row,
+    .r-container-column
+      outline 1px solid alpha(#999, 0.3)
+      font-family monospace
+
+    .container-demo
+      background alpha($color-blue, 0.15)
+
 
 </style>

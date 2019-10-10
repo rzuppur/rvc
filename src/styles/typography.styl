@@ -16,7 +16,7 @@ DEFAULT BOTTOM MARGINS
 
 p,
 pre
-  margin-bottom $spacing-medium
+  margin-bottom $space-medium
 
   &:last-child
     margin-bottom 0
@@ -32,10 +32,13 @@ p
 TITLES
  */
 
-for i in (1..6)
+for i in "1" "2" "3" "4" "5" "6" "caps"
   .title-{i}
     word-wrap break-word
-    margin-bottom $spacing-medium
+    margin-bottom $space-small
+
+    &:not(:first-child)
+      margin-top $space-large
 
 .title-1
   font-sans($font-size-large-5)
@@ -56,8 +59,6 @@ for i in (1..6)
   font-sans($font-size-normal, $font-weight-sans-bold)
 
 .title-caps
-  word-wrap break-word
-  margin-bottom $spacing-medium
   font-sans($font-size-small, $font-weight-sans-bold)
   text-transform uppercase
   letter-spacing 0.1em

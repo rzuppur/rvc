@@ -134,7 +134,7 @@
     .darkMode &
       background-color transparent
       color $color-darkmode-text
-      border-color alpha(#fff, .15)
+      border-color alpha(#fff, 0.15)
 
     &,
     &:hover
@@ -163,10 +163,10 @@
 
       &:hover,
       &:focus
-        background alpha(#000, .04)
+        background alpha(#000, 0.04)
 
         .darkMode &
-          background alpha(#fff, .08)
+          background alpha(#fff, 0.08)
 
       &:focus:not(:active)
         box-shadow inset 0 0 0 3px alpha($color-focus-blue, 0.2) !important
@@ -190,10 +190,10 @@
         box-shadow inset 0 0 0 2px $color-focus-blue, inset 0 0 0 3px darken($color-focus-blue, 20) !important
 
     &.gray
-      background darken($color-light-gray-background, .5)
+      background alpha(#000, 0.04)
 
       .darkMode &
-        background alpha(#fff, .1)
+        background alpha(#fff, 0.1)
 
     &[disabled]
       box-shadow none !important
@@ -233,7 +233,7 @@
         border-top-color alpha(#000, 0.3)
         border-right-color alpha(#000, 0.3)
         border-radius 100%
-        animation spinAround .6s infinite linear
+        animation spinAround 0.6s infinite linear
         position absolute !important
 
         .darkMode &
