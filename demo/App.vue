@@ -31,18 +31,18 @@
 
       .r-container-column.r-container-maximum(:class="{ darkMode }")
 
-        section
+        section(style="padding-top: 12px")
 
-          r-tabs
+          r-tabs(:extendLine="true")
 
-            r-tab(name="Icons")
+            r-tab-content(name="Icons")
               .space-bottom-medium(v-pre)
                 include:markdown-it ../docs/icon.md
 
               .icons
                 r-icon.gray(v-for="icon in icons.concat(['missing'])" :icon="icon" v-rtip="icon")
 
-            r-tab(name="Tooltip")
+            r-tab-content(name="Tooltip")
               .space-bottom-medium(v-pre)
                 include:markdown-it ../docs/tooltip.md
 
@@ -53,7 +53,7 @@
                 r-button(v-rtip.right="'Position right'") Right
                 r-button(v-rtip="null") Null
 
-            r-tab(name="Buttons")
+            r-tab-content(name="Buttons")
               .space-bottom-medium(v-pre)
                 include:markdown-it ../docs/button.md
 
@@ -96,7 +96,7 @@
                 r-button(small icon="close")
                 r-button(small borderless icon="edit")
 
-            r-tab(name="Toast notification")
+            r-tab-content(name="Toast notification")
               .space-bottom-medium(v-pre)
                 include:markdown-it ../docs/toast.md
 
@@ -105,7 +105,7 @@
                 r-button(:action="() => { $notifyToast('Short') }") Short
                 r-button(:action="() => { $notifyToast('Long text notification that should hopefully wrap to multiple lines and you should be able to read this entire text before it disappears.') }") Long notification
 
-            r-tab(name="Containers")
+            r-tab-content(name="Containers")
               .space-bottom-medium(v-pre)
                 include:markdown-it ../docs/container.md
 
@@ -133,7 +133,7 @@
                 .r-container-column.r-container-tiny
                   p.container-demo r-container-column r-container-tiny
 
-            r-tab(name="Typography")
+            r-tab-content(name="Typography")
               .space-bottom-medium(v-pre)
                 include:markdown-it ../docs/typo.md
 
@@ -167,13 +167,16 @@
               .text-error text-error
               .text-small text-small
 
-            r-tab(name="Tabs")
+            r-tab-content(name="Tabs")
               .space-bottom-medium(v-pre)
                 include:markdown-it ../docs/tab.md
+
               r-tabs
-                r-tab(name="Tab 1")
+
+                r-tab-content(name="Tab 1")
                   p Tab 1 content
-                r-tab(name="Tab 2")
+
+                r-tab-content(name="Tab 2")
                   p Tab 2 content
 
 </template>

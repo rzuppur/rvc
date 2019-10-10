@@ -4,7 +4,7 @@ import { Component, PluginObject, VueConstructor } from "vue";
 import Button from "./components/global/r-button/Button.vue";
 import Icon from "./components/global/r-icon/Icon.vue";
 import Tabs from "./components/global/r-tabs/Tabs.vue";
-import Tab from "./components/global/r-tabs/r-tab/Tab.vue";
+import TabContent from "./components/global/r-tabs/r-tab-content/TabContent.vue";
 import GlobalStyles from "./components/root/GlobalStyles.vue";
 import Toast from "./components/root/Toast.vue";
 import RTip from "./directives/RTip";
@@ -28,7 +28,7 @@ const install = (Vue: VueConstructor): void => {
   Vue.component("r-button", Button);
   Vue.component("r-icon", Icon);
   Vue.component("r-tabs", Tabs);
-  Vue.component("r-tab", Tab);
+  Vue.component("r-tab-content", TabContent);
   Vue.directive("rtip", RTip(Vue));
 
   let toastComponent: Component;

@@ -8,7 +8,7 @@
 
 <script>
   export default {
-    name: "Tab",
+    name: "TabContent",
     props: {
       name: {
         type: String,

@@ -134,7 +134,7 @@
     .darkMode &
       background-color transparent
       color $color-darkmode-text
-      border-color alpha(#fff, 0.15)
+      border-color $color-darkmode-gray-border
 
     &,
     &:hover
