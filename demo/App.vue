@@ -1,8 +1,8 @@
 <template lang="pug">
 
-  #app
+  #app.r-fullheight-parent
 
-    .r-container-row.r-columns-mobile-medium
+    .r-container-row.r-columns-mobile-medium.r-fullheight
 
       .r-container-column.r-container-small.sidebar
 
@@ -176,8 +176,6 @@
                 r-tab(name="Tab 2")
                   p Tab 2 content
 
-          hr
-
 </template>
 
 <script>
@@ -265,10 +263,6 @@
     padding 10px
     border-radius $border-radius
     overflow-x auto
-
-  hr
-    margin $font-size-normal*2px 0
-
 
   .tab-content
     .r-container,
