@@ -56,7 +56,7 @@ const install = (Vue: VueConstructor): void => {
     },
   });
 
-  Vue.prototype.$notifyToast = (message: string) => {
+  Vue.prototype.$rNotifyToast = (message: string) => {
     // @ts-ignore
     toastComponent.notify(message);
   };

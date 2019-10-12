@@ -1,1 +1,1 @@
-From any component, call `this.$notifyToast("message");`.
+From any component, call `this.$rNotifyToast("message");`.

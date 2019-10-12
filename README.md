@@ -81,7 +81,7 @@ Material or modified material icons as 24x24px svg.
 />
 ```
 ### Toast notification
-From any component, call `this.$notifyToast("message");`.
+From any component, call `this.$rNotifyToast("message");`.
 ### Dark mode
 Add class `darkMode` to any parent element.
 ### Containers
