@@ -10,7 +10,7 @@
 <br>
 
 ### Modal
-```javascript
+```html
 <r-modal
   title: string | false
   blocking: boolean // optional
