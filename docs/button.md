@@ -18,3 +18,15 @@ Every property listed is optional. If button contains no childs but has an icon,
     {{ text }}
   </r-button>
 ```
+
+Grouped buttons
+```html
+<div class="r-buttons-grouped">
+  <div class="r-button-group">
+    {{ r-buttons }}
+  </div>
+  <div class="r-button-group">
+    {{ r-buttons }}
+  </div>
+</div>
+```

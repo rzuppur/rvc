@@ -39,28 +39,28 @@
               .space-bottom-medium(v-pre)
                 include:markdown-it ../docs/button.md
 
-              .buttons
+              .r-buttons
                 r-button Normal
                 r-button(primary) Primary
                 r-button(borderless) Borderless
                 r-button(gray borderless) Gray borderless
                 r-button(gray) Gray
 
-              .buttons
+              .r-buttons
                 r-button(disabled) Normal
                 r-button(primary disabled) Primary
                 r-button(borderless disabled) Borderless
                 r-button(gray borderless disabled) Gray borderless
                 r-button(gray disabled) Gray
 
-              .buttons
+              .r-buttons
                 r-button(loading)
                 r-button(primary loading)
                 r-button(borderless loading)
                 r-button(gray borderless loading)
                 r-button(gray loading)
 
-              .buttons
+              .r-buttons
                 r-button(icon="arrow left") Icon
                 r-button(primary icon="add") Icon
                 r-button(borderless icon="close" icon-color="red") Icon
@@ -70,13 +70,22 @@
                 r-button(icon="add image")
                 r-button(borderless icon="eye visible")
 
-              .buttons
+              .r-buttons
                 r-button(:action="test") @click test
                 r-button(:action="test" :actionWithModifier="test2") @click.ctrl test
                 r-button(small) Small
                 r-button(small icon="arrow left") Small icon
                 r-button(small icon="close")
                 r-button(small borderless icon="edit")
+
+              .r-buttons-grouped
+                .r-button-group
+                  r-button(icon="text bold")
+                  r-button(icon="text italic")
+                  r-button(icon="text underline")
+                .r-button-group
+                  r-button Buttons
+                  r-button Grouped
 
             r-tab-content(name="Icons")
               .space-bottom-medium(v-pre)
@@ -89,7 +98,7 @@
               .space-bottom-medium(v-pre)
                 include:markdown-it ../docs/tooltip.md
 
-              .buttons
+              .r-buttons
                 r-button(v-rtip="'Default tooltip - long text test'") Default
                 r-button(v-rtip.bottom="'Position bottom'") Bottom
                 r-button(v-rtip.left="'Position left'") Left
@@ -100,7 +109,7 @@
               .space-bottom-medium(v-pre)
                 include:markdown-it ../docs/toast.md
 
-              .buttons
+              .r-buttons
                 r-button(:action="() => { $notifyToast('Notification') }") Notification
                 r-button(:action="() => { $notifyToast('Short') }") Short
                 r-button(:action="() => { $notifyToast('Long text notification that should hopefully wrap to multiple lines and you should be able to read this entire text before it disappears.') }") Long notification
@@ -231,14 +240,8 @@
     padding-top $space-medium
     padding-bottom $space-medium
 
-  .buttons
-    $_buttons_margin = 10px
-
-    align-items center
-    display flex
-    flex-wrap wrap
-    justify-content flex-start
-    margin-bottom - $_buttons_margin
+  .r-buttons
+    margin-bottom $space-small
 
     &:not(:last-child)
       margin-bottom 0

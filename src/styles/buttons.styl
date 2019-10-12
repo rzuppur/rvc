@@ -1,0 +1,33 @@
+@import "shared.styl"
+
+
+$_buttons_margin = $space-tiny
+
+.r-buttons
+  margin-right -($_buttons_margin)
+  margin-bottom -($_buttons_margin)
+
+  &.align-right
+    text-align right
+
+  .r-button
+    margin-right $_buttons_margin
+    margin-bottom $_buttons_margin
+
+.r-buttons-grouped
+  margin-right -($_buttons_margin)
+  margin-bottom -($_buttons_margin)
+
+  .r-button-group
+    display inline-block
+    margin-right $_buttons_margin
+    margin-bottom $_buttons_margin
+
+    .r-button + .r-button
+      border-top-left-radius 0
+      border-bottom-left-radius 0
+      border-left none
+
+    .r-button:not(:last-child)
+      border-top-right-radius 0
+      border-bottom-right-radius 0
