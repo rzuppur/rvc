@@ -5,6 +5,7 @@ import PortalVue, { PortalTarget } from "portal-vue";
 import Button from "./components/global/r-button/Button.vue";
 import Icon from "./components/global/r-icon/Icon.vue";
 import Modal from "./components/global/r-modal/Modal.vue";
+import ModalConfirm from "./components/root/ModalConfirm.vue";
 import Tabs from "./components/global/r-tabs/Tabs.vue";
 import TabContent from "./components/global/r-tabs/r-tab-content/TabContent.vue";
 import GlobalStyles from "./components/root/GlobalStyles.vue";
@@ -34,6 +35,7 @@ const install = (Vue: VueConstructor): void => {
   let toastComponent: Component;
   let globalStylesComponent: Component;
   let portalTargetComponent: Component;
+  let modalConfirmComponent: Component;
 
   Vue.mixin({
     data() {
@@ -48,6 +50,8 @@ const install = (Vue: VueConstructor): void => {
         globalStylesComponent = mountComponentToRoot(Vue, this, GlobalStyles);
         // @ts-ignore
         portalTargetComponent = mountComponentToRoot(Vue, this, PortalTarget, { name: "r-modals", multiple: true });
+        // @ts-ignore
+        modalConfirmComponent = mountComponentToRoot(Vue, this, ModalConfirm);
       }
     },
   });

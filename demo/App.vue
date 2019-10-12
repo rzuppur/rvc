@@ -43,8 +43,13 @@
           r-tabs(:extendLine="true")
 
             r-tab-content(name="Modals")
+              .space-bottom-medium(v-pre)
+                include:markdown-it ../docs/modal.md
+
+
               .r-buttons
                 +modalButtons()
+                r-button(:action="confirmModalDemo") Confirmation modal
 
               r-modal(ref="modal1" title="Default size (small)")
                 p Modal content
@@ -252,12 +257,16 @@
       toggleTheme() {
         this.darkMode = !this.darkMode;
       },
+      async confirmModalDemo() {
+        const result = await this.$root.rModalConfirm("Modal question?", "Confirm", "Cancel", "Description text");
+        this.$root.$notifyToast(result ? "Confirmed" : "Cancelled");
+      },
     },
   };
 </script>
 
 <style lang="stylus">
-  @import url('https://rsms.me/inter/inter.css');
+  @import url("https://rsms.me/inter/inter.css");
 </style>
 
 <style lang="stylus" scoped>

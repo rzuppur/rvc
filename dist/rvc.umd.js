@@ -1,14 +1,15 @@
 /*!
- * rvc v0.27.1 
+ * rvc v0.32.0 
  * (c) 2019 Reino Zuppur
  * Released under the MIT License.
  */
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('resize-observer-polyfill')) :
-  typeof define === 'function' && define.amd ? define(['resize-observer-polyfill'], factory) :
-  (global = global || self, global.Rvc = factory(global.ResizeObserver));
-}(this, function (ResizeObserver) { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('portal-vue'), require('resize-observer-polyfill')) :
+  typeof define === 'function' && define.amd ? define(['portal-vue', 'resize-observer-polyfill'], factory) :
+  (global = global || self, global.Rvc = factory(global.PortalVue, global.ResizeObserver));
+}(this, function (PortalVue, ResizeObserver) { 'use strict';
 
+  var PortalVue__default = 'default' in PortalVue ? PortalVue['default'] : PortalVue;
   ResizeObserver = ResizeObserver && ResizeObserver.hasOwnProperty('default') ? ResizeObserver['default'] : ResizeObserver;
 
   var script = {
@@ -233,7 +234,7 @@
     /* style */
     const __vue_inject_styles__ = function (inject) {
       if (!inject) return
-      inject("data-v-27354950_0", { source: ".r-button{cursor:pointer;user-select:none;-webkit-touch-callout:none;-webkit-appearance:none;-moz-appearance:none;position:relative;vertical-align:top;white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;height:40px;padding:0 12px;border:1px solid #ddd;border-radius:4px;font-family:Inter,BlinkMacSystemFont,-apple-system,\"Segoe UI\",Roboto,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\";font-size:16px;letter-spacing:-.005em;line-height:24px;font-weight:400;text-align:center;color:#40444a;background-color:#fff;box-shadow:none;transition:transform .1s,box-shadow .1s}.darkMode .r-button{background-color:transparent;color:#e1e3e5;border-color:rgba(255,255,255,.15)}.r-button,.r-button:hover{text-decoration:none;color:#40444a}.darkMode .r-button,.darkMode .r-button:hover{color:#e1e3e5}.r-button.is-active,.r-button.is-focused,.r-button:active,.r-button:focus{outline:0}.r-button[disabled]{cursor:not-allowed}.r-button:active:not([disabled]){transform:scale(.98)}.r-button.borderless{background-color:transparent;box-shadow:none;border:none}.r-button.borderless:focus,.r-button.borderless:hover{background:rgba(0,0,0,.04)}.darkMode .r-button.borderless:focus,.darkMode .r-button.borderless:hover{background:rgba(255,255,255,.08)}.r-button.borderless:focus:not(:active){box-shadow:inset 0 0 0 3px rgba(13,124,200,.2)!important}.r-button:hover:not(.borderless){box-shadow:inset 0 0 0 1px rgba(13,124,200,.3)!important}.r-button:focus:not(:active){box-shadow:inset 0 0 0 1px rgba(13,124,200,.2),0 0 0 1px #0d7cc8!important}.r-button.primary{background:#2097e8;border:none;color:#fff}.r-button.primary:focus,.r-button.primary:hover{background:#1790e1}.r-button.primary:focus:not(:active){box-shadow:inset 0 0 0 2px #0d7cc8,inset 0 0 0 3px #074168!important}.r-button.gray{background:rgba(0,0,0,.04)}.darkMode .r-button.gray{background:rgba(255,255,255,.1)}.r-button[disabled]{box-shadow:none!important;opacity:.4}.r-button.fullwidth{display:flex;width:100%}.r-button.small{height:34px}.r-button.icon-only{width:40px;min-width:40px;padding:0}.r-button.icon-only.small{width:34px;min-width:34px}.r-button:not(.icon-only){min-width:65px}.r-button.loading{color:transparent!important;pointer-events:none}.r-button.loading>span{opacity:0}.r-button.loading::after{content:\"\";width:18px;height:18px;border:2px solid transparent;border-top-color:rgba(0,0,0,.3);border-right-color:rgba(0,0,0,.3);border-radius:100%;animation:spinAround .6s infinite linear;position:absolute!important}.darkMode .r-button.loading::after{border-top-color:rgba(255,255,255,.4);border-right-color:rgba(255,255,255,.4)}.r-button:not(.muted)>span:not(.icon){font-size:16px;letter-spacing:-.005em;line-height:24px;font-weight:600}.r-button>span{transition:opacity 75ms}.r-button>span:not(.r-icon){position:relative;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.r-button>.r-icon:first-child:not(:last-child){margin-left:-2px;margin-right:8px}.r-button>.r-icon:last-child:not(:first-child){margin-left:8px;margin-right:-2px}.r-button>.r-icon:first-child:last-child{margin-left:0;margin-right:0}.small>.r-icon:first-child:not(:last-child){margin-left:-4px;margin-right:5px}.small>.r-icon:last-child:not(:first-child){margin-right:-4px;margin-left:5px}@-moz-keyframes spinAround{from{transform:rotate(0)}to{transform:rotate(359deg)}}@-webkit-keyframes spinAround{from{transform:rotate(0)}to{transform:rotate(359deg)}}@-o-keyframes spinAround{from{transform:rotate(0)}to{transform:rotate(359deg)}}@keyframes spinAround{from{transform:rotate(0)}to{transform:rotate(359deg)}}", map: undefined, media: undefined });
+      inject("data-v-08102d50_0", { source: ".r-button{cursor:pointer;user-select:none;-webkit-touch-callout:none;-webkit-appearance:none;-moz-appearance:none;position:relative;vertical-align:top;white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;height:40px;padding:0 12px;border:1px solid #ddd;border-radius:4px;font-family:Inter,BlinkMacSystemFont,-apple-system,\"Segoe UI\",Roboto,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\";font-size:16px;letter-spacing:-.005em;line-height:24px;font-weight:400;text-align:center;color:#40444a;background-color:#fff;box-shadow:none;transition:transform .1s,box-shadow .1s}.darkMode .r-button{background-color:transparent;color:#e1e3e5;border-color:rgba(255,255,255,.15)}.r-button,.r-button:hover{text-decoration:none;color:#40444a}.darkMode .r-button,.darkMode .r-button:hover{color:#e1e3e5}.r-button.is-active,.r-button.is-focused,.r-button:active,.r-button:focus{outline:0}.r-button[disabled]{cursor:not-allowed}.r-button:active:not([disabled]){transform:scale(.98)}.r-button.borderless{background-color:transparent;box-shadow:none;border:none}.r-button.borderless:focus,.r-button.borderless:hover{background:rgba(0,0,0,.04)}.darkMode .r-button.borderless:focus,.darkMode .r-button.borderless:hover{background:rgba(255,255,255,.08)}.r-button.borderless:focus:not(:active){box-shadow:inset 0 0 0 3px rgba(13,124,200,.2)!important}.r-button:hover:not(.borderless){box-shadow:inset 0 0 0 1px rgba(13,124,200,.3)!important}.r-button:focus:not(:active){box-shadow:inset 0 0 0 1px rgba(13,124,200,.2),0 0 0 1px #0d7cc8!important}.r-button.primary{background:#2097e8;border:none;color:#fff}.r-button.primary:focus,.r-button.primary:hover{background:#1790e1}.r-button.primary:focus:not(:active){box-shadow:inset 0 0 0 2px #0d7cc8,inset 0 0 0 3px #074168!important}.r-button.gray{background:rgba(0,0,0,.04)}.darkMode .r-button.gray{background:rgba(255,255,255,.1)}.r-button[disabled]{box-shadow:none!important;opacity:.4}.r-button.fullwidth{display:flex;width:100%}.r-button.small{height:34px}.r-button.icon-only{width:40px;min-width:40px;padding:0}.r-button.icon-only.small{width:34px;min-width:34px}.r-button:not(.icon-only){min-width:65px}.r-button.loading{color:transparent!important;pointer-events:none}.r-button.loading>span{opacity:0}.r-button.loading::after{content:\"\";width:18px;height:18px;border:2px solid transparent;border-top-color:rgba(0,0,0,.3);border-right-color:rgba(0,0,0,.3);border-radius:100%;animation:spinAround .6s infinite linear;position:absolute!important}.darkMode .r-button.loading::after{border-top-color:rgba(255,255,255,.4);border-right-color:rgba(255,255,255,.4)}.r-button:not(.muted)>span:not(.icon){font-size:16px;letter-spacing:-.005em;line-height:24px;font-weight:600}.r-button>span{transition:opacity 75ms}.r-button>span:not(.r-icon){position:relative;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.r-button>.r-icon:first-child:not(:last-child){margin-left:-2px;margin-right:8px}.r-button>.r-icon:last-child:not(:first-child){margin-left:8px;margin-right:-2px}.r-button>.r-icon:first-child:last-child{margin-left:0;margin-right:0}.small>.r-icon:first-child:not(:last-child){margin-left:-4px;margin-right:5px}.small>.r-icon:last-child:not(:first-child){margin-right:-4px;margin-left:5px}@-moz-keyframes spinAround{from{transform:rotate(0)}to{transform:rotate(359deg)}}@-webkit-keyframes spinAround{from{transform:rotate(0)}to{transform:rotate(359deg)}}@-o-keyframes spinAround{from{transform:rotate(0)}to{transform:rotate(359deg)}}@keyframes spinAround{from{transform:rotate(0)}to{transform:rotate(359deg)}}", map: undefined, media: undefined });
 
     };
     /* scoped */
@@ -379,7 +380,7 @@
     /* style */
     const __vue_inject_styles__$1 = function (inject) {
       if (!inject) return
-      inject("data-v-4d05c91f_0", { source: ".r-icon{height:24px;width:24px;display:inline-block}.r-icon.icon-text{vertical-align:text-bottom;display:inline-block;position:relative;top:1px}.r-icon.icon-text,.r-icon.icon-text svg{height:18px!important;width:18px!important}.darkMode .r-icon svg{fill:#e1e3e5}.r-icon.gray svg{fill:#777}.darkMode .r-icon.gray svg{fill:#aab0b6}.r-icon.light-gray svg{fill:#aaa}.r-icon.green svg{fill:#009635}.darkMode .r-icon.green svg{fill:#00aa3c}.r-icon.red svg{fill:#e24161}.darkMode .r-icon.red svg{fill:#e55370}.r-icon.blue svg{fill:#2097e8}.darkMode .r-icon.blue svg{fill:#1584cf}.r-icon.gold svg{fill:#eebc41}.r-icon.white svg{fill:#fff}", map: undefined, media: undefined });
+      inject("data-v-0892b90c_0", { source: ".r-icon{height:24px;width:24px;display:inline-block}.r-icon.icon-text{vertical-align:text-bottom;display:inline-block;position:relative;top:1px}.r-icon.icon-text,.r-icon.icon-text svg{height:18px!important;width:18px!important}.darkMode .r-icon svg{fill:#e1e3e5}.r-icon.gray svg{fill:#777}.darkMode .r-icon.gray svg{fill:#aab0b6}.r-icon.light-gray svg{fill:#aaa}.r-icon.green svg{fill:#009635}.darkMode .r-icon.green svg{fill:#00aa3c}.r-icon.red svg{fill:#e24161}.darkMode .r-icon.red svg{fill:#e55370}.r-icon.blue svg{fill:#2097e8}.darkMode .r-icon.blue svg{fill:#1584cf}.r-icon.gold svg{fill:#eebc41}.r-icon.white svg{fill:#fff}", map: undefined, media: undefined });
 
     };
     /* scoped */
@@ -403,27 +404,1086 @@
       undefined
     );
 
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
+  function _typeof(obj) {
+    if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+      _typeof = function (obj) {
+        return typeof obj;
+      };
+    } else {
+      _typeof = function (obj) {
+        return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+      };
+    }
+
+    return _typeof(obj);
+  }
+
+  function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
+    try {
+      var info = gen[key](arg);
+      var value = info.value;
+    } catch (error) {
+      reject(error);
+      return;
+    }
+
+    if (info.done) {
+      resolve(value);
+    } else {
+      Promise.resolve(value).then(_next, _throw);
+    }
+  }
+
+  function _asyncToGenerator(fn) {
+    return function () {
+      var self = this,
+          args = arguments;
+      return new Promise(function (resolve, reject) {
+        var gen = fn.apply(self, args);
+
+        function _next(value) {
+          asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
+        }
+
+        function _throw(err) {
+          asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
+        }
+
+        _next(undefined);
+      });
+    };
+  }
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  function _createClass(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties(Constructor, staticProps);
+    return Constructor;
+  }
+
+  function createCommonjsModule(fn, module) {
+  	return module = { exports: {} }, fn(module, module.exports), module.exports;
+  }
+
+  var runtime_1 = createCommonjsModule(function (module) {
+    /**
+     * Copyright (c) 2014-present, Facebook, Inc.
+     *
+     * This source code is licensed under the MIT license found in the
+     * LICENSE file in the root directory of this source tree.
+     */
+    var runtime = function (exports) {
+
+      var Op = Object.prototype;
+      var hasOwn = Op.hasOwnProperty;
+      var undefined$1; // More compressible than void 0.
+
+      var $Symbol = typeof Symbol === "function" ? Symbol : {};
+      var iteratorSymbol = $Symbol.iterator || "@@iterator";
+      var asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator";
+      var toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag";
+
+      function wrap(innerFn, outerFn, self, tryLocsList) {
+        // If outerFn provided and outerFn.prototype is a Generator, then outerFn.prototype instanceof Generator.
+        var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator;
+        var generator = Object.create(protoGenerator.prototype);
+        var context = new Context(tryLocsList || []); // The ._invoke method unifies the implementations of the .next,
+        // .throw, and .return methods.
+
+        generator._invoke = makeInvokeMethod(innerFn, self, context);
+        return generator;
+      }
+
+      exports.wrap = wrap; // Try/catch helper to minimize deoptimizations. Returns a completion
+      // record like context.tryEntries[i].completion. This interface could
+      // have been (and was previously) designed to take a closure to be
+      // invoked without arguments, but in all the cases we care about we
+      // already have an existing method we want to call, so there's no need
+      // to create a new function object. We can even get away with assuming
+      // the method takes exactly one argument, since that happens to be true
+      // in every case, so we don't have to touch the arguments object. The
+      // only additional allocation required is the completion record, which
+      // has a stable shape and so hopefully should be cheap to allocate.
+
+      function tryCatch(fn, obj, arg) {
+        try {
+          return {
+            type: "normal",
+            arg: fn.call(obj, arg)
+          };
+        } catch (err) {
+          return {
+            type: "throw",
+            arg: err
+          };
+        }
+      }
+
+      var GenStateSuspendedStart = "suspendedStart";
+      var GenStateSuspendedYield = "suspendedYield";
+      var GenStateExecuting = "executing";
+      var GenStateCompleted = "completed"; // Returning this object from the innerFn has the same effect as
+      // breaking out of the dispatch switch statement.
+
+      var ContinueSentinel = {}; // Dummy constructor functions that we use as the .constructor and
+      // .constructor.prototype properties for functions that return Generator
+      // objects. For full spec compliance, you may wish to configure your
+      // minifier not to mangle the names of these two functions.
+
+      function Generator() {}
+
+      function GeneratorFunction() {}
+
+      function GeneratorFunctionPrototype() {} // This is a polyfill for %IteratorPrototype% for environments that
+      // don't natively support it.
+
+
+      var IteratorPrototype = {};
+
+      IteratorPrototype[iteratorSymbol] = function () {
+        return this;
+      };
+
+      var getProto = Object.getPrototypeOf;
+      var NativeIteratorPrototype = getProto && getProto(getProto(values([])));
+
+      if (NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol)) {
+        // This environment has a native %IteratorPrototype%; use it instead
+        // of the polyfill.
+        IteratorPrototype = NativeIteratorPrototype;
+      }
+
+      var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype);
+      GeneratorFunction.prototype = Gp.constructor = GeneratorFunctionPrototype;
+      GeneratorFunctionPrototype.constructor = GeneratorFunction;
+      GeneratorFunctionPrototype[toStringTagSymbol] = GeneratorFunction.displayName = "GeneratorFunction"; // Helper for defining the .next, .throw, and .return methods of the
+      // Iterator interface in terms of a single ._invoke method.
+
+      function defineIteratorMethods(prototype) {
+        ["next", "throw", "return"].forEach(function (method) {
+          prototype[method] = function (arg) {
+            return this._invoke(method, arg);
+          };
+        });
+      }
+
+      exports.isGeneratorFunction = function (genFun) {
+        var ctor = typeof genFun === "function" && genFun.constructor;
+        return ctor ? ctor === GeneratorFunction || // For the native GeneratorFunction constructor, the best we can
+        // do is to check its .name property.
+        (ctor.displayName || ctor.name) === "GeneratorFunction" : false;
+      };
+
+      exports.mark = function (genFun) {
+        if (Object.setPrototypeOf) {
+          Object.setPrototypeOf(genFun, GeneratorFunctionPrototype);
+        } else {
+          genFun.__proto__ = GeneratorFunctionPrototype;
+
+          if (!(toStringTagSymbol in genFun)) {
+            genFun[toStringTagSymbol] = "GeneratorFunction";
+          }
+        }
+
+        genFun.prototype = Object.create(Gp);
+        return genFun;
+      }; // Within the body of any async function, `await x` is transformed to
+      // `yield regeneratorRuntime.awrap(x)`, so that the runtime can test
+      // `hasOwn.call(value, "__await")` to determine if the yielded value is
+      // meant to be awaited.
+
+
+      exports.awrap = function (arg) {
+        return {
+          __await: arg
+        };
+      };
+
+      function AsyncIterator(generator) {
+        function invoke(method, arg, resolve, reject) {
+          var record = tryCatch(generator[method], generator, arg);
+
+          if (record.type === "throw") {
+            reject(record.arg);
+          } else {
+            var result = record.arg;
+            var value = result.value;
+
+            if (value && _typeof(value) === "object" && hasOwn.call(value, "__await")) {
+              return Promise.resolve(value.__await).then(function (value) {
+                invoke("next", value, resolve, reject);
+              }, function (err) {
+                invoke("throw", err, resolve, reject);
+              });
+            }
+
+            return Promise.resolve(value).then(function (unwrapped) {
+              // When a yielded Promise is resolved, its final value becomes
+              // the .value of the Promise<{value,done}> result for the
+              // current iteration.
+              result.value = unwrapped;
+              resolve(result);
+            }, function (error) {
+              // If a rejected Promise was yielded, throw the rejection back
+              // into the async generator function so it can be handled there.
+              return invoke("throw", error, resolve, reject);
+            });
+          }
+        }
+
+        var previousPromise;
+
+        function enqueue(method, arg) {
+          function callInvokeWithMethodAndArg() {
+            return new Promise(function (resolve, reject) {
+              invoke(method, arg, resolve, reject);
+            });
+          }
+
+          return previousPromise = // If enqueue has been called before, then we want to wait until
+          // all previous Promises have been resolved before calling invoke,
+          // so that results are always delivered in the correct order. If
+          // enqueue has not been called before, then it is important to
+          // call invoke immediately, without waiting on a callback to fire,
+          // so that the async generator function has the opportunity to do
+          // any necessary setup in a predictable way. This predictability
+          // is why the Promise constructor synchronously invokes its
+          // executor callback, and why async functions synchronously
+          // execute code before the first await. Since we implement simple
+          // async functions in terms of async generators, it is especially
+          // important to get this right, even though it requires care.
+          previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, // Avoid propagating failures to Promises returned by later
+          // invocations of the iterator.
+          callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg();
+        } // Define the unified helper method that is used to implement .next,
+        // .throw, and .return (see defineIteratorMethods).
+
+
+        this._invoke = enqueue;
+      }
+
+      defineIteratorMethods(AsyncIterator.prototype);
+
+      AsyncIterator.prototype[asyncIteratorSymbol] = function () {
+        return this;
+      };
+
+      exports.AsyncIterator = AsyncIterator; // Note that simple async functions are implemented on top of
+      // AsyncIterator objects; they just return a Promise for the value of
+      // the final result produced by the iterator.
+
+      exports.async = function (innerFn, outerFn, self, tryLocsList) {
+        var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList));
+        return exports.isGeneratorFunction(outerFn) ? iter // If outerFn is a generator, return the full iterator.
+        : iter.next().then(function (result) {
+          return result.done ? result.value : iter.next();
+        });
+      };
+
+      function makeInvokeMethod(innerFn, self, context) {
+        var state = GenStateSuspendedStart;
+        return function invoke(method, arg) {
+          if (state === GenStateExecuting) {
+            throw new Error("Generator is already running");
+          }
+
+          if (state === GenStateCompleted) {
+            if (method === "throw") {
+              throw arg;
+            } // Be forgiving, per 25.3.3.3.3 of the spec:
+            // https://people.mozilla.org/~jorendorff/es6-draft.html#sec-generatorresume
+
+
+            return doneResult();
+          }
+
+          context.method = method;
+          context.arg = arg;
+
+          while (true) {
+            var delegate = context.delegate;
+
+            if (delegate) {
+              var delegateResult = maybeInvokeDelegate(delegate, context);
+
+              if (delegateResult) {
+                if (delegateResult === ContinueSentinel) continue;
+                return delegateResult;
+              }
+            }
+
+            if (context.method === "next") {
+              // Setting context._sent for legacy support of Babel's
+              // function.sent implementation.
+              context.sent = context._sent = context.arg;
+            } else if (context.method === "throw") {
+              if (state === GenStateSuspendedStart) {
+                state = GenStateCompleted;
+                throw context.arg;
+              }
+
+              context.dispatchException(context.arg);
+            } else if (context.method === "return") {
+              context.abrupt("return", context.arg);
+            }
+
+            state = GenStateExecuting;
+            var record = tryCatch(innerFn, self, context);
+
+            if (record.type === "normal") {
+              // If an exception is thrown from innerFn, we leave state ===
+              // GenStateExecuting and loop back for another invocation.
+              state = context.done ? GenStateCompleted : GenStateSuspendedYield;
+
+              if (record.arg === ContinueSentinel) {
+                continue;
+              }
+
+              return {
+                value: record.arg,
+                done: context.done
+              };
+            } else if (record.type === "throw") {
+              state = GenStateCompleted; // Dispatch the exception by looping back around to the
+              // context.dispatchException(context.arg) call above.
+
+              context.method = "throw";
+              context.arg = record.arg;
+            }
+          }
+        };
+      } // Call delegate.iterator[context.method](context.arg) and handle the
+      // result, either by returning a { value, done } result from the
+      // delegate iterator, or by modifying context.method and context.arg,
+      // setting context.delegate to null, and returning the ContinueSentinel.
+
+
+      function maybeInvokeDelegate(delegate, context) {
+        var method = delegate.iterator[context.method];
+
+        if (method === undefined$1) {
+          // A .throw or .return when the delegate iterator has no .throw
+          // method always terminates the yield* loop.
+          context.delegate = null;
+
+          if (context.method === "throw") {
+            // Note: ["return"] must be used for ES3 parsing compatibility.
+            if (delegate.iterator["return"]) {
+              // If the delegate iterator has a return method, give it a
+              // chance to clean up.
+              context.method = "return";
+              context.arg = undefined$1;
+              maybeInvokeDelegate(delegate, context);
+
+              if (context.method === "throw") {
+                // If maybeInvokeDelegate(context) changed context.method from
+                // "return" to "throw", let that override the TypeError below.
+                return ContinueSentinel;
+              }
+            }
+
+            context.method = "throw";
+            context.arg = new TypeError("The iterator does not provide a 'throw' method");
+          }
+
+          return ContinueSentinel;
+        }
+
+        var record = tryCatch(method, delegate.iterator, context.arg);
+
+        if (record.type === "throw") {
+          context.method = "throw";
+          context.arg = record.arg;
+          context.delegate = null;
+          return ContinueSentinel;
+        }
+
+        var info = record.arg;
+
+        if (!info) {
+          context.method = "throw";
+          context.arg = new TypeError("iterator result is not an object");
+          context.delegate = null;
+          return ContinueSentinel;
+        }
+
+        if (info.done) {
+          // Assign the result of the finished delegate to the temporary
+          // variable specified by delegate.resultName (see delegateYield).
+          context[delegate.resultName] = info.value; // Resume execution at the desired location (see delegateYield).
+
+          context.next = delegate.nextLoc; // If context.method was "throw" but the delegate handled the
+          // exception, let the outer generator proceed normally. If
+          // context.method was "next", forget context.arg since it has been
+          // "consumed" by the delegate iterator. If context.method was
+          // "return", allow the original .return call to continue in the
+          // outer generator.
+
+          if (context.method !== "return") {
+            context.method = "next";
+            context.arg = undefined$1;
+          }
+        } else {
+          // Re-yield the result returned by the delegate method.
+          return info;
+        } // The delegate iterator is finished, so forget it and continue with
+        // the outer generator.
+
+
+        context.delegate = null;
+        return ContinueSentinel;
+      } // Define Generator.prototype.{next,throw,return} in terms of the
+      // unified ._invoke helper method.
+
+
+      defineIteratorMethods(Gp);
+      Gp[toStringTagSymbol] = "Generator"; // A Generator should always return itself as the iterator object when the
+      // @@iterator function is called on it. Some browsers' implementations of the
+      // iterator prototype chain incorrectly implement this, causing the Generator
+      // object to not be returned from this call. This ensures that doesn't happen.
+      // See https://github.com/facebook/regenerator/issues/274 for more details.
+
+      Gp[iteratorSymbol] = function () {
+        return this;
+      };
+
+      Gp.toString = function () {
+        return "[object Generator]";
+      };
+
+      function pushTryEntry(locs) {
+        var entry = {
+          tryLoc: locs[0]
+        };
+
+        if (1 in locs) {
+          entry.catchLoc = locs[1];
+        }
+
+        if (2 in locs) {
+          entry.finallyLoc = locs[2];
+          entry.afterLoc = locs[3];
+        }
+
+        this.tryEntries.push(entry);
+      }
+
+      function resetTryEntry(entry) {
+        var record = entry.completion || {};
+        record.type = "normal";
+        delete record.arg;
+        entry.completion = record;
+      }
+
+      function Context(tryLocsList) {
+        // The root entry object (effectively a try statement without a catch
+        // or a finally block) gives us a place to store values thrown from
+        // locations where there is no enclosing try statement.
+        this.tryEntries = [{
+          tryLoc: "root"
+        }];
+        tryLocsList.forEach(pushTryEntry, this);
+        this.reset(true);
+      }
+
+      exports.keys = function (object) {
+        var keys = [];
+
+        for (var key in object) {
+          keys.push(key);
+        }
+
+        keys.reverse(); // Rather than returning an object with a next method, we keep
+        // things simple and return the next function itself.
+
+        return function next() {
+          while (keys.length) {
+            var key = keys.pop();
+
+            if (key in object) {
+              next.value = key;
+              next.done = false;
+              return next;
+            }
+          } // To avoid creating an additional object, we just hang the .value
+          // and .done properties off the next function object itself. This
+          // also ensures that the minifier will not anonymize the function.
+
+
+          next.done = true;
+          return next;
+        };
+      };
+
+      function values(iterable) {
+        if (iterable) {
+          var iteratorMethod = iterable[iteratorSymbol];
+
+          if (iteratorMethod) {
+            return iteratorMethod.call(iterable);
+          }
+
+          if (typeof iterable.next === "function") {
+            return iterable;
+          }
+
+          if (!isNaN(iterable.length)) {
+            var i = -1,
+                next = function next() {
+              while (++i < iterable.length) {
+                if (hasOwn.call(iterable, i)) {
+                  next.value = iterable[i];
+                  next.done = false;
+                  return next;
+                }
+              }
+
+              next.value = undefined$1;
+              next.done = true;
+              return next;
+            };
+
+            return next.next = next;
+          }
+        } // Return an iterator with no values.
+
+
+        return {
+          next: doneResult
+        };
+      }
+
+      exports.values = values;
+
+      function doneResult() {
+        return {
+          value: undefined$1,
+          done: true
+        };
+      }
+
+      Context.prototype = {
+        constructor: Context,
+        reset: function reset(skipTempReset) {
+          this.prev = 0;
+          this.next = 0; // Resetting context._sent for legacy support of Babel's
+          // function.sent implementation.
+
+          this.sent = this._sent = undefined$1;
+          this.done = false;
+          this.delegate = null;
+          this.method = "next";
+          this.arg = undefined$1;
+          this.tryEntries.forEach(resetTryEntry);
+
+          if (!skipTempReset) {
+            for (var name in this) {
+              // Not sure about the optimal order of these conditions:
+              if (name.charAt(0) === "t" && hasOwn.call(this, name) && !isNaN(+name.slice(1))) {
+                this[name] = undefined$1;
+              }
+            }
+          }
+        },
+        stop: function stop() {
+          this.done = true;
+          var rootEntry = this.tryEntries[0];
+          var rootRecord = rootEntry.completion;
+
+          if (rootRecord.type === "throw") {
+            throw rootRecord.arg;
+          }
+
+          return this.rval;
+        },
+        dispatchException: function dispatchException(exception) {
+          if (this.done) {
+            throw exception;
+          }
+
+          var context = this;
+
+          function handle(loc, caught) {
+            record.type = "throw";
+            record.arg = exception;
+            context.next = loc;
+
+            if (caught) {
+              // If the dispatched exception was caught by a catch block,
+              // then let that catch block handle the exception normally.
+              context.method = "next";
+              context.arg = undefined$1;
+            }
+
+            return !!caught;
+          }
+
+          for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+            var entry = this.tryEntries[i];
+            var record = entry.completion;
+
+            if (entry.tryLoc === "root") {
+              // Exception thrown outside of any try block that could handle
+              // it, so set the completion value of the entire function to
+              // throw the exception.
+              return handle("end");
+            }
+
+            if (entry.tryLoc <= this.prev) {
+              var hasCatch = hasOwn.call(entry, "catchLoc");
+              var hasFinally = hasOwn.call(entry, "finallyLoc");
+
+              if (hasCatch && hasFinally) {
+                if (this.prev < entry.catchLoc) {
+                  return handle(entry.catchLoc, true);
+                } else if (this.prev < entry.finallyLoc) {
+                  return handle(entry.finallyLoc);
+                }
+              } else if (hasCatch) {
+                if (this.prev < entry.catchLoc) {
+                  return handle(entry.catchLoc, true);
+                }
+              } else if (hasFinally) {
+                if (this.prev < entry.finallyLoc) {
+                  return handle(entry.finallyLoc);
+                }
+              } else {
+                throw new Error("try statement without catch or finally");
+              }
+            }
+          }
+        },
+        abrupt: function abrupt(type, arg) {
+          for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+            var entry = this.tryEntries[i];
+
+            if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) {
+              var finallyEntry = entry;
+              break;
+            }
+          }
+
+          if (finallyEntry && (type === "break" || type === "continue") && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc) {
+            // Ignore the finally entry if control is not jumping to a
+            // location outside the try/catch block.
+            finallyEntry = null;
+          }
+
+          var record = finallyEntry ? finallyEntry.completion : {};
+          record.type = type;
+          record.arg = arg;
+
+          if (finallyEntry) {
+            this.method = "next";
+            this.next = finallyEntry.finallyLoc;
+            return ContinueSentinel;
+          }
+
+          return this.complete(record);
+        },
+        complete: function complete(record, afterLoc) {
+          if (record.type === "throw") {
+            throw record.arg;
+          }
+
+          if (record.type === "break" || record.type === "continue") {
+            this.next = record.arg;
+          } else if (record.type === "return") {
+            this.rval = this.arg = record.arg;
+            this.method = "return";
+            this.next = "end";
+          } else if (record.type === "normal" && afterLoc) {
+            this.next = afterLoc;
+          }
+
+          return ContinueSentinel;
+        },
+        finish: function finish(finallyLoc) {
+          for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+            var entry = this.tryEntries[i];
+
+            if (entry.finallyLoc === finallyLoc) {
+              this.complete(entry.completion, entry.afterLoc);
+              resetTryEntry(entry);
+              return ContinueSentinel;
+            }
+          }
+        },
+        "catch": function _catch(tryLoc) {
+          for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+            var entry = this.tryEntries[i];
+
+            if (entry.tryLoc === tryLoc) {
+              var record = entry.completion;
+
+              if (record.type === "throw") {
+                var thrown = record.arg;
+                resetTryEntry(entry);
+              }
+
+              return thrown;
+            }
+          } // The context.catch method must only be called with a location
+          // argument that corresponds to a known catch block.
+
+
+          throw new Error("illegal catch attempt");
+        },
+        delegateYield: function delegateYield(iterable, resultName, nextLoc) {
+          this.delegate = {
+            iterator: values(iterable),
+            resultName: resultName,
+            nextLoc: nextLoc
+          };
+
+          if (this.method === "next") {
+            // Deliberately forget the last sent value so that we don't
+            // accidentally pass it on to the delegate.
+            this.arg = undefined$1;
+          }
+
+          return ContinueSentinel;
+        }
+      }; // Regardless of whether this script is executing as a CommonJS module
+      // or not, return the runtime object so that we can declare the variable
+      // regeneratorRuntime in the outer scope, which allows this module to be
+      // injected easily by `bin/regenerator --include-runtime script.js`.
+
+      return exports;
+    }( // If this script is executing as a CommonJS module, use module.exports
+    // as the regeneratorRuntime namespace. Otherwise create a new empty
+    // object. Either way, the resulting object will be used to initialize
+    // the regeneratorRuntime variable at the top of this file.
+     module.exports );
+
+    try {
+      regeneratorRuntime = runtime;
+    } catch (accidentalStrictMode) {
+      // This module should not be running in strict mode, so the above
+      // assignment should always work unless something is misconfigured. Just
+      // in case runtime.js accidentally runs in strict mode, we can escape
+      // strict mode using a global Function call. This could conceivably fail
+      // if a Content Security Policy forbids using Function, but in that case
+      // the proper solution is to fix the accidental strict mode problem. If
+      // you've misconfigured your bundler to force strict mode and applied a
+      // CSP to forbid Function, and you're not willing to fix either of those
+      // problems, please detail your unique predicament in a GitHub issue.
+      Function("r", "regeneratorRuntime = r")(runtime);
+    }
+  });
+
+  var regenerator = runtime_1;
+
   var script$2 = {
+    name: "Modal",
+    props: {
+      title: {
+        default: "Modal title",
+        type: [String, Boolean]
+      },
+      blocking: {
+        default: false,
+        type: Boolean
+      },
+      size: {
+        default: "small",
+        type: String
+      }
+    },
+    data: function data() {
+      return {
+        modalOpen: false,
+        contentScrolls: false
+      };
+    },
+    computed: {
+      myIndex: function myIndex() {
+        return this.$root.rModalsOpen.indexOf(this._id);
+      },
+      modalContainerClass: function modalContainerClass() {
+        return "r-container-".concat(this.size);
+      },
+      modalOverlayZIndex: function modalOverlayZIndex() {
+        return 10000 + this.$root.rModalsOpen.indexOf(this._id);
+      },
+      modalZIndex: function modalZIndex() {
+        return 10001 + this.$root.rModalsOpen.indexOf(this._id);
+      }
+    },
+    beforeCreate: function beforeCreate() {
+      this._id = Date.now().toString(36) + Math.random().toString(36).substr(2, 5);
+    },
+    mounted: function mounted() {
+      var _this = this;
+
+      this.contentObs = new ResizeObserver(function () {
+        _this.checkContentScroll();
+      });
+    },
+    beforeDestroy: function beforeDestroy() {
+      if (this.modalOpen) this.close();
+      if (this.contentObs) this.contentObs.disconnect();
+    },
+    methods: {
+      open: function () {
+        var _open = _asyncToGenerator(
+        /*#__PURE__*/
+        regenerator.mark(function _callee() {
+          var index;
+          return regenerator.wrap(function _callee$(_context) {
+            while (1) {
+              switch (_context.prev = _context.next) {
+                case 0:
+                  index = this.$root.rModalsOpen.indexOf(this._id);
+                  if (index >= 0) this.$root.rModalsOpen.splice(index, 1);
+                  this.$root.rModalsOpen.push(this._id);
+                  this.modalOpen = true;
+                  document.body.classList.add("r-modal-open");
+                  _context.next = 7;
+                  return this.$nextTick();
+
+                case 7:
+                  if (this.$refs.modalContent) {
+                    this.contentObs.observe(this.$refs.modalContent);
+                  }
+
+                case 8:
+                case "end":
+                  return _context.stop();
+              }
+            }
+          }, _callee, this);
+        }));
+
+        function open() {
+          return _open.apply(this, arguments);
+        }
+
+        return open;
+      }(),
+      close: function close() {
+        this.$root.rModalsOpen.splice(this.$root.rModalsOpen.indexOf(this._id), 1);
+        this.modalOpen = false;
+        this.$emit("close");
+        if (this.$root.rModalsOpen.length === 0) document.body.classList.remove("r-modal-open");
+      },
+      outsideClose: function outsideClose() {
+        if (!this.blocking) this.close();
+      },
+      checkContentScroll: function checkContentScroll() {
+        if (this.$refs.modalContent) {
+          var overflow = this.$refs.modalContent.scrollHeight - this.$refs.modalContent.clientHeight;
+          this.contentScrolls = overflow > 0;
+        }
+      }
+    }
+  };
+
+  /* script */
+  const __vue_script__$2 = script$2;
+
+  /* template */
+  var __vue_render__ = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('portal',{attrs:{"to":"r-modals"}},[_c('transition',{attrs:{"name":"modal"}},[(_vm.modalOpen)?_c('div',{staticClass:"modal-overlay",style:({ 'z-index': _vm.modalOverlayZIndex }),on:{"click":_vm.outsideClose,"keyup":function($event){if(!$event.type.indexOf('key')&&_vm._k($event.keyCode,"esc",27,$event.key,["Esc","Escape"])){ return null; }$event.stopPropagation();return _vm.outsideClose($event)}}},[_c('div',{staticClass:"modal-container r-container",class:_vm.modalContainerClass},[_c('div',{ref:"modal",staticClass:"modal",style:({ 'z-index': _vm.modalZIndex }),attrs:{"role":"dialog","aria-labelledby":_vm.title ? ("dialog-title-" + _vm._id) : null},on:{"click":function($event){$event.stopPropagation();}},nativeOn:{"!keydown":function($event){if(!$event.type.indexOf('key')&&_vm._k($event.keyCode,"esc",27,$event.key,["Esc","Escape"])){ return null; }return _vm.outsideClose($event)}}},[(_vm.title !== false)?_c('div',{staticClass:"modal-header"},[_c('h1',{staticClass:"title title-4",attrs:{"id":("dialog-title-" + _vm._id)}},[_vm._v(_vm._s(_vm.title))]),(!_vm.blocking)?_c('r-button',{attrs:{"borderless":"borderless","action":_vm.close,"label":"Close dialog","icon":"close"}}):_vm._e()],1):_vm._e(),_c('div',{ref:"modalContent",staticClass:"modal-content",class:{ 'modal-content-scroll': _vm.contentScrolls }},[_c('div',{staticClass:"modal-content-inner"},[_vm._t("default")],2)]),_c('div',{staticClass:"modal-buttons"},[_c('div',{staticClass:"r-buttons"},[_vm._t("buttons",[_c('r-button',{attrs:{"action":_vm.close}},[_vm._v("Close")])],{"close":_vm.close})],2)])])])]):_vm._e()])],1)};
+  var __vue_staticRenderFns__ = [];
+
+    /* style */
+    const __vue_inject_styles__$2 = function (inject) {
+      if (!inject) return
+      inject("data-v-208a88c4_0", { source: ".modal-enter-active[data-v-208a88c4],.modal-leave-active[data-v-208a88c4]{transition:opacity 120ms ease-out}.modal-enter-active .modal[data-v-208a88c4],.modal-leave-active .modal[data-v-208a88c4]{transition:transform 120ms ease-out}.modal-enter[data-v-208a88c4],.modal-leave-to[data-v-208a88c4]{opacity:0}.modal-enter .modal[data-v-208a88c4],.modal-leave-to .modal[data-v-208a88c4]{transform:scale(.97)}@media (max-width:480px){.modal-enter-active[data-v-208a88c4],.modal-leave-active[data-v-208a88c4]{transition:opacity 170ms ease-out}.modal-enter-active .modal[data-v-208a88c4],.modal-leave-active .modal[data-v-208a88c4]{transition:transform 240ms cubic-bezier(.31,.79,.46,.92)}.modal-enter .modal[data-v-208a88c4],.modal-leave-to .modal[data-v-208a88c4]{transform:translateY(12px)}}.modal-overlay[data-v-208a88c4]{overflow:hidden;-webkit-overflow-scrolling:touch;background:rgba(0,0,0,.6);position:fixed;text-align:center;left:0;top:0;right:0;bottom:0;height:100%}@supports (display:grid){@media (min-width:481px){.modal-overlay[data-v-208a88c4]{grid-template-columns:100%;grid-template-rows:1fr max-content 2fr;display:grid}.modal-overlay .modal-container[data-v-208a88c4]{grid-column:1;grid-row:2;width:100%}}}.modal-overlay.white[data-v-208a88c4]{background:rgba(255,255,255,.93)}.modal-container[data-v-208a88c4]{text-align:left}.modal[data-v-208a88c4]{background:#fff;border-radius:4px;box-shadow:0 0 0 3px rgba(0,0,0,.1),0 15px 10px -5px rgba(0,0,0,.07);word-wrap:break-word;overflow-y:auto;display:flex;flex-direction:column;max-height:calc(100vh - 24px)}.modal-buttons[data-v-208a88c4],.modal-header[data-v-208a88c4]{padding:24px;flex:0 0 auto}.modal-header[data-v-208a88c4]{display:flex;align-items:center}.modal-header .title[data-v-208a88c4]{flex:1 1 auto;margin:0}.modal-header .modal-close[data-v-208a88c4]{flex:0 0 auto;align-self:flex-start}.modal-content[data-v-208a88c4]{padding:0 24px;flex:0 1 auto;overflow:hidden}.modal-content.modal-content-scroll[data-v-208a88c4]{min-height:48px;padding:24px;overflow-y:auto;border-top:1px solid #eee;border-bottom:1px solid #eee}@media (max-width:480px){.modal-container[data-v-208a88c4]{padding:0}.modal-container[data-v-208a88c4]{justify-content:flex-end;height:100%;display:flex;flex-direction:column}.modal[data-v-208a88c4]{border-radius:0;padding-bottom:40px}}", map: undefined, media: undefined });
+
+    };
+    /* scoped */
+    const __vue_scope_id__$2 = "data-v-208a88c4";
+    /* module identifier */
+    const __vue_module_identifier__$2 = undefined;
+    /* functional template */
+    const __vue_is_functional_template__$2 = false;
+    /* style inject SSR */
+    
+
+    
+    var Modal = normalizeComponent_1(
+      { render: __vue_render__, staticRenderFns: __vue_staticRenderFns__ },
+      __vue_inject_styles__$2,
+      __vue_script__$2,
+      __vue_scope_id__$2,
+      __vue_is_functional_template__$2,
+      __vue_module_identifier__$2,
+      browser,
+      undefined
+    );
+
+  var script$3 = {
+    name: "ModalConfirm",
+    components: {
+      Modal: Modal
+    },
+    data: function data() {
+      return {
+        question: "",
+        desc: false,
+        yesText: "Yes",
+        noText: "No",
+        promiseResolve: null,
+        promiseReject: null
+      };
+    },
+    beforeDestroy: function beforeDestroy() {
+      if (this.promiseReject) this.promiseReject(new Error("Component destroyed"));
+    },
+    mounted: function mounted() {
+      this.$root.rModalConfirm = this.confirm;
+    },
+    methods: {
+      confirm: function () {
+        var _confirm = _asyncToGenerator(
+        /*#__PURE__*/
+        regenerator.mark(function _callee(question, yesText, noText, desc) {
+          var _this = this;
+
+          return regenerator.wrap(function _callee$(_context) {
+            while (1) {
+              switch (_context.prev = _context.next) {
+                case 0:
+                  if (!(this.promiseResolve || this.promiseReject)) {
+                    _context.next = 3;
+                    break;
+                  }
+
+                  console.warn("! Already confirming");
+                  return _context.abrupt("return", Promise.reject());
+
+                case 3:
+                  this.question = question;
+                  if (desc) this.desc = desc;
+                  if (yesText) this.yesText = yesText;
+                  if (noText) this.noText = noText;
+                  setTimeout(function () {
+                    if (!_this.$refs.confirmModal) {
+                      console.warn("! No confirmModal");
+
+                      _this.promiseReject();
+                    } else {
+                      _this.$refs.confirmModal.open();
+                    }
+                  }, 0);
+                  return _context.abrupt("return", new Promise(function (resolve, reject) {
+                    _this.promiseResolve = resolve;
+                    _this.promiseReject = reject;
+                  }));
+
+                case 9:
+                case "end":
+                  return _context.stop();
+              }
+            }
+          }, _callee, this);
+        }));
+
+        function confirm(_x, _x2, _x3, _x4) {
+          return _confirm.apply(this, arguments);
+        }
+
+        return confirm;
+      }(),
+      no: function no() {
+        if (this.promiseResolve) {
+          this.promiseResolve(false);
+        } else {
+          console.warn("! No promiseResolve");
+        }
+
+        this._cleanup();
+      },
+      yes: function yes() {
+        if (this.promiseResolve) {
+          this.promiseResolve(true);
+        } else {
+          console.warn("! No promiseResolve");
+        }
+
+        this._cleanup();
+      },
+      _cleanup: function _cleanup() {
+        this.$refs.confirmModal && this.$refs.confirmModal.modalOpen && this.$refs.confirmModal.close();
+        this.question = "";
+        this.desc = false;
+        this.yesText = "Yes";
+        this.noText = "No";
+        this.promiseResolve = null;
+        this.promiseReject = null;
+      }
+    }
+  };
+
+  /* script */
+  const __vue_script__$3 = script$3;
+
+  /* template */
+  var __vue_render__$1 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.promiseResolve)?_c('r-modal',{ref:"confirmModal",attrs:{"title":_vm.question},on:{"close":_vm.no},scopedSlots:_vm._u([{key:"buttons",fn:function(){return [_c('r-button',{attrs:{"primary":"primary","action":_vm.yes}},[_vm._v(_vm._s(_vm.yesText))]),_c('r-button',{attrs:{"action":_vm.no}},[_vm._v(_vm._s(_vm.noText))])]},proxy:true}],null,false,1587310570)},[(_vm.desc)?_c('p',[_vm._v(_vm._s(_vm.desc))]):_vm._e()]):_vm._e()};
+  var __vue_staticRenderFns__$1 = [];
+
+    /* style */
+    const __vue_inject_styles__$3 = undefined;
+    /* scoped */
+    const __vue_scope_id__$3 = "data-v-33c1b778";
+    /* module identifier */
+    const __vue_module_identifier__$3 = undefined;
+    /* functional template */
+    const __vue_is_functional_template__$3 = false;
+    /* style inject */
+    
+    /* style inject SSR */
+    
+
+    
+    var ModalConfirm = normalizeComponent_1(
+      { render: __vue_render__$1, staticRenderFns: __vue_staticRenderFns__$1 },
+      __vue_inject_styles__$3,
+      __vue_script__$3,
+      __vue_scope_id__$3,
+      __vue_is_functional_template__$3,
+      __vue_module_identifier__$3,
+      undefined,
+      undefined
+    );
+
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  var script$4 = {
     name: "Tabs",
     props: {
       extendLine: {
@@ -456,125 +1516,30 @@
   };
 
   /* script */
-  const __vue_script__$2 = script$2;
+  const __vue_script__$4 = script$4;
 
   /* template */
-  var __vue_render__ = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"r-tabs"},[_c('div',{staticClass:"tabs"},_vm._l((_vm.tabs),function(tab){return _c('r-button',{key:'tab-' + tab.name,staticClass:"tab",class:{ active: tab.isActive },attrs:{"action":function () { _vm.setTabActive(tab.name); },"borderless":"borderless"}},[_c('span',{class:{ 'text-quiet': !tab.isActive }},[_vm._v(_vm._s(tab.name))])])}),1),_c('div',{staticClass:"line space-bottom-medium",class:{ extendLine: _vm.extendLine }}),_c('div',{staticClass:"tabs-content"},[_vm._t("default")],2)])};
-  var __vue_staticRenderFns__ = [];
+  var __vue_render__$2 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"r-tabs"},[_c('div',{staticClass:"tabs"},_vm._l((_vm.tabs),function(tab){return _c('r-button',{key:'tab-' + tab.name,staticClass:"tab",class:{ active: tab.isActive },attrs:{"action":function () { _vm.setTabActive(tab.name); },"borderless":"borderless"}},[_c('span',{class:{ 'text-quiet': !tab.isActive }},[_vm._v(_vm._s(tab.name))])])}),1),_c('div',{staticClass:"line space-bottom-medium",class:{ extendLine: _vm.extendLine }}),_c('div',{staticClass:"tabs-content"},[_vm._t("default")],2)])};
+  var __vue_staticRenderFns__$2 = [];
 
     /* style */
-    const __vue_inject_styles__$2 = function (inject) {
+    const __vue_inject_styles__$4 = function (inject) {
       if (!inject) return
-      inject("data-v-dc987df6_0", { source: ".line[data-v-dc987df6]{margin-top:-1px;border-bottom:1px solid #ddd}.darkMode .line[data-v-dc987df6]{border-bottom-color:rgba(255,255,255,.15)}.line.extendLine[data-v-dc987df6]{margin-left:-24px;margin-right:-24px}.tab[data-v-dc987df6]{border-radius:0}.tab.active[data-v-dc987df6]{border-top:3px solid transparent;border-bottom:3px solid #0d7cc8;color:#1c69ab}.darkMode .tab.active[data-v-dc987df6]{color:#45a8ec}.tab .text-quiet[data-v-dc987df6]{font-weight:400}", map: undefined, media: undefined });
+      inject("data-v-43523216_0", { source: ".line[data-v-43523216]{margin-top:-1px;border-bottom:1px solid #eee}.darkMode .line[data-v-43523216]{border-bottom-color:rgba(255,255,255,.15)}.line.extendLine[data-v-43523216]{margin-left:-24px;margin-right:-24px}.tab[data-v-43523216]{border-radius:0}.tab.active[data-v-43523216]{border-top:3px solid transparent;border-bottom:3px solid #0d7cc8;color:#1c69ab}.darkMode .tab.active[data-v-43523216]{color:#45a8ec}.tab .text-quiet[data-v-43523216]{font-weight:400}", map: undefined, media: undefined });
 
     };
     /* scoped */
-    const __vue_scope_id__$2 = "data-v-dc987df6";
+    const __vue_scope_id__$4 = "data-v-43523216";
     /* module identifier */
-    const __vue_module_identifier__$2 = undefined;
+    const __vue_module_identifier__$4 = undefined;
     /* functional template */
-    const __vue_is_functional_template__$2 = false;
+    const __vue_is_functional_template__$4 = false;
     /* style inject SSR */
     
 
     
     var Tabs = normalizeComponent_1(
-      { render: __vue_render__, staticRenderFns: __vue_staticRenderFns__ },
-      __vue_inject_styles__$2,
-      __vue_script__$2,
-      __vue_scope_id__$2,
-      __vue_is_functional_template__$2,
-      __vue_module_identifier__$2,
-      browser,
-      undefined
-    );
-
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  var script$3 = {
-    name: "TabContent",
-    props: {
-      name: {
-        type: String,
-        required: true
-      }
-    },
-    data: function data() {
-      return {
-        isActive: false
-      };
-    }
-  };
-
-  /* script */
-  const __vue_script__$3 = script$3;
-
-  /* template */
-  var __vue_render__$1 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.isActive)?_c('div',{staticClass:"tab-content"},[_vm._t("default")],2):_vm._e()};
-  var __vue_staticRenderFns__$1 = [];
-
-    /* style */
-    const __vue_inject_styles__$3 = undefined;
-    /* scoped */
-    const __vue_scope_id__$3 = "data-v-7735b126";
-    /* module identifier */
-    const __vue_module_identifier__$3 = undefined;
-    /* functional template */
-    const __vue_is_functional_template__$3 = false;
-    /* style inject */
-    
-    /* style inject SSR */
-    
-
-    
-    var TabContent = normalizeComponent_1(
-      { render: __vue_render__$1, staticRenderFns: __vue_staticRenderFns__$1 },
-      __vue_inject_styles__$3,
-      __vue_script__$3,
-      __vue_scope_id__$3,
-      __vue_is_functional_template__$3,
-      __vue_module_identifier__$3,
-      undefined,
-      undefined
-    );
-
-  var script$4 = {
-    name: "GlobalStyles",
-    functional: true,
-    render: function render() {
-      return "";
-    }
-  };
-
-  /* script */
-  const __vue_script__$4 = script$4;
-
-  /* template */
-
-    /* style */
-    const __vue_inject_styles__$4 = function (inject) {
-      if (!inject) return
-      inject("data-v-90410286_0", { source: "*,::after,::before{box-sizing:border-box}ol[class],ul[class]{padding:0;list-style:none}blockquote,body,dd,dl,figcaption,figure,h1,h2,h3,h4,li,ol[class],p,pre,ul[class]{margin:0}body{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%;font-kerning:normal;background:#fff}#app,body{min-height:100vh}a:not([class]){text-decoration-skip-ink:auto}img{max-width:100%;display:block}button,input,select,textarea{font:inherit}h1,h2,h3,h4,h5,h6{font-weight:inherit;font-size:inherit}body{font-family:Inter,BlinkMacSystemFont,-apple-system,\"Segoe UI\",Roboto,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\";line-height:1.5;word-break:break-word}b,strong{font-weight:600}p,pre{margin-bottom:24px}p:last-child,pre:last-child{margin-bottom:0}p{font-size:16px;letter-spacing:-.005em;line-height:24px;font-weight:400}.title-1{word-wrap:break-word;margin-bottom:12px}.title-1:not(:first-child){margin-top:48px}.title-2{word-wrap:break-word;margin-bottom:12px}.title-2:not(:first-child){margin-top:48px}.title-3{word-wrap:break-word;margin-bottom:12px}.title-3:not(:first-child){margin-top:48px}.title-4{word-wrap:break-word;margin-bottom:12px}.title-4:not(:first-child){margin-top:48px}.title-5{word-wrap:break-word;margin-bottom:12px}.title-5:not(:first-child){margin-top:48px}.title-6{word-wrap:break-word;margin-bottom:12px}.title-6:not(:first-child){margin-top:48px}.title-caps{word-wrap:break-word;margin-bottom:12px}.title-caps:not(:first-child){margin-top:48px}.title-1{font-size:67px;letter-spacing:-.017em;line-height:70px;font-weight:400}.title-2{font-size:51px;letter-spacing:-.017em;line-height:60px;font-weight:400}.title-3{font-size:38px;letter-spacing:-.017em;line-height:49px;font-weight:400}.title-4{font-size:28px;letter-spacing:-.015em;line-height:39px;font-weight:400}.title-5{font-size:21px;letter-spacing:-.012em;line-height:31px;font-weight:400}.title-6{font-size:16px;letter-spacing:-.005em;line-height:24px;font-weight:600}.title-caps{font-size:13px;letter-spacing:.004em;line-height:20px;font-weight:600;text-transform:uppercase;letter-spacing:.1em}.text-bold{font-weight:600}.text-center{text-align:center}.text-right{text-align:right}.text-quiet{color:#777}.darkMode .text-quiet{color:#aab0b6}.text-error{color:#a61216}.darkMode .text-error{color:#e24161}.text-small{font-size:13px;letter-spacing:.004em;line-height:20px;font-weight:400}hr{height:2px;border:none;outline:0;margin:16px 0;padding:0;box-shadow:none;background:#ddd}.darkMode hr{background:rgba(255,255,255,.15)}.space-top-tiny{margin-top:6px}.space-top-small{margin-top:12px}.space-top-medium{margin-top:24px}.space-top-large{margin-top:48px}.space-top-huge{margin-top:96px}.space-bottom-tiny{margin-bottom:6px}.space-bottom-small{margin-bottom:12px}.space-bottom-medium{margin-bottom:24px}.space-bottom-large{margin-bottom:48px}.space-bottom-huge{margin-bottom:96px}.margin-top-none{margin-top:0!important}.margin-bottom-none{margin-bottom:0!important}.margin-vertical-none{margin-top:0!important;margin-bottom:0!important}.margin-horizontal-none{margin-left:0!important;margin-right:0!important}.margin-none{margin:0!important}.r-fullheight-parent{position:relative}.r-fullheight-parent>.r-fullheight{position:absolute;top:0;bottom:0;left:0;right:0}.r-container{margin-left:auto;margin-right:auto;padding-left:24px;padding-right:24px}.r-container-huge{max-width:1440px}.r-container-large{max-width:960px}.r-container-medium{max-width:720px}.r-container-small{max-width:480px}.r-container-tiny{max-width:240px}.r-container-maximum{max-width:none}.r-container-row{display:flex;flex-direction:row;margin-left:auto;margin-right:auto;overflow-x:auto;overflow-y:hidden}.r-container-row>.r-container-column{flex-grow:0;flex-shrink:1;min-width:216px;max-width:none;padding-left:24px;padding-right:24px}.r-container-row>.r-container-huge{flex-basis:1440px}.r-container-row>.r-container-large{flex-basis:960px}.r-container-row>.r-container-medium{flex-basis:720px}.r-container-row>.r-container-small{flex-basis:480px}.r-container-row>.r-container-tiny{flex-basis:240px}.r-container-row>.r-container-maximum{flex-grow:1;flex-basis:100%}@media (max-width:960px){.r-container-row.r-columns-mobile-large{display:block;position:static}.r-container-row.r-columns-mobile-large>.r-container-column{max-width:none;min-width:0}}@media (max-width:720px){.r-container-row.r-columns-mobile-medium{display:block;position:static}.r-container-row.r-columns-mobile-medium>.r-container-column{max-width:none;min-width:0}}@media (max-width:480px){.r-container-row.r-columns-mobile-small{display:block;position:static}.r-container-row.r-columns-mobile-small>.r-container-column{max-width:none;min-width:0}}.r-container-row.r-fullheight>.r-container-column{overflow-y:auto;-webkit-overflow-scrolling:touch}.flex0{flex:0 0 auto}.flex1{flex:1 1 auto}.flex2{flex:2 2 auto}.flex3{flex:3 3 auto}", map: undefined, media: undefined });
-
-    };
-    /* scoped */
-    const __vue_scope_id__$4 = undefined;
-    /* module identifier */
-    const __vue_module_identifier__$4 = undefined;
-    /* functional template */
-    const __vue_is_functional_template__$4 = undefined;
-    /* style inject SSR */
-    
-
-    
-    var GlobalStyles = normalizeComponent_1(
-      {},
+      { render: __vue_render__$2, staticRenderFns: __vue_staticRenderFns__$2 },
       __vue_inject_styles__$4,
       __vue_script__$4,
       __vue_scope_id__$4,
@@ -592,9 +1557,104 @@
   //
   //
   //
+  var script$5 = {
+    name: "TabContent",
+    props: {
+      name: {
+        type: String,
+        required: true
+      }
+    },
+    data: function data() {
+      return {
+        isActive: false
+      };
+    }
+  };
+
+  /* script */
+  const __vue_script__$5 = script$5;
+
+  /* template */
+  var __vue_render__$3 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.isActive)?_c('div',{staticClass:"tab-content"},[_vm._t("default")],2):_vm._e()};
+  var __vue_staticRenderFns__$3 = [];
+
+    /* style */
+    const __vue_inject_styles__$5 = undefined;
+    /* scoped */
+    const __vue_scope_id__$5 = "data-v-461dcf7a";
+    /* module identifier */
+    const __vue_module_identifier__$5 = undefined;
+    /* functional template */
+    const __vue_is_functional_template__$5 = false;
+    /* style inject */
+    
+    /* style inject SSR */
+    
+
+    
+    var TabContent = normalizeComponent_1(
+      { render: __vue_render__$3, staticRenderFns: __vue_staticRenderFns__$3 },
+      __vue_inject_styles__$5,
+      __vue_script__$5,
+      __vue_scope_id__$5,
+      __vue_is_functional_template__$5,
+      __vue_module_identifier__$5,
+      undefined,
+      undefined
+    );
+
+  var script$6 = {
+    name: "GlobalStyles",
+    functional: true,
+    render: function render() {
+      return "";
+    }
+  };
+
+  /* script */
+  const __vue_script__$6 = script$6;
+
+  /* template */
+
+    /* style */
+    const __vue_inject_styles__$6 = function (inject) {
+      if (!inject) return
+      inject("data-v-f041f3f6_0", { source: "*,::after,::before{box-sizing:border-box}ol[class],ul[class]{padding:0;list-style:none}blockquote,body,dd,dl,figcaption,figure,h1,h2,h3,h4,li,ol[class],p,pre,ul[class]{margin:0}body{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%;font-kerning:normal;background:#fff}#app,body{min-height:100vh}a:not([class]){text-decoration-skip-ink:auto}img{max-width:100%;display:block}button,input,select,textarea{font:inherit}h1,h2,h3,h4,h5,h6{font-weight:inherit;font-size:inherit}body{font-family:Inter,BlinkMacSystemFont,-apple-system,\"Segoe UI\",Roboto,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\";line-height:1.5;word-break:break-word}b,strong{font-weight:600}p,pre{margin-bottom:24px}p:last-child,pre:last-child{margin-bottom:0}p{font-size:16px;letter-spacing:-.005em;line-height:24px;font-weight:400}a{text-underline-position:under;color:#1c69ab}a:visited{color:#3a598d}.darkMode a{color:#2097e8}.darkMode a:visited{color:#2076e8}.title-1{word-wrap:break-word;margin-bottom:12px}.title-1:not(:first-child){margin-top:48px}.title-2{word-wrap:break-word;margin-bottom:12px}.title-2:not(:first-child){margin-top:48px}.title-3{word-wrap:break-word;margin-bottom:12px}.title-3:not(:first-child){margin-top:48px}.title-4{word-wrap:break-word;margin-bottom:12px}.title-4:not(:first-child){margin-top:48px}.title-5{word-wrap:break-word;margin-bottom:12px}.title-5:not(:first-child){margin-top:48px}.title-6{word-wrap:break-word;margin-bottom:12px}.title-6:not(:first-child){margin-top:48px}.title-caps{word-wrap:break-word;margin-bottom:12px}.title-caps:not(:first-child){margin-top:48px}.title-1{font-size:67px;letter-spacing:-.017em;line-height:70px;font-weight:400}.title-2{font-size:51px;letter-spacing:-.017em;line-height:60px;font-weight:400}.title-3{font-size:38px;letter-spacing:-.017em;line-height:49px;font-weight:400}.title-4{font-size:28px;letter-spacing:-.015em;line-height:39px;font-weight:400}.title-5{font-size:21px;letter-spacing:-.012em;line-height:31px;font-weight:400}.title-6{font-size:16px;letter-spacing:-.005em;line-height:24px;font-weight:600}.title-caps{font-size:13px;letter-spacing:.004em;line-height:20px;font-weight:600;text-transform:uppercase;letter-spacing:.1em}.text-bold{font-weight:600}.text-center{text-align:center}.text-right{text-align:right}.text-quiet{color:#777}.darkMode .text-quiet{color:#aab0b6}.text-error{color:#a61216}.darkMode .text-error{color:#e24161}.text-small{font-size:13px;letter-spacing:.004em;line-height:20px;font-weight:400}hr{height:2px;border:none;outline:0;margin:16px 0;padding:0;box-shadow:none;background:#ddd}.darkMode hr{background:rgba(255,255,255,.15)}.space-top-tiny{margin-top:6px}.space-top-small{margin-top:12px}.space-top-medium{margin-top:24px}.space-top-large{margin-top:48px}.space-top-huge{margin-top:96px}.space-bottom-tiny{margin-bottom:6px}.space-bottom-small{margin-bottom:12px}.space-bottom-medium{margin-bottom:24px}.space-bottom-large{margin-bottom:48px}.space-bottom-huge{margin-bottom:96px}.margin-top-none{margin-top:0!important}.margin-bottom-none{margin-bottom:0!important}.margin-vertical-none{margin-top:0!important;margin-bottom:0!important}.margin-horizontal-none{margin-left:0!important;margin-right:0!important}.margin-none{margin:0!important}.r-fullheight-parent{position:relative}.r-fullheight-parent>.r-fullheight{position:absolute;top:0;bottom:0;left:0;right:0}.r-container{margin-left:auto;margin-right:auto;padding-left:24px;padding-right:24px}.r-container-huge{max-width:1440px}.r-container-large{max-width:960px}.r-container-medium{max-width:720px}.r-container-small{max-width:480px}.r-container-tiny{max-width:240px}.r-container-maximum{max-width:none}.r-container-row{display:flex;flex-direction:row;margin-left:auto;margin-right:auto;overflow-x:auto;overflow-y:hidden}.r-container-row>.r-container-column{flex-grow:0;flex-shrink:1;min-width:216px;max-width:none;padding-left:24px;padding-right:24px}.r-container-row>.r-container-huge{flex-basis:1440px}.r-container-row>.r-container-large{flex-basis:960px}.r-container-row>.r-container-medium{flex-basis:720px}.r-container-row>.r-container-small{flex-basis:480px}.r-container-row>.r-container-tiny{flex-basis:240px}.r-container-row>.r-container-maximum{flex-grow:1;flex-basis:100%}@media (max-width:960px){.r-container-row.r-columns-mobile-large{display:block;position:static}.r-container-row.r-columns-mobile-large>.r-container-column{max-width:none;min-width:0}}@media (max-width:720px){.r-container-row.r-columns-mobile-medium{display:block;position:static}.r-container-row.r-columns-mobile-medium>.r-container-column{max-width:none;min-width:0}}@media (max-width:480px){.r-container-row.r-columns-mobile-small{display:block;position:static}.r-container-row.r-columns-mobile-small>.r-container-column{max-width:none;min-width:0}}.r-container-row.r-fullheight>.r-container-column{overflow-y:auto;-webkit-overflow-scrolling:touch}.flex0{flex:0 0 auto}.flex1{flex:1 1 auto}.flex2{flex:2 2 auto}.flex3{flex:3 3 auto}body.r-modal-open{overflow:hidden}.r-buttons{margin-right:-6px;margin-bottom:-6px}.r-buttons.align-right{text-align:right}.r-buttons .r-button{margin-right:6px;margin-bottom:6px}.r-buttons-grouped{margin-right:-6px;margin-bottom:-6px}.r-buttons-grouped .r-button-group{display:inline-block;margin-right:6px;margin-bottom:6px}.r-buttons-grouped .r-button-group .r-button+.r-button{border-top-left-radius:0;border-bottom-left-radius:0;border-left:none}.r-buttons-grouped .r-button-group .r-button:not(:last-child){border-top-right-radius:0;border-bottom-right-radius:0}", map: undefined, media: undefined });
+
+    };
+    /* scoped */
+    const __vue_scope_id__$6 = undefined;
+    /* module identifier */
+    const __vue_module_identifier__$6 = undefined;
+    /* functional template */
+    const __vue_is_functional_template__$6 = undefined;
+    /* style inject SSR */
+    
+
+    
+    var GlobalStyles = normalizeComponent_1(
+      {},
+      __vue_inject_styles__$6,
+      __vue_script__$6,
+      __vue_scope_id__$6,
+      __vue_is_functional_template__$6,
+      __vue_module_identifier__$6,
+      browser,
+      undefined
+    );
+
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
   //
   var MAX_SHOWN = 3;
-  var script$5 = {
+  var script$7 = {
     name: "Toast",
     data: function data() {
       return {
@@ -640,63 +1700,41 @@
   };
 
   /* script */
-  const __vue_script__$5 = script$5;
+  const __vue_script__$7 = script$7;
 
   /* template */
-  var __vue_render__$2 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"toast-list"},[_c('transition-group',{staticClass:"toast-list-inner",attrs:{"name":"toast-list","tag":"div"}},_vm._l((_vm.queue),function(notification){return _c('div',{key:notification.index,staticClass:"toast-notification-wrap"},[_c('div',{staticClass:"toast-notification",on:{"click":function($event){return _vm.remove(notification.index)}}},[_vm._v(_vm._s(notification.text))])])}),0)],1)};
-  var __vue_staticRenderFns__$2 = [];
+  var __vue_render__$4 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"toast-list"},[_c('transition-group',{staticClass:"toast-list-inner",attrs:{"name":"toast-list","tag":"div"}},_vm._l((_vm.queue),function(notification){return _c('div',{key:notification.index,staticClass:"toast-notification-wrap"},[_c('div',{staticClass:"toast-notification",on:{"click":function($event){return _vm.remove(notification.index)}}},[_vm._v(_vm._s(notification.text))])])}),0)],1)};
+  var __vue_staticRenderFns__$4 = [];
 
     /* style */
-    const __vue_inject_styles__$5 = function (inject) {
+    const __vue_inject_styles__$7 = function (inject) {
       if (!inject) return
-      inject("data-v-0b376ed6_0", { source: ".toast-list[data-v-0b376ed6]{position:fixed;top:36px;left:10px;right:10px;z-index:1100;user-select:none;pointer-events:none}.toast-list-inner[data-v-0b376ed6]{max-width:700px;margin:0 auto;position:relative;text-align:center}.toast-notification[data-v-0b376ed6]{display:inline-block;padding:15px 25px;margin-bottom:5px;word-break:break-word;color:#fff;font-size:16px;letter-spacing:-.005em;line-height:24px;font-weight:600;background:#40444a;border-radius:4px;box-shadow:0 2px 10px -2px rgba(0,0,0,.2);pointer-events:all;user-select:none}.toast-list-enter[data-v-0b376ed6],.toast-list-leave-to[data-v-0b376ed6]{opacity:0}.toast-list-enter-active[data-v-0b376ed6],.toast-list-leave-active[data-v-0b376ed6],.toast-list-move[data-v-0b376ed6]{transition:all .2s}.toast-list-leave-active[data-v-0b376ed6]{position:absolute;left:0;right:0}", map: undefined, media: undefined });
+      inject("data-v-6ba995ac_0", { source: ".toast-list[data-v-6ba995ac]{position:fixed;top:36px;left:10px;right:10px;z-index:13000;user-select:none;pointer-events:none}.toast-list-inner[data-v-6ba995ac]{max-width:700px;margin:0 auto;position:relative;text-align:center}.toast-notification[data-v-6ba995ac]{display:inline-block;padding:15px 25px;margin-bottom:5px;word-break:break-word;color:#fff;font-size:16px;letter-spacing:-.005em;line-height:24px;font-weight:600;background:#40444a;border-radius:4px;box-shadow:0 2px 10px -2px rgba(0,0,0,.2);pointer-events:all;user-select:none}.toast-list-enter[data-v-6ba995ac],.toast-list-leave-to[data-v-6ba995ac]{opacity:0}.toast-list-enter-active[data-v-6ba995ac],.toast-list-leave-active[data-v-6ba995ac],.toast-list-move[data-v-6ba995ac]{transition:all .2s}.toast-list-leave-active[data-v-6ba995ac]{position:absolute;left:0;right:0}", map: undefined, media: undefined });
 
     };
     /* scoped */
-    const __vue_scope_id__$5 = "data-v-0b376ed6";
+    const __vue_scope_id__$7 = "data-v-6ba995ac";
     /* module identifier */
-    const __vue_module_identifier__$5 = undefined;
+    const __vue_module_identifier__$7 = undefined;
     /* functional template */
-    const __vue_is_functional_template__$5 = false;
+    const __vue_is_functional_template__$7 = false;
     /* style inject SSR */
     
 
     
     var Toast = normalizeComponent_1(
-      { render: __vue_render__$2, staticRenderFns: __vue_staticRenderFns__$2 },
-      __vue_inject_styles__$5,
-      __vue_script__$5,
-      __vue_scope_id__$5,
-      __vue_is_functional_template__$5,
-      __vue_module_identifier__$5,
+      { render: __vue_render__$4, staticRenderFns: __vue_staticRenderFns__$4 },
+      __vue_inject_styles__$7,
+      __vue_script__$7,
+      __vue_scope_id__$7,
+      __vue_is_functional_template__$7,
+      __vue_module_identifier__$7,
       browser,
       undefined
     );
 
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
-      descriptor.enumerable = descriptor.enumerable || false;
-      descriptor.configurable = true;
-      if ("value" in descriptor) descriptor.writable = true;
-      Object.defineProperty(target, descriptor.key, descriptor);
-    }
-  }
-
-  function _createClass(Constructor, protoProps, staticProps) {
-    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-    if (staticProps) _defineProperties(Constructor, staticProps);
-    return Constructor;
-  }
-
   //
-  var script$6 = {
+  var script$8 = {
     name: "Tooltip",
     data: function data() {
       return {
@@ -862,35 +1900,35 @@
   };
 
   /* script */
-  const __vue_script__$6 = script$6;
+  const __vue_script__$8 = script$8;
 
   /* template */
-  var __vue_render__$3 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('transition',{attrs:{"name":"tooltip"}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.visible),expression:"visible"}],ref:"tooltip",staticClass:"r-tooltip",style:(_vm.tooltipStyle)},[_vm._v(_vm._s(_vm.text))])]),_c('transition',{attrs:{"name":"tooltip-arrow"}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.visible),expression:"visible"}],staticClass:"r-tooltip-arrow",style:(_vm.arrowStyle)})])],1)};
-  var __vue_staticRenderFns__$3 = [];
+  var __vue_render__$5 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('transition',{attrs:{"name":"tooltip"}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.visible),expression:"visible"}],ref:"tooltip",staticClass:"r-tooltip",style:(_vm.tooltipStyle)},[_vm._v(_vm._s(_vm.text))])]),_c('transition',{attrs:{"name":"tooltip-arrow"}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.visible),expression:"visible"}],staticClass:"r-tooltip-arrow",style:(_vm.arrowStyle)})])],1)};
+  var __vue_staticRenderFns__$5 = [];
 
     /* style */
-    const __vue_inject_styles__$6 = function (inject) {
+    const __vue_inject_styles__$8 = function (inject) {
       if (!inject) return
-      inject("data-v-47ac65a6_0", { source: ".tooltip-enter-active[data-v-47ac65a6]{transition:opacity .1s}.tooltip-enter[data-v-47ac65a6]{opacity:0}.tooltip-arrow-enter-active[data-v-47ac65a6]{transition:opacity 150ms}.tooltip-arrow-enter[data-v-47ac65a6]{opacity:0}.r-tooltip[data-v-47ac65a6]{position:fixed;z-index:1000;padding:5px 12px;margin-right:5px;word-break:break-word;color:#fff;font-size:16px;letter-spacing:-.005em;line-height:24px;font-weight:600;background:#40444a;border-radius:4px;box-shadow:0 2px 10px -2px rgba(0,0,0,.2);pointer-events:none;user-select:none}.r-tooltip-arrow[data-v-47ac65a6]{position:fixed;z-index:1001;border-top:7px solid #40444a;border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:7px solid transparent;pointer-events:none;user-select:none}", map: undefined, media: undefined });
+      inject("data-v-89be188a_0", { source: ".tooltip-enter-active[data-v-89be188a]{transition:opacity .1s}.tooltip-enter[data-v-89be188a]{opacity:0}.tooltip-arrow-enter-active[data-v-89be188a]{transition:opacity 150ms}.tooltip-arrow-enter[data-v-89be188a]{opacity:0}.r-tooltip[data-v-89be188a]{position:fixed;z-index:12000;padding:5px 12px;margin-right:5px;word-break:break-word;color:#fff;font-size:16px;letter-spacing:-.005em;line-height:24px;font-weight:600;background:#40444a;border-radius:4px;box-shadow:0 2px 10px -2px rgba(0,0,0,.2);pointer-events:none;user-select:none}.r-tooltip-arrow[data-v-89be188a]{position:fixed;z-index:12001;border-top:7px solid #40444a;border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:7px solid transparent;pointer-events:none;user-select:none}", map: undefined, media: undefined });
 
     };
     /* scoped */
-    const __vue_scope_id__$6 = "data-v-47ac65a6";
+    const __vue_scope_id__$8 = "data-v-89be188a";
     /* module identifier */
-    const __vue_module_identifier__$6 = undefined;
+    const __vue_module_identifier__$8 = undefined;
     /* functional template */
-    const __vue_is_functional_template__$6 = false;
+    const __vue_is_functional_template__$8 = false;
     /* style inject SSR */
     
 
     
     var TooltipComponent = normalizeComponent_1(
-      { render: __vue_render__$3, staticRenderFns: __vue_staticRenderFns__$3 },
-      __vue_inject_styles__$6,
-      __vue_script__$6,
-      __vue_scope_id__$6,
-      __vue_is_functional_template__$6,
-      __vue_module_identifier__$6,
+      { render: __vue_render__$5, staticRenderFns: __vue_staticRenderFns__$5 },
+      __vue_inject_styles__$8,
+      __vue_script__$8,
+      __vue_scope_id__$8,
+      __vue_is_functional_template__$8,
+      __vue_module_identifier__$8,
       browser,
       undefined
     );
@@ -1001,7 +2039,7 @@
     };
   };
 
-  var version = "0.27.1";
+  var version = "0.32.0";
 
   var mountComponentToRoot = function mountComponentToRoot(vue, parent, componentConstructor) {
     var propsData = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};
@@ -1015,21 +2053,37 @@
   };
 
   var install = function install(Vue) {
+    Vue.use(PortalVue__default);
     Vue.component("r-button", Button);
     Vue.component("r-icon", Icon);
+    Vue.component("r-modal", Modal);
     Vue.component("r-tabs", Tabs);
     Vue.component("r-tab-content", TabContent);
     Vue.directive("rtip", RTip(Vue));
     var toastComponent;
     var globalStylesComponent;
+    var portalTargetComponent;
+    var modalConfirmComponent;
     Vue.mixin({
+      data: function data() {
+        return this.$parent ? {} : {
+          rModalsOpen: []
+        };
+      },
       mounted: function mounted() {
         // @ts-ignore
         if (!this.$parent) {
           // @ts-ignore
           toastComponent = mountComponentToRoot(Vue, this, Toast); // @ts-ignore
 
-          globalStylesComponent = mountComponentToRoot(Vue, this, GlobalStyles);
+          globalStylesComponent = mountComponentToRoot(Vue, this, GlobalStyles); // @ts-ignore
+
+          portalTargetComponent = mountComponentToRoot(Vue, this, PortalVue.PortalTarget, {
+            name: "r-modals",
+            multiple: true
+          }); // @ts-ignore
+
+          modalConfirmComponent = mountComponentToRoot(Vue, this, ModalConfirm);
         }
       }
     });
