@@ -22,11 +22,24 @@ pre
     margin-bottom 0
 
 /*
-P
+TEXT
  */
 
 p
   font-sans($font-size-normal)
+
+a
+  text-underline-position under
+  color $color-blue-text
+
+  &:visited
+    color spin(desaturate($color-blue-text, 30), 10deg)
+
+  .darkMode &
+    color $color-blue
+
+    &:visited
+      color spin($color-blue, 10deg)
 
 /*
 TITLES

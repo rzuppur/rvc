@@ -2,13 +2,13 @@
 
   #app.r-fullheight-parent
 
-    .r-container-row.r-columns-mobile-medium.r-fullheight
+    .r-container-row.r-columns-mobile-medium.r-fullheight(:class="{ darkMode }")
 
       .r-container-column.r-container-small.sidebar
 
         section
           h1.title-3.space-bottom-tiny RVC
-          .title-5.margin-top-none Vue UI Components Library
+          .title-5.margin-top-none Vue UI Framework
 
           p
             a(href="https://github.com/rzuppur/rvc/blob/master/demo/App.vue" target="_blank") View page source
@@ -29,29 +29,11 @@
 
           r-button(gray borderless :action="toggleTheme" :icon="`brightness ${darkMode ? 'dark' : 'bright'}`") Toggle theme
 
-      .r-container-column.r-container-maximum(:class="{ darkMode }")
+      .r-container-column.r-container-maximum
 
         section(style="padding-top: 12px")
 
           r-tabs(:extendLine="true")
-
-            r-tab-content(name="Icons")
-              .space-bottom-medium(v-pre)
-                include:markdown-it ../docs/icon.md
-
-              .icons
-                r-icon.gray(v-for="icon in icons.concat(['missing'])" :icon="icon" v-rtip="icon")
-
-            r-tab-content(name="Tooltip")
-              .space-bottom-medium(v-pre)
-                include:markdown-it ../docs/tooltip.md
-
-              .buttons
-                r-button(v-rtip="'Default tooltip - long text test'") Default
-                r-button(v-rtip.bottom="'Position bottom'") Bottom
-                r-button(v-rtip.left="'Position left'") Left
-                r-button(v-rtip.right="'Position right'") Right
-                r-button(v-rtip="null") Null
 
             r-tab-content(name="Buttons")
               .space-bottom-medium(v-pre)
@@ -95,6 +77,24 @@
                 r-button(small icon="arrow left") Small icon
                 r-button(small icon="close")
                 r-button(small borderless icon="edit")
+
+            r-tab-content(name="Icons")
+              .space-bottom-medium(v-pre)
+                include:markdown-it ../docs/icon.md
+
+              .icons
+                r-icon.gray(v-for="icon in icons.concat(['missing'])" :icon="icon" v-rtip="icon")
+
+            r-tab-content(name="Tooltip")
+              .space-bottom-medium(v-pre)
+                include:markdown-it ../docs/tooltip.md
+
+              .buttons
+                r-button(v-rtip="'Default tooltip - long text test'") Default
+                r-button(v-rtip.bottom="'Position bottom'") Bottom
+                r-button(v-rtip.left="'Position left'") Left
+                r-button(v-rtip.right="'Position right'") Right
+                r-button(v-rtip="null") Null
 
             r-tab-content(name="Toast notification")
               .space-bottom-medium(v-pre)
@@ -218,11 +218,14 @@
   @import "../src/styles/shared.styl"
 
   .darkMode
-    background $color-dark-background
+    background $color-darkmode-background
     color $color-darkmode-text
 
   .sidebar
     background $color-light-gray-background
+
+    .darkMode &
+      background lighten($color-darkmode-background, 6)
 
   section
     padding-top $space-medium
