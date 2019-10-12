@@ -125,3 +125,17 @@ MODAL
 
 body.r-modal-open
   overflow hidden
+
+
+/*
+MEDIA
+ */
+for size in "medium" "small"
+
+  &.r-media-hide-{size}
+    @media (max-width lookup("$container-" + size))
+      display none
+
+  &.r-media-show-{size}
+    @media (min-width (lookup("$container-" + size) + 1px))
+      display none

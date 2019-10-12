@@ -24,7 +24,8 @@
 
             .modal-header(v-if="title !== false")
 
-              h1.title.title-4(:id="`dialog-title-${_id}`") {{ title }}
+              h1.title.title-4.r-media-hide-small(:id="`dialog-title-${_id}`") {{ title }}
+              h1.title.title-5.r-media-show-small(:id="`dialog-title-${_id}`") {{ title }}
 
               r-button(v-if="!blocking" borderless :action="close" label="Close dialog" icon="close")
 
@@ -203,10 +204,10 @@
 
   .modal-header
     display flex
-    align-items center
 
     .title
       flex 1 1 auto
+      align-self center
       margin 0
 
     .modal-close
@@ -220,7 +221,7 @@
 
     &.modal-content-scroll
       min-height $space-large
-      padding $space-medium
+      padding $space-small $space-medium
       overflow-y auto
       border-top 1px solid $color-light-border
       border-bottom @border-top
@@ -238,7 +239,6 @@
 
     .modal
       border-radius 0
-      padding-bottom 40px
 
 
 </style>
