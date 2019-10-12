@@ -126,6 +126,8 @@ Basic tabs component.
   <r-tab-content name="tab_name_3"></r-tab-content>
 </r-tabs>
 ```
+### Other
+You can use `r-media-hide-{"small" | "medium"}` and `r-media-show-{"small" | "medium"}` to show some items only on small/wide screens.
 <br/><br/>
 
 ## Usage
