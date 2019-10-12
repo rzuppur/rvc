@@ -29,7 +29,11 @@
 
               r-button(v-if="!blocking" borderless :action="close" label="Close dialog" icon="close")
 
-            .modal-content(:class="{ 'modal-content-scroll': contentScrolls }" ref="modalContent")
+            .modal-content(
+              :class="{ 'modal-content-scroll': contentScrolls, 'show-top-border': showTopBorder, 'show-bottom-border': showBottomBorder }"
+              @scroll.passive="updateScrollPosition"
+              ref="modalContent"
+            )
               .modal-content-inner
                 slot
 
@@ -64,6 +68,8 @@
       return {
         modalOpen: false,
         contentScrolls: false,
+        showTopBorder: false,
+        showBottomBorder: false,
       };
     },
     computed: {
@@ -119,6 +125,14 @@
         if (this.$refs.modalContent) {
           const overflow = this.$refs.modalContent.scrollHeight - this.$refs.modalContent.clientHeight;
           this.contentScrolls = overflow > 0;
+          this.updateScrollPosition();
+        }
+      },
+      updateScrollPosition() {
+        const content = this.$refs.modalContent;
+        if (content) {
+          this.showTopBorder = content.scrollTop > 4;
+          this.showBottomBorder = content.scrollTop < (content.scrollHeight - content.offsetHeight - 5);
         }
       },
     },
@@ -203,6 +217,9 @@
     flex 0 0 auto
 
   .modal-header
+    padding-bottom $space-small
+
+  .modal-header
     display flex
 
     .title
@@ -221,10 +238,19 @@
 
     &.modal-content-scroll
       min-height $space-large
-      padding $space-small $space-medium
+      padding 0 $space-medium $space-medium
       overflow-y auto
-      border-top 1px solid $color-light-border
-      border-bottom @border-top
+
+      $_shadow_size = 12px
+
+      &.show-top-border
+        box-shadow inset 0 $_shadow_size $_shadow_size (- $_shadow_size) alpha(#000, 0.1)
+
+      &.show-bottom-border
+        box-shadow inset 0 (- $_shadow_size) $_shadow_size (- $_shadow_size) alpha(#000, 0.1)
+
+      &.show-top-border.show-bottom-border
+        box-shadow inset 0 $_shadow_size $_shadow_size (- $_shadow_size) alpha(#000, 0.1), inset 0 (- $_shadow_size) $_shadow_size (- $_shadow_size) alpha(#000, 0.1)
 
   @media (max-width $container-small)
 

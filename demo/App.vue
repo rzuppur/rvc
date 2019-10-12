@@ -60,6 +60,9 @@
                 p Modal content
                 p Modal content
                 p Modal content
+                p Modal content
+                p Modal content
+                p Modal content
 
                 template(v-slot:buttons)
                   +modalButtons()
@@ -152,9 +155,9 @@
                 include:markdown-it ../docs/toast.md
 
               .r-buttons
-                r-button(:action="() => { $notifyToast('Notification') }") Notification
-                r-button(:action="() => { $notifyToast('Short') }") Short
-                r-button(:action="() => { $notifyToast('Long text notification that should hopefully wrap to multiple lines and you should be able to read this entire text before it disappears.') }") Long notification
+                r-button(:action="() => { $rNotifyToast('Notification') }") Notification
+                r-button(:action="() => { $rNotifyToast('Short') }") Short
+                r-button(:action="() => { $rNotifyToast('Long text notification that should hopefully wrap to multiple lines and you should be able to read this entire text before it disappears.') }") Long notification
 
             r-tab-content(name="Containers")
               .space-bottom-medium(v-pre)
@@ -259,7 +262,7 @@
       },
       async confirmModalDemo() {
         const result = await this.$root.rModalConfirm("Modal question?", "Confirm", "Cancel", "Description text");
-        this.$root.$notifyToast(result ? "Confirmed" : "Cancelled");
+        this.$root.$rNotifyToast(result ? "Confirmed" : "Cancelled");
       },
     },
   };
