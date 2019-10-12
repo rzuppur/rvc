@@ -1,5 +1,12 @@
 <template lang="pug">
 
+  mixin modalButtons()
+    r-button(:action="() => { $refs.modal1.open(); }") Default size
+    r-button(:action="() => { $refs.modal2.open(); }") Medium size
+    r-button(:action="() => { $refs.modal3.open(); }") Large size
+    r-button(:action="() => { $refs.modal6.open(); }") Blocking
+
+
   #app.r-fullheight-parent
 
     .r-container-row.r-columns-mobile-medium.r-fullheight(:class="{ darkMode }")
@@ -34,6 +41,36 @@
         section(style="padding-top: 12px")
 
           r-tabs(:extendLine="true")
+
+            r-tab-content(name="Modals")
+              .r-buttons
+                +modalButtons()
+
+              r-modal(ref="modal1" title="Default size (small)")
+                p Modal content
+                p Modal content
+                p Modal content
+                p Modal content
+                p Modal content
+                p Modal content
+                p Modal content
+                p Modal content
+
+                template(v-slot:buttons)
+                  +modalButtons()
+
+              r-modal(ref="modal2" title="Medium size" size="medium")
+                template(v-slot:buttons)
+                  +modalButtons()
+
+              r-modal(ref="modal3" title="Large size" size="large")
+                template(v-slot:buttons)
+                  +modalButtons()
+
+              r-modal(ref="modal6" title="Blocking modal" :blocking="true")
+                p Can't close this
+                template(v-slot:buttons="buttons")
+                  r-button(:action="buttons.close") Unless you click here
 
             r-tab-content(name="Buttons")
               .space-bottom-medium(v-pre)
@@ -243,14 +280,6 @@
   .r-buttons
     margin-bottom $space-small
 
-    &:not(:last-child)
-      margin-bottom 0
-
-    .r-button
-      margin-bottom $_buttons_margin
-
-      &:not(:last-child):not(.fullwidth)
-        margin-right $_buttons_margin
 
   .icons
     .r-icon

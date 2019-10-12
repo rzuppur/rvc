@@ -118,7 +118,7 @@
 
     height $height-input
     padding 0 12px
-    border 1px solid $color-gray-border
+    border 1px solid $color-medium-border
     border-radius $border-radius
 
     font-family $font-sans
@@ -134,7 +134,7 @@
     .darkMode &
       background-color transparent
       color $color-darkmode-text
-      border-color $color-darkmode-gray-border
+      border-color $color-darkmode-medium-border
 
     &,
     &:hover

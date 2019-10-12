@@ -55,10 +55,10 @@
 
   .line
     margin-top -1px
-    border-bottom 1px solid $color-gray-border
+    border-bottom 1px solid $color-light-border
 
     .darkMode &
-      border-bottom-color $color-darkmode-gray-border
+      border-bottom-color $color-darkmode-medium-border
 
     &.extendLine
       margin-left - $space-medium

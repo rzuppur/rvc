@@ -185,7 +185,7 @@
 
   .r-tooltip
     position fixed
-    z-index 1000
+    z-index 12000
     padding 5px 12px
     margin-right 5px
     word-break break-word
@@ -199,7 +199,7 @@
 
   .r-tooltip-arrow
     position fixed
-    z-index 1001
+    z-index 12001
     $_size = 7px
     border-top $_size solid $_background
     border-left $_size solid transparent

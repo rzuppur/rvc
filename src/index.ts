@@ -1,19 +1,15 @@
 // @ts-ignore
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { Component, PluginObject, VueConstructor } from "vue";
+import PortalVue, { PortalTarget } from "portal-vue";
 import Button from "./components/global/r-button/Button.vue";
 import Icon from "./components/global/r-icon/Icon.vue";
+import Modal from "./components/global/r-modal/Modal.vue";
 import Tabs from "./components/global/r-tabs/Tabs.vue";
 import TabContent from "./components/global/r-tabs/r-tab-content/TabContent.vue";
 import GlobalStyles from "./components/root/GlobalStyles.vue";
 import Toast from "./components/root/Toast.vue";
 import RTip from "./directives/RTip";
-
-declare global {
-  interface Window {
-    Vue: VueConstructor
-  }
-}
 
 const version = "__VERSION__";
 
@@ -25,16 +21,24 @@ const mountComponentToRoot = (vue: VueConstructor, parent: any, componentConstru
 };
 
 const install = (Vue: VueConstructor): void => {
+  Vue.use(PortalVue);
+
   Vue.component("r-button", Button);
   Vue.component("r-icon", Icon);
+  Vue.component("r-modal", Modal);
   Vue.component("r-tabs", Tabs);
   Vue.component("r-tab-content", TabContent);
+
   Vue.directive("rtip", RTip(Vue));
 
   let toastComponent: Component;
   let globalStylesComponent: Component;
+  let portalTargetComponent: Component;
 
   Vue.mixin({
+    data() {
+      return this.$parent ? {} : { rModalsOpen: [] };
+    },
     mounted() {
       // @ts-ignore
       if (!this.$parent) {
@@ -42,6 +46,8 @@ const install = (Vue: VueConstructor): void => {
         toastComponent = mountComponentToRoot(Vue, this, Toast);
         // @ts-ignore
         globalStylesComponent = mountComponentToRoot(Vue, this, GlobalStyles);
+        // @ts-ignore
+        portalTargetComponent = mountComponentToRoot(Vue, this, PortalTarget, { name: "r-modals", multiple: true });
       }
     },
   });

@@ -59,7 +59,7 @@
     top 36px
     left 10px
     right 10px
-    z-index 1100
+    z-index 13000
     user-select none
     pointer-events none
 
