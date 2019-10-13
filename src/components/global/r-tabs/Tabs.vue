@@ -11,7 +11,7 @@
       )
         span(:class="{ 'text-quiet': !tab.isActive }") {{ tab.name }}
 
-    .line.space-bottom-medium(:class="{ extendLine }")
+    .line.margin-bottom-medium(:class="{ extendLine }")
 
     .tabs-content
       slot

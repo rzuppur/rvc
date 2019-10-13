@@ -5,21 +5,9 @@ SPACING
  */
 
 for direction in "top" "bottom"
-  .space-{direction}-tiny
-    margin-{direction} $space-tiny
-
-  .space-{direction}-small
-    margin-{direction} $space-small
-
-  .space-{direction}-medium
-    margin-{direction} $space-medium
-
-  .space-{direction}-large
-    margin-{direction} $space-large
-
-  .space-{direction}-huge
-    margin-{direction} $space-huge
-
+  for size in "huge" "large" "medium" "small" "tiny"
+    .margin-{direction}-{size}[class]
+      margin-{direction} lookup("$space-" + size)
 
 .margin-top-none
   margin-top 0 !important

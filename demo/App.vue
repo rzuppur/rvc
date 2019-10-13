@@ -14,7 +14,7 @@
       .r-container-column.r-container-small.sidebar
 
         section
-          h1.title-3.space-bottom-tiny RVC
+          h1.title-3.margin-bottom-tiny RVC
           .title-5.margin-top-none Vue UI Framework
 
           p
@@ -31,7 +31,7 @@
 
           h2.title-5 Dark mode
 
-          .space-bottom-medium(v-pre)
+          .margin-bottom-medium(v-pre)
             include:markdown-it ../docs/dark.md
 
           r-button(gray borderless :action="toggleTheme" :icon="`brightness ${darkMode ? 'dark' : 'bright'}`") Toggle theme
@@ -43,7 +43,7 @@
           r-tabs(:extendLine="true")
 
             r-tab-content(name="Modals")
-              .space-bottom-medium(v-pre)
+              .margin-bottom-medium(v-pre)
                 include:markdown-it ../docs/modal.md
 
 
@@ -81,7 +81,7 @@
                   r-button(:action="buttons.close") Unless you click here
 
             r-tab-content(name="Buttons")
-              .space-bottom-medium(v-pre)
+              .margin-bottom-medium(v-pre)
                 include:markdown-it ../docs/button.md
 
               .r-buttons
@@ -133,14 +133,14 @@
                   r-button Grouped
 
             r-tab-content(name="Icons")
-              .space-bottom-medium(v-pre)
+              .margin-bottom-medium(v-pre)
                 include:markdown-it ../docs/icon.md
 
               .icons
                 r-icon.gray(v-for="icon in icons.concat(['missing'])" :icon="icon" v-rtip="icon")
 
             r-tab-content(name="Tooltip")
-              .space-bottom-medium(v-pre)
+              .margin-bottom-medium(v-pre)
                 include:markdown-it ../docs/tooltip.md
 
               .r-buttons
@@ -151,7 +151,7 @@
                 r-button(v-rtip="null") Null
 
             r-tab-content(name="Toast notification")
-              .space-bottom-medium(v-pre)
+              .margin-bottom-medium(v-pre)
                 include:markdown-it ../docs/toast.md
 
               .r-buttons
@@ -160,15 +160,15 @@
                 r-button(:action="() => { $rNotifyToast('Long text notification that should hopefully wrap to multiple lines and you should be able to read this entire text before it disappears.') }") Long notification
 
             r-tab-content(name="Containers")
-              .space-bottom-medium(v-pre)
+              .margin-bottom-medium(v-pre)
                 include:markdown-it ../docs/container.md
 
               each size in ["tiny", "small", "medium", "large", "huge", "maximum"]
-                .space-bottom-medium.r-container(class="r-container-" + size)
+                .margin-bottom-medium.r-container(class="r-container-" + size)
                   p.container-demo r-container r-container-#{size}
 
               .r-container-row.r-container-huge
-                p.space-bottom-small.container-demo.flex1 r-container-row r-container-huge r-columns-mobile-large
+                p.margin-bottom-small.container-demo.flex1 r-container-row r-container-huge r-columns-mobile-large
               .r-container-row.r-container-huge.r-columns-mobile-large
                 .r-container-column.r-container-tiny
                   p.container-demo r-container-column r-container-tiny
@@ -177,10 +177,10 @@
                 .r-container-column.r-container-small
                   p.container-demo r-container-column r-container-small
 
-              .space-bottom-medium
+              .margin-bottom-medium
 
               .r-container-row.r-container-medium
-                p.space-bottom-small.container-demo.flex1 r-container-row r-container-medium r-columns-mobile-small
+                p.margin-bottom-small.container-demo.flex1 r-container-row r-container-medium r-columns-mobile-small
               .r-container-row.r-container-medium.r-columns-mobile-small
                 .r-container-column.r-container-maximum
                   p.container-demo  r-container-column r-container-maximum
@@ -188,7 +188,7 @@
                   p.container-demo r-container-column r-container-tiny
 
             r-tab-content(name="Typography")
-              .space-bottom-medium(v-pre)
+              .margin-bottom-medium(v-pre)
                 include:markdown-it ../docs/typo.md
 
               .title-1 title-1
@@ -222,7 +222,7 @@
               .text-small text-small
 
             r-tab-content(name="Tabs")
-              .space-bottom-medium(v-pre)
+              .margin-bottom-medium(v-pre)
                 include:markdown-it ../docs/tab.md
 
               r-tabs
