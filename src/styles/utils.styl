@@ -4,7 +4,7 @@
 SPACING
  */
 
-for direction in "top" "bottom"
+for direction in "top" "bottom" "left" "right"
   for size in "huge" "large" "medium" "small" "tiny"
     .margin-{direction}-{size}[class]
       margin-{direction} lookup("$space-" + size)
