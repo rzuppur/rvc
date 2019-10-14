@@ -24,8 +24,7 @@
 
             .modal-header(v-if="title !== false")
 
-              h1.title.title-4.r-media-hide-small(:id="`dialog-title-${_id}`") {{ title }}
-              h1.title.title-5.r-media-show-small(:id="`dialog-title-${_id}`") {{ title }}
+              h1.title.title-5(:id="`dialog-title-${_id}`") {{ title }}
 
               r-button(v-if="!blocking" borderless :action="close" label="Close dialog" icon="close")
 
