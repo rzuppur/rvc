@@ -13,7 +13,7 @@
 
 Confirmation modal
 ```javascript
-const result = await $root.rModalConfirm(
+const result = await this.$root.rModalConfirm(
   "Question",
   "Confirm text", // optional
   "Cancel text", // optional
