@@ -164,7 +164,7 @@
       transition opacity 170ms ease-out
 
       .modal
-        transition transform 240ms cubic-bezier(.31,.79,.46,.92)
+        transition transform 200ms cubic-bezier(.31,.79,.46,.92)
 
     .modal-enter,
     .modal-leave-to
