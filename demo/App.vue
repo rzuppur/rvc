@@ -5,6 +5,7 @@
     r-button(:action="() => { $refs.modal2.open(); }") Medium size
     r-button(:action="() => { $refs.modal3.open(); }") Large size
     r-button(:action="() => { $refs.modal6.open(); }") Blocking
+    r-button(:action="() => { $refs.modal7.open(); }") No buttons
 
 
   #app.r-fullheight-parent
@@ -52,17 +53,7 @@
                 r-button(:action="confirmModalDemo") Confirmation modal
 
               r-modal(ref="modal1" title="Default size (small)")
-                p Modal content
-                p Modal content
-                p Modal content
-                p Modal content
-                p Modal content
-                p Modal content
-                p Modal content
-                p Modal content
-                p Modal content
-                p Modal content
-                p Modal content
+                p(v-for="i in 10") Modal content
 
                 template(v-slot:buttons)
                   +modalButtons()
@@ -79,6 +70,9 @@
                 p Can't close this
                 template(v-slot:buttons="buttons")
                   r-button(:action="buttons.close") Unless you click here
+
+              r-modal(ref="modal7" title="No buttons modal" :buttons="false")
+                p(v-for="i in 10") Modal content
 
             r-tab-content(name="Buttons")
               .margin-bottom-medium(v-pre)

@@ -29,14 +29,14 @@
               r-button(v-if="!blocking" borderless :action="close" label="Close dialog" icon="close")
 
             .modal-content(
-              :class="{ 'modal-content-scroll': contentScrolls, 'show-top-border': showTopBorder, 'show-bottom-border': showBottomBorder }"
+              :class="{ 'modal-content-scroll': contentScrolls, 'show-top-border': showTopBorder, 'show-bottom-border': showBottomBorder, 'no-buttons': !buttons }"
               @scroll.passive="updateScrollPosition"
               ref="modalContent"
             )
               .modal-content-inner
                 slot
 
-            .modal-buttons
+            .modal-buttons(v-if="buttons")
               .r-buttons
                 slot(name="buttons" :close="close")
                   r-button(:action="close") Close
@@ -56,6 +56,10 @@
       },
       blocking: {
         default: false,
+        type: Boolean,
+      },
+      buttons: {
+        default: true,
         type: Boolean,
       },
       size: {
@@ -234,6 +238,9 @@
     padding 0 $space-medium
     flex 0 1 auto
     overflow hidden
+
+    &.no-buttons
+      padding-bottom $space-medium
 
     &.modal-content-scroll
       min-height $space-large
