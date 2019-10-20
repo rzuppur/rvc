@@ -104,6 +104,6 @@
       fill $color-gold
 
     &.white svg
-      fill #fff
+      fill $color-white
 
 </style>

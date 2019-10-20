@@ -2,8 +2,8 @@
 
   mixin modalButtons()
     r-button(:action="() => { $refs.modal1.open(); }") Default size
-    r-button(:action="() => { $refs.modal2.open(); }") Medium size
-    r-button(:action="() => { $refs.modal3.open(); }") Large size
+    r-button(:action="() => { $refs.modal2.open(); }") Medium width
+    r-button(:action="() => { $refs.modal3.open(); }") Large width
     r-button(:action="() => { $refs.modal6.open(); }") Blocking
     r-button(:action="() => { $refs.modal7.open(); }") No buttons
 

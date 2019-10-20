@@ -189,11 +189,11 @@
     padding 5px 12px
     margin-right 5px
     word-break break-word
-    color #fff
+    color $color-white
     font-sans($font-size-normal, $font-weight-sans-bold)
     background $_background
     border-radius $border-radius
-    box-shadow 0 2px 10px -2px alpha(#000, .2)
+    box-shadow 0 2px 10px -2px alpha($color-black, .2)
     pointer-events none
     user-select none
 

@@ -74,11 +74,11 @@
     padding 15px 25px
     margin-bottom 5px
     word-break break-word
-    color #fff
+    color $color-white
     font-sans($font-size-normal, $font-weight-sans-bold)
     background $color-text
     border-radius $border-radius
-    box-shadow 0 2px 10px -2px alpha(#000, .2)
+    box-shadow 0 2px 10px -2px alpha($color-black, .2)
     pointer-events all
     user-select none
 

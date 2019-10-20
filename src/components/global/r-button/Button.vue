@@ -126,7 +126,7 @@
     text-align center
 
     color $color-text
-    background-color #fff
+    background-color $color-white
 
     box-shadow none
     transition transform 100ms, box-shadow 100ms
@@ -163,10 +163,10 @@
 
       &:hover,
       &:focus
-        background alpha(#000, 0.04)
+        background alpha($color-black, 0.04)
 
         .darkMode &
-          background alpha(#fff, 0.08)
+          background alpha($color-white, 0.08)
 
       &:focus:not(:active)
         box-shadow inset 0 0 0 3px alpha($color-focus-blue, 0.2) !important
@@ -180,7 +180,7 @@
     &.primary
       background $color-button-cta
       border none
-      color #fff
+      color $color-white
 
       &:hover,
       &:focus
@@ -190,10 +190,10 @@
         box-shadow inset 0 0 0 2px $color-focus-blue, inset 0 0 0 3px darken($color-focus-blue, 20) !important
 
     &.gray
-      background alpha(#000, 0.04)
+      background alpha($color-black, 0.04)
 
       .darkMode &
-        background alpha(#fff, 0.1)
+        background alpha($color-white, 0.1)
 
     &[disabled]
       box-shadow none !important
@@ -230,15 +230,15 @@
         width 18px
         height @width
         border 2px solid transparent
-        border-top-color alpha(#000, 0.3)
-        border-right-color alpha(#000, 0.3)
+        border-top-color alpha($color-black, 0.3)
+        border-right-color alpha($color-black, 0.3)
         border-radius 100%
         animation spinAround 0.6s infinite linear
         position absolute !important
 
         .darkMode &
-          border-top-color alpha(#fff, 0.4)
-          border-right-color alpha(#fff, 0.4)
+          border-top-color alpha($color-white, 0.4)
+          border-right-color alpha($color-white, 0.4)
 
     &:not(.muted) > span:not(.icon)
       font-sans($font-size-normal, $font-weight-sans-bold)

@@ -205,14 +205,16 @@
     text-align left
 
   .modal
-    background #fff
     border-radius $border-radius
-    box-shadow 0 0 0 3px alpha(#000, .1), 0 15px 10px -5px alpha(#000, .07)
     word-wrap break-word
     overflow-y auto
     display flex
     flex-direction column
     max-height "calc(100vh - %s)" % $space-medium
+    box-shadow 0 0 0 3px alpha($color-black, 0.15), 0 15px 10px -5px alpha($color-black, 0.07)
+
+    .darkMode &
+      box-shadow 0 0 0 3px alpha($color-white, 0.1), 0 15px 30px -5px alpha($color-black, 0.5)
 
   .modal-header,
   .modal-buttons
