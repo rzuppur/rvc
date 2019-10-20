@@ -270,6 +270,7 @@
   .top-shadow,
   .bottom-shadow
     position relative
+    z-index 10
 
     &:after
       content ""
