@@ -1,0 +1,19 @@
+/*
+AREAS
+ */
+
+.r-background-primary
+  background $color-white
+  color $color-text
+
+  .darkMode &
+    background $color-darkmode-background
+    color $color-darkmode-text
+
+.r-background-secondary
+  background $color-light-gray-background
+  color $color-text
+
+  .darkMode &
+    background lighten($color-darkmode-background, 6%)
+    color $color-darkmode-text

@@ -8,11 +8,11 @@
     r-button(:action="() => { $refs.modal7.open(); }") No buttons
 
 
-  #app.r-fullheight-parent
+  #app.r-fullheight-parent(:class="{ darkMode }")
 
-    .r-container-row.r-columns-mobile-medium.r-fullheight(:class="{ darkMode }")
+    .r-container-row.r-columns-mobile-medium.r-fullheight
 
-      .r-container-column.r-container-small.sidebar
+      .r-container-column.r-container-small.r-background-secondary
 
         section
           h1.title-3.margin-bottom-tiny RVC
@@ -37,7 +37,7 @@
 
           r-button(gray borderless :action="toggleTheme" :icon="`brightness ${darkMode ? 'dark' : 'bright'}`") Toggle theme
 
-      .r-container-column.r-container-maximum
+      .r-container-column.r-container-maximum.r-background-primary
 
         section(style="padding-top: 12px")
 
@@ -227,6 +227,11 @@
                 r-tab-content(name="Tab 2")
                   p Tab 2 content
 
+            r-tab-content(name="Other")
+              .margin-bottom-medium(v-pre)
+                include:markdown-it ../docs/other.md
+
+
 </template>
 
 <script>
@@ -269,23 +274,12 @@
 <style lang="stylus" scoped>
   @import "../src/styles/shared.styl"
 
-  .darkMode
-    background $color-darkmode-background
-    color $color-darkmode-text
-
-  .sidebar
-    background $color-light-gray-background
-
-    .darkMode &
-      background lighten($color-darkmode-background, 6)
-
   section
     padding-top $space-medium
     padding-bottom $space-medium
 
   .r-buttons
     margin-bottom $space-small
-
 
   .icons
     .r-icon

@@ -13,7 +13,7 @@
 
         .modal-container.r-container(:class="modalContainerClass")
 
-          .modal(
+          .modal.r-background-primary(
             ref="modal"
             role="dialog"
             @click.stop=""
@@ -178,7 +178,6 @@
   .modal-overlay
     overflow hidden
     -webkit-overflow-scrolling touch
-    background alpha(#000, 0.6)
     position fixed
     text-align center
     left 0
@@ -186,6 +185,10 @@
     right 0
     bottom 0
     height 100%
+    background alpha($color-darkmode-background, 0.6)
+
+    .darkMode &
+      background alpha(darken($color-darkmode-background, 20%), 0.9)
 
     @supports (display: grid)
       @media (min-width ($container-small + 1px))
@@ -197,9 +200,6 @@
           grid-column 1
           grid-row 2
           width 100%
-
-    &.white
-      background alpha(#fff, 0.93)
 
   .modal-container
     text-align left
