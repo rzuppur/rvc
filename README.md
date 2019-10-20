@@ -14,6 +14,7 @@
 <r-modal
   title: string | false
   blocking: boolean // optional
+  buttons: boolean // optional, set to false to hide bottom bar with buttons
   size: string  // optional, ("small" | "medium" | "large" | "huge" | "maximum")
 >
   {{ modal content }}
@@ -128,6 +129,9 @@ Basic tabs component.
 ```
 ### Other
 You can use `r-media-hide-{"small" | "medium"}` and `r-media-show-{"small" | "medium"}` to show some items only on small/wide screens.
+
+Use `r-background-primary` and `r-background-secondary` classes to add text and background color that changes with dark mode. For example, main content area and sidebar/header.
+
 <br/><br/>
 
 ## Usage

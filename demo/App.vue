@@ -53,7 +53,9 @@
                 r-button(:action="confirmModalDemo") Confirmation modal
 
               r-modal(ref="modal1" title="Default size (small)")
-                p(v-for="i in 10") Modal content
+                p Modal content start
+                p(v-for="i in 20") .
+                p Modal content end
 
                 template(v-slot:buttons)
                   +modalButtons()

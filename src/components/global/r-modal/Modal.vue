@@ -28,13 +28,17 @@
 
               r-button(v-if="!blocking" borderless :action="close" label="Close dialog" icon="close")
 
+            .flex0.top-shadow(v-if="showTopBorder")
+
             .modal-content(
-              :class="{ 'modal-content-scroll': contentScrolls, 'show-top-border': showTopBorder, 'show-bottom-border': showBottomBorder, 'no-buttons': !buttons }"
+              :class="{ 'modal-content-scroll': contentScrolls, 'no-buttons': !buttons }"
               @scroll.passive="updateScrollPosition"
               ref="modalContent"
             )
               .modal-content-inner
                 slot
+
+            .flex0.bottom-shadow(v-if="showBottomBorder")
 
             .modal-buttons(v-if="buttons")
               .r-buttons
@@ -249,17 +253,6 @@
       padding 0 $space-medium $space-medium
       overflow-y auto
 
-      $_shadow_size = 12px
-
-      &.show-top-border
-        box-shadow inset 0 $_shadow_size $_shadow_size (- $_shadow_size) alpha(#000, 0.1)
-
-      &.show-bottom-border
-        box-shadow inset 0 (- $_shadow_size) $_shadow_size (- $_shadow_size) alpha(#000, 0.1)
-
-      &.show-top-border.show-bottom-border
-        box-shadow inset 0 $_shadow_size $_shadow_size (- $_shadow_size) alpha(#000, 0.1), inset 0 (- $_shadow_size) $_shadow_size (- $_shadow_size) alpha(#000, 0.1)
-
   @media (max-width $container-small)
 
     .modal-container
@@ -274,5 +267,67 @@
     .modal
       border-radius 0
 
+  .top-shadow,
+  .bottom-shadow
+    position relative
+
+    &:after
+      content ""
+      user-select none
+      pointer-events none
+      height 20px
+      position absolute
+      left 0
+      right 0
+      opacity 0.07
+
+    .darkMode &
+      height 1px
+      background $color-darkmode-medium-border
+      &:after
+        opacity 0.3
+        height 40px
+
+  .top-shadow:after
+    top 0
+    background linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.878) 4.3%,
+      rgba(0, 0, 0, 0.764) 8.6%,
+      rgba(0, 0, 0, 0.657) 12.9%,
+      rgba(0, 0, 0, 0.558) 17.3%,
+      rgba(0, 0, 0, 0.467) 21.9%,
+      rgba(0, 0, 0, 0.384) 26.8%,
+      rgba(0, 0, 0, 0.309) 32.2%,
+      rgba(0, 0, 0, 0.243) 38%,
+      rgba(0, 0, 0, 0.184) 44.4%,
+      rgba(0, 0, 0, 0.133) 51.4%,
+      rgba(0, 0, 0, 0.09) 59.2%,
+      rgba(0, 0, 0, 0.055) 67.9%,
+      rgba(0, 0, 0, 0.028) 77.5%,
+      rgba(0, 0, 0, 0.01) 88.2%,
+      rgba(0, 0, 0, 0) 100%)
+
+  .bottom-shadow:after
+    bottom 0
+    background linear-gradient(
+      to top,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.878) 4.3%,
+      rgba(0, 0, 0, 0.764) 8.6%,
+      rgba(0, 0, 0, 0.657) 12.9%,
+      rgba(0, 0, 0, 0.558) 17.3%,
+      rgba(0, 0, 0, 0.467) 21.9%,
+      rgba(0, 0, 0, 0.384) 26.8%,
+      rgba(0, 0, 0, 0.309) 32.2%,
+      rgba(0, 0, 0, 0.243) 38%,
+      rgba(0, 0, 0, 0.184) 44.4%,
+      rgba(0, 0, 0, 0.133) 51.4%,
+      rgba(0, 0, 0, 0.09) 59.2%,
+      rgba(0, 0, 0, 0.055) 67.9%,
+      rgba(0, 0, 0, 0.028) 77.5%,
+      rgba(0, 0, 0, 0.01) 88.2%,
+      rgba(0, 0, 0, 0) 100%)
 
 </style>
