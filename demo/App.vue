@@ -8,9 +8,9 @@
     r-button(:action="() => { $refs.modal7.open(); }") No buttons
 
 
-  #app.r-fullheight-parent(:class="{ darkMode }")
+  #app.r-fill-absolute-parent(:class="{ darkMode }")
 
-    .r-container-row.r-columns-mobile-medium.r-fullheight
+    .r-container-row.r-columns-mobile-medium.r-fill-absolute
 
       .r-container-column.r-container-small.r-background-secondary
 
@@ -271,6 +271,11 @@
 
 <style lang="stylus">
   @import url("https://rsms.me/inter/inter.css");
+
+  body,
+  #app
+    min-height 100vh
+
 </style>
 
 <style lang="stylus" scoped>

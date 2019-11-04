@@ -6,6 +6,9 @@ $_buttons_margin = $space-tiny
 .r-buttons
   margin-right -($_buttons_margin)
   margin-bottom -($_buttons_margin)
+  display flex
+  flex-direction row
+  flex-wrap wrap
 
   &.align-right
     text-align right
@@ -13,6 +16,7 @@ $_buttons_margin = $space-tiny
   .r-button
     margin-right $_buttons_margin
     margin-bottom $_buttons_margin
+    flex 0 0 auto
 
 .r-buttons-grouped
   margin-right -($_buttons_margin)

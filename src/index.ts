@@ -8,9 +8,9 @@ import Modal from "./components/global/r-modal/Modal.vue";
 import ModalConfirm from "./components/root/ModalConfirm.vue";
 import Tabs from "./components/global/r-tabs/Tabs.vue";
 import TabContent from "./components/global/r-tabs/r-tab-content/TabContent.vue";
-import GlobalStyles from "./components/root/GlobalStyles.vue";
 import Toast from "./components/root/Toast.vue";
 import RTip from "./directives/RTip";
+import "./styles/main.styl";
 
 const version = "__VERSION__";
 
@@ -33,7 +33,6 @@ const install = (Vue: VueConstructor): void => {
   Vue.directive("rtip", RTip(Vue));
 
   let toastComponent: Component;
-  let globalStylesComponent: Component;
   let portalTargetComponent: Component;
   let modalConfirmComponent: Component;
 
@@ -46,8 +45,6 @@ const install = (Vue: VueConstructor): void => {
       if (!this.$parent) {
         // @ts-ignore
         toastComponent = mountComponentToRoot(Vue, this, Toast);
-        // @ts-ignore
-        globalStylesComponent = mountComponentToRoot(Vue, this, GlobalStyles);
         // @ts-ignore
         portalTargetComponent = mountComponentToRoot(Vue, this, PortalTarget, { name: "r-modals", multiple: true });
         // @ts-ignore
