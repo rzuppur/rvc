@@ -1,5 +1,5 @@
 /*!
- * rvc v0.37.2 
+ * rvc v0.38.3 
  * (c) 2019 Reino Zuppur
  * Released under the MIT License.
  */
@@ -7,6 +7,8 @@
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
+var PortalVue = require('portal-vue');
+var PortalVue__default = _interopDefault(PortalVue);
 var ResizeObserver = _interopDefault(require('resize-observer-polyfill'));
 
 var script = {
@@ -1340,27 +1342,162 @@ var __vue_staticRenderFns__ = [];
     undefined
   );
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 var script$3 = {
+  name: "ModalConfirm",
+  components: {
+    Modal: Modal
+  },
+  data: function data() {
+    return {
+      question: "",
+      desc: false,
+      yesText: "Yes",
+      noText: "No",
+      promiseResolve: null,
+      promiseReject: null
+    };
+  },
+  beforeDestroy: function beforeDestroy() {
+    if (this.promiseReject) this.promiseReject(new Error("Component destroyed"));
+  },
+  mounted: function mounted() {
+    this.$root.rModalConfirm = this.confirm;
+  },
+  methods: {
+    confirm: function () {
+      var _confirm = _asyncToGenerator(
+      /*#__PURE__*/
+      regenerator.mark(function _callee(question, yesText, noText, desc) {
+        var _this = this;
+
+        return regenerator.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                if (!(this.promiseResolve || this.promiseReject)) {
+                  _context.next = 3;
+                  break;
+                }
+
+                console.warn("! Already confirming");
+                return _context.abrupt("return", Promise.reject());
+
+              case 3:
+                this.question = question;
+                if (desc) this.desc = desc;
+                if (yesText) this.yesText = yesText;
+                if (noText) this.noText = noText;
+                setTimeout(function () {
+                  if (!_this.$refs.confirmModal) {
+                    console.warn("! No confirmModal");
+
+                    _this.promiseReject();
+                  } else {
+                    _this.$refs.confirmModal.open();
+                  }
+                }, 0);
+                return _context.abrupt("return", new Promise(function (resolve, reject) {
+                  _this.promiseResolve = resolve;
+                  _this.promiseReject = reject;
+                }));
+
+              case 9:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
+
+      function confirm(_x, _x2, _x3, _x4) {
+        return _confirm.apply(this, arguments);
+      }
+
+      return confirm;
+    }(),
+    no: function no() {
+      if (this.promiseResolve) {
+        this.promiseResolve(false);
+      } else {
+        console.warn("! No promiseResolve");
+      }
+
+      this._cleanup();
+    },
+    yes: function yes() {
+      if (this.promiseResolve) {
+        this.promiseResolve(true);
+      } else {
+        console.warn("! No promiseResolve");
+      }
+
+      this._cleanup();
+    },
+    _cleanup: function _cleanup() {
+      this.$refs.confirmModal && this.$refs.confirmModal.modalOpen && this.$refs.confirmModal.close();
+      this.question = "";
+      this.desc = false;
+      this.yesText = "Yes";
+      this.noText = "No";
+      this.promiseResolve = null;
+      this.promiseReject = null;
+    }
+  }
+};
+
+/* script */
+const __vue_script__$3 = script$3;
+
+/* template */
+var __vue_render__$1 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.promiseResolve)?_c('r-modal',{ref:"confirmModal",attrs:{"title":_vm.question},on:{"close":_vm.no},scopedSlots:_vm._u([{key:"buttons",fn:function(){return [_c('r-button',{attrs:{"primary":"primary","action":_vm.yes}},[_vm._v(_vm._s(_vm.yesText))]),_c('r-button',{attrs:{"action":_vm.no}},[_vm._v(_vm._s(_vm.noText))])]},proxy:true}],null,false,1587310570)},[(_vm.desc)?_c('p',[_vm._v(_vm._s(_vm.desc))]):_vm._e()]):_vm._e()};
+var __vue_staticRenderFns__$1 = [];
+
+  /* style */
+  const __vue_inject_styles__$3 = undefined;
+  /* scoped */
+  const __vue_scope_id__$3 = "data-v-33c1b778";
+  /* module identifier */
+  const __vue_module_identifier__$3 = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$3 = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var ModalConfirm = normalizeComponent_1(
+    { render: __vue_render__$1, staticRenderFns: __vue_staticRenderFns__$1 },
+    __vue_inject_styles__$3,
+    __vue_script__$3,
+    __vue_scope_id__$3,
+    __vue_is_functional_template__$3,
+    __vue_module_identifier__$3,
+    undefined,
+    undefined
+  );
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var script$4 = {
   name: "Tabs",
   props: {
     extendLine: {
@@ -1393,35 +1530,35 @@ var script$3 = {
 };
 
 /* script */
-const __vue_script__$3 = script$3;
+const __vue_script__$4 = script$4;
 
 /* template */
-var __vue_render__$1 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"r-tabs"},[_c('div',{staticClass:"tabs"},_vm._l((_vm.tabs),function(tab){return _c('r-button',{key:'tab-' + tab.name,staticClass:"tab",class:{ active: tab.isActive },attrs:{"action":function () { _vm.setTabActive(tab.name); },"borderless":"borderless"}},[_c('span',{class:{ 'text-quiet': !tab.isActive }},[_vm._v(_vm._s(tab.name))])])}),1),_c('div',{staticClass:"line margin-bottom-medium",class:{ extendLine: _vm.extendLine }}),_c('div',{staticClass:"tabs-content"},[_vm._t("default")],2)])};
-var __vue_staticRenderFns__$1 = [];
+var __vue_render__$2 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"r-tabs"},[_c('div',{staticClass:"tabs"},_vm._l((_vm.tabs),function(tab){return _c('r-button',{key:'tab-' + tab.name,staticClass:"tab",class:{ active: tab.isActive },attrs:{"action":function () { _vm.setTabActive(tab.name); },"borderless":"borderless"}},[_c('span',{class:{ 'text-quiet': !tab.isActive }},[_vm._v(_vm._s(tab.name))])])}),1),_c('div',{staticClass:"line margin-bottom-medium",class:{ extendLine: _vm.extendLine }}),_c('div',{staticClass:"tabs-content"},[_vm._t("default")],2)])};
+var __vue_staticRenderFns__$2 = [];
 
   /* style */
-  const __vue_inject_styles__$3 = function (inject) {
+  const __vue_inject_styles__$4 = function (inject) {
     if (!inject) return
     inject("data-v-728ea2ea_0", { source: ".line[data-v-728ea2ea]{margin-top:-1px;border-bottom:1px solid #eee}.darkMode .line[data-v-728ea2ea]{border-bottom-color:rgba(255,255,255,.15)}.line.extendLine[data-v-728ea2ea]{margin-left:-24px;margin-right:-24px}.tab[data-v-728ea2ea]{border-radius:0}.tab.active[data-v-728ea2ea]{border-top:3px solid transparent;border-bottom:3px solid #0d7cc8;color:#1c69ab}.darkMode .tab.active[data-v-728ea2ea]{color:#45a8ec}.tab .text-quiet[data-v-728ea2ea]{font-weight:400}", map: undefined, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$3 = "data-v-728ea2ea";
+  const __vue_scope_id__$4 = "data-v-728ea2ea";
   /* module identifier */
-  const __vue_module_identifier__$3 = undefined;
+  const __vue_module_identifier__$4 = undefined;
   /* functional template */
-  const __vue_is_functional_template__$3 = false;
+  const __vue_is_functional_template__$4 = false;
   /* style inject SSR */
   
 
   
   var Tabs = normalizeComponent_1(
-    { render: __vue_render__$1, staticRenderFns: __vue_staticRenderFns__$1 },
-    __vue_inject_styles__$3,
-    __vue_script__$3,
-    __vue_scope_id__$3,
-    __vue_is_functional_template__$3,
-    __vue_module_identifier__$3,
+    { render: __vue_render__$2, staticRenderFns: __vue_staticRenderFns__$2 },
+    __vue_inject_styles__$4,
+    __vue_script__$4,
+    __vue_scope_id__$4,
+    __vue_is_functional_template__$4,
+    __vue_module_identifier__$4,
     browser,
     undefined
   );
@@ -1434,7 +1571,7 @@ var __vue_staticRenderFns__$1 = [];
 //
 //
 //
-var script$4 = {
+var script$5 = {
   name: "TabContent",
   props: {
     name: {
@@ -1450,20 +1587,20 @@ var script$4 = {
 };
 
 /* script */
-const __vue_script__$4 = script$4;
+const __vue_script__$5 = script$5;
 
 /* template */
-var __vue_render__$2 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.isActive)?_c('div',{staticClass:"tab-content"},[_vm._t("default")],2):_vm._e()};
-var __vue_staticRenderFns__$2 = [];
+var __vue_render__$3 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.isActive)?_c('div',{staticClass:"tab-content"},[_vm._t("default")],2):_vm._e()};
+var __vue_staticRenderFns__$3 = [];
 
   /* style */
-  const __vue_inject_styles__$4 = undefined;
+  const __vue_inject_styles__$5 = undefined;
   /* scoped */
-  const __vue_scope_id__$4 = "data-v-461dcf7a";
+  const __vue_scope_id__$5 = "data-v-461dcf7a";
   /* module identifier */
-  const __vue_module_identifier__$4 = undefined;
+  const __vue_module_identifier__$5 = undefined;
   /* functional template */
-  const __vue_is_functional_template__$4 = false;
+  const __vue_is_functional_template__$5 = false;
   /* style inject */
   
   /* style inject SSR */
@@ -1471,18 +1608,107 @@ var __vue_staticRenderFns__$2 = [];
 
   
   var TabContent = normalizeComponent_1(
-    { render: __vue_render__$2, staticRenderFns: __vue_staticRenderFns__$2 },
-    __vue_inject_styles__$4,
-    __vue_script__$4,
-    __vue_scope_id__$4,
-    __vue_is_functional_template__$4,
-    __vue_module_identifier__$4,
+    { render: __vue_render__$3, staticRenderFns: __vue_staticRenderFns__$3 },
+    __vue_inject_styles__$5,
+    __vue_script__$5,
+    __vue_scope_id__$5,
+    __vue_is_functional_template__$5,
+    __vue_module_identifier__$5,
     undefined,
     undefined
   );
 
 //
-var script$5 = {
+//
+//
+//
+//
+//
+//
+//
+//
+var MAX_SHOWN = 3;
+var script$6 = {
+  name: "Toast",
+  data: function data() {
+    return {
+      queue: []
+    };
+  },
+  watch: {
+    queue: {
+      handler: function handler(val) {
+        var _this = this;
+
+        if (val.length) {
+          setTimeout(function () {
+            _this.remove(val[0].index);
+          }, 900 + val[0].text.length * 70);
+        }
+      }
+    }
+  },
+  created: function created() {
+    this.index = 0;
+  },
+  methods: {
+    notify: function notify(text) {
+      var index = this.index;
+      this.index += 1;
+      text = text.toString();
+      this.queue.push({
+        text: text,
+        index: index
+      });
+
+      if (this.queue.length > MAX_SHOWN) {
+        this.queue = this.queue.slice(-MAX_SHOWN);
+      }
+    },
+    remove: function remove(index) {
+      this.queue = this.queue.filter(function (notif) {
+        return notif.index !== index;
+      });
+    }
+  }
+};
+
+/* script */
+const __vue_script__$6 = script$6;
+
+/* template */
+var __vue_render__$4 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"toast-list"},[_c('transition-group',{staticClass:"toast-list-inner",attrs:{"name":"toast-list","tag":"div"}},_vm._l((_vm.queue),function(notification){return _c('div',{key:notification.index,staticClass:"toast-notification-wrap"},[_c('div',{staticClass:"toast-notification",on:{"click":function($event){return _vm.remove(notification.index)}}},[_vm._v(_vm._s(notification.text))])])}),0)],1)};
+var __vue_staticRenderFns__$4 = [];
+
+  /* style */
+  const __vue_inject_styles__$6 = function (inject) {
+    if (!inject) return
+    inject("data-v-553e74e0_0", { source: ".toast-list[data-v-553e74e0]{position:fixed;top:36px;left:10px;right:10px;z-index:13000;user-select:none;pointer-events:none}.toast-list-inner[data-v-553e74e0]{max-width:700px;margin:0 auto;position:relative;text-align:center}.toast-notification[data-v-553e74e0]{display:inline-block;padding:15px 25px;margin-bottom:5px;word-break:break-word;color:#fff;font-size:16px;letter-spacing:-.005em;line-height:24px;font-weight:600;background:#40444a;border-radius:4px;box-shadow:0 2px 10px -2px rgba(0,0,0,.2);pointer-events:all;user-select:none}.toast-list-enter[data-v-553e74e0],.toast-list-leave-to[data-v-553e74e0]{opacity:0}.toast-list-enter-active[data-v-553e74e0],.toast-list-leave-active[data-v-553e74e0],.toast-list-move[data-v-553e74e0]{transition:all .2s}.toast-list-leave-active[data-v-553e74e0]{position:absolute;left:0;right:0}", map: undefined, media: undefined });
+
+  };
+  /* scoped */
+  const __vue_scope_id__$6 = "data-v-553e74e0";
+  /* module identifier */
+  const __vue_module_identifier__$6 = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$6 = false;
+  /* style inject SSR */
+  
+
+  
+  var Toast = normalizeComponent_1(
+    { render: __vue_render__$4, staticRenderFns: __vue_staticRenderFns__$4 },
+    __vue_inject_styles__$6,
+    __vue_script__$6,
+    __vue_scope_id__$6,
+    __vue_is_functional_template__$6,
+    __vue_module_identifier__$6,
+    browser,
+    undefined
+  );
+
+//
+var script$7 = {
   name: "Tooltip",
   data: function data() {
     return {
@@ -1648,35 +1874,35 @@ var script$5 = {
 };
 
 /* script */
-const __vue_script__$5 = script$5;
+const __vue_script__$7 = script$7;
 
 /* template */
-var __vue_render__$3 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('transition',{attrs:{"name":"tooltip"}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.visible),expression:"visible"}],ref:"tooltip",staticClass:"r-tooltip",style:(_vm.tooltipStyle)},[_vm._v(_vm._s(_vm.text))])]),_c('transition',{attrs:{"name":"tooltip-arrow"}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.visible),expression:"visible"}],staticClass:"r-tooltip-arrow",style:(_vm.arrowStyle)})])],1)};
-var __vue_staticRenderFns__$3 = [];
+var __vue_render__$5 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('transition',{attrs:{"name":"tooltip"}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.visible),expression:"visible"}],ref:"tooltip",staticClass:"r-tooltip",style:(_vm.tooltipStyle)},[_vm._v(_vm._s(_vm.text))])]),_c('transition',{attrs:{"name":"tooltip-arrow"}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.visible),expression:"visible"}],staticClass:"r-tooltip-arrow",style:(_vm.arrowStyle)})])],1)};
+var __vue_staticRenderFns__$5 = [];
 
   /* style */
-  const __vue_inject_styles__$5 = function (inject) {
+  const __vue_inject_styles__$7 = function (inject) {
     if (!inject) return
     inject("data-v-333349ff_0", { source: ".tooltip-enter-active[data-v-333349ff]{transition:opacity .1s}.tooltip-enter[data-v-333349ff]{opacity:0}.tooltip-arrow-enter-active[data-v-333349ff]{transition:opacity 150ms}.tooltip-arrow-enter[data-v-333349ff]{opacity:0}.r-tooltip[data-v-333349ff]{position:fixed;z-index:12000;padding:5px 12px;margin-right:5px;word-break:break-word;color:#fff;font-size:16px;letter-spacing:-.005em;line-height:24px;font-weight:600;background:#40444a;border-radius:4px;box-shadow:0 2px 10px -2px rgba(0,0,0,.2);pointer-events:none;user-select:none}.r-tooltip-arrow[data-v-333349ff]{position:fixed;z-index:12001;border-top:7px solid #40444a;border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:7px solid transparent;pointer-events:none;user-select:none}", map: undefined, media: undefined });
 
   };
   /* scoped */
-  const __vue_scope_id__$5 = "data-v-333349ff";
+  const __vue_scope_id__$7 = "data-v-333349ff";
   /* module identifier */
-  const __vue_module_identifier__$5 = undefined;
+  const __vue_module_identifier__$7 = undefined;
   /* functional template */
-  const __vue_is_functional_template__$5 = false;
+  const __vue_is_functional_template__$7 = false;
   /* style inject SSR */
   
 
   
   var TooltipComponent = normalizeComponent_1(
-    { render: __vue_render__$3, staticRenderFns: __vue_staticRenderFns__$3 },
-    __vue_inject_styles__$5,
-    __vue_script__$5,
-    __vue_scope_id__$5,
-    __vue_is_functional_template__$5,
-    __vue_module_identifier__$5,
+    { render: __vue_render__$5, staticRenderFns: __vue_staticRenderFns__$5 },
+    __vue_inject_styles__$7,
+    __vue_script__$7,
+    __vue_scope_id__$7,
+    __vue_is_functional_template__$7,
+    __vue_module_identifier__$7,
     browser,
     undefined
   );
@@ -1787,10 +2013,21 @@ var RTip = function RTip(vue) {
   };
 };
 
-var version = "0.37.2";
+var version = "0.38.3";
+
+var mountComponentToRoot = function mountComponentToRoot(vue, parent, componentConstructor) {
+  var propsData = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};
+  var node = document.createElement("div");
+  parent.$el.appendChild(node);
+  var Constructor = vue.extend(componentConstructor);
+  return new Constructor({
+    parent: parent,
+    propsData: propsData
+  }).$mount(node);
+};
 
 var install = function install(Vue) {
-  //Vue.use(PortalVue);
+  Vue.use(PortalVue__default);
   Vue.component("r-button", Button);
   Vue.component("r-icon", Icon);
   Vue.component("r-modal", Modal);
@@ -1798,6 +2035,8 @@ var install = function install(Vue) {
   Vue.component("r-tab-content", TabContent);
   Vue.directive("rtip", RTip(Vue));
   var toastComponent;
+  var portalTargetComponent;
+  var modalConfirmComponent;
   Vue.mixin({
     data: function data() {
       return this.$parent ? {} : {
@@ -1806,7 +2045,17 @@ var install = function install(Vue) {
     },
     mounted: function mounted() {
       // @ts-ignore
-      if (!this.$parent) ;
+      if (!this.$parent) {
+        // @ts-ignore
+        toastComponent = mountComponentToRoot(Vue, this, Toast); // @ts-ignore
+
+        portalTargetComponent = mountComponentToRoot(Vue, this, PortalVue.PortalTarget, {
+          name: "r-modals",
+          multiple: true
+        }); // @ts-ignore
+
+        modalConfirmComponent = mountComponentToRoot(Vue, this, ModalConfirm);
+      }
     }
   });
 

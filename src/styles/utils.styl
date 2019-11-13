@@ -103,9 +103,31 @@ for size in "huge" "large" "medium" "small" "tiny"
 FLEX
  */
 
+.flex-container
+  display flex
+  flex-direction row
+
+.flex-container-column
+  flex-direction column
+
+.flex-items-center
+  align-items center
+
 for n in 0 1 2 3
   .flex{n}
     flex n n auto
+
+/*
+CLEARFIX
+ */
+
+.clearfix:before,
+.clearfix:after
+    content " "
+    display table
+
+.clearfix:after
+    clear both
 
 /*
 MODAL

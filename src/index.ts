@@ -10,7 +10,6 @@ import Tabs from "./components/global/r-tabs/Tabs.vue";
 import TabContent from "./components/global/r-tabs/r-tab-content/TabContent.vue";
 import Toast from "./components/root/Toast.vue";
 import RTip from "./directives/RTip";
-import "./styles/main.styl";
 
 const version = "__VERSION__";
 

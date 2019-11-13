@@ -3,6 +3,7 @@
 ```javascript
 import Vue from "vue";
 import rvc from "@rzuppur/rvc";
+import "@rzuppur/rvc/src/styles/main.styl";
 
 Vue.use(rvc);
 ```
