@@ -146,7 +146,9 @@ Basic tabs component.
 
 `flex{0-3}` flex child grow and shrink value
 
-`clearfix`
+`clearfix` clearfix
+
+`r-styled-scrollbar` custom scrollbar style
 <br/><br/>
 
 ## Usage
@@ -159,6 +161,16 @@ import rvc from "@rzuppur/rvc";
 import "@rzuppur/rvc/src/styles/main.styl";
 
 Vue.use(rvc);
+```
+
+To customize [Stylus](http://stylus-lang.com/) variables, import `main.styl` in your app styles instead and override values before the import. [View variables that can be themed here](https://github.com/rzuppur/rvc/blob/master/src/styles/shared.styl).
+
+```stylus
+/* CUSTOMIZE VARIABLES HERE */
+$color-text = green;
+
+/* IMPORT RVC STYLES HERE */
+@import "../src/styles/main.styl";
 ```
 ### Project setup
 ```
