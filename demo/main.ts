@@ -2,7 +2,9 @@
 import Vue from "vue";
 import App from "./App.vue";
 import "../src/plugin";
-import "../src/styles/main.styl";
+
+// To allow stylus variables customization styles are imported in App.vue
+// import "../src/styles/main.styl";
 
 
 Vue.config.productionTip = false;

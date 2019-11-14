@@ -1,9 +1,9 @@
 <template lang="pug">
 
   div
-    transition(name="tooltip")
+    transition(name="r-tooltip")
       .r-tooltip(v-show="visible" ref="tooltip" :style="tooltipStyle") {{ text }}
-    transition(name="tooltip-arrow")
+    transition(name="r-tooltip-arrow")
       .r-tooltip-arrow(v-show="visible" :style="arrowStyle")
 
 </template>
@@ -164,48 +164,3 @@
   };
 
 </script>
-
-
-<style lang="stylus" scoped>
-  @import "../../styles/shared.styl"
-
-  .tooltip-enter-active
-    transition opacity 100ms
-
-  .tooltip-enter
-    opacity 0
-
-  .tooltip-arrow-enter-active
-    transition opacity 150ms
-
-  .tooltip-arrow-enter
-    opacity 0
-
-  $_background = $color-text
-
-  .r-tooltip
-    position fixed
-    z-index 12000
-    padding 5px 12px
-    margin-right 5px
-    word-break break-word
-    color $color-white
-    font-sans($font-size-normal, $font-weight-sans-bold)
-    background $_background
-    border-radius $border-radius
-    box-shadow 0 2px 10px -2px alpha($color-black, .2)
-    pointer-events none
-    user-select none
-
-  .r-tooltip-arrow
-    position fixed
-    z-index 12001
-    $_size = 7px
-    border-top $_size solid $_background
-    border-left $_size solid transparent
-    border-right $_size solid transparent
-    border-bottom $_size solid transparent
-    pointer-events none
-    user-select none
-
-</style>

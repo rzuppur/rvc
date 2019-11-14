@@ -1,0 +1,26 @@
+.r-tabs-container
+
+  .r-tabs-line
+    margin-top -1px
+    border-bottom 1px solid $color-light-border
+
+    .darkMode &
+      border-bottom-color $color-darkmode-medium-border
+
+    &.extendLine
+      margin-left - $space-medium
+      margin-right - $space-medium
+
+  .r-tab
+    border-radius 0
+
+    &.active
+      border-top 3px solid transparent
+      border-bottom 3px solid $color-focus-blue
+      color $color-blue-text
+
+      .darkMode &
+        color $color-darkmode-blue-text
+
+    .text-quiet
+      font-weight $font-weight-sans-regular

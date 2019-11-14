@@ -89,9 +89,3 @@
   };
 
 </script>
-
-
-<style lang="stylus" scoped>
-  @import "../../styles/shared.styl"
-
-</style>

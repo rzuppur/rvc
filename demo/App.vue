@@ -272,6 +272,14 @@
 <style lang="stylus">
   @import url("https://rsms.me/inter/inter.css");
 
+  /* CUSTOMIZE VARIABLES HERE */
+  // $color-button-cta = #5e6cbb;
+
+  /* IMPORT RVC STYLES HERE */
+  @import "../src/styles/main.styl";
+
+  /* - */
+
   body,
   #app
     min-height 100vh
