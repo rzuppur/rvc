@@ -118,31 +118,24 @@
 
     height $height-input
     padding 0 12px
-    border 1px solid $color-medium-border
+    border none
     border-radius $border-radius
 
     font-family $font-sans
     font-sans($font-size-normal)
     text-align center
+    text-decoration none
 
     color $color-text
     background-color $color-white
 
-    box-shadow none
+    box-shadow inset 0 0 0 1px $color-medium-border
     transition transform 100ms, box-shadow 100ms
 
     .darkMode &
       background-color transparent
       color $color-darkmode-text
-      border-color $color-darkmode-medium-border
-
-    &,
-    &:hover
-      text-decoration none
-      color $color-text
-
-      .darkMode &
-        color $color-darkmode-text
+      box-shadow inset 0 0 0 1px $color-darkmode-medium-border
 
     &:focus,
     &.is-focused,
@@ -161,25 +154,21 @@
       box-shadow none
       border none
 
-      &:hover,
-      &:focus
+      &:hover
         background alpha($color-black, 0.04)
 
         .darkMode &
           background alpha($color-white, 0.08)
 
-      &:focus:not(:active)
-        box-shadow inset 0 0 0 3px alpha($color-focus-blue, 0.2) !important
-
-    &:hover:not(.borderless)
-      box-shadow inset 0 0 0 1px alpha($color-focus-blue, 0.3) !important
+    &:hover
+      box-shadow inset 0 0 0 1px alpha($color-focus-blue, 50%) !important
 
     &:focus:not(:active)
-      box-shadow inset 0 0 0 1px alpha($color-focus-blue, 0.2), 0 0 0 1px $color-focus-blue !important
+      box-shadow inset 0 0 0 2px $color-focus-blue !important
 
     &.primary
       background $color-button-cta
-      border none
+      box-shadow none
       color $color-white
 
       &:hover,
@@ -187,7 +176,10 @@
         background darken($color-button-cta, 3)
 
       &:focus:not(:active)
-        box-shadow inset 0 0 0 2px $color-focus-blue, inset 0 0 0 3px darken($color-focus-blue, 20) !important
+        box-shadow inset 0 0 0 2px $color-button-cta, inset 0 0 0 4px $color-white !important
+
+        .darkMode &
+          box-shadow inset 0 0 0 2px $color-button-cta, inset 0 0 0 4px $color-darkmode-background !important
 
     &.gray
       background alpha($color-black, 0.04)
@@ -196,6 +188,7 @@
         background alpha($color-white, 0.1)
 
     &[disabled]
+      pointer-events none
       box-shadow none !important
       opacity 0.4
 
