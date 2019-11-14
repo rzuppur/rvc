@@ -2,58 +2,58 @@
 COLORS
  */
 
-$color-blue = #2097e8
-$color-blue-text = #1c69ab
-$color-darkmode-blue-text = lighten($color-blue, 8)
+$color-blue ?= #2097e8
+$color-blue-text ?= #1c69ab
+$color-darkmode-blue-text ?= lighten($color-blue, 8)
 
-$color-red = #e24161
-$color-red-text = #a61216
+$color-red ?= #e24161
+$color-red-text ?= #a61216
 
-$color-green = #009635
-$color-green-text = #109541
+$color-green ?= #009635
+$color-green-text ?= #109541
 
-$color-yellow = #ffdd57
-$color-gold = #eebc41
+$color-yellow ?= #ffdd57
+$color-gold ?= #eebc41
 
-$color-white = #ffffff
-$color-black = #000000
+$color-white ?= #ffffff
+$color-black ?= #000000
 
-$color-light-gray-background = #f9f9fa
-$color-darkmode-background = #181b22
+$color-light-gray-background ?= #f9f9fa
+$color-darkmode-background ?= #181b22
 
-$color-gray-text-light = #aaa
-$color-gray-text = #777
-$color-text = #40444a
-$color-darkmode-text = #e1e3e5
-$color-darkmode-text-dim = darken($color-darkmode-text, 20)
+$color-gray-text-light ?= #aaa
+$color-gray-text ?= #777
+$color-text ?= #40444a
+$color-darkmode-text ?= #e1e3e5
+$color-darkmode-text-dim ?= darken($color-darkmode-text, 20)
 
-$color-light-border = #eee
-$color-medium-border = #ddd
-$color-darkmode-medium-border = alpha($color-white, 0.15)
-$color-focus-blue = #0d7cc8
-$color-button-cta = $color-blue
+$color-light-border ?= #eee
+$color-medium-border ?= #ddd
+$color-darkmode-medium-border ?= alpha($color-white, 0.15)
+$color-focus-blue ?= #0d7cc8
+$color-button-cta ?= $color-blue
 
 /*
 SIZES
  */
-$border-radius = 4px
+$border-radius ?= 4px
 
-$height-input = 40px
-$height-input-small = 34px
+$height-input ?= 40px
+$height-input-small ?= 34px
 
 
 /*
 TYPOGRAPHY
  */
-$font-sans = "Inter", BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
+$font-sans ?= "Inter", BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
 
-$font-weight-sans-regular = 400
-$font-weight-sans-bold = 600
-$font-weight-sans-black = 900
+$font-weight-sans-regular ?= 400
+$font-weight-sans-bold ?= 600
+$font-weight-sans-black ?= 900
 
-$_line-height-base = 1.5
-$_font-size-base = 16px
-$_font-sizes-ratio = 1.333
+$_line-height-base ?= 1.5
+$_font-size-base ?= 16px
+$_font-sizes-ratio ?= 1.333
 
 font-size-ratio(level)
   max(13px, round($_font-size-base * ($_font-sizes-ratio ** level)))
