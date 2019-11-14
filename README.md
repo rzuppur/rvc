@@ -172,6 +172,7 @@ $color-text = green;
 /* IMPORT RVC STYLES HERE */
 @import "../src/styles/main.styl";
 ```
+## Dev
 ### Project setup
 ```
 yarn install
