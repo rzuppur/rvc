@@ -17,3 +17,34 @@ AREAS
   .darkMode &
     background lighten($color-background-darkmode, 6%)
     color $color-text-darkmode
+
+/*
+SCROLLBAR
+ */
+
+.r-styled-scrollbar
+
+  &::-webkit-scrollbar
+    width 8px
+    height 8px
+
+  &::-webkit-scrollbar-track
+    background-color alpha($color-black, 5%)
+    border-radius 0
+
+  &::-webkit-scrollbar-thumb
+    border-radius 4px
+    min-height 40px
+    background alpha($color-black, 20%)
+
+  &::-webkit-scrollbar-thumb:window-inactive
+    background alpha($color-black, 15%)
+
+  .darkMode &
+
+    &::-webkit-scrollbar-track
+      background-color transparent
+
+    &::-webkit-scrollbar-thumb,
+    &::-webkit-scrollbar-thumb:window-inactive
+      background alpha($color-white, 15%)

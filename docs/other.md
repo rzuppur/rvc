@@ -16,4 +16,6 @@
 
 `flex{0-3}` flex child grow and shrink value
 
-`clearfix`
+`clearfix` clearfix
+
+`r-styled-scrollbar` custom scrollbar style

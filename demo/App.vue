@@ -12,7 +12,7 @@
 
     .r-container-row.r-columns-mobile-medium.r-fill-absolute
 
-      .r-container-column.r-container-small.r-background-secondary
+      .r-container-column.r-container-small.r-background-secondary.r-styled-scrollbar
 
         section
           h1.title-3.margin-bottom-tiny RVC
@@ -37,7 +37,7 @@
 
           r-button(gray borderless :action="toggleTheme" :icon="`brightness ${darkMode ? 'dark' : 'bright'}`") Toggle theme
 
-      .r-container-column.r-container-maximum.r-background-primary
+      .r-container-column.r-container-maximum.r-background-primary.r-styled-scrollbar
 
         section(style="padding-top: 12px")
 
