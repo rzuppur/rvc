@@ -33,13 +33,13 @@
   color $color-text
   background-color $color-white
 
-  box-shadow inset 0 0 0 1px $color-medium-border
+  box-shadow inset 0 0 0 1px $color-border-medium
   transition transform 100ms, box-shadow 100ms
 
   .darkMode &
     background-color transparent
-    color $color-darkmode-text
-    box-shadow inset 0 0 0 1px $color-darkmode-medium-border
+    color $color-text-darkmode
+    box-shadow inset 0 0 0 1px $color-border-medium-darkmode
 
   &:focus,
   &.is-focused,
@@ -83,7 +83,7 @@
       box-shadow inset 0 0 0 2px $color-button-cta, inset 0 0 0 4px $color-white !important
 
       .darkMode &
-        box-shadow inset 0 0 0 2px $color-button-cta, inset 0 0 0 4px $color-darkmode-background !important
+        box-shadow inset 0 0 0 2px $color-button-cta, inset 0 0 0 4px $color-background-darkmode !important
 
   &.gray
     background alpha($color-black, 0.04)

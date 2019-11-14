@@ -1,16 +1,20 @@
 /*
 COLORS
+
+naming:
+$color - {type?} - {name} - {darkmode?}
+
  */
 
 $color-blue ?= #2097e8
-$color-blue-text ?= #1c69ab
-$color-darkmode-blue-text ?= lighten($color-blue, 8)
+$color-text-blue ?= #1c69ab
+$color-text-blue-darkmode ?= lighten($color-blue, 8)
 
 $color-red ?= #e24161
-$color-red-text ?= #a61216
+$color-text-red ?= #a61216
 
 $color-green ?= #009635
-$color-green-text ?= #109541
+$color-text-green ?= #109541
 
 $color-yellow ?= #ffdd57
 $color-gold ?= #eebc41
@@ -18,18 +22,18 @@ $color-gold ?= #eebc41
 $color-white ?= #ffffff
 $color-black ?= #000000
 
-$color-light-gray-background ?= #f9f9fa
-$color-darkmode-background ?= #181b22
+$color-background-light-gray ?= #f9f9fa
+$color-background-darkmode ?= #181b22
 
-$color-gray-text-light ?= #aaa
-$color-gray-text ?= #777
 $color-text ?= #40444a
-$color-darkmode-text ?= #e1e3e5
-$color-darkmode-text-dim ?= darken($color-darkmode-text, 20)
+$color-text-quiet ?= #777
+$color-text-darkmode ?= #e1e3e5
+$color-text-quiet-darkmode ?= darken($color-text-darkmode, 20)
 
-$color-light-border ?= #eee
-$color-medium-border ?= #ddd
-$color-darkmode-medium-border ?= alpha($color-white, 0.15)
+$color-border-light ?= #eee
+$color-border-medium ?= #ddd
+$color-border-medium-darkmode ?= alpha($color-white, 0.15)
+
 $color-focus-blue ?= #0d7cc8
 $color-button-cta ?= $color-blue
 

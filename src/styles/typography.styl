@@ -29,17 +29,17 @@ p
 
 a
   text-underline-position under
-  color $color-blue-text
+  color $color-text-blue
   cursor pointer
 
   &:visited
-    color spin(desaturate($color-blue-text, 15), 10deg)
+    color spin(desaturate($color-text-blue, 15), 10deg)
 
   .darkMode &
-    color $color-blue
+    color $color-text-blue-darkmode
 
     &:visited
-      color spin($color-blue, 10deg)
+      color spin($color-text-blue-darkmode, 10deg)
 
 /*
 TITLES
@@ -91,13 +91,13 @@ UTILITY
   text-align right
 
 .text-quiet
-  color $color-gray-text
+  color $color-text-quiet
 
   .darkMode &
-    color $color-darkmode-text-dim
+    color $color-text-quiet-darkmode
 
 .text-error
-  color $color-red-text
+  color $color-text-red
 
   .darkMode &
     color $color-red
@@ -116,8 +116,8 @@ hr
   margin $font-size-normal 0
   padding 0
   box-shadow none
-  background $color-light-border
+  background $color-border-light
 
   .darkMode &
-    background $color-darkmode-medium-border
+    background $color-border-medium-darkmode
 
