@@ -12,8 +12,8 @@ To customize [Stylus](http://stylus-lang.com/) variables, import `main.styl` in 
 
 ```stylus
 /* CUSTOMIZE VARIABLES HERE */
-$color-text = green;
+$color-text = green
 
-/* IMPORT RVC STYLES HERE */
-@import "../src/styles/main.styl";
+/* IMPORT RVC MAIN.STYL HERE */
+@import "../node_modules/@rzuppur/rvc/src/styles/main.styl"
 ```

@@ -276,7 +276,7 @@
   // $color-button-cta = #5e6cbb;
 
   /* IMPORT RVC STYLES HERE */
-  @import "../src/styles/main.styl";
+  @import "../src/styles/main.styl";  // Import from node_modules/@rzuppur/rvc instead
 
   /* - */
 
