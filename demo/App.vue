@@ -43,6 +43,12 @@
 
           r-tabs(:extendLine="true")
 
+            //-r-tab-content(name="Forms")
+              .r-form-group
+                r-text-input
+                r-text-input
+                r-text-input
+
             r-tab-content(name="Modals")
               .margin-bottom-medium(v-pre)
                 include:markdown-it ../docs/modal.md

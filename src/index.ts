@@ -8,6 +8,7 @@ import Modal from "./components/global/r-modal/Modal.vue";
 import ModalConfirm from "./components/root/ModalConfirm.vue";
 import Tabs from "./components/global/r-tabs/Tabs.vue";
 import TabContent from "./components/global/r-tabs/r-tab-content/TabContent.vue";
+import TextInput from "./components/global/r-text-input/TextInput.vue";
 import Toast from "./components/root/Toast.vue";
 import RTip from "./directives/RTip";
 
@@ -28,6 +29,7 @@ const install = (Vue: VueConstructor): void => {
   Vue.component("r-modal", Modal);
   Vue.component("r-tabs", Tabs);
   Vue.component("r-tab-content", TabContent);
+  Vue.component("r-text-input", TextInput);
 
   Vue.directive("rtip", RTip(Vue));
 
