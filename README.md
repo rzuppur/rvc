@@ -127,6 +127,20 @@ Basic tabs component.
   <r-tab-content name="tab_name_3"></r-tab-content>
 </r-tabs>
 ```
+### Form
+Bind value with v-model.
+
+```html
+<div class="r-form-group">
+  <r-text-input
+    label: string
+    placeholder: string
+    type: string // default "text"
+    fullwidth: boolean  // default true
+  >
+  </r-text-input>
+</div>
+```
 ### Other
 #### Utility css classes
 

@@ -5,53 +5,17 @@
     transform rotate(359deg)
 
 .r-button
-
+  control()
   cursor pointer
   user-select none
-  -webkit-touch-callout none
-  -webkit-appearance none
-  -moz-appearance none
-
-  position relative
-  vertical-align top
   white-space nowrap
-
-  display inline-flex
-  align-items center
-  justify-content center
-
-  height $height-input
-  padding 0 12px
-  border none
-  border-radius $border-radius
-
-  font-family $font-sans
-  font-sans($font-size-normal)
   text-align center
-  text-decoration none
-
   color $color-text
   background-color $color-white
-
-  box-shadow inset 0 0 0 1px $color-border-medium
-  transition transform 100ms, box-shadow 100ms
 
   .darkMode &
     background-color transparent
     color $color-text-darkmode
-    box-shadow inset 0 0 0 1px $color-border-medium-darkmode
-
-  &:focus,
-  &.is-focused,
-  &:active,
-  &.is-active
-    outline none
-
-  &[disabled]
-    cursor not-allowed
-
-  &:active:not([disabled])
-    box-shadow inset 0 0 0 2px alpha($color-focus-blue, 50%) !important
 
   &.borderless
     background-color transparent
@@ -63,12 +27,6 @@
 
       .darkMode &
         background alpha($color-white, 0.08)
-
-  &:hover
-    box-shadow inset 0 0 0 1px alpha($color-focus-blue, 50%) !important
-
-  &:focus:not(:active)
-    box-shadow inset 0 0 0 2px $color-focus-blue !important
 
   &.primary
     background $color-button-cta
@@ -92,16 +50,8 @@
       background alpha($color-white, 0.1)
 
   &[disabled]
-    pointer-events none
     box-shadow none !important
     opacity 0.4
-
-  &.fullwidth
-    display flex
-    width 100%
-
-  &.small
-    height $height-input-small
 
   &.icon-only
     width $height-input
@@ -173,7 +123,6 @@
     margin-right -4px
     margin-left 5px
 
-// -webkit-touch-callout none
 
 $_buttons_margin = $space-tiny
 
@@ -183,6 +132,7 @@ $_buttons_margin = $space-tiny
   display flex
   flex-direction row
   flex-wrap wrap
+  align-items center
 
   .r-button
     margin-right $_buttons_margin
@@ -201,8 +151,14 @@ $_buttons_margin = $space-tiny
     .r-button + .r-button
       border-top-left-radius 0
       border-bottom-left-radius 0
-      border-left none
+      margin-left -1px
 
-    .r-button:not(:last-child)
-      border-top-right-radius 0
-      border-bottom-right-radius 0
+    .r-button
+
+      &:hover,
+      &:focus
+        z-index 1
+
+      &:not(:last-child)
+        border-top-right-radius 0
+        border-bottom-right-radius 0

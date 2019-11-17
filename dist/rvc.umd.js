@@ -1,5 +1,5 @@
 /*!
- * rvc v0.39.0 
+ * rvc v0.40.0 
  * (c) 2019 Reino Zuppur
  * Released under the MIT License.
  */
@@ -418,6 +418,55 @@
     if (protoProps) _defineProperties(Constructor.prototype, protoProps);
     if (staticProps) _defineProperties(Constructor, staticProps);
     return Constructor;
+  }
+
+  function _defineProperty(obj, key, value) {
+    if (key in obj) {
+      Object.defineProperty(obj, key, {
+        value: value,
+        enumerable: true,
+        configurable: true,
+        writable: true
+      });
+    } else {
+      obj[key] = value;
+    }
+
+    return obj;
+  }
+
+  function ownKeys(object, enumerableOnly) {
+    var keys = Object.keys(object);
+
+    if (Object.getOwnPropertySymbols) {
+      var symbols = Object.getOwnPropertySymbols(object);
+      if (enumerableOnly) symbols = symbols.filter(function (sym) {
+        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+      });
+      keys.push.apply(keys, symbols);
+    }
+
+    return keys;
+  }
+
+  function _objectSpread2(target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i] != null ? arguments[i] : {};
+
+      if (i % 2) {
+        ownKeys(source, true).forEach(function (key) {
+          _defineProperty(target, key, source[key]);
+        });
+      } else if (Object.getOwnPropertyDescriptors) {
+        Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+      } else {
+        ownKeys(source).forEach(function (key) {
+          Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+        });
+      }
+    }
+
+    return target;
   }
 
   function createCommonjsModule(fn, module) {
@@ -1559,6 +1608,93 @@
       undefined
     );
 
+  var genId = function genId() {
+    return "_".concat(Math.random().toString(36).substr(2)).concat(Math.random().toString(36).substr(2));
+  };
+
+  var UIDMixin = {
+    beforeCreate: function beforeCreate() {
+      this._uid = genId();
+    },
+    computed: {
+      /**
+       * @return {string}
+       */
+      UID: function UID() {
+        return this._uid;
+      }
+    }
+  };
+
+  var script$6 = {
+    name: "TextInput",
+    mixins: [UIDMixin],
+    props: {
+      label: String,
+      placeholder: String,
+      helperText: {
+        type: String,
+        default: undefined
+      },
+      invalidMessage: {
+        type: String,
+        default: undefined
+      },
+      type: {
+        type: String,
+        default: "text"
+      },
+      fullwidth: {
+        type: Boolean,
+        default: true
+      },
+      value: String
+    },
+    computed: {
+      inputListeners: function inputListeners() {
+        var _this = this;
+
+        return _objectSpread2({}, this.$listeners, {
+          input: function input(event) {
+            return _this.$emit("input", event.target.value);
+          }
+        });
+      }
+    }
+  };
+
+  /* script */
+  const __vue_script__$6 = script$6;
+
+  /* template */
+  var __vue_render__$4 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"r-text-input"},[_c('label',{attrs:{"for":_vm.UID}},[_vm._v(_vm._s(_vm.label))]),_c('input',_vm._g({class:{ fullwidth: _vm.fullwidth },attrs:{"id":_vm.UID,"type":_vm.type,"placeholder":_vm.placeholder},domProps:{"value":_vm.value}},_vm.inputListeners))])};
+  var __vue_staticRenderFns__$4 = [];
+
+    /* style */
+    const __vue_inject_styles__$6 = undefined;
+    /* scoped */
+    const __vue_scope_id__$6 = undefined;
+    /* module identifier */
+    const __vue_module_identifier__$6 = undefined;
+    /* functional template */
+    const __vue_is_functional_template__$6 = false;
+    /* style inject */
+    
+    /* style inject SSR */
+    
+
+    
+    var TextInput = normalizeComponent_1(
+      { render: __vue_render__$4, staticRenderFns: __vue_staticRenderFns__$4 },
+      __vue_inject_styles__$6,
+      __vue_script__$6,
+      __vue_scope_id__$6,
+      __vue_is_functional_template__$6,
+      __vue_module_identifier__$6,
+      undefined,
+      undefined
+    );
+
   //
   //
   //
@@ -1569,7 +1705,7 @@
   //
   //
   var MAX_SHOWN = 3;
-  var script$6 = {
+  var script$7 = {
     name: "Toast",
     data: function data() {
       return {
@@ -1615,20 +1751,20 @@
   };
 
   /* script */
-  const __vue_script__$6 = script$6;
+  const __vue_script__$7 = script$7;
 
   /* template */
-  var __vue_render__$4 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"r-toast-list"},[_c('transition-group',{staticClass:"r-toast-list-inner",attrs:{"name":"r-toast-list","tag":"div"}},_vm._l((_vm.queue),function(notification){return _c('div',{key:notification.index,staticClass:"r-toast-notification-wrap"},[_c('div',{staticClass:"r-toast-notification",on:{"click":function($event){return _vm.remove(notification.index)}}},[_vm._v(_vm._s(notification.text))])])}),0)],1)};
-  var __vue_staticRenderFns__$4 = [];
+  var __vue_render__$5 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"r-toast-list"},[_c('transition-group',{staticClass:"r-toast-list-inner",attrs:{"name":"r-toast-list","tag":"div"}},_vm._l((_vm.queue),function(notification){return _c('div',{key:notification.index,staticClass:"r-toast-notification-wrap"},[_c('div',{staticClass:"r-toast-notification",on:{"click":function($event){return _vm.remove(notification.index)}}},[_vm._v(_vm._s(notification.text))])])}),0)],1)};
+  var __vue_staticRenderFns__$5 = [];
 
     /* style */
-    const __vue_inject_styles__$6 = undefined;
+    const __vue_inject_styles__$7 = undefined;
     /* scoped */
-    const __vue_scope_id__$6 = undefined;
+    const __vue_scope_id__$7 = undefined;
     /* module identifier */
-    const __vue_module_identifier__$6 = undefined;
+    const __vue_module_identifier__$7 = undefined;
     /* functional template */
-    const __vue_is_functional_template__$6 = false;
+    const __vue_is_functional_template__$7 = false;
     /* style inject */
     
     /* style inject SSR */
@@ -1636,18 +1772,18 @@
 
     
     var Toast = normalizeComponent_1(
-      { render: __vue_render__$4, staticRenderFns: __vue_staticRenderFns__$4 },
-      __vue_inject_styles__$6,
-      __vue_script__$6,
-      __vue_scope_id__$6,
-      __vue_is_functional_template__$6,
-      __vue_module_identifier__$6,
+      { render: __vue_render__$5, staticRenderFns: __vue_staticRenderFns__$5 },
+      __vue_inject_styles__$7,
+      __vue_script__$7,
+      __vue_scope_id__$7,
+      __vue_is_functional_template__$7,
+      __vue_module_identifier__$7,
       undefined,
       undefined
     );
 
   //
-  var script$7 = {
+  var script$8 = {
     name: "Tooltip",
     data: function data() {
       return {
@@ -1813,20 +1949,20 @@
   };
 
   /* script */
-  const __vue_script__$7 = script$7;
+  const __vue_script__$8 = script$8;
 
   /* template */
-  var __vue_render__$5 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('transition',{attrs:{"name":"r-tooltip"}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.visible),expression:"visible"}],ref:"tooltip",staticClass:"r-tooltip",style:(_vm.tooltipStyle)},[_vm._v(_vm._s(_vm.text))])]),_c('transition',{attrs:{"name":"r-tooltip-arrow"}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.visible),expression:"visible"}],staticClass:"r-tooltip-arrow",style:(_vm.arrowStyle)})])],1)};
-  var __vue_staticRenderFns__$5 = [];
+  var __vue_render__$6 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('transition',{attrs:{"name":"r-tooltip"}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.visible),expression:"visible"}],ref:"tooltip",staticClass:"r-tooltip",style:(_vm.tooltipStyle)},[_vm._v(_vm._s(_vm.text))])]),_c('transition',{attrs:{"name":"r-tooltip-arrow"}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.visible),expression:"visible"}],staticClass:"r-tooltip-arrow",style:(_vm.arrowStyle)})])],1)};
+  var __vue_staticRenderFns__$6 = [];
 
     /* style */
-    const __vue_inject_styles__$7 = undefined;
+    const __vue_inject_styles__$8 = undefined;
     /* scoped */
-    const __vue_scope_id__$7 = undefined;
+    const __vue_scope_id__$8 = undefined;
     /* module identifier */
-    const __vue_module_identifier__$7 = undefined;
+    const __vue_module_identifier__$8 = undefined;
     /* functional template */
-    const __vue_is_functional_template__$7 = false;
+    const __vue_is_functional_template__$8 = false;
     /* style inject */
     
     /* style inject SSR */
@@ -1834,12 +1970,12 @@
 
     
     var TooltipComponent = normalizeComponent_1(
-      { render: __vue_render__$5, staticRenderFns: __vue_staticRenderFns__$5 },
-      __vue_inject_styles__$7,
-      __vue_script__$7,
-      __vue_scope_id__$7,
-      __vue_is_functional_template__$7,
-      __vue_module_identifier__$7,
+      { render: __vue_render__$6, staticRenderFns: __vue_staticRenderFns__$6 },
+      __vue_inject_styles__$8,
+      __vue_script__$8,
+      __vue_scope_id__$8,
+      __vue_is_functional_template__$8,
+      __vue_module_identifier__$8,
       undefined,
       undefined
     );
@@ -1950,7 +2086,7 @@
     };
   };
 
-  var version = "0.39.0";
+  var version = "0.40.0";
 
   var mountComponentToRoot = function mountComponentToRoot(vue, parent, componentConstructor) {
     var propsData = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};
@@ -1970,6 +2106,7 @@
     Vue.component("r-modal", Modal);
     Vue.component("r-tabs", Tabs);
     Vue.component("r-tab-content", TabContent);
+    Vue.component("r-text-input", TextInput);
     Vue.directive("rtip", RTip(Vue));
     var toastComponent;
     var portalTargetComponent;

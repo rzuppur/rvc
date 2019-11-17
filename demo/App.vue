@@ -43,16 +43,9 @@
 
           r-tabs(:extendLine="true")
 
-            //-r-tab-content(name="Forms")
-              .r-form-group
-                r-text-input
-                r-text-input
-                r-text-input
-
             r-tab-content(name="Modals")
               .margin-bottom-medium(v-pre)
                 include:markdown-it ../docs/modal.md
-
 
               .r-buttons
                 +modalButtons()
@@ -234,6 +227,16 @@
 
                 r-tab-content(name="Tab 2")
                   p Tab 2 content
+
+            r-tab-content(name="Forms")
+              .margin-bottom-medium(v-pre)
+                include:markdown-it ../docs/form.md
+
+              .r-form-group
+                r-text-input(label="Text input" :fullwidth="false" placeholder="Placeholder")
+
+              .r-form-group
+                r-text-input(label="Full width")
 
             r-tab-content(name="Other")
               .margin-bottom-medium(v-pre)
