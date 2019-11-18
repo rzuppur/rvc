@@ -52,6 +52,7 @@ TYPOGRAPHY
 $font-sans ?= "Inter", BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
 
 $font-weight-sans-regular ?= 400
+$font-weight-sans-medium ?= 500
 $font-weight-sans-bold ?= 600
 $font-weight-sans-black ?= 900
 
@@ -62,13 +63,13 @@ $_font-sizes-ratio ?= 1.333
 font-size-ratio(level)
   max(13px, round($_font-size-base * ($_font-sizes-ratio ** level)))
 
-$font-size-small = font-size-ratio(-1)
-$font-size-normal = font-size-ratio(0)
-$font-size-large-1 = font-size-ratio(1)
-$font-size-large-2 = font-size-ratio(2)
-$font-size-large-3 = font-size-ratio(3)
-$font-size-large-4 = font-size-ratio(4)
-$font-size-large-5 = font-size-ratio(5)
+$font-size-small ?= font-size-ratio(-1)
+$font-size-normal ?= font-size-ratio(0)
+$font-size-large-1 ?= font-size-ratio(1)
+$font-size-large-2 ?= font-size-ratio(2)
+$font-size-large-3 ?= font-size-ratio(3)
+$font-size-large-4 ?= font-size-ratio(4)
+$font-size-large-5 ?= font-size-ratio(5)
 
 tracking(fontSize)
   letter-spacing round(-0.017+(0.202*(2.71828**(-0.175*fontSize))), 3)em
@@ -94,20 +95,20 @@ font-sans-no-weight(size)
 SPACING
  */
 
-$_spacing-base = round($_font-size-base * $_line-height-base)
+$_spacing-base ?= round($_font-size-base * $_line-height-base)
 
-$space-extra-tiny = round($_spacing-base / 8px)
-$space-tiny = round($_spacing-base / 4px)
-$space-small = round($_spacing-base / 2px)
-$space-medium = $_spacing-base
-$space-large = round($_spacing-base * 2px)
-$space-huge = round($_spacing-base * 4px)
+$space-extra-tiny ?= round($_spacing-base / 8px)
+$space-tiny ?= round($_spacing-base / 4px)
+$space-small ?= round($_spacing-base / 2px)
+$space-medium ?= $_spacing-base
+$space-large ?= round($_spacing-base * 2px)
+$space-huge ?= round($_spacing-base * 4px)
 
-$container-tiny =  $space-medium * 10
-$container-small =  $space-medium * 20
-$container-medium =  $space-medium * 30
-$container-large =  $space-medium * 40
-$container-huge =  $space-medium * 60
+$container-tiny ?=  $space-medium * 10
+$container-small ?=  $space-medium * 20
+$container-medium ?=  $space-medium * 30
+$container-large ?=  $space-medium * 40
+$container-huge ?=  $space-medium * 60
 
 /*
 MIXINS
