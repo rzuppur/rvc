@@ -83,8 +83,12 @@ for size in "huge" "large" "medium" "small" "tiny"
   for size in "large" "medium" "small"
     &.r-columns-mobile-{size}
       @media (max-width lookup("$container-" + size))
-        display block
+        display flex
+        flex-direction column
         position static
+
+        &.r-columns-mobile-reverse
+          flex-direction column-reverse
 
         & > .r-container-column
           max-width none
