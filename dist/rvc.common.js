@@ -1,5 +1,5 @@
 /*!
- * rvc v0.41.2 
+ * rvc v0.42.0 
  * (c) 2019 Reino Zuppur
  * Released under the MIT License.
  */
@@ -1666,7 +1666,7 @@ var script$6 = {
 const __vue_script__$6 = script$6;
 
 /* template */
-var __vue_render__$4 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"r-text-input"},[_c('label',{attrs:{"for":_vm.UID}},[_vm._v(_vm._s(_vm.label))]),_c('input',_vm._g({class:{ fullwidth: _vm.fullwidth },attrs:{"id":_vm.UID,"type":_vm.type,"placeholder":_vm.placeholder},domProps:{"value":_vm.value}},_vm.inputListeners))])};
+var __vue_render__$4 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"r-text-input"},[(_vm.label)?_c('label',{staticClass:"r-form-label",attrs:{"for":_vm.UID}},[_vm._v(_vm._s(_vm.label)),(_vm.helperText)?_c('div',{staticClass:"text-quiet text-small"},[_vm._v(_vm._s(_vm.helperText))]):_vm._e()]):_vm._e(),_c('input',_vm._g(_vm._b({staticClass:"r-input-text",class:{ fullwidth: _vm.fullwidth, invalid: _vm.invalidMessage },attrs:{"id":_vm.UID,"type":_vm.type,"placeholder":_vm.placeholder},domProps:{"value":_vm.value}},'input',_vm.$attrs,false),_vm.inputListeners)),(_vm.invalidMessage)?_c('div',{staticClass:"text-error margin-top-tiny"},[_vm._v(_vm._s(_vm.invalidMessage))]):_vm._e()])};
 var __vue_staticRenderFns__$4 = [];
 
   /* style */
@@ -1694,6 +1694,79 @@ var __vue_staticRenderFns__$4 = [];
     undefined
   );
 
+var script$7 = {
+  name: "TextInputArea",
+  mixins: [UIDMixin],
+  props: {
+    label: String,
+    placeholder: String,
+    helperText: {
+      type: String,
+      default: undefined
+    },
+    invalidMessage: {
+      type: String,
+      default: undefined
+    },
+    fullwidth: {
+      type: Boolean,
+      default: true
+    },
+    value: String
+  },
+  computed: {
+    inputListeners: function inputListeners() {
+      var _this = this;
+
+      return _objectSpread2({}, this.$listeners, {
+        input: function input(event) {
+          return _this.$emit("input", event.target.value);
+        },
+        "&input": function input(event) {
+          // & for passive listener
+          event.target.style.height = "auto";
+          event.target.style.height = "".concat(event.target.scrollHeight, "px");
+        }
+      });
+    }
+  },
+  mounted: function mounted() {
+    this.$refs.textarea.style.height = "".concat(this.$refs.textarea.scrollHeight, "px");
+  }
+};
+
+/* script */
+const __vue_script__$7 = script$7;
+
+/* template */
+var __vue_render__$5 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"r-text-input-area"},[(_vm.label)?_c('label',{staticClass:"r-form-label",attrs:{"for":_vm.UID}},[_vm._v(_vm._s(_vm.label)),(_vm.helperText)?_c('div',{staticClass:"text-quiet text-small margin-bottom-tiny"},[_vm._v(_vm._s(_vm.helperText))]):_vm._e()]):_vm._e(),_c('textarea',_vm._g(_vm._b({ref:"textarea",staticClass:"r-input-text",class:{ fullwidth: _vm.fullwidth, invalid: _vm.invalidMessage },attrs:{"id":_vm.UID,"placeholder":_vm.placeholder},domProps:{"value":_vm.value}},'textarea',_vm.$attrs,false),_vm.inputListeners)),(_vm.invalidMessage)?_c('div',{staticClass:"text-error margin-top-tiny"},[_vm._v(_vm._s(_vm.invalidMessage))]):_vm._e()])};
+var __vue_staticRenderFns__$5 = [];
+
+  /* style */
+  const __vue_inject_styles__$7 = undefined;
+  /* scoped */
+  const __vue_scope_id__$7 = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$7 = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$7 = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var TextInputArea = normalizeComponent_1(
+    { render: __vue_render__$5, staticRenderFns: __vue_staticRenderFns__$5 },
+    __vue_inject_styles__$7,
+    __vue_script__$7,
+    __vue_scope_id__$7,
+    __vue_is_functional_template__$7,
+    __vue_module_identifier__$7,
+    undefined,
+    undefined
+  );
+
 //
 //
 //
@@ -1704,7 +1777,7 @@ var __vue_staticRenderFns__$4 = [];
 //
 //
 var MAX_SHOWN = 3;
-var script$7 = {
+var script$8 = {
   name: "Toast",
   data: function data() {
     return {
@@ -1750,20 +1823,20 @@ var script$7 = {
 };
 
 /* script */
-const __vue_script__$7 = script$7;
+const __vue_script__$8 = script$8;
 
 /* template */
-var __vue_render__$5 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"r-toast-list"},[_c('transition-group',{staticClass:"r-toast-list-inner",attrs:{"name":"r-toast-list","tag":"div"}},_vm._l((_vm.queue),function(notification){return _c('div',{key:notification.index,staticClass:"r-toast-notification-wrap"},[_c('div',{staticClass:"r-toast-notification",on:{"click":function($event){return _vm.remove(notification.index)}}},[_vm._v(_vm._s(notification.text))])])}),0)],1)};
-var __vue_staticRenderFns__$5 = [];
+var __vue_render__$6 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"r-toast-list"},[_c('transition-group',{staticClass:"r-toast-list-inner",attrs:{"name":"r-toast-list","tag":"div"}},_vm._l((_vm.queue),function(notification){return _c('div',{key:notification.index,staticClass:"r-toast-notification-wrap"},[_c('div',{staticClass:"r-toast-notification",on:{"click":function($event){return _vm.remove(notification.index)}}},[_vm._v(_vm._s(notification.text))])])}),0)],1)};
+var __vue_staticRenderFns__$6 = [];
 
   /* style */
-  const __vue_inject_styles__$7 = undefined;
+  const __vue_inject_styles__$8 = undefined;
   /* scoped */
-  const __vue_scope_id__$7 = undefined;
+  const __vue_scope_id__$8 = undefined;
   /* module identifier */
-  const __vue_module_identifier__$7 = undefined;
+  const __vue_module_identifier__$8 = undefined;
   /* functional template */
-  const __vue_is_functional_template__$7 = false;
+  const __vue_is_functional_template__$8 = false;
   /* style inject */
   
   /* style inject SSR */
@@ -1771,18 +1844,18 @@ var __vue_staticRenderFns__$5 = [];
 
   
   var Toast = normalizeComponent_1(
-    { render: __vue_render__$5, staticRenderFns: __vue_staticRenderFns__$5 },
-    __vue_inject_styles__$7,
-    __vue_script__$7,
-    __vue_scope_id__$7,
-    __vue_is_functional_template__$7,
-    __vue_module_identifier__$7,
+    { render: __vue_render__$6, staticRenderFns: __vue_staticRenderFns__$6 },
+    __vue_inject_styles__$8,
+    __vue_script__$8,
+    __vue_scope_id__$8,
+    __vue_is_functional_template__$8,
+    __vue_module_identifier__$8,
     undefined,
     undefined
   );
 
 //
-var script$8 = {
+var script$9 = {
   name: "Tooltip",
   data: function data() {
     return {
@@ -1948,20 +2021,20 @@ var script$8 = {
 };
 
 /* script */
-const __vue_script__$8 = script$8;
+const __vue_script__$9 = script$9;
 
 /* template */
-var __vue_render__$6 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('transition',{attrs:{"name":"r-tooltip"}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.visible),expression:"visible"}],ref:"tooltip",staticClass:"r-tooltip",style:(_vm.tooltipStyle)},[_vm._v(_vm._s(_vm.text))])]),_c('transition',{attrs:{"name":"r-tooltip-arrow"}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.visible),expression:"visible"}],staticClass:"r-tooltip-arrow",style:(_vm.arrowStyle)})])],1)};
-var __vue_staticRenderFns__$6 = [];
+var __vue_render__$7 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('transition',{attrs:{"name":"r-tooltip"}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.visible),expression:"visible"}],ref:"tooltip",staticClass:"r-tooltip",style:(_vm.tooltipStyle)},[_vm._v(_vm._s(_vm.text))])]),_c('transition',{attrs:{"name":"r-tooltip-arrow"}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.visible),expression:"visible"}],staticClass:"r-tooltip-arrow",style:(_vm.arrowStyle)})])],1)};
+var __vue_staticRenderFns__$7 = [];
 
   /* style */
-  const __vue_inject_styles__$8 = undefined;
+  const __vue_inject_styles__$9 = undefined;
   /* scoped */
-  const __vue_scope_id__$8 = undefined;
+  const __vue_scope_id__$9 = undefined;
   /* module identifier */
-  const __vue_module_identifier__$8 = undefined;
+  const __vue_module_identifier__$9 = undefined;
   /* functional template */
-  const __vue_is_functional_template__$8 = false;
+  const __vue_is_functional_template__$9 = false;
   /* style inject */
   
   /* style inject SSR */
@@ -1969,12 +2042,12 @@ var __vue_staticRenderFns__$6 = [];
 
   
   var TooltipComponent = normalizeComponent_1(
-    { render: __vue_render__$6, staticRenderFns: __vue_staticRenderFns__$6 },
-    __vue_inject_styles__$8,
-    __vue_script__$8,
-    __vue_scope_id__$8,
-    __vue_is_functional_template__$8,
-    __vue_module_identifier__$8,
+    { render: __vue_render__$7, staticRenderFns: __vue_staticRenderFns__$7 },
+    __vue_inject_styles__$9,
+    __vue_script__$9,
+    __vue_scope_id__$9,
+    __vue_is_functional_template__$9,
+    __vue_module_identifier__$9,
     undefined,
     undefined
   );
@@ -2085,7 +2158,7 @@ var RTip = function RTip(vue) {
   };
 };
 
-var version = "0.41.2";
+var version = "0.42.0";
 
 var mountComponentToRoot = function mountComponentToRoot(vue, parent, componentConstructor) {
   var propsData = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};
@@ -2106,6 +2179,7 @@ var install = function install(Vue) {
   Vue.component("r-tabs", Tabs);
   Vue.component("r-tab-content", TabContent);
   Vue.component("r-text-input", TextInput);
+  Vue.component("r-text-input-area", TextInputArea);
   Vue.directive("rtip", RTip(Vue));
   var toastComponent;
   var portalTargetComponent;

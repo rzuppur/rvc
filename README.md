@@ -111,7 +111,7 @@ Headings are all reset to normal text. Use `title-N` for visually styling them.
 Default font stack is `"Inter", BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"` but Inter is not imported, if you want to use it instead of OS default fonts you have to add `@import url('https://rsms.me/inter/inter.css')` to your css.
 
 Available classes:
-`text-bold`, `text-quiet`, `text-center`, `text-right`, `text-error`, `text-small`, `title-1`, `title-2`, `title-3`, `title-4`, `title-5`, `title-6`, `title-caps`
+`text-bold`, `text-medium`, `text-quiet`, `text-center`, `text-right`, `text-error`, `text-small`, `title-1`, `title-2`, `title-3`, `title-4`, `title-5`, `title-6`, `title-caps`
 ### Tabs
 Basic tabs component.
 ```html
@@ -128,13 +128,15 @@ Basic tabs component.
 </r-tabs>
 ```
 ### Form
-Bind value with v-model.
+Bind value with v-model. Same props (except _type_) apply for `r-text-input` and `r-text-input-area`
 
 ```html
 <div class="r-form-group">
   <r-text-input
     label: string
     placeholder: string
+    helper-text: string
+    invalid-message: string // setting this will mark the field as invalid
     type: string // default "text"
     fullwidth: boolean  // default true
   >
