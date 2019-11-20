@@ -238,6 +238,9 @@
               .r-form-group
                 r-text-input(label="Full width")
 
+              .r-form-group
+                r-text-input-area(label="Textarea" helper-text="Description text")
+
             r-tab-content(name="Other")
               .margin-bottom-medium(v-pre)
                 include:markdown-it ../docs/other.md
