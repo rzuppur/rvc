@@ -137,10 +137,10 @@ MEDIA
  */
 for size in "medium" "small"
 
-  &.r-media-hide-{size}
+  &.r-media-hide-{size}[class]
     @media (max-width lookup("$container-" + size))
       display none
 
-  &.r-media-show-{size}
+  &.r-media-show-{size}[class]
     @media (min-width (lookup("$container-" + size) + 1px))
       display none
