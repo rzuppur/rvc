@@ -56,7 +56,7 @@ Every property listed is optional. If button contains no childs but has an icon,
     actionWithModifier: function  // @click.ctrl.exact handler
     label: string  // aria-label, for icon only buttons
     icon: string  // One of valid r-icon icons
-    icon-color: string  // ("light-gray" | "green" | "red" | "blue" | "white")
+    icon-color: string  // ("gray" | "green" | "red" | "blue" | "link" | "white")
   >
     {{ text }}
   </r-button>
@@ -78,7 +78,7 @@ Material or modified material icons as 24x24px svg.
 ```html
 <r-icon
   icon: string
-  icon-color: string  // ("gray" | "light-gray" | "green" | "red" | "blue" | "white")
+  icon-color: string  // ("gray" | "green" | "red" | "blue" | "link" | "white")
 />
 ```
 ### Toast notification
