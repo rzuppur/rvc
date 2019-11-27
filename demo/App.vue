@@ -209,11 +209,15 @@
               .title-caps title-caps
               p The component system is another important concept in Vue, because it’s an abstraction that allows us to build large-scale applications composed of small, self-contained, and often reusable components. If we think about it, almost any type of application interface can be abstracted into a tree of components.
 
+              .text-regular text-regular
+              .text-medium text-medium
               .text-bold text-bold
-              .text-quiet text-quiet
+              .text-color-body text-color-body
+              .text-color-quiet text-color-quiet
+              .text-color-error text-color-error
+              .text-left text-left
               .text-center text-center
               .text-right text-right
-              .text-error text-error
               .text-small text-small
 
             r-tab-content(name="Tabs")
@@ -314,17 +318,24 @@
       margin-bottom 10px
 
   code
-    background alpha(#999, 0.2)
+    background alpha(#999, 15%)
     border-radius $border-radius
     padding 4px
     font-size $font-size-small
 
+    &:not(:first-child)
+      margin-left 4px
+
+    &:not(:last-child)
+      margin-right 4px
+
   pre code
     background none
     padding 0
+    margin 0
 
   pre
-    background alpha(#999, 0.2)
+    background alpha(#999, 15%)
     padding 10px
     border-radius $border-radius
     overflow-x auto

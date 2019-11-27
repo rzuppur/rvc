@@ -19,3 +19,7 @@
 `clearfix` clearfix
 
 `r-styled-scrollbar` custom scrollbar style
+
+`r-border-radius` add default border radius
+
+`r-border-radius-double` add default * 2 border radius

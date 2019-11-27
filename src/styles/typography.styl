@@ -15,10 +15,8 @@ DEFAULT BOTTOM MARGINS
 
 p,
 pre
-  margin-bottom $space-medium
-
-  &:last-child
-    margin-bottom 0
+  &:not(:last-child)
+    margin-bottom $space-medium
 
 /*
 TEXT
@@ -81,32 +79,44 @@ for i in "1" "2" "3" "4" "5" "6" "caps"
 UTILITY
  */
 
-.text-bold
-  font-weight $font-weight-sans-bold
+.text-regular
+  font-weight $font-weight-sans-regular
 
 .text-medium
   font-weight $font-weight-sans-medium
+
+.text-bold
+  font-weight $font-weight-sans-bold
+
+.text-color-body
+  color $color-text
+
+  .darkMode &
+    color $color-text-darkmode
+
+.text-color-quiet
+  color $color-text-quiet
+
+  .darkMode &
+    color $color-text-quiet-darkmode
+
+.text-color-error
+  color $color-text-red
+
+  .darkMode &
+    color $color-text-red-darkmode
+
+.text-small
+  font-sans-no-weight($font-size-small)
+
+.text-left
+  text-align left
 
 .text-center
   text-align center
 
 .text-right
   text-align right
-
-.text-quiet
-  color $color-text-quiet
-
-  .darkMode &
-    color $color-text-quiet-darkmode
-
-.text-error
-  color $color-text-red
-
-  .darkMode &
-    color $color-red
-
-.text-small
-  font-sans-no-weight($font-size-small)
 
 /*
 OTHER
