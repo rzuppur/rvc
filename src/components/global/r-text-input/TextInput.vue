@@ -4,7 +4,7 @@
 
     label.r-form-label(v-if="label" :for="UID") {{ label }}
 
-      .text-quiet.text-small(v-if="helperText") {{ helperText }}
+      .text-color-quiet.text-small(v-if="helperText") {{ helperText }}
 
     input.r-input-text(
       :id="UID"
@@ -16,7 +16,7 @@
       v-on="inputListeners"
     )
 
-    .text-error.margin-top-tiny(v-if="invalidMessage") {{ invalidMessage }}
+    .text-color-error.margin-top-tiny(v-if="invalidMessage") {{ invalidMessage }}
 
 </template>
 

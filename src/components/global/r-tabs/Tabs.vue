@@ -9,7 +9,7 @@
         :action="() => { setTabActive(tab.name); }"
         borderless
       )
-        span(:class="{ 'text-quiet': !tab.isActive }") {{ tab.name }}
+        span(:class="{ 'text-color-quiet': !tab.isActive }") {{ tab.name }}
 
     .r-tabs-line.margin-bottom-medium(:class="{ extendLine }")
 
