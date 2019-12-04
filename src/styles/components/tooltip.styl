@@ -10,8 +10,6 @@
 .r-tooltip-arrow-enter
   opacity 0
 
-$_background = $color-text
-
 .r-tooltip
   position fixed
   z-index 12000
@@ -34,9 +32,12 @@ $_background = $color-text
   position fixed
   z-index 12001
   $_size = 7px
-  border-top $_size solid $_background
+  border-top $_size solid $color-background-3-darkmode
   border-left $_size solid transparent
   border-right $_size solid transparent
   border-bottom $_size solid transparent
   pointer-events none
   user-select none
+
+  .darkMode &
+    border-top-color $color-background-1-darkmode
