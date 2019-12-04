@@ -12,7 +12,7 @@
 
     .r-container-row.r-columns-mobile-medium.r-fill-absolute
 
-      .r-container-column.r-container-small.r-background-secondary.r-styled-scrollbar
+      .r-container-column.r-container-small.r-elevation-2.r-styled-scrollbar
 
         section
           h1.title-3.margin-bottom-tiny RVC
@@ -37,7 +37,7 @@
 
           r-button(gray borderless :action="toggleTheme" :icon="`brightness ${darkMode ? 'dark' : 'bright'}`") Toggle theme
 
-      .r-container-column.r-container-maximum.r-background-primary.r-styled-scrollbar
+      .r-container-column.r-container-maximum.r-elevation-3.r-styled-scrollbar
 
         section(style="padding-top: 12px")
 
@@ -244,6 +244,27 @@
 
               .r-form-group
                 r-text-input-area(label="Textarea" helper-text="Description text")
+
+            r-tab-content(name="Sheets")
+              .margin-bottom-medium(v-pre)
+                include:markdown-it ../docs/sheet.md
+
+              .r-elevation-0.padding-medium
+                p r-elevation-0
+                .r-elevation-1.margin-bottom-medium.padding-small
+                  p r-elevation-1
+                .r-elevation-2.margin-bottom-medium.padding-small
+                  p r-elevation-2
+                .r-elevation-3.margin-bottom-medium.padding-small
+                  p r-elevation-3
+
+                hr
+
+                .r-elevation-3.margin-bottom-medium.padding-small.r-border-radius
+                  p r-border-radius
+                .r-elevation-3.margin-bottom-medium.padding-small.r-border-radius-double
+                  p r-border-radius-double
+
 
             r-tab-content(name="Other")
               .margin-bottom-medium(v-pre)

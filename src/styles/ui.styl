@@ -1,24 +1,16 @@
 /*
-AREAS
+ELEVATION
  */
 
-.r-background-primary
-  background $color-white
-  color $color-text
+for level in "0" "1" "2" "3"
+  .r-elevation-{level}
+    color $color-text
+    background lookup("$color-background-" + level)
 
-  &.darkMode,
-  .darkMode &
-    background $color-background-darkmode
-    color $color-text-darkmode
-
-.r-background-secondary
-  background $color-background-light-gray
-  color $color-text
-
-  &.darkMode,
-  .darkMode &
-    background lighten($color-background-darkmode, 6%)
-    color $color-text-darkmode
+    &.darkMode,
+    .darkMode &
+      color $color-text-darkmode
+      background lookup("$color-background-" + level + "-darkmode")
 
 .r-border-radius
   border-radius $border-radius

@@ -13,7 +13,7 @@
 
         .r-modal-container.r-container(:class="modalContainerClass")
 
-          .r-modal.r-background-primary(
+          .r-modal.r-elevation-3(
             ref="modal"
             role="dialog"
             @click.stop=""

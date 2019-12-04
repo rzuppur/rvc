@@ -1,6 +1,6 @@
 {
   "name": "@rzuppur/rvc",
-  "version": "0.43.4",
+  "version": "0.44.0",
   "author": "Reino Zuppur",
   "scripts": {
     "demo": "vue-cli-service demo App.vue",

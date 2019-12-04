@@ -1,5 +1,5 @@
 /*!
- * rvc v0.43.4 
+ * rvc v0.44.0 
  * (c) 2019 Reino Zuppur
  * Released under the MIT License.
  */
@@ -204,6 +204,7 @@ var ICONS = {
   "add image": "M5,3A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H14.09C14.03,20.67 14,20.34 14,20C14,19.32 14.12,18.64 14.35,18H5L8.5,13.5L11,16.5L14.5,12L16.73,14.97C17.7,14.34 18.84,14 20,14C20.34,14 20.67,14.03 21,14.09V5C21,3.89 20.1,3 19,3H5M19,16V19H16V21H19V24H21V21H24V19H21V16H19Z",
   "add text": "M8.5,7H10.5L16,21H13.6L12.5,18H6.3L5.2,21H3L8.5,7M7.1,16H11.9L9.5,9.7L7.1,16M22,5V7H19V10H17V7H14V5H17V2H19V5H22Z",
   "add date": "M19,19V7H5V19H19M16,1H18V3H19A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5C3.89,21 3,20.1 3,19V5C3,3.89 3.89,3 5,3H6V1H8V3H16V1M11,9H13V12H16V14H13V17H11V14H8V12H11V9Z",
+  "add article": "M17 19.22H5V7H12V5H5C3.9 5 3 5.9 3 7V19C3 20.1 3.9 21 5 21H17C18.1 21 19 20.1 19 19V12H17V19.22Z M19 2H17V5H14C14.01 5.01 14 7 14 7H17V9.99C17.01 10 19 9.99 19 9.99V7H22V5H19V2Z M15 9H7V11H15V9Z M7 12V14H15V12H7Z M15 15H7V17H15V15Z",
   "send": "M2,21L23,12L2,3V10L17,12L2,14V21Z",
   "check": "M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z",
   "undo": "M13.5,7A6.5,6.5 0 0,1 20,13.5A6.5,6.5 0 0,1 13.5,20H10V18H13.5C16,18 18,16 18,13.5C18,11 16,9 13.5,9H7.83L10.91,12.09L9.5,13.5L4,8L9.5,2.5L10.92,3.91L7.83,7H13.5M6,18H8V20H6V18Z",
@@ -1302,7 +1303,7 @@ var script$2 = {
 const __vue_script__$2 = script$2;
 
 /* template */
-var __vue_render__ = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('portal',{attrs:{"to":"r-modals"}},[_c('transition',{attrs:{"name":"r-modal"}},[(_vm.modalOpen)?_c('div',{staticClass:"r-modal-overlay",style:({ 'z-index': _vm.modalOverlayZIndex }),on:{"click":_vm.outsideClose,"keyup":function($event){if(!$event.type.indexOf('key')&&_vm._k($event.keyCode,"esc",27,$event.key,["Esc","Escape"])){ return null; }$event.stopPropagation();return _vm.outsideClose($event)}}},[_c('div',{staticClass:"r-modal-container r-container",class:_vm.modalContainerClass},[_c('div',{ref:"modal",staticClass:"r-modal r-background-primary",style:({ 'z-index': _vm.modalZIndex }),attrs:{"role":"dialog","aria-labelledby":_vm.title ? ("dialog-title-" + _vm._id) : null},on:{"click":function($event){$event.stopPropagation();}},nativeOn:{"!keydown":function($event){if(!$event.type.indexOf('key')&&_vm._k($event.keyCode,"esc",27,$event.key,["Esc","Escape"])){ return null; }return _vm.outsideClose($event)}}},[(_vm.title !== false)?_c('div',{staticClass:"r-modal-header"},[_c('h1',{staticClass:"r-modal-title title-5",attrs:{"id":("dialog-title-" + _vm._id)}},[_vm._v(_vm._s(_vm.title))]),(!_vm.blocking)?_c('r-button',{staticClass:"r-modal-close",attrs:{"borderless":"borderless","action":_vm.close,"label":"Close dialog","icon":"close"}}):_vm._e()],1):_vm._e(),(_vm.showTopBorder)?_c('div',{staticClass:"flex0 r-modal-top-shadow"}):_vm._e(),_c('div',{ref:"modalContent",staticClass:"r-modal-content",class:{ 'r-modal-content-scroll': _vm.contentScrolls, 'no-buttons': !_vm.buttons },on:{"&scroll":function($event){return _vm.updateScrollPosition($event)}}},[_c('div',{staticClass:"r-modal-content-inner"},[_vm._t("default")],2)]),(_vm.showBottomBorder)?_c('div',{staticClass:"flex0 r-modal-bottom-shadow"}):_vm._e(),(_vm.buttons)?_c('div',{staticClass:"r-modal-buttons"},[_c('div',{staticClass:"r-buttons"},[_vm._t("buttons",[_c('r-button',{attrs:{"action":_vm.close}},[_vm._v("Close")])],{"close":_vm.close})],2)]):_vm._e()])])]):_vm._e()])],1)};
+var __vue_render__ = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('portal',{attrs:{"to":"r-modals"}},[_c('transition',{attrs:{"name":"r-modal"}},[(_vm.modalOpen)?_c('div',{staticClass:"r-modal-overlay",style:({ 'z-index': _vm.modalOverlayZIndex }),on:{"click":_vm.outsideClose,"keyup":function($event){if(!$event.type.indexOf('key')&&_vm._k($event.keyCode,"esc",27,$event.key,["Esc","Escape"])){ return null; }$event.stopPropagation();return _vm.outsideClose($event)}}},[_c('div',{staticClass:"r-modal-container r-container",class:_vm.modalContainerClass},[_c('div',{ref:"modal",staticClass:"r-modal r-elevation-3",style:({ 'z-index': _vm.modalZIndex }),attrs:{"role":"dialog","aria-labelledby":_vm.title ? ("dialog-title-" + _vm._id) : null},on:{"click":function($event){$event.stopPropagation();}},nativeOn:{"!keydown":function($event){if(!$event.type.indexOf('key')&&_vm._k($event.keyCode,"esc",27,$event.key,["Esc","Escape"])){ return null; }return _vm.outsideClose($event)}}},[(_vm.title !== false)?_c('div',{staticClass:"r-modal-header"},[_c('h1',{staticClass:"r-modal-title title-5",attrs:{"id":("dialog-title-" + _vm._id)}},[_vm._v(_vm._s(_vm.title))]),(!_vm.blocking)?_c('r-button',{staticClass:"r-modal-close",attrs:{"borderless":"borderless","action":_vm.close,"label":"Close dialog","icon":"close"}}):_vm._e()],1):_vm._e(),(_vm.showTopBorder)?_c('div',{staticClass:"flex0 r-modal-top-shadow"}):_vm._e(),_c('div',{ref:"modalContent",staticClass:"r-modal-content",class:{ 'r-modal-content-scroll': _vm.contentScrolls, 'no-buttons': !_vm.buttons },on:{"&scroll":function($event){return _vm.updateScrollPosition($event)}}},[_c('div',{staticClass:"r-modal-content-inner"},[_vm._t("default")],2)]),(_vm.showBottomBorder)?_c('div',{staticClass:"flex0 r-modal-bottom-shadow"}):_vm._e(),(_vm.buttons)?_c('div',{staticClass:"r-modal-buttons"},[_c('div',{staticClass:"r-buttons"},[_vm._t("buttons",[_c('r-button',{attrs:{"action":_vm.close}},[_vm._v("Close")])],{"close":_vm.close})],2)]):_vm._e()])])]):_vm._e()])],1)};
 var __vue_staticRenderFns__ = [];
 
   /* style */
@@ -2155,7 +2156,7 @@ var RTip = function RTip(vue) {
   };
 };
 
-var version = "0.43.4";
+var version = "0.44.0";
 
 var mountComponentToRoot = function mountComponentToRoot(vue, parent, componentConstructor) {
   var propsData = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};

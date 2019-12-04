@@ -23,9 +23,6 @@ $color-gold ?= #eebc41
 $color-white ?= #ffffff
 $color-black ?= #000000
 
-$color-background-light-gray ?= #f9f9fa
-$color-background-darkmode ?= #181b22
-
 $color-text ?= #40444a
 $color-text-quiet ?= #777
 $color-text-darkmode ?= #e1e3e5
@@ -43,6 +40,8 @@ $color-link-darkmode ?= $color-text-blue-darkmode
 
 $color-link-visited ?= spin(desaturate($color-link, 15), 10deg)
 $color-link-visited-darkmode ?= spin($color-link-darkmode, 10deg)
+
+@import "shared/colors-ui.styl"
 
 /*
 SIZES
