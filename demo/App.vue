@@ -257,6 +257,8 @@
                   p r-elevation-2
                 .r-elevation-3.margin-bottom-medium.padding-small
                   p r-elevation-3
+                .r-elevation-4.margin-bottom-medium.padding-small
+                  p r-elevation-4
 
                 hr
 

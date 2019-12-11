@@ -1,5 +1,5 @@
 /*!
- * rvc v0.45.0 
+ * rvc v0.46.0 
  * (c) 2019 Reino Zuppur
  * Released under the MIT License.
  */
@@ -2157,7 +2157,7 @@ var RTip = function RTip(vue) {
   };
 };
 
-var version = "0.45.0";
+var version = "0.46.0";
 
 var mountComponentToRoot = function mountComponentToRoot(vue, parent, componentConstructor) {
   var propsData = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};
