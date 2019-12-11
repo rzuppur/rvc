@@ -1,4 +1,4 @@
-`{margin|padding}-{direction}-{size}` apply margin/padding to element
+`{"margin" | "padding"}-{direction}-{size}` apply margin/padding to element
 - direction: `top` `bottom` `left` `right`
 - size: `huge` `large` `medium` `small` `tiny` `none`
 
@@ -8,7 +8,7 @@
 
 `flex-container-column` flex direction column
 
-`flex-items-center` center align flex childs
+`flex-items-{"start" | "center" | "end"}` align flex childs
 
 `flex{0-3}` flex child grow and shrink value
 

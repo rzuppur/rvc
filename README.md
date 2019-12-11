@@ -161,7 +161,7 @@ Bind value with v-model. Same props (except _type_) apply for `r-text-input` and
 
 `r-border-radius-double` add default * 2 border radius
 ### Other
-`{margin|padding}-{direction}-{size}` apply margin/padding to element
+`{"margin" | "padding"}-{direction}-{size}` apply margin/padding to element
 - direction: `top` `bottom` `left` `right`
 - size: `huge` `large` `medium` `small` `tiny` `none`
 
@@ -171,7 +171,7 @@ Bind value with v-model. Same props (except _type_) apply for `r-text-input` and
 
 `flex-container-column` flex direction column
 
-`flex-items-center` center align flex childs
+`flex-items-{"start" | "center" | "end"}` align flex childs
 
 `flex{0-3}` flex child grow and shrink value
 
