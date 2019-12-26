@@ -1,5 +1,5 @@
 /*!
- * rvc v0.46.1 
+ * rvc v0.46.3 
  * (c) 2019 Reino Zuppur
  * Released under the MIT License.
  */
@@ -1493,6 +1493,10 @@ var script$4 = {
     extendLine: {
       type: Boolean,
       default: false
+    },
+    line: {
+      type: Boolean,
+      default: true
     }
   },
   data: function data() {
@@ -1523,7 +1527,7 @@ var script$4 = {
 const __vue_script__$4 = script$4;
 
 /* template */
-var __vue_render__$2 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"r-tabs-container"},[_c('div',{staticClass:"r-tabs"},_vm._l((_vm.tabs),function(tab){return _c('r-button',{key:'tab-' + tab.name,staticClass:"r-tab",class:{ active: tab.isActive },attrs:{"action":function () { _vm.setTabActive(tab.name); },"borderless":"borderless"}},[_c('span',{class:{ 'text-color-quiet': !tab.isActive }},[_vm._v(_vm._s(tab.name))])])}),1),_c('div',{staticClass:"r-tabs-line margin-bottom-medium",class:{ extendLine: _vm.extendLine }}),_c('div',{staticClass:"r-tabs-content"},[_vm._t("default")],2)])};
+var __vue_render__$2 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"r-tabs-container"},[_c('div',{staticClass:"r-tabs"},_vm._l((_vm.tabs),function(tab){return _c('r-button',{key:'tab-' + tab.name,staticClass:"r-tab",class:{ active: tab.isActive },attrs:{"action":function () { _vm.setTabActive(tab.name); },"borderless":"borderless"}},[_c('span',{class:{ 'text-color-quiet': !tab.isActive }},[_vm._v(_vm._s(tab.name))])])}),1),(_vm.line)?_c('div',{staticClass:"r-tabs-line margin-bottom-medium",class:{ extendLine: _vm.extendLine }}):_vm._e(),_c('div',{staticClass:"r-tabs-content"},[_vm._t("default")],2)])};
 var __vue_staticRenderFns__$2 = [];
 
   /* style */
@@ -2157,7 +2161,7 @@ var RTip = function RTip(vue) {
   };
 };
 
-var version = "0.46.1";
+var version = "0.46.3";
 
 var mountComponentToRoot = function mountComponentToRoot(vue, parent, componentConstructor) {
   var propsData = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};

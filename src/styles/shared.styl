@@ -26,11 +26,11 @@ $color-black ?= #000000
 $color-text ?= #40444a
 $color-text-quiet ?= #777
 $color-text-darkmode ?= #e1e3e5
-$color-text-quiet-darkmode ?= darken($color-text-darkmode, 20)
+$color-text-quiet-darkmode ?= darken($color-text-darkmode, 20%)
 
 $color-border-light ?= #eee
 $color-border-medium ?= #ddd
-$color-border-medium-darkmode ?= alpha($color-white, 0.15)
+$color-border-medium-darkmode ?= alpha($color-white, 15%)
 
 $color-focus-blue ?= #0d7cc8
 $color-button-cta ?= $color-blue
@@ -38,8 +38,8 @@ $color-button-cta ?= $color-blue
 $color-link ?= $color-text-blue
 $color-link-darkmode ?= $color-text-blue-darkmode
 
-$color-link-visited ?= spin(desaturate($color-link, 15), 10deg)
-$color-link-visited-darkmode ?= spin($color-link-darkmode, 10deg)
+$color-link-visited ?= spin(desaturate($color-link, 15%), 10deg)
+$color-link-visited-darkmode ?= lighten(spin($color-link-darkmode, 10deg), 15%)
 
 @import "shared/colors-ui.styl"
 

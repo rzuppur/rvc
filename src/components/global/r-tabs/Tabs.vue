@@ -11,7 +11,7 @@
       )
         span(:class="{ 'text-color-quiet': !tab.isActive }") {{ tab.name }}
 
-    .r-tabs-line.margin-bottom-medium(:class="{ extendLine }")
+    .r-tabs-line.margin-bottom-medium(v-if="line" :class="{ extendLine }")
 
     .r-tabs-content
       slot
@@ -25,6 +25,10 @@
       extendLine: {
         type: Boolean,
         default: false,
+      },
+      line: {
+        type: Boolean,
+        default: true,
       },
     },
     data: () => ( {
