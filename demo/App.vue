@@ -7,6 +7,19 @@
     r-button(:action="() => { $refs.modal6.open(); }") Blocking
     r-button(:action="() => { $refs.modal7.open(); }") No buttons
 
+  mixin buttonsTests()
+    .r-buttons
+      r-button&attributes(attributes) Normal
+      r-button(primary)&attributes(attributes) Primary
+      r-button(borderless)&attributes(attributes) Borderless
+      r-button(gray borderless)&attributes(attributes) Gray borderless
+      r-button(gray)&attributes(attributes) Gray
+
+  mixin demoTab(name)
+    r-tab-content(name=name)
+      h2.r-title-4.r-margin-bottom-medium= name
+      block
+
 
   #app.r-fill-absolute-parent(:class="{ darkMode }")
 
@@ -15,8 +28,8 @@
       .r-container-column.r-container-small.r-elevation-2.r-styled-scrollbar
 
         section
-          h1.title-3.margin-bottom-tiny RVC
-          .title-5.margin-top-none Vue UI Framework
+          h1.r-title-3.r-margin-bottom-tiny RVC
+          .r-title-5.r-margin-top-none Vue UI Framework
 
           p
             a(href="https://github.com/rzuppur/rvc/blob/master/demo/App.vue" target="_blank") View page source
@@ -25,14 +38,14 @@
             br
             a(href="https://www.npmjs.com/package/@rzuppur/rvc" target="_blank") NPM
 
-          h2.title-5 Install
+          h2.r-title-5 Install
 
           div(v-pre)
             include:markdown-it ../docs/usage.md
 
-          h2.title-5 Dark mode
+          h2.r-title-5 Dark mode
 
-          .margin-bottom-medium(v-pre)
+          .r-margin-bottom-medium(v-pre)
             include:markdown-it ../docs/dark.md
 
           r-button(gray borderless :action="toggleTheme" :icon="`brightness ${darkMode ? 'dark' : 'bright'}`") Toggle theme
@@ -43,8 +56,68 @@
 
           r-tabs(:extendLine="true")
 
-            r-tab-content(name="Modals")
-              .margin-bottom-medium(v-pre)
+            +demoTab("Typography")
+              .r-margin-bottom-medium(v-pre)
+                include:markdown-it ../docs/typo.md
+
+              each level in [1, 2, 3, 4, 5, 6, "caps"]
+                div(class="r-title-" + level) r-title-#{level}
+
+              each style in ["regular", "medium", "bold", "color-body", "color-quiet", "color-error", "left", "center", "right", "small"]
+                div(class="r-text-" + style) r-text-#{style}
+
+            +demoTab("Containers")
+              .r-margin-bottom-medium(v-pre)
+                include:markdown-it ../docs/container.md
+
+              each size in ["tiny", "small", "medium", "large", "huge", "maximum"]
+                .r-margin-bottom-medium.r-container(class="r-container-" + size)
+                  p.container-demo r-container r-container-#{size}
+
+              .r-container-row.r-container-huge
+                p.r-margin-bottom-small.container-demo.r-flex-1 r-container-row r-container-huge r-columns-mobile-large
+              .r-container-row.r-container-huge.r-columns-mobile-large
+                .r-container-column.r-container-tiny
+                  p.container-demo r-container-column r-container-tiny
+                .r-container-column.r-container-large
+                  p.container-demo  r-container-column r-container-large
+                .r-container-column.r-container-small
+                  p.container-demo r-container-column r-container-small
+
+              .r-margin-bottom-medium
+
+              .r-container-row.r-container-medium
+                p.r-margin-bottom-small.container-demo.r-flex-1 r-container-row r-container-medium r-columns-mobile-small
+              .r-container-row.r-container-medium.r-columns-mobile-small
+                .r-container-column.r-container-maximum
+                  p.container-demo  r-container-column r-container-maximum
+                .r-container-column.r-container-tiny
+                  p.container-demo r-container-column r-container-tiny
+
+            +demoTab("Sheets")
+              .r-margin-bottom-medium(v-pre)
+                include:markdown-it ../docs/sheet.md
+
+              .r-elevation-0.r-padding-medium
+                p r-elevation-0
+                .r-elevation-1.r-margin-bottom-medium.r-padding-small
+                  p r-elevation-1
+                .r-elevation-2.r-margin-bottom-medium.r-padding-small
+                  p r-elevation-2
+                .r-elevation-3.r-margin-bottom-medium.r-padding-small
+                  p r-elevation-3
+                .r-elevation-4.r-margin-bottom-medium.r-padding-small
+                  p r-elevation-4
+
+                hr
+
+                .r-elevation-3.r-margin-bottom-medium.r-padding-small.r-border-radius
+                  p r-border-radius
+                .r-elevation-3.r-margin-bottom-medium.r-padding-small.r-border-radius-double
+                  p r-border-radius-double
+
+            +demoTab("Modals")
+              .r-margin-bottom-medium(v-pre)
                 include:markdown-it ../docs/modal.md
 
               .r-buttons
@@ -75,30 +148,13 @@
               r-modal(ref="modal7" title="No buttons modal" :buttons="false")
                 p(v-for="i in 10") Modal content
 
-            r-tab-content(name="Buttons")
-              .margin-bottom-medium(v-pre)
+            +demoTab("Buttons")
+              .r-margin-bottom-medium(v-pre)
                 include:markdown-it ../docs/button.md
 
-              .r-buttons
-                r-button Normal
-                r-button(primary) Primary
-                r-button(borderless) Borderless
-                r-button(gray borderless) Gray borderless
-                r-button(gray) Gray
-
-              .r-buttons
-                r-button(disabled) Normal
-                r-button(primary disabled) Primary
-                r-button(borderless disabled) Borderless
-                r-button(gray borderless disabled) Gray borderless
-                r-button(gray disabled) Gray
-
-              .r-buttons
-                r-button(loading)
-                r-button(primary loading)
-                r-button(borderless loading)
-                r-button(gray borderless loading)
-                r-button(gray loading)
+              +buttonsTests()
+              +buttonsTests()(disabled=true)
+              +buttonsTests()(loading=true)
 
               .r-buttons
                 r-button(icon="arrow left") Icon
@@ -127,113 +183,8 @@
                   r-button Buttons
                   r-button Grouped
 
-            r-tab-content(name="Icons")
-              .margin-bottom-medium(v-pre)
-                include:markdown-it ../docs/icon.md
-
-              .icons
-                r-icon.gray(v-for="icon in icons.concat(['missing'])" :icon="icon" v-rtip="icon")
-
-            r-tab-content(name="Tooltip")
-              .margin-bottom-medium(v-pre)
-                include:markdown-it ../docs/tooltip.md
-
-              .r-buttons
-                r-button(v-rtip="'Default tooltip - long text test'") Default
-                r-button(v-rtip.bottom="'Position bottom'") Bottom
-                r-button(v-rtip.left="'Position left'") Left
-                r-button(v-rtip.right="'Position right'") Right
-                r-button(v-rtip="null") Null
-
-            r-tab-content(name="Toast notification")
-              .margin-bottom-medium(v-pre)
-                include:markdown-it ../docs/toast.md
-
-              .r-buttons
-                r-button(:action="() => { $rNotifyToast('Notification') }") Notification
-                r-button(:action="() => { $rNotifyToast('Short') }") Short
-                r-button(:action="() => { $rNotifyToast('Long text notification that should hopefully wrap to multiple lines and you should be able to read this entire text before it disappears.') }") Long notification
-
-            r-tab-content(name="Containers")
-              .margin-bottom-medium(v-pre)
-                include:markdown-it ../docs/container.md
-
-              each size in ["tiny", "small", "medium", "large", "huge", "maximum"]
-                .margin-bottom-medium.r-container(class="r-container-" + size)
-                  p.container-demo r-container r-container-#{size}
-
-              .r-container-row.r-container-huge
-                p.margin-bottom-small.container-demo.flex1 r-container-row r-container-huge r-columns-mobile-large
-              .r-container-row.r-container-huge.r-columns-mobile-large
-                .r-container-column.r-container-tiny
-                  p.container-demo r-container-column r-container-tiny
-                .r-container-column.r-container-large
-                  p.container-demo  r-container-column r-container-large
-                .r-container-column.r-container-small
-                  p.container-demo r-container-column r-container-small
-
-              .margin-bottom-medium
-
-              .r-container-row.r-container-medium
-                p.margin-bottom-small.container-demo.flex1 r-container-row r-container-medium r-columns-mobile-small
-              .r-container-row.r-container-medium.r-columns-mobile-small
-                .r-container-column.r-container-maximum
-                  p.container-demo  r-container-column r-container-maximum
-                .r-container-column.r-container-tiny
-                  p.container-demo r-container-column r-container-tiny
-
-            r-tab-content(name="Typography")
-              .margin-bottom-medium(v-pre)
-                include:markdown-it ../docs/typo.md
-
-              .title-1 title-1
-              p The official guide assumes intermediate level knowledge of HTML, CSS, and JavaScript. If you are totally new to frontend development, it might not be the best idea to jump right into a framework as your first step - grasp the basics then come back! Prior experience with other frameworks helps, but is not required.
-
-              .title-2 title-2
-              p At the core of Vue.js is a system that enables us to declaratively render data to the DOM using straightforward template syntax
-              p Here we are encountering something new. The v-bind attribute you are seeing is called a directive. Directives are prefixed with v- to indicate that they are special attributes provided by Vue, and as you may have guessed, they apply special reactive behavior to the rendered DOM. Here, it is basically saying “keep this element’s title attribute up-to-date with the message property on the Vue instance.”
-
-              .title-3 title-3
-              p This example demonstrates that we can bind data to not only text and attributes, but also the structure of the DOM. Moreover, Vue also provides a powerful transition effect system that can automatically apply transition effects when elements are inserted/updated/removed by Vue.
-              p There are quite a few other directives, each with its own special functionality. For example, the v-for directive can be used for displaying a list of items using the data from an Array.
-
-              .title-4 title-4
-              p In the console, enter app4.todos.push({ text: 'New item' }). You should see a new item appended to the list.
-
-              .title-5 title-5
-              p Note that in this method we update the state of our app without touching the DOM - all DOM manipulations are handled by Vue, and the code you write is focused on the underlying logic.
-
-              .title-6 title-6
-              p Vue also provides the v-model directive that makes two-way binding between form input and app state a breeze.
-
-              .title-caps title-caps
-              p The component system is another important concept in Vue, because it’s an abstraction that allows us to build large-scale applications composed of small, self-contained, and often reusable components. If we think about it, almost any type of application interface can be abstracted into a tree of components.
-
-              .text-regular text-regular
-              .text-medium text-medium
-              .text-bold text-bold
-              .text-color-body text-color-body
-              .text-color-quiet text-color-quiet
-              .text-color-error text-color-error
-              .text-left text-left
-              .text-center text-center
-              .text-right text-right
-              .text-small text-small
-
-            r-tab-content(name="Tabs")
-              .margin-bottom-medium(v-pre)
-                include:markdown-it ../docs/tab.md
-
-              r-tabs
-
-                r-tab-content(name="Tab 1")
-                  p Tab 1 content
-
-                r-tab-content(name="Tab 2")
-                  p Tab 2 content
-
-            r-tab-content(name="Forms")
-              .margin-bottom-medium(v-pre)
+            +demoTab("Forms")
+              .r-margin-bottom-medium(v-pre)
                 include:markdown-it ../docs/form.md
 
               .r-form-group
@@ -245,31 +196,47 @@
               .r-form-group
                 r-text-input-area(label="Textarea" helper-text="Description text")
 
-            r-tab-content(name="Sheets")
-              .margin-bottom-medium(v-pre)
-                include:markdown-it ../docs/sheet.md
+            +demoTab("Icons")
+              .r-margin-bottom-medium(v-pre)
+                include:markdown-it ../docs/icon.md
 
-              .r-elevation-0.padding-medium
-                p r-elevation-0
-                .r-elevation-1.margin-bottom-medium.padding-small
-                  p r-elevation-1
-                .r-elevation-2.margin-bottom-medium.padding-small
-                  p r-elevation-2
-                .r-elevation-3.margin-bottom-medium.padding-small
-                  p r-elevation-3
-                .r-elevation-4.margin-bottom-medium.padding-small
-                  p r-elevation-4
+              .icons
+                r-icon.gray(v-for="icon in icons.concat(['missing'])" :icon="icon" v-rtip="icon")
 
-                hr
+            +demoTab("Tabs")
+              .r-margin-bottom-medium(v-pre)
+                include:markdown-it ../docs/tab.md
 
-                .r-elevation-3.margin-bottom-medium.padding-small.r-border-radius
-                  p r-border-radius
-                .r-elevation-3.margin-bottom-medium.padding-small.r-border-radius-double
-                  p r-border-radius-double
+              r-tabs(:line="false")
+                .r-margin-bottom-medium
 
+                r-tab-content(name="Tab 1", icon="star")
+                  p Tab 1 content
 
-            r-tab-content(name="Other")
-              .margin-bottom-medium(v-pre)
+                r-tab-content(name="Tab 2", icon="settings")
+                  p Tab 2 content
+
+            +demoTab("Tooltip")
+              .r-margin-bottom-medium(v-pre)
+                include:markdown-it ../docs/tooltip.md
+
+              .r-buttons
+                r-button(v-rtip="'Default tooltip - long text test'") Default
+                r-button(v-rtip.bottom="'Position bottom'") Bottom
+                r-button(v-rtip.left="'Position left'") Left
+                r-button(v-rtip.right="'Position right'") Right
+                r-button(v-rtip="null") Null
+
+            +demoTab("Toast notification")
+              .r-margin-bottom-medium(v-pre)
+                include:markdown-it ../docs/toast.md
+
+              form.r-flex-container.r-flex-items-end(@submit.prevent="() => { $rNotifyToast(testText) }")
+                r-text-input-area.r-flex-1(v-model="testText" placeholder="Notification text")
+                r-button.r-margin-left-small(primary submit) Notify
+
+            +demoTab("Other")
+              .r-margin-bottom-medium(v-pre)
                 include:markdown-it ../docs/other.md
 
 
@@ -282,6 +249,7 @@
   export default {
     data: () => ({
       darkMode: false,
+      testText: "Long text notification that should hopefully wrap to multiple lines and you should be able to read this entire text before it disappears.",
     }),
     computed: {
       icons() {

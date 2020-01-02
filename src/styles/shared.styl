@@ -60,14 +60,13 @@ $font-sans ?= "Inter", BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Ox
 $font-weight-sans-regular ?= 400
 $font-weight-sans-medium ?= 500
 $font-weight-sans-bold ?= 600
-$font-weight-sans-black ?= 900
 
-$_line-height-base ?= 1.5
-$_font-size-base ?= 16px
-$_font-sizes-ratio ?= 1.333
+$line-height-base ?= 1.5
+$font-size-base ?= 16px
+$font-sizes-ratio ?= 1.333
 
 font-size-ratio(level)
-  max(13px, round($_font-size-base * ($_font-sizes-ratio ** level)))
+  max(13px, round($font-size-base * ($font-sizes-ratio ** level)))
 
 $font-size-small ?= font-size-ratio(-1)
 $font-size-normal ?= font-size-ratio(0)
@@ -84,7 +83,7 @@ lineHeightRounded(fontSize, lineHeight)
   line-height round(lineHeight * fontSize)px
 
 leading(fontSize)
-  lineHeightRounded(fontSize, $_line-height-base - (fontSize - $font-size-normal) * .009)
+  lineHeightRounded(fontSize, $line-height-base - (fontSize - $font-size-normal) * .009)
 
 font-sans(size, weight=$font-weight-sans-regular)
   font-size size*1px
@@ -101,14 +100,14 @@ font-sans-no-weight(size)
 SPACING
  */
 
-$_spacing-base ?= round($_font-size-base * $_line-height-base)
+$spacing-base ?= round($font-size-base * $line-height-base)
 
-$space-extra-tiny ?= round($_spacing-base / 8px)
-$space-tiny ?= round($_spacing-base / 4px)
-$space-small ?= round($_spacing-base / 2px)
-$space-medium ?= $_spacing-base
-$space-large ?= round($_spacing-base * 2px)
-$space-huge ?= round($_spacing-base * 4px)
+$space-extra-tiny ?= round($spacing-base / 8px)
+$space-tiny ?= round($spacing-base / 4px)
+$space-small ?= round($spacing-base / 2px)
+$space-medium ?= $spacing-base
+$space-large ?= round($spacing-base * 2px)
+$space-huge ?= round($spacing-base * 4px)
 
 $container-tiny ?=  $space-medium * 10
 $container-small ?=  $space-medium * 20

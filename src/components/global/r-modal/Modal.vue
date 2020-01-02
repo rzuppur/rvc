@@ -24,11 +24,11 @@
 
             .r-modal-header(v-if="title !== false")
 
-              h1.r-modal-title.title-5(:id="`dialog-title-${_id}`") {{ title }}
+              h1.r-modal-title.r-title-5(:id="`dialog-title-${_id}`") {{ title }}
 
               r-button.r-modal-close(v-if="!blocking" borderless :action="close" label="Close dialog" icon="close")
 
-            .flex0.r-modal-top-shadow(v-if="showTopBorder")
+            .r-flex-0.r-modal-top-shadow(v-if="showTopBorder")
 
             .r-modal-content(
               :class="{ 'r-modal-content-scroll': contentScrolls, 'no-buttons': !buttons }"
@@ -38,7 +38,7 @@
               .r-modal-content-inner
                 slot
 
-            .flex0.r-modal-bottom-shadow(v-if="showBottomBorder")
+            .r-flex-0.r-modal-bottom-shadow(v-if="showBottomBorder")
 
             .r-modal-buttons(v-if="buttons")
               .r-buttons

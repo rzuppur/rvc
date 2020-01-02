@@ -1,6 +1,6 @@
 body
   font-family $font-sans
-  line-height $_line-height-base
+  line-height $line-height-base
   word-break break-word
   color $color-text
   font-feature-settings: "calt" 1
@@ -45,32 +45,32 @@ TITLES
  */
 
 for i in "1" "2" "3" "4" "5" "6" "caps"
-  .title-{i}
+  .r-title-{i}
     word-wrap break-word
     margin-bottom $space-small
 
     &:not(:first-child)
       margin-top $space-large
 
-.title-1
+.r-title-1
   font-sans($font-size-large-5)
 
-.title-2
+.r-title-2
   font-sans($font-size-large-4)
 
-.title-3
+.r-title-3
   font-sans($font-size-large-3)
 
-.title-4
+.r-title-4
   font-sans($font-size-large-2)
 
-.title-5
+.r-title-5
   font-sans($font-size-large-1)
 
-.title-6
+.r-title-6
   font-sans($font-size-normal, $font-weight-sans-bold)
 
-.title-caps
+.r-title-caps
   font-sans($font-size-small, $font-weight-sans-bold)
   text-transform uppercase
   letter-spacing 0.1em
@@ -80,43 +80,43 @@ for i in "1" "2" "3" "4" "5" "6" "caps"
 UTILITY
  */
 
-.text-regular
+.r-text-regular
   font-weight $font-weight-sans-regular
 
-.text-medium
+.r-text-medium
   font-weight $font-weight-sans-medium
 
-.text-bold
+.r-text-bold
   font-weight $font-weight-sans-bold
 
-.text-color-body
+.r-text-color-body
   color $color-text
 
   .darkMode &
     color $color-text-darkmode
 
-.text-color-quiet
+.r-text-color-quiet
   color $color-text-quiet
 
   .darkMode &
     color $color-text-quiet-darkmode
 
-.text-color-error
+.r-text-color-error
   color $color-text-red
 
   .darkMode &
     color $color-text-red-darkmode
 
-.text-small
+.r-text-small
   font-sans-no-weight($font-size-small)
 
-.text-left
+.r-text-left
   text-align left
 
-.text-center
+.r-text-center
   text-align center
 
-.text-right
+.r-text-right
   text-align right
 
 /*

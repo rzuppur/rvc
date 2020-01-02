@@ -4,22 +4,22 @@ SPACING
 
 for size in "huge" "large" "medium" "small" "tiny"
   for type in "margin" "padding"
-    .{type}-{size}[class]
+    .r-{type}-{size}[class]
       {type} lookup("$space-" + size)
 
 for direction in "top" "bottom" "left" "right"
   for size in "huge" "large" "medium" "small" "tiny"
     for type in "margin" "padding"
-      .{type}-{direction}-{size}[class]
+      .r-{type}-{direction}-{size}[class]
         {type}-{direction} lookup("$space-" + size)
 
-.margin-top-none
+.r-margin-top-none
   margin-top 0 !important
 
-.margin-bottom-none
+.r-margin-bottom-none
   margin-bottom 0 !important
 
-.margin-none
+.r-margin-none
   margin 0 !important
 
 
@@ -103,42 +103,42 @@ for size in "huge" "large" "medium" "small" "tiny"
 FLEX
  */
 
-.flex-container
+.r-flex-container
   display flex
   flex-direction row
 
-.flex-container-column
+.r-flex-container-column
   flex-direction column
 
-.flex-items-start
-  align-items start
+.r-flex-items-start
+  align-items flex-start
 
-.flex-items-center
+.r-flex-items-center
   align-items center
 
-.flex-items-end
-  align-items end
+.r-flex-items-end
+  align-items flex-end
 
 for n in 0 1 2 3
-  .flex{n}
+  .r-flex-{n}
     flex n n auto
 
 /*
 CLEARFIX
  */
 
-.clearfix:before,
-.clearfix:after
+.r-clearfix:before,
+.r-clearfix:after
     content " "
     display table
 
-.clearfix:after
+.r-clearfix:after
     clear both
 
 /*
 MEDIA
  */
-for size in "medium" "small"
+for size in "large" "medium" "small"
 
   &.r-media-hide-{size}[class]
     @media (max-width lookup("$container-" + size))

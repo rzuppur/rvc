@@ -19,7 +19,7 @@
       queue: {
         handler(val) {
           if (val.length) {
-            setTimeout(() => {
+            this.lastTimeout = setTimeout(() => {
               this.remove(val[0].index);
             }, 900 + val[0].text.length * 70);
           }
@@ -29,7 +29,22 @@
     created() {
       this.index = 0;
     },
+    mounted() {
+      document.addEventListener("visibilitychange", this.onVisibilityChange, false);
+      this.onVisibilityChange();
+    },
+    beforeDestroy() {
+      document.removeEventListener("visibilitychange", this.onVisibilityChange);
+    },
     methods: {
+      onVisibilityChange() {
+        clearTimeout(this.lastTimeout);
+        if (!document.hidden && this.queue.length) {
+          this.lastTimeout = setTimeout(() => {
+            this.remove(this.queue[0].index);
+          }, 900 + this.queue[0].text.length * 70);
+        }
+      },
       notify(text) {
         const { index } = this;
         this.index += 1;

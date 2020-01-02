@@ -6,12 +6,14 @@
         v-for="tab in tabs"
         :key="'tab-' + tab.name"
         :class="{ active: tab.isActive }"
+        :icon="tab.icon"
+        :icon-color="tab.isActive ? 'blue' : null"
         :action="() => { setTabActive(tab.name); }"
         borderless
       )
-        span(:class="{ 'text-color-quiet': !tab.isActive }") {{ tab.name }}
+        span(:class="{ 'r-text-color-quiet': !tab.isActive }") {{ tab.name }}
 
-    .r-tabs-line.margin-bottom-medium(v-if="line" :class="{ extendLine }")
+    .r-tabs-line.r-margin-bottom-medium(v-if="line" :class="{ extendLine }")
 
     .r-tabs-content
       slot

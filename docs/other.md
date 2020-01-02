@@ -1,17 +1,17 @@
-`{"margin" | "padding"}-{direction}-{size}` apply margin/padding to element
+`r-{"margin" | "padding"}-{direction}-{size}` apply margin/padding to element
 - direction: `top` `bottom` `left` `right`
 - size: `huge` `large` `medium` `small` `tiny` `none`
 
-`r-media-hide-{"small" | "medium"}` and `r-media-show-{"small" | "medium"}` to show some items only on small/wide screens.
+`r-media-hide-{"small" | "medium" | "large"}` and `r-media-show-{"small" | "medium" | "large"}` to show/hide some items on small/medium/wide screens.
 
-`flex-container` display flex, direction row
+`r-flex-container` display flex, direction row
 
-`flex-container-column` flex direction column
+`r-flex-container-column` flex direction column
 
-`flex-items-{"start" | "center" | "end"}` align flex childs
+`r-flex-items-{"start" | "center" | "end"}` align flex childs
 
-`flex{0-3}` flex child grow and shrink value
+`r-flex-{0-3}` flex child grow and shrink value
 
-`clearfix` clearfix
+`r-clearfix` clearfix
 
 `r-styled-scrollbar` custom scrollbar style

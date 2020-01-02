@@ -14,6 +14,10 @@
         type: String,
         required: true,
       },
+      icon: {
+        type: String,
+        required: false,
+      },
     },
     data: () => ({
       isActive: false,

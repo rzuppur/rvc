@@ -1,19 +1,24 @@
 /*
 BACKGROUND
 
-$color-background-{elevation}[-darkmode]
+Defined:
+- $color-base-background[-darkmode]
+
+Generated:
+- $color-background-{elevation}[-darkmode]
  */
 
-$color-background-base ?= #ffffff
-$color-background-base-darkmode ?= #0f1115
+$color-base-background ?= #ffffff
+$color-base-background-darkmode ?= #090a0d
 
-$color-background-4 ?= $color-background-base
-$color-background-3 ?= $color-background-base
+$color-background-5 ?= $color-base-background
+$color-background-4 ?= $color-base-background
+$color-background-3 ?= $color-base-background
 $color-background-2 ?= mix(#eef, darken($color-background-3, 2%), 5%)
 $color-background-1 ?= darken($color-background-2, 2%)
 $color-background-0 ?= darken($color-background-1, 5%)
 
-$color-background-0-darkmode ?= $color-background-base-darkmode
+$color-background-0-darkmode ?= $color-base-background-darkmode
 $color-background-1-darkmode ?= lighten($color-background-0-darkmode, 4%)
 $color-background-2-darkmode ?= lighten($color-background-1-darkmode, 3%)
 $color-background-3-darkmode ?= lighten($color-background-2-darkmode, 4%)

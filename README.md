@@ -82,7 +82,7 @@ Material or modified material icons as 24x24px svg.
 />
 ```
 ### Toast notification
-From any component, call `this.$rNotifyToast("message");`.
+From any component, call `this.$rNotifyToast("message");`. Auto-hide timer is based on text length and paused if window is not currently visible.
 ### Dark mode
 Add class `darkMode` to any parent element.
 ### Containers
@@ -106,23 +106,32 @@ Add `r-columns-mobile-{small|medium|large}` to `r-container-row` to specify the 
 </div>
 ```
 ### Typography
-Headings are all reset to normal text. Use `title-N` for visually styling them.
+Semantic heading level and visual style is separated — headings are all reset to normal text. Use `r-title-N` for visually styling them.
 
 Default font stack is `"Inter", BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"` but Inter is not imported, if you want to use it instead of OS default fonts you have to add `@import url('https://rsms.me/inter/inter.css')` to your css.
+
+You can override the font and weights using stylus variables. Font size and ratio affects spacing, this can be overridden using `$spacing-base`.
+- `$font-sans` font stack
+- `$font-weight-sans-regular` default 400
+- `$font-weight-sans-medium` default 500
+- `$font-weight-sans-bold` default 600
+- `$line-height-base` default 1.5
+- `$font-size-base` default 16px
+- `$font-sizes-ratio` default 1.333, used for generating heading sizes
 
 Text style classes:
 
 **Weight:** 
-`text-regular`, `text-medium`, `text-bold`
+`r-text-regular`, `r-text-medium`, `r-text-bold`
 
 **Color:** 
-`text-color-body`, `text-color-quiet`, `text-color-error`
+`r-text-color-body`, `r-text-color-quiet`, `r-text-color-error`
 
 **Size:** 
-`text-small`, `title-1`, `title-2`, `title-3`, `title-4`, `title-5`, `title-6`, `title-caps`
+`r-text-small`, `r-title-1`, `r-title-2`, `r-title-3`, `r-title-4`, `r-title-5`, `r-title-6`, `r-title-caps`
 
 **Alignment:** 
-`text-left`, `text-center`, `text-right`
+`r-text-left`, `r-text-center`, `r-text-right`
 ### Tabs
 Basic tabs component.
 ```html
@@ -132,11 +141,8 @@ Basic tabs component.
 >
   <r-tab-content
     name: string  // REQUIRED
-  >
-    {{ tab content }}
-  </r-tab-content>
-  <r-tab-content name="tab_name_2"></r-tab-content>
-  <r-tab-content name="tab_name_3"></r-tab-content>
+    icon: string  // optional r-icon
+  ></r-tab-content>
 </r-tabs>
 ```
 ### Form
@@ -162,21 +168,21 @@ Bind value with v-model. Same props (except _type_) apply for `r-text-input` and
 
 `r-border-radius-double` add default * 2 border radius
 ### Other
-`{"margin" | "padding"}-{direction}-{size}` apply margin/padding to element
+`r-{"margin" | "padding"}-{direction}-{size}` apply margin/padding to element
 - direction: `top` `bottom` `left` `right`
 - size: `huge` `large` `medium` `small` `tiny` `none`
 
-`r-media-hide-{"small" | "medium"}` and `r-media-show-{"small" | "medium"}` to show some items only on small/wide screens.
+`r-media-hide-{"small" | "medium" | "large"}` and `r-media-show-{"small" | "medium" | "large"}` to show/hide some items on small/medium/wide screens.
 
-`flex-container` display flex, direction row
+`r-flex-container` display flex, direction row
 
-`flex-container-column` flex direction column
+`r-flex-container-column` flex direction column
 
-`flex-items-{"start" | "center" | "end"}` align flex childs
+`r-flex-items-{"start" | "center" | "end"}` align flex childs
 
-`flex{0-3}` flex child grow and shrink value
+`r-flex-{0-3}` flex child grow and shrink value
 
-`clearfix` clearfix
+`r-clearfix` clearfix
 
 `r-styled-scrollbar` custom scrollbar style
 <br/><br/>

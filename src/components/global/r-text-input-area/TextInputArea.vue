@@ -2,9 +2,9 @@
 
   .r-text-input-area
 
-    label.r-form-label(v-if="label" :for="UID") {{ label }}
+    label.r-form-label.r-text-medium(v-if="label" :for="UID") {{ label }}
 
-      .text-color-quiet.text-small.margin-bottom-tiny(v-if="helperText") {{ helperText }}
+      .r-text-color-quiet.r-text-small.r-margin-bottom-tiny.r-text-regular(v-if="helperText") {{ helperText }}
 
     textarea.r-input-text(
       :id="UID"
@@ -16,7 +16,7 @@
       v-on="inputListeners"
     )
 
-    .text-color-error.margin-top-tiny(v-if="invalidMessage") {{ invalidMessage }}
+    .r-text-color-error.r-margin-top-tiny(v-if="invalidMessage") {{ invalidMessage }}
 
 </template>
 

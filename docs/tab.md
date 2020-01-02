@@ -6,10 +6,7 @@ Basic tabs component.
 >
   <r-tab-content
     name: string  // REQUIRED
-  >
-    {{ tab content }}
-  </r-tab-content>
-  <r-tab-content name="tab_name_2"></r-tab-content>
-  <r-tab-content name="tab_name_3"></r-tab-content>
+    icon: string  // optional r-icon
+  ></r-tab-content>
 </r-tabs>
 ```
