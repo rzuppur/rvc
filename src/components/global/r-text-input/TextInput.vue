@@ -4,7 +4,7 @@
 
     label.r-form-label.r-text-medium(v-if="label" :for="UID") {{ label }}
 
-      .r-text-color-quiet.r-text-small.r-text-regular(v-if="helperText") {{ helperText }}
+      .r-text-color-quiet.r-text-small.r-margin-bottom-tiny.r-text-regular(v-if="helperText") {{ helperText }}
 
     input.r-input-text(
       :id="UID"
