@@ -1,5 +1,5 @@
 /*!
- * rvc v0.47.0 
+ * rvc v0.47.4 
  * (c) 2020 Reino Zuppur
  * Released under the MIT License.
  */
@@ -1310,7 +1310,7 @@
   const __vue_script__$2 = script$2;
 
   /* template */
-  var __vue_render__ = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('portal',{attrs:{"to":"r-modals"}},[_c('transition',{attrs:{"name":"r-modal"}},[(_vm.modalOpen)?_c('div',{staticClass:"r-modal-overlay",style:({ 'z-index': _vm.modalOverlayZIndex }),on:{"click":_vm.outsideClose,"keyup":function($event){if(!$event.type.indexOf('key')&&_vm._k($event.keyCode,"esc",27,$event.key,["Esc","Escape"])){ return null; }$event.stopPropagation();return _vm.outsideClose($event)}}},[_c('div',{staticClass:"r-modal-container r-container",class:_vm.modalContainerClass},[_c('div',{ref:"modal",staticClass:"r-modal r-elevation-3",style:({ 'z-index': _vm.modalZIndex }),attrs:{"role":"dialog","aria-labelledby":_vm.title ? ("dialog-title-" + _vm._id) : null},on:{"click":function($event){$event.stopPropagation();}},nativeOn:{"!keydown":function($event){if(!$event.type.indexOf('key')&&_vm._k($event.keyCode,"esc",27,$event.key,["Esc","Escape"])){ return null; }return _vm.outsideClose($event)}}},[(_vm.title !== false)?_c('div',{staticClass:"r-modal-header"},[_c('h1',{staticClass:"r-modal-title r-title-5",attrs:{"id":("dialog-title-" + _vm._id)}},[_vm._v(_vm._s(_vm.title))]),(!_vm.blocking)?_c('r-button',{staticClass:"r-modal-close",attrs:{"borderless":"borderless","action":_vm.close,"label":"Close dialog","icon":"close"}}):_vm._e()],1):_vm._e(),(_vm.showTopBorder)?_c('div',{staticClass:"r-flex-0 r-modal-top-shadow"}):_vm._e(),_c('div',{ref:"modalContent",staticClass:"r-modal-content",class:{ 'r-modal-content-scroll': _vm.contentScrolls, 'no-buttons': !_vm.buttons },on:{"&scroll":function($event){return _vm.updateScrollPosition($event)}}},[_c('div',{staticClass:"r-modal-content-inner"},[_vm._t("default")],2)]),(_vm.showBottomBorder)?_c('div',{staticClass:"r-flex-0 r-modal-bottom-shadow"}):_vm._e(),(_vm.buttons)?_c('div',{staticClass:"r-modal-buttons"},[_c('div',{staticClass:"r-buttons"},[_vm._t("buttons",[_c('r-button',{attrs:{"action":_vm.close}},[_vm._v("Close")])],{"close":_vm.close})],2)]):_vm._e()])])]):_vm._e()])],1)};
+  var __vue_render__ = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('portal',{attrs:{"to":"r-modals"}},[_c('transition',{attrs:{"name":"r-modal"}},[(_vm.modalOpen)?_c('div',{staticClass:"r-modal-overlay",style:({ 'z-index': _vm.modalOverlayZIndex }),on:{"click":_vm.outsideClose,"keyup":function($event){if(!$event.type.indexOf('key')&&_vm._k($event.keyCode,"esc",27,$event.key,["Esc","Escape"])){ return null; }$event.stopPropagation();return _vm.outsideClose($event)}}},[_c('div',{staticClass:"r-modal-container r-container",class:_vm.modalContainerClass},[_c('div',{ref:"modal",staticClass:"r-modal r-elevation-3",style:({ 'z-index': _vm.modalZIndex }),attrs:{"role":"dialog","aria-labelledby":_vm.title ? ("dialog-title-" + _vm._id) : null},on:{"click":function($event){$event.stopPropagation();},"!keydown":function($event){if(!$event.type.indexOf('key')&&_vm._k($event.keyCode,"esc",27,$event.key,["Esc","Escape"])){ return null; }return _vm.outsideClose($event)}}},[(_vm.title !== false)?_c('div',{staticClass:"r-modal-header"},[_c('h1',{staticClass:"r-modal-title r-title-5",attrs:{"id":("dialog-title-" + _vm._id)}},[_vm._v(_vm._s(_vm.title))]),(!_vm.blocking)?_c('r-button',{staticClass:"r-modal-close",attrs:{"borderless":"borderless","action":_vm.close,"label":"Close dialog","icon":"close"}}):_vm._e()],1):_vm._e(),(_vm.showTopBorder)?_c('div',{staticClass:"r-flex-0 r-modal-top-shadow"}):_vm._e(),_c('div',{ref:"modalContent",staticClass:"r-modal-content",class:{ 'r-modal-content-scroll': _vm.contentScrolls, 'no-buttons': !_vm.buttons },on:{"&scroll":function($event){return _vm.updateScrollPosition($event)}}},[_c('div',{staticClass:"r-modal-content-inner"},[_vm._t("default")],2)]),(_vm.showBottomBorder)?_c('div',{staticClass:"r-flex-0 r-modal-bottom-shadow"}):_vm._e(),(_vm.buttons)?_c('div',{staticClass:"r-modal-buttons"},[_c('div',{staticClass:"r-buttons"},[_vm._t("buttons",[_c('r-button',{attrs:{"action":_vm.close}},[_vm._v("Close")])],{"close":_vm.close})],2)]):_vm._e()])])]):_vm._e()])],1)};
   var __vue_staticRenderFns__ = [];
 
     /* style */
@@ -1681,7 +1681,7 @@
   const __vue_script__$6 = script$6;
 
   /* template */
-  var __vue_render__$4 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"r-text-input"},[(_vm.label)?_c('label',{staticClass:"r-form-label r-text-medium",attrs:{"for":_vm.UID}},[_vm._v(_vm._s(_vm.label)),(_vm.helperText)?_c('div',{staticClass:"r-text-color-quiet r-text-small"},[_vm._v(_vm._s(_vm.helperText))]):_vm._e()]):_vm._e(),_c('input',_vm._g(_vm._b({staticClass:"r-input-text",class:{ fullwidth: _vm.fullwidth, invalid: _vm.invalidMessage },attrs:{"id":_vm.UID,"type":_vm.type,"placeholder":_vm.placeholder},domProps:{"value":_vm.value}},'input',_vm.$attrs,false),_vm.inputListeners)),(_vm.invalidMessage)?_c('div',{staticClass:"r-text-color-error r-margin-top-tiny"},[_vm._v(_vm._s(_vm.invalidMessage))]):_vm._e()])};
+  var __vue_render__$4 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"r-text-input"},[(_vm.label)?_c('label',{staticClass:"r-form-label r-text-medium",attrs:{"for":_vm.UID}},[_vm._v(_vm._s(_vm.label)),(_vm.helperText)?_c('div',{staticClass:"r-text-color-quiet r-text-small r-margin-bottom-tiny r-text-regular"},[_vm._v(_vm._s(_vm.helperText))]):_vm._e()]):_vm._e(),_c('input',_vm._g(_vm._b({staticClass:"r-input-text",class:{ fullwidth: _vm.fullwidth, invalid: _vm.invalidMessage },attrs:{"id":_vm.UID,"type":_vm.type,"placeholder":_vm.placeholder},domProps:{"value":_vm.value}},'input',_vm.$attrs,false),_vm.inputListeners)),(_vm.invalidMessage)?_c('div',{staticClass:"r-text-color-error r-margin-top-tiny"},[_vm._v(_vm._s(_vm.invalidMessage))]):_vm._e()])};
   var __vue_staticRenderFns__$4 = [];
 
     /* style */
@@ -2191,7 +2191,7 @@
     };
   };
 
-  var version = "0.47.0";
+  var version = "0.47.4";
 
   var mountComponentToRoot = function mountComponentToRoot(vue, parent, componentConstructor) {
     var propsData = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};

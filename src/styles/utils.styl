@@ -2,25 +2,21 @@
 SPACING
  */
 
-for size in "huge" "large" "medium" "small" "tiny"
-  for type in "margin" "padding"
+for type in "margin" "padding"
+  .r-{type}-none
+    {type} 0 !important
+
+  for size in "huge" "large" "medium" "small" "tiny"
     .r-{type}-{size}[class]
       {type} lookup("$space-" + size)
 
-for direction in "top" "bottom" "left" "right"
-  for size in "huge" "large" "medium" "small" "tiny"
-    for type in "margin" "padding"
+    for direction in "top" "bottom" "left" "right"
       .r-{type}-{direction}-{size}[class]
         {type}-{direction} lookup("$space-" + size)
 
-.r-margin-top-none
-  margin-top 0 !important
-
-.r-margin-bottom-none
-  margin-bottom 0 !important
-
-.r-margin-none
-  margin 0 !important
+  for direction in "top" "bottom" "left" "right"
+    .r-{type}-{direction}-none
+      {type}-{direction} 0 !important
 
 
 /*

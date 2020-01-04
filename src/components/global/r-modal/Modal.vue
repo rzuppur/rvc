@@ -18,7 +18,7 @@
             role="dialog"
             @click.stop=""
             :aria-labelledby="title ? `dialog-title-${_id}` : null"
-            @keydown.native.capture.esc="outsideClose"
+            @keydown.capture.esc="outsideClose"
             :style="{ 'z-index': modalZIndex }"
           )
 
