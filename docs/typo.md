@@ -24,3 +24,6 @@ Text style classes:
 
 **Alignment:** 
 `r-text-left`, `r-text-center`, `r-text-right`
+
+**Overflow:**
+`r-ellipsis`

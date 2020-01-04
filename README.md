@@ -132,7 +132,9 @@ Text style classes:
 
 **Alignment:** 
 `r-text-left`, `r-text-center`, `r-text-right`
-### Tabs
+
+**Overflow:**
+`r-ellipsis`### Tabs
 Basic tabs component.
 ```html
 <r-tabs
