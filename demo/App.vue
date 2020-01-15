@@ -29,7 +29,7 @@
 
         section
           h1.r-title-3.r-margin-bottom-tiny RVC
-          .r-title-5.r-margin-top-none Vue UI Framework
+          .r-title-5.r-margin-top-none Vue user interface library
 
           p
             a(href="https://github.com/rzuppur/rvc/blob/master/demo/App.vue" target="_blank") View page source
