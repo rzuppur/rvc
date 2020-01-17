@@ -47,6 +47,16 @@
         };
       },
     },
+    watch: {
+      async value() {
+        const el = this.$refs.textarea;
+        if (el) {
+          await this.$nextTick();
+          el.style.height = "auto";
+          el.style.height = `${el.scrollHeight}px`;
+        }
+      },
+    },
     mounted() {
       this.$refs.textarea.style.height = `${this.$refs.textarea.scrollHeight}px`;
     },
