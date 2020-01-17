@@ -1,5 +1,5 @@
 /*!
- * rvc v0.47.4 
+ * rvc v0.47.8 
  * (c) 2020 Reino Zuppur
  * Released under the MIT License.
  */
@@ -1745,6 +1745,45 @@
         });
       }
     },
+    watch: {
+      value: function () {
+        var _value = _asyncToGenerator(
+        /*#__PURE__*/
+        regenerator.mark(function _callee() {
+          var el;
+          return regenerator.wrap(function _callee$(_context) {
+            while (1) {
+              switch (_context.prev = _context.next) {
+                case 0:
+                  el = this.$refs.textarea;
+
+                  if (!el) {
+                    _context.next = 6;
+                    break;
+                  }
+
+                  _context.next = 4;
+                  return this.$nextTick();
+
+                case 4:
+                  el.style.height = "auto";
+                  el.style.height = "".concat(el.scrollHeight, "px");
+
+                case 6:
+                case "end":
+                  return _context.stop();
+              }
+            }
+          }, _callee, this);
+        }));
+
+        function value() {
+          return _value.apply(this, arguments);
+        }
+
+        return value;
+      }()
+    },
     mounted: function mounted() {
       this.$refs.textarea.style.height = "".concat(this.$refs.textarea.scrollHeight, "px");
     }
@@ -2191,7 +2230,7 @@
     };
   };
 
-  var version = "0.47.4";
+  var version = "0.47.8";
 
   var mountComponentToRoot = function mountComponentToRoot(vue, parent, componentConstructor) {
     var propsData = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};
