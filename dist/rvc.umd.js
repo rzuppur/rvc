@@ -1,5 +1,5 @@
 /*!
- * rvc v0.47.12 
+ * rvc v0.47.13 
  * (c) 2020 Reino Zuppur
  * Released under the MIT License.
  */
@@ -1669,7 +1669,7 @@
         type: Boolean,
         default: true
       },
-      value: String
+      value: [String, Number]
     },
     computed: {
       inputListeners: function inputListeners() {
@@ -1734,7 +1734,7 @@
         type: Boolean,
         default: true
       },
-      value: String
+      value: [String, Number]
     },
     computed: {
       inputListeners: function inputListeners() {
@@ -2237,7 +2237,7 @@
     };
   };
 
-  var version = "0.47.12";
+  var version = "0.47.13";
 
   var mountComponentToRoot = function mountComponentToRoot(vue, parent, componentConstructor) {
     var propsData = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};

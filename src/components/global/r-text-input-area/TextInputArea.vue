@@ -32,7 +32,7 @@
       helperText: { type: String, default: undefined },
       invalidMessage: { type: String, default: undefined },
       fullwidth: { type: Boolean, default: true },
-      value: String,
+      value: [String, Number],
     },
     computed: {
       inputListeners() {

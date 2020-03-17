@@ -33,7 +33,7 @@
       invalidMessage: { type: String, default: undefined },
       type: { type: String, default: "text" },
       fullwidth: { type: Boolean, default: true },
-      value: String,
+      value: [String, Number],
     },
     computed: {
       inputListeners() {
