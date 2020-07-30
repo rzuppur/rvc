@@ -39,7 +39,7 @@
     "eslint-plugin-vue": "^5.2.3",
     "jstransformer-markdown-it": "^2.1.0",
     "pug-cli": "^1.0.0-alpha6",
-    "stylus": "^0.54.7",
+    "stylus": "0.54.8",
     "stylus-loader": "^3.0.2",
     "typescript": "^3.6.3",
     "vue": "^2.6.10",
