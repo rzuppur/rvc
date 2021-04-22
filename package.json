@@ -1,6 +1,6 @@
 {
   "name": "@rzuppur/rvc",
-  "version": "0.47.14",
+  "version": "0.47.15",
   "author": "Reino Zuppur",
   "scripts": {
     "demo": "vue-cli-service demo App.vue",
@@ -8,7 +8,7 @@
     "docs:build": "pug -p docs < README.pug > README.md",
     "build": "yarn run docs:build && vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "prepublish": "yarn run build",
+    "prepublishOnly": "yarn run build",
     "start": "yarn run demo"
   },
   "main": "dist/rvc.common.js",
