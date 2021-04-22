@@ -21,7 +21,7 @@
           if (val.length) {
             this.lastTimeout = setTimeout(() => {
               this.remove(val[0].index);
-            }, 900 + val[0].text.length * 70);
+            }, 1900 + val[0].text.length * 60);
           }
         },
       },
