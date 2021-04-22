@@ -13,6 +13,7 @@ Every property listed is optional. If button contains no childs but has an icon,
     actionWithModifier: function  // @click.ctrl.exact handler
     label: string  // aria-label, for icon only buttons
     icon: string  // One of valid r-icon icons
+    icon-right: boolean  // default false
     icon-color: string  // ("gray" | "green" | "red" | "blue" | "link" | "white")
   >
     {{ text }}

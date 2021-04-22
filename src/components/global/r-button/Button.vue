@@ -8,6 +8,7 @@
       actionWithModifier: Function,
       label: String,
       icon: String,
+      iconRight: Boolean,
       iconColor: String,
       borderless: Boolean,
       primary: Boolean,
@@ -25,17 +26,26 @@
       const childrenNodes = [];
       const textSlot = context.slots().default;
 
+      let icon;
       if (p.icon) {
-        childrenNodes.push(createElement("r-icon", {
+        icon = createElement("r-icon", {
           props: { icon: p.icon },
           class: [{
             white: p.primary,
             gray: !p.primary && !p.iconColor,
           }, p.iconColor],
-        }));
+        });
       }
 
-      if (textSlot) childrenNodes.push(createElement("span", {}, [textSlot]));
+      if (icon && !p.iconRight) {
+        childrenNodes.push(icon);
+      }
+      if (textSlot) {
+        childrenNodes.push(createElement("span", {}, [textSlot]));
+      }
+      if (icon && p.iconRight) {
+        childrenNodes.push(icon);
+      }
 
       const buttonClasses = {
         "r-button": true,

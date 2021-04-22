@@ -1,5 +1,5 @@
 /*!
- * rvc v0.47.16 
+ * rvc v0.48.0 
  * (c) 2021 Reino Zuppur
  * Released under the MIT License.
  */
@@ -19,6 +19,7 @@ var script = {
     actionWithModifier: Function,
     label: String,
     icon: String,
+    iconRight: Boolean,
     iconColor: String,
     borderless: Boolean,
     primary: Boolean,
@@ -34,9 +35,10 @@ var script = {
     var p = context.props;
     var childrenNodes = [];
     var textSlot = context.slots().default;
+    var icon;
 
     if (p.icon) {
-      childrenNodes.push(createElement("r-icon", {
+      icon = createElement("r-icon", {
         props: {
           icon: p.icon
         },
@@ -44,10 +46,21 @@ var script = {
           white: p.primary,
           gray: !p.primary && !p.iconColor
         }, p.iconColor]
-      }));
+      });
     }
 
-    if (textSlot) childrenNodes.push(createElement("span", {}, [textSlot]));
+    if (icon && !p.iconRight) {
+      childrenNodes.push(icon);
+    }
+
+    if (textSlot) {
+      childrenNodes.push(createElement("span", {}, [textSlot]));
+    }
+
+    if (icon && p.iconRight) {
+      childrenNodes.push(icon);
+    }
+
     var buttonClasses = {
       "r-button": true,
       "icon-only": p.icon && !textSlot,
@@ -2244,7 +2257,7 @@ var RTip = function RTip(vue) {
   };
 };
 
-var version = "0.47.16";
+var version = "0.48.0";
 
 var mountComponentToRoot = function mountComponentToRoot(vue, parent, componentConstructor) {
   var propsData = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};

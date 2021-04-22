@@ -158,6 +158,7 @@
 
               .r-buttons
                 r-button(icon="arrow left") Icon
+                r-button(icon="arrow left" icon-right) Icon right
                 r-button(primary icon="add") Icon
                 r-button(borderless icon="close" icon-color="red") Icon
                 r-button(gray borderless icon="edit" icon-color="blue") Icon
@@ -171,6 +172,7 @@
                 r-button(:action="test" :actionWithModifier="test2") @click.ctrl test
                 r-button(small) Small
                 r-button(small icon="arrow left") Small icon
+                r-button(small icon="arrow left" icon-right) Icon right
                 r-button(small icon="close")
                 r-button(small borderless icon="edit")
 
